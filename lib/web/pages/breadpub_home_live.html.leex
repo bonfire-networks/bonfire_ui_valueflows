@@ -1,0 +1,66 @@
+<div class="container h-screen max-w-screen-lg mx-auto">
+  <%= live_component(
+    @socket,
+    LogoHeaderLive,
+    assigns
+  ) %>
+  <%= live_component(
+    @socket,
+    HeaderGuestLive,
+    assigns
+  ) %>
+  <%= live_component(
+    @socket,
+    IntentCreateActivityLive,
+    assigns
+  ) %>
+<div class="flex mt-6 -mx-2">
+  <div class="w-3/5 px-2">
+    <div class="mb-8 bg-white rounded-lg shadow">
+      <div class="px-4 py-5 bg-white border-b border-gray-200 border-b-3 sm:px-6">
+      <div class="flex flex-wrap items-center justify-between -mt-2 -ml-4 sm:flex-no-wrap">
+          <div class="mt-2 ml-4">
+            <div class="flex space-x-8 text-lg font-medium leading-6 text-gray-900">
+              <div class="flex items-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span class="ml-2 text-sm">5 Open</span>
+              </div> 
+              <div class="flex items-center">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>                <span class="ml-2 text-sm">5 Close</span>
+              </div> 
+            </div>
+          </div>
+          <div class="flex-shrink-0 mt-2 ml-4">
+          <span class="inline-flex">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+          </span>
+          </div>
+      </div>
+      </div>
+      <div class="mx-auto max-w-7xl">
+      <%= live_component(
+          @socket,
+          ProposalFeedLive
+      ) %>
+      <%= live_component(
+          @socket,
+          ProposalFeedLive
+      ) %>
+      <%= live_component(
+          @socket,
+          ProposalFeedLive
+      ) %>
+      <%= live_component(
+          @socket,
+          ProposalFeedLive
+      ) %>
+      </div>
+  </div>
+  </div>
+    <div class="w-2/5 px-2">
+        <%= live_component(
+        @socket,
+        HashtagsLive
+      ) %>
+    </div>
+</div>
