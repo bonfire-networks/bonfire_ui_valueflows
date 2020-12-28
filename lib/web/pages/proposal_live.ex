@@ -1,8 +1,5 @@
-defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
+defmodule Bonfire.UI.ValueFlows.ProposalLive do
   use Bonfire.Web, :live_view
-  alias Bonfire.Web.Components.HashtagsLive
-  alias Bonfire.UI.ValueFlows.IntentCreateActivityLive
-  alias Bonfire.UI.ValueFlows.ProposalFeedLive
   alias Bonfire.Common.Web.LivePlugs
     alias Bonfire.Me.Users
     alias Bonfire.Me.Web.{CreateUserLive, MeHomeLive}
