@@ -7,10 +7,11 @@
     </div>
     <div class="mx-8 -mt-12">
       <%= live_component(
-        @socket,
-        IntentCreateActivityLive,
-        assigns
-      ) %>
+        @socket, 
+        IntentCreateActivityLive, 
+        id: :IntentCreationForm,
+        assigns: assigns
+      )  %>
     </div>
 
 <div class="mt-4">

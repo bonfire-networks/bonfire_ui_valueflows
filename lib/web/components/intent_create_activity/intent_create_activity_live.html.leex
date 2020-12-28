@@ -3,61 +3,119 @@
     <div class="px-4 py-5 sm:p-6">
       <h3 class="mb-4 text-sm font-semibold tracking-wide text-gray-600">Do you want to post something?</h3>
       <div class="flex items-center space-x-4">
-        <div class="flex items-center px-3 py-2 bg-gray-100 border rounded-md cursor">
-          <input id="need" name="intent" type="radio" class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
-          <label for="need" class="block ml-3 text-sm font-bold tracking-widest text-gray-700">
+        <div 
+          class='flex items-center px-3 py-2 bg-gray-100 border rounded-md cursor-pointer <%= if @selected_tab == "need" do %>ring-4 bg-blue-100 text-blue-900<% end %>'
+          phx-click="toggleProposal"
+          phx-value-id="need"
+          phx-target="<%= @myself %>"
+          >
+          <span class="block text-sm font-bold tracking-widest text-gray-700 <%= if @selected_tab == "need" do %>text-blue-900<% end %>">
             Need
-          </label>
+          </span>
         </div>
-        <div class="flex items-center px-3 py-2 bg-gray-100 border rounded-md cursor">
-          <input id="offer" name="intent" type="radio" class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
-          <label for="offer" class="block ml-3 text-sm font-bold tracking-widest text-gray-700">
+        <div 
+          class="flex items-center px-3 py-2 bg-gray-100 border rounded-md cursor-pointer <%= if @selected_tab == "offer" do %>ring-4 bg-blue-100 text-blue-900<% end %>"
+          phx-click="toggleProposal"
+          phx-value-id="offer"
+          phx-target="<%= @myself %>"
+          >
+          <span for="offer" class="block text-sm font-bold tracking-widest text-gray-700 <%= if @selected_tab == "offer" do %>text-blue-900<% end %>">
             Offer
-          </label>
+          </span>
         </div>
       </div>
-      <!-- <div class="py-5 space-y-6">
-        <div>
-          <div class="col-span-3 sm:col-span-2">
-            <label for="company_website" class="block text-sm font-medium text-gray-700">
-              Add a title
+
+      <%= cond do %>
+        <% @selected_tab == "need" -> %>
+        <div class="py-5 space-y-6">
+          <div>
+            <div class="col-span-3 sm:col-span-2">
+              <label for="company_website" class="block text-sm font-medium text-gray-700">
+                Add a title for your need
+              </label>
+              <div class="flex mt-1 rounded-md shadow-sm">
+                <input type="text" name="company_website" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm" placeholder="www.example.com">
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="about" class="block text-sm font-medium text-gray-700">
+              Add a description
             </label>
-            <div class="flex mt-1 rounded-md shadow-sm">
-              <input type="text" name="company_website" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm" placeholder="www.example.com">
+            <div class="mt-1">
+              <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="you@example.com"></textarea>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+              Brief description for your profile. URLs are hyperlinked.
+            </p>
+          </div>
+          <div>
+            <label for="country" class="block text-sm font-medium text-gray-700">
+              Add in lists
+            </label>
+            <div class="flex mt-1 shadow-sm">
+              <span class="inline-flex items-center px-3 text-gray-900 bg-gray-100 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
+                  <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
+                <option>United States</option>
+                <option>Canada</option>
+                <option>Mexico</option>
+              </select>
             </div>
           </div>
         </div>
-        <div>
-          <label for="about" class="block text-sm font-medium text-gray-700">
-            Add a description
-          </label>
-          <div class="mt-1">
-            <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="you@example.com"></textarea>
+        <% @selected_tab == "offer" -> %>
+        <div class="py-5 space-y-6">
+          <div>
+            <div class="col-span-3 sm:col-span-2">
+              <label for="company_website" class="block text-sm font-medium text-gray-700">
+                Add a title
+              </label>
+              <div class="flex mt-1 rounded-md shadow-sm">
+                <input type="text" name="company_website" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm" placeholder="www.example.com">
+              </div>
+            </div>
           </div>
-          <p class="mt-2 text-sm text-gray-500">
-            Brief description for your profile. URLs are hyperlinked.
-          </p>
-        </div>
-        <div>
-          <label for="country" class="block text-sm font-medium text-gray-700">
-            Add in lists
-          </label>
-          <div class="flex mt-1 shadow-sm">
-            <span class="inline-flex items-center px-3 text-gray-900 bg-gray-100 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
-              <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
-                <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-              </svg>
-            </span>
-            <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Mexico</option>
-            </select>
+          <div>
+            <label for="about" class="block text-sm font-medium text-gray-700">
+              Add a description
+            </label>
+            <div class="mt-1">
+              <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="you@example.com"></textarea>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">
+              Brief description for your profile. URLs are hyperlinked.
+            </p>
+          </div>
+          <div>
+            <label for="country" class="block text-sm font-medium text-gray-700">
+              Add in lists
+            </label>
+            <div class="flex mt-1 shadow-sm">
+              <span class="inline-flex items-center px-3 text-gray-900 bg-gray-100 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
+                  <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
+                <option>United States</option>
+                <option>Canada</option>
+                <option>Mexico</option>
+              </select>
+            </div>
           </div>
         </div>
-      </div> -->
+        <% true -> %>
+          <div></div>
+      <% end %>
     </div>
-   <!--  <div class="flex justify-between p-4 border-t">
+    
+    <%= if @selected_tab != "" do %>
+
+    <div class="flex justify-between p-4 border-t">
         <div class="flex items-center">
           <button type="button" aria-pressed="false" aria-labelledby="toggleLabel" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-gray-200 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="sr-only">Use setting</span>
@@ -67,9 +125,22 @@
             <span class="text-sm font-medium text-gray-900">Make it public</span>
           </span>
         </div>
+        <div class="flex">
+          <button 
+            phx-click="toggleProposal"
+            phx-value-id=""
+            phx-target="<%= @myself %>"
+            type="button" 
+            class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Cancel
+          </button>
           <button type="submit" class="flex justify-center px-4 py-2 text-sm font-medium text-gray-100 transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 hover:text-gray-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-200 active:bg-gray-700">
             Publish
           </button>
-    </div> -->
+        </div>
+    </div>
+    <%= end %>
+
+
   </form>
 </div>
