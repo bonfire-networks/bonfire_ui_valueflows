@@ -19,7 +19,7 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
 
     defp mounted(params, session, socket) do
       {:ok, socket
-      |> assign(page_title: "Switch User",
+      |> assign(page_title: "Home",
       selected_tab: "about",
       )}
     end

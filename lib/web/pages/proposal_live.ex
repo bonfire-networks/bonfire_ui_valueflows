@@ -16,7 +16,7 @@ defmodule Bonfire.UI.ValueFlows.ProposalLive do
 
     defp mounted(params, session, socket) do
       {:ok, socket
-      |> assign(page_title: "Switch User",
+      |> assign(page_title: "Proposal",
       selected_tab: "about",
       )}
     end

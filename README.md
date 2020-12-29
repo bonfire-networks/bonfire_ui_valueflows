@@ -2,13 +2,7 @@
 
 An extension for [Bonfire](https://bonfire.cafe/) that handles:
 
-- Account creation
-- Email verification
-- Authentication
-- User/Profile creation
-- User/Profile switching
-- User Profile
-- Settings
+- UI components and views for [ValueFlows](https://github.com/bonfire-ecosystem/bonfire_valueflows)
 
 ## Handy commands
 
