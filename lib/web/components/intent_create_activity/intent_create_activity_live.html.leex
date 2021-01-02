@@ -31,84 +31,156 @@
       <%= cond do %>
         <% @selected_tab == "need" -> %>
         <div class="py-5 mt-5 space-y-6 border-t">
-          <div>
-            <div class="col-span-3 sm:col-span-2">
-              <label for="company_website" class="block text-sm font-medium text-gray-700">
-                Add a title for your need
-              </label>
-              <div class="flex mt-1 rounded-md shadow-sm">
-                <input type="text" name="company_website" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm" placeholder="www.example.com">
+          <div class="">
+            <div class="relative flex mb-16 items-top">
+              <span class="absolute  top-10 -bottom-14 left-4 -ml-px  w-0.5 bg-gray-200"></span>
+              <svg class="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+              <div class="flex-1 ml-3">
+                <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none border-l-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
+                  <option>Everyone</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                </select>
+                <div class="p-3 mt-3 text-center bg-blue-100 border-2 border-blue-300 border-dashed cursor-pointer">
+                  <span class="text-base text-blue-400">Add a reciprocal</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <label for="about" class="block text-sm font-medium text-gray-700">
-              Add a description
-            </label>
-            <div class="mt-1">
-              <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="you@example.com"></textarea>
-            </div>
-            <p class="mt-2 text-sm text-gray-500">
-              Brief description for your profile. URLs are hyperlinked.
-            </p>
-          </div>
-          <div>
-            <label for="country" class="block text-sm font-medium text-gray-700">
-              Add in lists
-            </label>
-            <div class="flex mt-1 shadow-sm">
-              <span class="inline-flex items-center px-3 text-gray-900 bg-gray-100 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
-                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
-                  <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                </svg>
-              </span>
-              <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
-              </select>
+
+            <div class="flex mb-3 items-top">
+              <img class="inline-block w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              <div class="flex-1 ml-3">
+                <h3 class="text-sm font-medium tracking-wide text-gray-600">Ivan Minutillo</h3>
+                <div class="w-full mt-2 border">
+                  <div class="col-span-3 sm:col-span-2">
+                    <label for="company_website" class="block text-sm font-medium text-gray-700 sr-only">
+                      Add a title
+                    </label>
+                    <div class="flex">
+                      <input type="text" name="company_website" id="company_website" class="flex-1 block w-full text-3xl font-semibold border-none rounded-none sm:text-sm" placeholder="Add a title">
+                    </div>
+                  </div>
+                  <div>
+                    <label for="about" class="block text-sm font-medium text-gray-700 sr-only">
+                      Add a description
+                    </label>
+                    <div class="">
+                      <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-none rounded-none sm:text-sm" placeholder="Type a description"></textarea>
+                    </div>   
+                  </div>
+                  <div class="flex justify-between px-3 py-3 border-t">
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                      <span class="text-sm font-semibold text-gray-600">Add an image</span>
+                    </div>
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                      <span class="text-sm font-semibold text-gray-600">Set a due date</span>
+                    </div>
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                      <span class="text-sm font-semibold text-gray-600">Add a location</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label for="country" class="block text-sm font-normal text-gray-600">
+                    Add in lists
+                  </label>
+                  <div class="flex mt-1 shadow-sm">
+                    <span class="inline-flex items-center px-3 text-gray-900 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+                      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
+                        <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                    <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none border-l-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
+                      <option>Frontend dev</option>
+                      <option>Canada</option>
+                      <option>Mexico</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <% @selected_tab == "offer" -> %>
-        <div class="py-5 space-y-6">
-          <div>
-            <div class="col-span-3 sm:col-span-2">
-              <label for="company_website" class="block text-sm font-medium text-gray-700">
-                Add a title
-              </label>
-              <div class="flex mt-1 rounded-md shadow-sm">
-                <input type="text" name="company_website" id="company_website" class="flex-1 block w-full border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm" placeholder="www.example.com">
+        <div class="py-5 mt-5 space-y-6 border-t">
+          <div class="">
+            <div class="relative flex mb-12 items-top">
+              <span class="absolute  top-10 -bottom-10 left-4 -ml-px  w-0.5 bg-gray-200"></span>
+              <img class="inline-block w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+              <div class="flex-1 ml-3">
+                <h3 class="text-sm font-medium tracking-wide text-gray-600">Ivan Minutillo</h3>
+                <div class="w-full mt-2 border">
+                  <div class="col-span-3 sm:col-span-2">
+                    <label for="company_website" class="block text-sm font-medium text-gray-700 sr-only">
+                      Add a title
+                    </label>
+                    <div class="flex">
+                      <input type="text" name="company_website" id="company_website" class="flex-1 block w-full text-3xl font-semibold border-none rounded-none sm:text-sm" placeholder="Add a title">
+                    </div>
+                  </div>
+                  <div>
+                    <label for="about" class="block text-sm font-medium text-gray-700 sr-only">
+                      Add a description
+                    </label>
+                    <div class="">
+                      <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-none rounded-none sm:text-sm" placeholder="Type a description"></textarea>
+                    </div>   
+                  </div>
+                  <div class="flex justify-between px-3 py-3 border-t">
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                      <span class="text-sm font-semibold text-gray-600">Add an image</span>
+                    </div>
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                      <span class="text-sm font-semibold text-gray-600">Set a due date</span>
+                    </div>
+                    <div class="flex items-center">
+                      <svg class="w-5 h-5 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                      <span class="text-sm font-semibold text-gray-600">Add a location</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label for="country" class="block text-sm font-normal text-gray-600">
+                    Add in lists
+                  </label>
+                  <div class="flex mt-1 shadow-sm">
+                    <span class="inline-flex items-center px-3 text-gray-900 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
+                      <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
+                        <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
+                    <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none border-l-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
+                      <option>Frontend dev</option>
+                      <option>Canada</option>
+                      <option>Mexico</option>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <label for="about" class="block text-sm font-medium text-gray-700">
-              Add a description
-            </label>
-            <div class="mt-1">
-              <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="you@example.com"></textarea>
+
+
+            <div class="flex mb-3 items-top">
+              <svg class="w-8 h-8 text-gray-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+              <div class="flex-1 ml-3">
+                <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none border-l-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
+                  <option>Everyone</option>
+                  <option>Canada</option>
+                  <option>Mexico</option>
+                </select>
+                <div class="p-3 mt-3 text-center bg-blue-100 border-2 border-blue-300 border-dashed cursor-pointer">
+                  <span class="text-base text-blue-400">Add a reciprocal</span>
+                </div>
+              </div>
             </div>
-            <p class="mt-2 text-sm text-gray-500">
-              Brief description for your profile. URLs are hyperlinked.
-            </p>
-          </div>
-          <div>
-            <label for="country" class="block text-sm font-medium text-gray-700">
-              Add in lists
-            </label>
-            <div class="flex mt-1 shadow-sm">
-              <span class="inline-flex items-center px-3 text-gray-900 bg-gray-100 border border-r-0 border-gray-300 rounded-l-md sm:text-sm">
-                <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="bg-gray-300">
-                  <path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-                </svg>
-              </span>
-              <select id="country" name="country" autocomplete="country" class="block w-full border-gray-300 rounded-none shadow-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-r-md ">
-                <option>United States</option>
-                <option>Canada</option>
-                <option>Mexico</option>
-              </select>
-            </div>
+
+
+
           </div>
         </div>
         <% true -> %>
