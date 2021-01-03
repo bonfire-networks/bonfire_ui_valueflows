@@ -78,22 +78,13 @@
       </div>
       <div class="mx-auto max-w-7xl">
 
-      <%= live_component(
+      <%= for l <- @list do %>
+        <%= live_component(
           @socket,
-          ProposalFeedLive
-      ) %>
-      <%= live_component(
-          @socket,
-          ProposalFeedLive
-      ) %>
-      <%= live_component(
-          @socket,
-          ProposalFeedLive
-      ) %>
-      <%= live_component(
-          @socket,
-          ProposalFeedLive
-      ) %>
+          ProposalFeedLive,
+          item: l
+        ) %>
+      <% end %>
       </div>
     </div>
   </div>

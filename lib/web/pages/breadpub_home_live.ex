@@ -20,13 +20,14 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
   end
 
   defp mounted(params, session, socket) do
-    intents = list_intents(socket)
+    intents = list_intents(socket).data.intents
     IO.inspect(intents)
 
     {:ok, socket
     |> assign(
       page_title: "Home",
       selected_tab: "about",
+      list: intents
     )}
   end
 
