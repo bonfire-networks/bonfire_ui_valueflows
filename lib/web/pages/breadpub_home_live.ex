@@ -1,10 +1,8 @@
 defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
   use Bonfire.Web, {:live_view, [layout: {Bonfire.UI.ValueFlows.LayoutView, "live.html"}]}
 
-  alias Bonfire.UI.Social.HashtagsLive
-  alias Bonfire.UI.ValueFlows.IntentCreateActivityLive
-  alias Bonfire.UI.ValueFlows.ProposalFeedLive
-
+  alias Bonfire.UI.Social.{HashtagsLive, ParticipantsLive}
+  alias Bonfire.UI.ValueFlows.{IntentCreateActivityLive, ProposalFeedLive, FiltersLive}
   alias Bonfire.Common.Web.LivePlugs
   alias Bonfire.Me.Users
   alias Bonfire.Me.Web.{CreateUserLive, MeHomeLive}
@@ -23,6 +21,7 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
     {:ok, socket
     |> assign(page_title: "Home",
     selected_tab: "about",
+
     )}
   end
 

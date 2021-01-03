@@ -3,6 +3,7 @@ defmodule Bonfire.UI.ValueFlows.ProposalLive do
 
   alias Bonfire.Common.Web.LivePlugs
   alias Bonfire.Me.Users
+  alias Bonfire.UI.Social.{ParticipantsLive}
   alias Bonfire.Me.Web.{CreateUserLive, MeHomeLive}
 
   def mount(params, session, socket) do

@@ -3,10 +3,44 @@
     <h2 class="mt-6 text-xl antialiased font-bold leading-7 text-gray-800 sm:text-2xl">
       Tags (categories) and VF objects are actor types?
     </h2>
-    <p class="mt-2 text-sm text-gray-600"><a class="font-bold text-gray-800" href="#">#102</a> Opened 1 month ago by <a class="font-bold text-gray-800 underline" href="#">Karen</a> in <a href="http://" class="font-bold text-gray-800 underline" target="_blank" rel="noopener noreferrer">#ActivityPub</a></p>
+    <p class="flex items-center mt-2 text-sm text-gray-600"><a class="mr-2 font-bold text-gray-800" href="#">#102</a> Opened 1 month ago by <a class="mx-1 font-bold text-gray-800 underline" href="#">Karen</a> in  <a class="inline-flex items-center ml-1 text-sm font-medium text-gray-800 underline" href="http://" target="_blank" rel="noopener noreferrer"> <span class="w-4 h-4 mr-1 bg-red-200 rounded"></span> frontend</a></p>
   </div>
   <div class="flex mb-16 -mx-2">
     <div class="w-2/3 px-2"> 
+
+      <div class="w-full mt-6 bg-green-300 bg-no-repeat bg-cover rounded-lg h-80"></div>
+
+      <div class="mt-4">
+        <div class="sm:hidden">
+          <label for="tabs" class="sr-only">Select a tab</label>
+          <select id="tabs" name="tabs" class="block w-full py-2 pl-3 pr-10 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <option selected>Proposals</option>
+            <option>Reciprocal</option>
+            <option>Activities</option>
+            <option>Agreement</option>
+          </select>
+        </div>
+        <div class="hidden sm:block">
+          <div class="border-b border-gray-200">
+            <nav class="flex -mb-px space-x-8" aria-label="Tabs">
+              <a href="#" class="px-1 py-4 text-sm font-medium text-indigo-600 border-b-2 border-indigo-500 whitespace-nowrap" aria-current="page">
+                Discussion
+              </a>
+              <a href="#" class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
+                Reciprocal
+              </a>
+              <a href="#" class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
+                Activities
+              </a>
+              <a href="#" class="px-1 py-4 text-sm font-medium text-gray-500 border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 whitespace-nowrap">
+                Agreement
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+
       <div class="mt-6 bg-white border rounded-md ">
         <div class="relative flex items-start p-4 space-x-3">
           <div class="relative">
@@ -217,30 +251,32 @@
           Edit proposal
         </button>
 
+        <div class="pb-4 border-t-4 border-blue-600 border-solid">
+          <h4 class="mt-4 text-3xl antialiased font-bold text-gray-700">5000 €</h4>
+          <a class="mt-4 text-sm text-gray-600 underline" href="#">Read more about the reciprocal</a>
+        </div>
+
         <div class="flex items-center mb-4">
-          <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z"></path></svg>
+          <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z"></path></svg>
           <span class="ml-3 text-sm font-normal text-gray-600">Open proposal</span> 
         </div>
         <div class="flex items-center mb-4">
-          <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path></svg>          
+          <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"></path></svg>          
           <span class="ml-3 text-sm font-normal text-gray-600">4 Comments</span> 
         </div>
         <div class="flex items-center mb-4">
-          <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+          <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
           <span class="ml-3 text-sm font-normal text-gray-600">Created on 18 December 2020</span> 
         </div>
         <div class="flex items-center mb-4">
-          <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+          <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
           <span class="ml-3 text-sm font-normal text-gray-600">Due on 18 December 2020</span> 
         </div>
         <div class="mt-6">
-          <h4 class="text-sm font-semibold text-gray-600">4 Participants</h4>
-          <div class="flex mt-3 -space-x-2 overflow-hidden">
-            <img class="inline-block w-8 h-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            <img class="inline-block w-8 h-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            <img class="inline-block w-8 h-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="">
-            <img class="inline-block w-8 h-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-          </div>
+          <%= live_component(
+          @socket,
+          ParticipantsLive
+        ) %>
         </div>
       </div>
     </div>
