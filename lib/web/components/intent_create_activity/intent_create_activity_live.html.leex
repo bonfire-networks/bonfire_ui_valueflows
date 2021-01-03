@@ -1,12 +1,12 @@
 <div class="overflow-hidden bg-white rounded-lg shadow">
-  <form action="#" method="POST">
+  <form phx-submit="create" phx-target="<%= @myself %>">
     <div class="px-4 py-4 pb-0">
       <div class="flex items-center mb-3">
         <img class="inline-block w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
         <h3 class="ml-3 text-sm font-normal tracking-wide text-gray-600">Hey Ivan, do you want to post something?</h3>
       </div>
       <div class="flex items-center py-4 space-x-8 border-t">
-        <div 
+        <div
           class='flex items-center p-1 rounded-md cursor-pointer <%= if @selected_tab == "need" do %>ring-4 bg-blue-100 text-blue-900<% end %>'
           phx-click="toggleProposal"
           phx-value-id="need"
@@ -17,7 +17,7 @@
             Publish a need
           </span>
         </div>
-        <div 
+        <div
           class="flex items-center p-1  rounded-md cursor-pointer <%= if @selected_tab == "offer" do %>ring-4 bg-blue-100 text-blue-900<% end %>"
           phx-click="toggleProposal"
           phx-value-id="offer"
@@ -55,11 +55,11 @@
                 <h3 class="text-sm font-medium tracking-wide text-gray-600">Ivan Minutillo</h3>
                 <div class="w-full mt-2 bg-white border">
                   <div class="col-span-3 sm:col-span-2">
-                    <label for="company_website" class="block text-sm font-medium text-gray-700 sr-only">
+                    <label for="name" class="block text-sm font-medium text-gray-700 sr-only">
                       Add a title
                     </label>
                     <div class="flex">
-                      <input type="text" name="company_website" id="company_website" class="flex-1 block w-full text-3xl font-semibold border-none rounded-none sm:text-sm" placeholder="Add a title">
+                      <input type="text" name="need[name]" id="name" class="flex-1 block w-full text-3xl font-semibold border-none rounded-none sm:text-sm" placeholder="Add a title">
                     </div>
                   </div>
                   <div>
@@ -67,8 +67,8 @@
                       Add a description
                     </label>
                     <div class="">
-                      <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-none rounded-none sm:text-sm" placeholder="Type a description"></textarea>
-                    </div>   
+                      <textarea id="about" name="need[note]" rows="3" class="block w-full mt-1 border-none rounded-none sm:text-sm" placeholder="Type a description"></textarea>
+                    </div>
                   </div>
                   <div class="flex justify-between px-3 py-3 border-t">
                     <div class="flex items-center">
@@ -86,6 +86,10 @@
                   </div>
                 </div>
                 <div class="mt-3">
+
+                                      <input type="text" name="need[at_location]" id="location_address" class="flex-1 block w-full text-3xl font-semibold border-none rounded-none sm:text-sm" placeholder="Add a location address">
+
+
                   <label for="country" class="block text-sm font-normal text-gray-600">
                     Add in lists
                   </label>
@@ -129,7 +133,7 @@
                     </label>
                     <div class="">
                       <textarea id="about" name="about" rows="3" class="block w-full mt-1 border-none rounded-none sm:text-sm" placeholder="Type a description"></textarea>
-                    </div>   
+                    </div>
                   </div>
                   <div class="flex justify-between px-3 py-3 border-t">
                     <div class="flex items-center">
@@ -189,7 +193,7 @@
           <div></div>
       <% end %>
     </div>
-    
+
     <%= if @selected_tab != "" do %>
 
     <div class="flex justify-between p-4 border-t">
@@ -203,11 +207,11 @@
           </span>
         </div>
         <div class="flex">
-          <button 
+          <button
             phx-click="toggleProposal"
             phx-value-id=""
             phx-target="<%= @myself %>"
-            type="button" 
+            type="button"
             class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             Cancel
           </button>
