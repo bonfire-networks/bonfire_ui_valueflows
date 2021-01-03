@@ -16,6 +16,8 @@ defmodule Bonfire.UI.ValueFlows.MixProject do
         {:phoenix_live_reload, "~> 1.2", only: :dev},
         {:dbg, "~> 1.0", only: [:dev, :test]},
         {:floki, ">= 0.0.0", only: [:dev, :test]},
+        {:absinthe, "~> 1.5.3", optional: true},
+        {:absinthe_plug, "~> 1.5", optional: true}
       ]
     ]
   end
