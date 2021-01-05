@@ -5,8 +5,10 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   alias Bonfire.UI.Social.SelectAutocompleteLive
 
   def mount(socket) do
+    {:ok, loc} = Geolocations.many()
+    locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     {:ok, socket
-    |> assign(is_public: false )}
+    |> assign(is_public: false, locations: locations )}
   end
 
   def handle_event("toggleIsPublic", _ , socket) do
