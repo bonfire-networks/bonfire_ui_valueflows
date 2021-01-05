@@ -78,11 +78,11 @@
       </div>
       <div class="mx-auto max-w-7xl">
 
-      <%= for l <- @list do %>
+      <%= for i <- @list do %>
         <%= live_component(
           @socket,
           ProposalFeedLive,
-          item: l
+          intent: i
         ) %>
       <% end %>
       </div>
