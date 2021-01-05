@@ -20,7 +20,7 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
   end
 
   defp mounted(params, session, socket) do
-    intents = list_intents(socket).data.intents
+    intents = all_intents(socket)
     IO.inspect(intents)
 
     {:ok, socket
@@ -35,6 +35,7 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
   @graphql """
     {
       intents {
+        id
         name
         provider
         receiver
@@ -42,7 +43,8 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
       }
     }
   """
-  def list_intents(socket), do: graphql(socket, :list_intents)
+  def intents(params \\ %{}, socket), do: liveql(socket, :intents, params)
+  def all_intents(socket), do: intents(socket)
 
 
 end
