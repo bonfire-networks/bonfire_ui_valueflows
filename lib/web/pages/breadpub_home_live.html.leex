@@ -9,8 +9,7 @@
       <%= live_component(
         @socket,
         IntentCreateActivityLive,
-        id: :IntentCreationForm,
-        current_user: @current_user
+        assigns
       )  %>
     </div>
 
