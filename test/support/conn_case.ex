@@ -30,7 +30,7 @@ defmodule Bonfire.UI.ValueFlows.ConnCase do
       # alias Bonfire.UI.ValueFlows.Web.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint Bonfire.UI.ValueFlows.Web.Endpoint
+      @endpoint Bonfire.Common.Config.get!(:endpoint_module)
     end
   end
 

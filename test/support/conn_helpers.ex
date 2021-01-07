@@ -8,7 +8,7 @@ defmodule Bonfire.UI.ValueFlows.Test.ConnHelpers do
   alias Bonfire.Data.Identity.Account
   alias Bonfire.Data.Identity.User
 
-  @endpoint Bonfire.UI.ValueFlows.Web.Endpoint
+  @endpoint Bonfire.Common.Config.get!(:endpoint_module)
 
   ### conn
 
