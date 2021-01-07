@@ -1,18 +1,19 @@
 defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   use Bonfire.Web, :live_component
   alias ValueFlows.Planning.Intent.Intents
-  alias Bonfire.Geolocate.Geolocations
   alias Bonfire.UI.ValueFlows.IntentAddLocationLive
+  alias Bonfire.Geolocate.Geolocations
 
   def mount(socket) do
-   
+
     {:ok, socket
     |> assign(
-      is_public: false, 
-      at_location: "",
+      is_public: false,
+      at_location: %{},
       due_date: "",
-      search_locations_results: [],
-      search_location_phrase: "" )}
+      location_search_results: [],
+      location_search_phrase: ""
+    )}
   end
 
   def handle_event("clear_due_date", _, socket) do
@@ -30,65 +31,6 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
     {:noreply, assign(socket, assigns)}
   end
 
-
-
-  # START FUNCTIONS FOR INTENT ADD LOCATION FORM
-  # ive tried to move them all in the intent_add_location_live module, making it stateful, 
-  # but I need the at_location param in the parent compoent (this one), to be used when creating the new intent
-  # it seems send(self) only works with the parent view and not with the parent component
-  # maybe wrong? 
-
-  def handle_event("clear_location", _, socket) do
-    assigns = [
-      at_location: ""
-    ]
-    {:noreply, assign(socket, assigns)}
-  end
-
-  def handle_event("search_location", %{"at_location" => at_location}, socket) do
-    IO.inspect(at_location)
-    {:ok, loc} = Geolocations.many()
-    locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
-    assigns = [
-      search_locations_results: search(Enum.map(locations, fn x -> x.name end), at_location),
-      search_location_phrase: at_location
-    ]
-
-    {:noreply, assign(socket, assigns)}
-  end
-
-  def search(""), do: []
-
-  def search(list, prefix) do
-    Enum.filter(list, &has_prefix?(&1, prefix))
-  end
-
-  defp has_prefix?(item, prefix) do
-    String.starts_with?(String.downcase(item), String.downcase(prefix))
-  end
-
-  def handle_event("pick_location", %{"name" => picked}, socket) do
-    assigns = [
-      search_locations_results: [],
-      search_location_phrase: picked,
-      toggled_location: false
-    ]
-
-    {:noreply, assign(socket, assigns)}
-  end
-
-  def handle_event("create_location", %{"at_location" => picked}, socket) do
-    assigns = [
-      search_locations_results: [],
-      search_location_phrase: "",
-      at_location: picked,
-      toggled_location: false
-    ]
-
-    {:noreply, assign(socket, assigns)}
-  end
-
-  # END FUNCTIONS FOR INTENT ADD LOCATIONS
 
   def handle_event("create", attrs, socket) do
 
@@ -109,7 +51,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
           action: "work",
           is_public: socket.assigns.is_public,
           at_location: location,
-          receiver: location
+          receiver: socket.assigns.current_user
         })
 
         {:ok, intent} = Intents.create(user, data)
@@ -120,5 +62,20 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
       {:noreply, socket}
   end
 
+
+  # START FUNCTIONS FOR INTENT ADD LOCATION FORM
+  # ive tried to move them all in the intent_add_location_live module, making it stateful,
+  # but I need the at_location param in the parent compoent (this one), to be used when creating the new intent --> DO YOU?
+  # it seems send(self) only works with the parent view and not with the parent component
+  # maybe wrong?
+  # WELL, let's see if this "function proxying" can work for that
+
+  def handle_event("location_"<>_action = event, params, socket) do
+    IO.inspect(proxy_event: event)
+    IO.inspect(proxy_params: params)
+    Bonfire.UI.ValueFlows.IntentAddLocationLive.handle_event(event, params, socket)
+  end
+
+  # END FUNCTIONS FOR INTENT ADD LOCATIONS
 
 end
