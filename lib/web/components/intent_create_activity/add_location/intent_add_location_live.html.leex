@@ -1,20 +1,25 @@
-<div style="width: 320px" class="absolute z-20 mt-2 origin-top-left bg-white rounded-md shadow-lg right-2">
-  <div class="py-1 rounded-md shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-    <div class="flex p-2 border-b">
-      <h4 class="flex-1 text-sm font-light text-center">Add a location</h4>
+<div 
+  class="py-1 rounded-md shadow-xs" 
+  role="menu" 
+  aria-orientation="vertical" 
+  aria-labelledby="add location menu">  
+  <form 
+    phx-change="search_location" 
+    phx-submit="create_location" 
+    phx-target="<%= @me %>"
+    action="">
+    <div class="flex items-center p-2 border-b">
+      <label for="<%= @name %>" class="flex-1 text-sm font-light text-center">Add a location</label>
       <svg 
-        phx-target="<%= @me %>" 
-        phx-click="toggle_location" 
-        class="w-6 h-6 text-gray-400 cursor-pointer" fill="currentColor" stroke="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>  
-      </svg>
+        @click ="toggle_add_location = false"
+        class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600" 
+        fill="currentColor" 
+        viewBox="0 0 20 20" 
+        xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+        </svg>
     </div>
     <div class="p-2">
-      <form 
-        phx-change="search_location" 
-        phx-submit="create_location" 
-        phx-target="<%= @me %>"
-        action="">
       <div class="flex mt-1 rounded-md shadow-sm">
         <div class="relative flex items-stretch flex-grow focus-within:z-10">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -56,8 +61,7 @@
           </div>
         </div>
       <% end %>
-      </form>
     </div>
-  </div>
+  </form>
 </div>
 

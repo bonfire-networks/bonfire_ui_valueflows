@@ -8,24 +8,27 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
    
     {:ok, socket
     |> assign(
-      toggled_location: false,
       is_public: false, 
       at_location: "",
+      due_date: "",
       search_locations_results: [],
       search_location_phrase: "" )}
   end
 
-  def handle_event("toggleIsPublic", _ , socket) do
-    socket = assign(socket, is_public: !socket.assigns.is_public)
-    {:noreply, socket}
- end
-
-
- def handle_event("toggle_location", _ , socket) do
-  socket = assign(socket, toggled_location: !socket.assigns.toggled_location)
-  {:noreply, socket}
+  def handle_event("clear_due_date", _, socket) do
+    assigns = [
+      due_date: ""
+    ]
+    {:noreply, assign(socket, assigns)}
   end
 
+  def handle_event("set_due", %{"due_date" => due}, socket) do
+    assigns = [
+      due_date: due,
+    ]
+
+    {:noreply, assign(socket, assigns)}
+  end
 
 
 
@@ -65,12 +68,9 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   end
 
   def handle_event("pick_location", %{"name" => picked}, socket) do
-    IO.inspect(picked)
-
     assigns = [
       search_locations_results: [],
-      search_location_phrase: "",
-      at_location: picked,
+      search_location_phrase: picked,
       toggled_location: false
     ]
 
@@ -78,8 +78,6 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   end
 
   def handle_event("create_location", %{"at_location" => picked}, socket) do
-    IO.inspect(picked)
-
     assigns = [
       search_locations_results: [],
       search_location_phrase: "",
