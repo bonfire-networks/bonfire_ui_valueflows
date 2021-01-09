@@ -23,9 +23,41 @@ defmodule Bonfire.UI.ValueFlows.MapLive do
     |> assign(
       page_title: "Map",
       selected_tab: "about",
-      # list: intents
+      markers: [],
+      points: [],
+      place: nil
     )}
   end
 
+  def fetch_place_things(filters, socket) do
+    with {:ok, things} <-
+           ValueFlows.Planning.Intent.Intents.many(filters) do
+      IO.inspect(things)
+
+      things =
+        things
+        |> Enum.map(
+          &Map.merge(
+            Bonfire.Geolocate.Geolocations.populate_coordinates(Map.get(&1, :at_location)),
+            &1 || %{}
+          )
+        )
+
+      IO.inspect(things)
+
+      things
+    else
+      e ->
+        IO.inspect(error: e)
+        nil
+    end
+  end
+
+  # proxy relevent events to the map component
+  def handle_event("map_"<>_action = event, params, socket) do
+    IO.inspect(proxy_event: event)
+    IO.inspect(proxy_params: params)
+    Bonfire.Geolocate.MapLive.handle_event(event, params, socket, true)
+  end
 
 end
