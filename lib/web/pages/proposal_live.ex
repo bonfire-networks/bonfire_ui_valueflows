@@ -6,7 +6,7 @@ defmodule Bonfire.UI.ValueFlows.ProposalLive do
   alias Bonfire.Common.Web.LivePlugs
   alias Bonfire.Me.Users
   alias Bonfire.UI.Social.{ParticipantsLive}
-  alias Bonfire.Me.Web.{CreateUserLive, MeHomeLive}
+  alias Bonfire.Me.Web.{CreateUserLive, LoggedDashboardLive}
 
   def mount(params, session, socket) do
     LivePlugs.live_plug params, session, socket, [
@@ -51,7 +51,7 @@ defmodule Bonfire.UI.ValueFlows.ProposalLive do
       }
     }
   """
-  def intent(params, socket), do: liveql(socket, :intent, params)
+  def intent(params, socket), do: []
   def intent_by_id(id, socket), do: intent(%{id: id}, socket)
 
 

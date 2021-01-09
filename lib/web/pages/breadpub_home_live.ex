@@ -1,4 +1,4 @@
-defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
+defmodule Bonfire.UI.ValueFlows.BreadpubLoggedDashboardLive do
   use Bonfire.Web, {:live_view, [layout: {Bonfire.UI.ValueFlows.LayoutView, "live.html"}]}
 
   use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
@@ -7,7 +7,7 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
   alias Bonfire.UI.ValueFlows.{IntentCreateActivityLive, ProposalFeedLive, FiltersLive}
   alias Bonfire.Common.Web.LivePlugs
   alias Bonfire.Me.Users
-  alias Bonfire.Me.Web.{CreateUserLive, MeHomeLive}
+  alias Bonfire.Me.Web.{CreateUserLive, LoggedDashboardLive}
 
   def mount(params, session, socket) do
     LivePlugs.live_plug params, session, socket, [
@@ -43,7 +43,7 @@ defmodule Bonfire.UI.ValueFlows.BreadpubHomeLive do
       }
     }
   """
-  def intents(params \\ %{}, socket), do: liveql(socket, :intents, params)
+  def intents(params \\ %{}, socket), do: []
   def all_intents(socket), do: intents(socket)
 
 
