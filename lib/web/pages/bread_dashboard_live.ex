@@ -1,4 +1,4 @@
-defmodule Bonfire.UI.ValueFlows.BreadpubLoggedDashboardLive do
+defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
   use Bonfire.Web, {:live_view, [layout: {Bonfire.UI.ValueFlows.LayoutView, "live.html"}]}
 
   use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
