@@ -62,6 +62,16 @@
               </button>
             <% end %>
 
+
+            <%= link to: Routes.live_path(@socket, Bonfire.UI.ValueFlows.MapLive) do %>
+              <button class="flex items-center px-2 py-2 mb-4 text-sm font-medium leading-5 text-gray-600 transition duration-150 ease-in-out rounded-md group hover:text-gray-900 hover:bg-white focus:outline-none focus:text-gray-900 focus:bg-gray-50">
+                <!-- Heroicon name: globe-alt -->
+                <svg class="w-5 h-5 mr-3 text-gray-500 transition duration-150 ease-in-out group-hover:text-gray-600 group-focus:text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>                </svg>
+                Map
+              </button>
+            <% end %>
+
             <div class="px-2 ">
               <h4 class="mt-8 mb-4 text-xs font-semibold tracking-widest text-blue-500 uppercase">Labels</h4>
             </div>
