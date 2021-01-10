@@ -13,6 +13,14 @@
       )  %>
     </div>
 
+    <div class="mt-4">
+      <%= live_component(
+        @socket,
+        CreateMilestoneLive,
+        assigns
+      )  %>
+    </div>
+
 <div class="mt-4">
   <div class="sm:hidden">
     <label for="tabs" class="sr-only">Select a tab</label>
