@@ -17,7 +17,8 @@
       <%= live_component(
         @socket,
         CreateMilestoneLive,
-        assigns
+        id: :create_milestone,
+        current_user: @current_user
       )  %>
     </div>
 

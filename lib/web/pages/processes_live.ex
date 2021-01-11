@@ -1,9 +1,8 @@
-defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
+defmodule Bonfire.UI.ValueFlows.ProcessesLive do
   use Bonfire.Web, {:live_view, [layout: {Bonfire.UI.ValueFlows.LayoutView, "live.html"}]}
 
   use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
 
-  alias Bonfire.UI.Social.{HashtagsLive, ParticipantsLive}
   alias Bonfire.UI.ValueFlows.{IntentCreateActivityLive, CreateMilestoneLive, ProposalFeedLive, FiltersLive}
   alias Bonfire.Common.Web.LivePlugs
   alias Bonfire.Me.Users
@@ -20,31 +19,28 @@ defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
   end
 
   defp mounted(params, session, socket) do
-    intents = all_intents(socket)
-    IO.inspect(intents)
+    processes = all_processes(socket)
+    IO.inspect(processes)
 
     {:ok, socket
     |> assign(
-      page_title: "Home",
-      selected_tab: "about",
-      list: intents
+      page_title: "Milestones list",
+      list: processes
     )}
   end
 
 
   @graphql """
     {
-      intents {
+      processes {
         id
         name
-        provider
-        receiver
-        at_location
+        note
       }
     }
   """
-  def intents(params \\ %{}, socket), do: liveql(socket, :intents, params)
-  def all_intents(socket), do: intents(socket)
+  def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
+  def all_processes(socket), do: processes(socket)
 
 
 end
