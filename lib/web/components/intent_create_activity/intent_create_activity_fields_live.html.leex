@@ -142,85 +142,84 @@ phx-target="<%= @myself %>">
 </div>
 </form>
 
-<div class="w-48 ml-3">
-<nav class="space-y-1" aria-label="Sidebar">
-<div
-x-data="{toggle_due_date: false}"
-@keydown.window.escape="toggle_due_date = false"
-@click.away = "toggle_due_date = false" >
-<button
-  type="button"
-  @click ="toggle_due_date = !toggle_due_date"
-  aria-haspopup="true"
-  aria-expanded="true"
-  x-bind:aria-expanded="toggle_due_date"
-  class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md active:bg-gray-100 hover:bg-gray-200 group" aria-current="page">
-  <svg x-description="Heroicon name: calendar" class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-  </svg>
-  <span class="truncate">
-    Set a due date
-  </span>
-</button>
+  <div class="w-48 ml-3">
+    <nav class="space-y-1" aria-label="Sidebar">
+      <div
+        x-data="{toggle_due_date: false}"
+        @keydown.window.escape="toggle_due_date = false"
+        @click.away = "toggle_due_date = false" >
+        <button
+          type="button"
+          @click ="toggle_due_date = !toggle_due_date"
+          aria-haspopup="true"
+          aria-expanded="true"
+          x-bind:aria-expanded="toggle_due_date"
+          class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md active:bg-gray-100 hover:bg-gray-200 group" aria-current="page">
+          <svg x-description="Heroicon name: calendar" class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+          <span class="truncate">
+            Set a due date
+          </span>
+        </button>
+          <div
+            x-show="toggle_due_date"
+            x-description="Dropdown panel, show/hide based on dropdown state."
+            x-transition:enter="transition ease-out duration-100"
+            x-transition:enter-start="transform opacity-0 scale-95"
+            x-transition:enter-end="transform opacity-100 scale-100"
+            x-transition:leave="transition ease-out duration-75"
+            x-transition:leave-start="transform opacity-100 scale-100"
+            x-transition:leave-end="transform opacity-0 scale-95"
 
-<div
-  x-show="toggle_due_date"
-  x-description="Dropdown panel, show/hide based on dropdown state."
-  x-transition:enter="transition ease-out duration-100"
-  x-transition:enter-start="transform opacity-0 scale-95"
-  x-transition:enter-end="transform opacity-100 scale-100"
-  x-transition:leave="transition ease-out duration-75"
-  x-transition:leave-start="transform opacity-100 scale-100"
-  x-transition:leave-end="transform opacity-0 scale-95"
-
-  class="absolute right-0 mt-2 mr-2 origin-top-right bg-white rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5">
-    <div
-      class="py-1 rounded-md shadow-xs"
-      role="menu"
-      aria-orientation="vertical"
-      aria-labelledby="due date menu">
-      <form
-        phx-submit="set_due"
-        phx-target="<%= @myself %>"
-        action="">
-        <div class="flex items-center p-2 border-b">
-          <label for="due_date" class="flex-1 text-sm font-light text-center">Set a due date</label>
-          <svg
-            @click ="toggle_due_date = false"
-            class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-            </svg>
-        </div>
-        <div class="p-2">
-          <div class="flex mt-1 rounded-md shadow-sm">
-            <div class="relative flex items-stretch flex-1 flex-grow w-full focus-within:z-10">
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+            class="absolute right-0 mt-2 mr-2 origin-top-right bg-white rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5">
+              <div
+                class="py-1 rounded-md shadow-xs"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="due date menu">
+                <form
+                  phx-submit="set_due"
+                  phx-target="<%= @myself %>"
+                  action="">
+                  <div class="flex items-center p-2 border-b">
+                    <label for="due_date" class="flex-1 text-sm font-light text-center">Set a due date</label>
+                    <svg
+                      @click ="toggle_due_date = false"
+                      class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                      </svg>
+                  </div>
+                  <div class="p-2">
+                    <div class="flex mt-1 rounded-md shadow-sm">
+                      <div class="relative flex items-stretch flex-1 flex-grow w-full focus-within:z-10">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                        </div>
+                        <input
+                          class="block w-full pl-10 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md sm:text-sm"
+                          type="date"
+                          name="due_date"
+                          min="<%= Date.utc_today %>"
+                          id="due_date">
+                        <button
+                          type="submit"
+                          class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-r-md bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
+                          <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+                          </svg>
+                          <span>Add</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <input
-                class="block w-full pl-10 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md sm:text-sm"
-                type="date"
-                name="due_date"
-                min="<%= Date.utc_today %>"
-                id="due_date">
-              <button
-                type="submit"
-                class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-r-md bg-gray-50 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
-                <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
-                </svg>
-                <span>Add</span>
-              </button>
-            </div>
           </div>
-        </div>
-      </form>
-    </div>
-</div>
-</div>
+      </div>
 
 <div
 x-data="{toggle_add_location: false}"
@@ -373,15 +372,17 @@ class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md 
       x-transition:leave="transition ease-out duration-75"
       x-transition:leave-start="transform opacity-100 scale-100"
       x-transition:leave-end="transform opacity-0 scale-95"
-
       class="absolute right-0 mt-2 mr-2 origin-top-right bg-white rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5">
+
+      <div x-data="{create_new_label: false}">
         <div
+          x-show="!create_new_label"
           class="py-1 rounded-md shadow-xs"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="due date menu">
           <div class="flex items-center p-2 border-b">
-            <label for="due_date" class="flex-1 text-sm font-light text-center">Add labels</label>
+            <label for="due_date" class="flex-1 text-sm font-light text-center">labels</label>
             <svg
               @click ="toggle_labels = false"
               class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600"
@@ -392,9 +393,113 @@ class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md 
               </svg>
           </div>
           <div class="p-2">
-            <input type="text" name="labels" id="labels" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Add a location address">
+            
+            <input type="text" name="labels" id="labels" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Search labels">
+            <div class="mt-3">
+              <h4 class="text-xs text-gray-600 uppercase">Labels</h4> 
+              <ul class="mt-2 space-y-2">
+                <li class="flex items-center">
+                  <div class="border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-green-400 rounded-sm hover:border-green-600 hover:border-l-4">
+                    <h3 class="text-sm font-semibold text-white">Test</h3>
+                  </div>
+                  <span class="mx-2">
+                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
+                  </span>
+                </li>
+                <li class="flex items-center">
+                  <div class="border-blue-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-blue-400 rounded-sm hover:border-blue-600 hover:border-l-4">
+                    <h3 class="text-sm font-semibold text-white">Test</h3>
+                  </div>
+                  <span class="mx-2">
+                    <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
+                  </span>
+                </li>
+              </ul>
+
+              <button
+                @click="create_new_label = true" 
+                type="button" 
+                class="items-center block w-full px-3 py-2 mt-2 text-sm font-medium leading-4 text-center text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Create a new label
+              </button>
+            </div>
           </div>
         </div>
+        <div
+          x-show="create_new_label"
+          class="py-1 rounded-md shadow-xs"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="create a new label menu">
+          <div class="flex items-center p-2 border-b">
+            <svg
+              @click ="create_new_label = false" 
+              class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600" 
+              fill="none" stroke="currentColor" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>            
+            </svg>
+            <span class="flex-1 text-sm font-light text-center">Add labels</span>
+          </div>
+          <div class="p-2">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+              <div class="mt-1">
+                <input autocomplete="off" type="text" name="name" id="name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              </div>
+            </div>
+            <div class="mt-3">
+              <h4 class="text-xs text-gray-600 uppercase">Pick a color</h4> 
+              <div class="grid grid-cols-5 gap-2 mt-2">
+                <!-- LIGHT -->
+                <div class="flex items-center h-8 col-span-1 bg-red-400 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 bg-orange-400 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 rounded-md cursor-pointer place-content-center bg-amber-300 hover:opacity-70">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 bg-teal-400 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 rounded-md cursor-pointer place-content-center bg-cyan-300 hover:opacity-70">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <!-- DARK -->  
+                <div class="flex items-center h-8 col-span-1 bg-blue-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 bg-purple-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 bg-pink-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 bg-orange-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center h-8 col-span-1 rounded-md cursor-pointer place-content-center bg-blueGray-700 hover:opacity-70">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="flex items-center col-span-5">
+                  <div class="flex items-center w-12 h-8 rounded-md cursor-pointer place-content-center bg-blueGray-300 hover:opacity-70">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                  </div>
+                  <span class="flex-1 ml-3 text-sm text-gray-500">Default color</span>
+                </div>
+              </div>
+              <button type="button" class="flex justify-center px-4 py-2 mt-3 text-sm font-medium text-gray-100 transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 hover:text-gray-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-200 active:bg-gray-700">
+                Create
+              </button>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
       </div>
     </div>
 
