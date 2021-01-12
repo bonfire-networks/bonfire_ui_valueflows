@@ -345,7 +345,7 @@ class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md 
   </div>
 
   <div
-    x-data="{toggle_labels: false}"
+    x-data="{toggle_labels: false, create_new_label: false}"
     @keydown.window.escape="toggle_labels = false"
     @click.away = "toggle_labels = false" >
     <button
@@ -374,7 +374,7 @@ class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md 
       x-transition:leave-end="transform opacity-0 scale-95"
       class="absolute right-0 mt-2 mr-2 origin-top-right bg-white rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5">
 
-      <div x-data="{create_new_label: false}">
+      <div>
         <div
           x-show="!create_new_label"
           class="py-1 rounded-md shadow-xs"
@@ -498,10 +498,9 @@ class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md 
             </div>
           </div>
         </div>
-
-      </div>
       </div>
     </div>
+  </div>
 
     <div
       x-data="{toggle_milestone: false}"
