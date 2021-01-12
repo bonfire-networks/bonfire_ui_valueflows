@@ -1,18 +1,22 @@
 defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   use Bonfire.Web, :live_component
   alias ValueFlows.Planning.Intent.Intents
-  alias Bonfire.UI.ValueFlows.IntentAddLocationLive
+  alias Bonfire.UI.ValueFlows.{IntentAddLocationLive, IntentCreateLabelLive, IntentPickLabelLive, IntentAddMilestoneLive}
   alias Bonfire.Geolocate.Geolocations
+  use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
 
   def mount(socket) do
-
+    processes = all_processes(socket)
     {:ok, socket
     |> assign(
       is_public: false,
       at_location: %{},
+      milestone: %{},
       due_date: "",
       location_search_results: [],
-      location_search_phrase: ""
+      location_search_phrase: "",
+      milestone_search_results: processes,
+      milestone_search_phrase: ""
     )}
   end
 
@@ -77,5 +81,24 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   end
 
   # END FUNCTIONS FOR INTENT ADD LOCATIONS
+
+  def handle_event("milestone_"<>_action = event, params, socket) do
+    IO.inspect(proxy_event: event)
+    IO.inspect(proxy_params: params)
+    Bonfire.UI.ValueFlows.IntentAddMilestoneLive.handle_event(event, params, socket)
+  end
+
+
+
+  @graphql """
+    {
+      processes {
+        id
+        name
+      }
+    }
+  """
+  def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
+  def all_processes(socket), do: processes(socket)
 
 end

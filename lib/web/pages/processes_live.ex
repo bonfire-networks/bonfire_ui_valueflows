@@ -20,7 +20,6 @@ defmodule Bonfire.UI.ValueFlows.ProcessesLive do
 
   defp mounted(params, session, socket) do
     processes = all_processes(socket)
-    IO.inspect(processes)
 
     {:ok, socket
     |> assign(

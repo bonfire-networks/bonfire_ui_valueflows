@@ -1,0 +1,63 @@
+<div
+x-show="create_new_label"
+class="py-1 rounded-md shadow-xs"
+role="menu"
+aria-orientation="vertical"
+aria-labelledby="create a new label menu">
+  <div class="flex items-center p-2 border-b">
+    <svg
+      @click ="create_new_label = false" 
+      class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600" 
+      fill="none" stroke="currentColor" 
+      viewBox="0 0 24 24" 
+      xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>            
+    </svg>
+    <span class="flex-1 text-sm font-light text-center">Add labels</span>
+  </div>
+  <div class="p-2">
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+      <div class="mt-1">
+        <input autocomplete="off" type="text" name="name" id="name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+    </div>
+    <div class="mt-3">
+      <h4 class="text-xs text-gray-600 uppercase">Pick a color</h4> 
+      <div class="grid grid-cols-5 gap-2 mt-2">
+        <!-- LIGHT -->
+        <div class="flex items-center h-8 col-span-1 bg-red-400 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 bg-orange-400 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 rounded-md cursor-pointer place-content-center bg-amber-300 hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 bg-teal-400 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 rounded-md cursor-pointer place-content-center bg-cyan-300 hover:opacity-70">
+        </div>
+        <!-- DARK -->  
+        <div class="flex items-center h-8 col-span-1 bg-blue-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 bg-purple-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 bg-pink-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 bg-orange-700 rounded-md cursor-pointer place-content-center hover:opacity-70">
+        </div>
+        <div class="flex items-center h-8 col-span-1 rounded-md cursor-pointer place-content-center bg-blueGray-700 hover:opacity-70">
+        </div>
+        <div class="flex items-center col-span-5">
+          <div class="flex items-center w-12 h-8 rounded-md cursor-pointer place-content-center bg-blueGray-300 hover:opacity-70">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <span class="flex-1 ml-3 text-sm text-gray-500">Default color</span>
+        </div>
+      </div>
+      <button type="button" class="flex justify-center px-4 py-2 mt-3 text-sm font-medium text-gray-100 transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 hover:text-gray-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-200 active:bg-gray-700">
+        Create
+      </button>
+      
+    </div>
+  </div>
+</div>

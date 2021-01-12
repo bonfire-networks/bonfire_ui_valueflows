@@ -3,16 +3,6 @@ defmodule Bonfire.UI.ValueFlows.IntentAddLocationLive do
 
   alias Bonfire.Geolocate.Geolocations
 
-  def mount(socket) do
-
-    {:ok, socket
-    |> assign(
-      location_search_results: [],
-      location_search_phrase: ""
-    )}
-  end
-
-
   def handle_event("location_clear", _, socket) do
     assigns = [
       at_location: ""
@@ -39,7 +29,6 @@ defmodule Bonfire.UI.ValueFlows.IntentAddLocationLive do
       location_search_results: [],
       location_search_phrase: location_name,
       at_location: input_to_atoms(loc),
-      toggled_location: false
     ]
 
     {:noreply, assign(socket, assigns)}
@@ -51,7 +40,6 @@ defmodule Bonfire.UI.ValueFlows.IntentAddLocationLive do
         location_search_results: [],
         location_search_phrase: "",
         at_location: loc,
-        toggled_location: false
       ]
     else e ->
       IO.inspect(error: e)
