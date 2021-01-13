@@ -1,0 +1,84 @@
+<div
+  x-show="!create_new_label"
+  class="py-1 rounded-md shadow-xs"
+  role="menu"
+  aria-orientation="vertical"
+  aria-labelledby="due date menu">
+  <form
+  phx-change="label_search"
+  phx-target="<%= @parent %>"
+  action="">
+  <div class="flex items-center p-2 border-b">
+    <label for="due_date" class="flex-1 text-sm font-light text-center">labels</label>
+    <svg
+      @click ="toggle_labels = false"
+      class="w-6 h-6 text-gray-500 bg-transparent border-none cursor-pointer hover:text-gray-600"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+      </svg>
+  </div>
+  <div class="p-2">
+
+    <input type="text" name="label_search" id="labels" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Search labels"     phx-change="label_search">
+    <div class="mt-3">
+      <h4 class="text-xs text-gray-600 uppercase">Labels</h4>
+      <ul class="mt-2 space-y-2">
+
+      <%= if length(@label_search_results) > 0 do %>
+
+      <%= for label <- @label_search_results do %>
+        <li class="flex items-center"
+                phx-click="label_pick"
+                phx-target="<%= @parent %>"
+                phx-value-id="<%= e(label, :id, nil) %>"
+                phx-value-name="<%= e(label, :name, e(label, :profile, :name, "Label")) %>">
+          <div class="border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-<%= e(label, :color, "gray") %>-400 rounded-sm hover:border-<%= e(label, :color, "gray") %>-600 hover:border-l-4">
+            <h3 class="text-sm font-semibold text-white"><%= e(label, :name, e(label, :profile, :name, "Label")) %></h3>
+          </div>
+          <span class="mx-2">
+            <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
+          </span>
+        </li>
+      <% end %>
+
+      <% else %>
+
+      <%= for label <- @main_labels do %>
+        <li class="flex items-center"
+                phx-click="label_pick"
+                phx-target="<%= @parent %>"
+                phx-value-id="<%= label.id %>"
+                phx-value-name="<%= e(label, :name, e(label, :profile, :name, "Label")) %>">
+          <div class="border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-<%= e(label, :color, "gray") %>-400 rounded-sm hover:border-<%= e(label, :color, "gray") %>-600 hover:border-l-4">
+            <h3 class="text-sm font-semibold text-white"><%= e(label, :name, e(label, :profile, :name, "Label")) %></h3>
+          </div>
+          <span class="mx-2">
+            <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
+          </span>
+        </li>
+      <% end %>
+      <% end %>
+
+      </ul>
+
+      <button
+        @click="create_new_label = true"
+        type="button"
+        class="items-center block w-full px-3 py-2 mt-2 text-sm font-medium leading-4 text-center text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Create a new label
+      </button>
+
+    </div>
+  </div>
+  </form>
+</div>
+
+<%= live_component(
+    @socket,
+    CreateLabelLive,
+    id: @intention<>"_label",
+    parent: @parent,
+    current_user: @current_user
+  ) %>

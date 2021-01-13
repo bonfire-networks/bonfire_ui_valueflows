@@ -1,6 +1,8 @@
-defmodule Bonfire.UI.ValueFlows.IntentAddMilestoneLive do
+defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
   use Bonfire.Web, :live_component
   use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
+
+  alias Bonfire.UI.ValueFlows.CreateMilestoneLive
 
   def handle_event("milestone_clear", _, socket) do
     assigns = [
@@ -45,7 +47,7 @@ defmodule Bonfire.UI.ValueFlows.IntentAddMilestoneLive do
     String.starts_with?(String.downcase(item.name), String.downcase(prefix))
   end
 
- 
+
 
   @graphql """
     {

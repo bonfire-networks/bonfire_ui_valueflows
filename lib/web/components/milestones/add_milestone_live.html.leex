@@ -30,10 +30,10 @@
         phx-target="<%= @parent %>"
         action="">
         <div class="p-2">
-          <input 
+          <input
             autocomplete="off"
-            type="text" 
-            name="milestone_input" 
+            type="text"
+            name="milestone_input"
             id="milestone" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Filter milestones">
         </div>
         <%= if @milestone_search_results != [] do %>
@@ -62,5 +62,13 @@
           </div>
         <% end %>
       </form>
+
+      <%= live_component(
+        @socket,
+        CreateMilestoneLive,
+        id: @intention<>"_create_milestone",
+        current_user: @current_user
+      )  %>
+
     </div>
   </div>

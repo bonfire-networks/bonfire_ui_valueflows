@@ -1,7 +1,7 @@
 defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   use Bonfire.Web, :live_component
   alias ValueFlows.Planning.Intent.Intents
-  alias Bonfire.UI.ValueFlows.{IntentAddLocationLive, IntentCreateLabelLive, IntentPickLabelLive, IntentAddMilestoneLive}
+  alias Bonfire.UI.ValueFlows.{AddLocationLive, CreateLabelLive, AddLabelLive, AddMilestoneLive}
   alias Bonfire.Geolocate.Geolocations
   use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
 
@@ -11,12 +11,15 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
     |> assign(
       is_public: false,
       at_location: %{},
+      chosen_labels: [],
       milestone: %{},
       due_date: "",
       location_search_results: [],
       location_search_phrase: "",
       milestone_search_results: processes,
-      milestone_search_phrase: ""
+      milestone_search_phrase: "",
+      label_search_results: [],
+      label_search_phrase: ""
     )}
   end
 
@@ -67,28 +70,27 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   end
 
 
-  # START FUNCTIONS FOR INTENT ADD LOCATION FORM
-  # ive tried to move them all in the intent_add_location_live module, making it stateful,
-  # but I need the at_location param in the parent compoent (this one), to be used when creating the new intent --> DO YOU?
-  # it seems send(self) only works with the parent view and not with the parent component
-  # maybe wrong?
-  # WELL, let's see if this "function proxying" can work for that
+  # START EVENT PROXY FUNCTIONS - TODO: find a better approach (hopefully LiveView implements per-input events rather than per-form only)
 
   def handle_event("location_"<>_action = event, params, socket) do
     IO.inspect(proxy_event: event)
     IO.inspect(proxy_params: params)
-    Bonfire.UI.ValueFlows.IntentAddLocationLive.handle_event(event, params, socket)
+    Bonfire.UI.ValueFlows.AddLocationLive.handle_event(event, params, socket)
   end
-
-  # END FUNCTIONS FOR INTENT ADD LOCATIONS
 
   def handle_event("milestone_"<>_action = event, params, socket) do
     IO.inspect(proxy_event: event)
     IO.inspect(proxy_params: params)
-    Bonfire.UI.ValueFlows.IntentAddMilestoneLive.handle_event(event, params, socket)
+    Bonfire.UI.ValueFlows.AddMilestoneLive.handle_event(event, params, socket)
   end
 
+  def handle_event("label_"<>_action = event, params, socket) do
+    IO.inspect(proxy_event: event)
+    IO.inspect(proxy_params: params)
+    Bonfire.UI.ValueFlows.AddLabelLive.handle_event(event, params, socket)
+  end
 
+  # END EVENT FUNCTIONS PROXIES
 
   @graphql """
     {

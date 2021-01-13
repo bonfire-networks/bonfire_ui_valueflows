@@ -77,45 +77,19 @@
             </div>
 
             <nav class="space-y-1" aria-label="Sidebar">
-              <a href="#" class="flex items-center px-2 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-md group" aria-current="page">
-                <span class="w-4 h-4 mr-2 bg-blue-200 rounded-md"></span>
+            <%= for label <- @main_labels do %>
+              <a href="/bread/label/<%= e(label, :id, "new") %>" class="flex items-center px-2 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-md group" aria-current="page">
+                <span class="w-4 h-4 mr-2 bg-<%= e(label, :color, "gray") %>-200 rounded-md"></span>
                 <span class="truncate">
-                  Frontend dev
+                  <%= e(label, :name, "Label") %>
                 </span>
 
                 <span class="bg-white ml-auto inline-block py-0.5 px-2 text-xs rounded-full">
-                  5
+                  <%= e(label, :items, "0") %>
                 </span>
               </a>
+            <% end %>
 
-              <a href="#" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group">
-                <span class="w-4 h-4 mr-2 bg-yellow-200 rounded-md"></span>
-                <span class="truncate">
-                  Backend dev
-                </span>
-              </a>
-
-              <a href="#" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group">
-                <span class="w-4 h-4 mr-2 bg-red-200 rounded-md"></span>
-                <span class="truncate">
-                  ActivityPub
-                </span>
-
-                <span class="bg-gray-100 group-hover:bg-gray-200 ml-auto inline-block py-0.5 px-2 text-xs rounded-full">
-                  19
-                </span>
-              </a>
-
-              <a href="#" class="flex items-center px-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 group">
-                <span class="w-4 h-4 mr-2 bg-green-200 rounded-md"></span>
-                <span class="truncate">
-                  Content
-                </span>
-
-                <span class="bg-gray-100 group-hover:bg-gray-200 ml-auto inline-block py-0.5 px-2 text-xs rounded-full">
-                  20+
-                </span>
-              </a>
             </nav>
 
           </nav>

@@ -26,7 +26,8 @@ defmodule Bonfire.UI.ValueFlows.ProposalLive do
     {:ok, socket
     |> assign(page_title: "Intent",
     selected_tab: "about",
-    intent: intent
+    intent: intent,
+    main_labels: []
     )}
   end
 

@@ -27,7 +27,13 @@ defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
     |> assign(
       page_title: "Home",
       selected_tab: "about",
-      list: intents
+      list: intents,
+      main_labels: [
+        %{id: 1, name: "Frontend dev", items: 5, color: "blue"},
+        %{id: 2, name: "Backend dev", items: 0, color: "yellow"},
+        %{id: 3, name: "AP dev", items: 1, color: "pink"},
+        %{id: 4, name: "Content", items: 3, color: "red"}
+      ]
     )}
   end
 
