@@ -25,7 +25,8 @@ defmodule Bonfire.UI.ValueFlows.MapLive do
       selected_tab: "about",
       markers: [],
       points: [],
-      place: nil
+      place: nil,
+      main_labels: []
     )}
   end
 
