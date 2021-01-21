@@ -62,13 +62,5 @@
           </div>
         <% end %>
       </form>
-
-      <%= live_component(
-        @socket,
-        CreateMilestoneLive,
-        id: @intention<>"_create_milestone",
-        current_user: @current_user
-      )  %>
-
     </div>
   </div>

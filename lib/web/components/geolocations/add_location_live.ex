@@ -3,6 +3,14 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
 
   alias Bonfire.Geolocate.Geolocations
 
+  def mount(socket) do
+    {:ok, socket
+    |> assign(
+      location_search_results: [],
+      location_search_phrase: ""
+    )}
+  end
+
   def handle_event("location_clear", _, socket) do
     assigns = [
       at_location: ""
@@ -11,6 +19,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
   end
 
   def handle_event("location_search", %{"location_input" => search_for}, socket) do
+    IO.inspect("heeyyyyy")
     {:ok, locations} = Geolocations.many({:name_contains, search_for})
     IO.inspect(locations)
     # locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
@@ -34,13 +43,16 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def handle_event("location_create", %{"location_input" => location_entered}, socket) do
-    assigns = with {:ok, loc} <- Bonfire.Geolocate.Geolocations.create(socket.assigns.current_user, %{name: location_entered, mappable_address: location_entered}) do
-      [
+  def handle_event("location_create", %{"location_input" => loc}, socket) do
+    IO.inspect(loc)
+    assigns = with {:ok, loc} <- Bonfire.Geolocate.Geolocations.create(socket.assigns.current_user, %{name: loc, mappable_address: loc}) do
+      assigns = [
         location_search_results: [],
         location_search_phrase: "",
         at_location: loc,
       ]
+      IO.inspect(send(self(), {:loc, assigns}))
+      assigns
     else e ->
       IO.inspect(error: e)
       []

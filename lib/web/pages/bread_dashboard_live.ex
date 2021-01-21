@@ -37,6 +37,11 @@ defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
     )}
   end
 
+  def handle_info({:loc, location}, socket) do
+    IO.inspect(location, label: "LOCATION:")
+    {:noreply, socket}
+  end
+  
 
   @graphql """
     {

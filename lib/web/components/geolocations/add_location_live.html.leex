@@ -3,11 +3,9 @@
   role="menu"
   aria-orientation="vertical"
   aria-labelledby="add location menu">
-  <form
-    phx-change="location_search"
-    phx-submit="location_create"
-    phx-target="<%= @parent %>"
-    action="">
+  <form 
+    phx-target="<%= @myself %>"
+    phx-submit="location_create">
     <div class="flex items-center p-2 border-b">
       <label for="location_input" class="flex-1 text-sm font-light text-center">Add a location</label>
       <svg
@@ -23,18 +21,16 @@
       <div class="flex mt-1 rounded-md shadow-sm">
         <div class="relative flex items-stretch flex-grow focus-within:z-10">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <!-- Heroicon name: users -->
             <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
-
           </div>
           <input
-          autocomplete="off"
-          type="text"
-          name="location_input"
-          value="<%= @location_search_phrase %>"
-          phx-debounce="500"
-          placeholder="Search or enter address..."
-          class="block w-full pl-10 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md sm:text-sm" placeholder="John Doe">
+            autocomplete="off"
+            type="text"
+            name="location_input"
+            value="<%= @location_search_phrase %>"
+            phx-debounce="500"
+            placeholder="Search or enter address..."
+            class="block w-full pl-10 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md sm:text-sm" placeholder="John Doe">
         </div>
         <button
           type="submit"
@@ -53,7 +49,8 @@
               <div
                 class="p-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-200 focus:bg-gray-200"
                 phx-click="location_pick"
-                phx-target="<%= @parent %>"
+                @click ="toggle_add_location = false"
+                phx-target="<%= @myself %>"
                 phx-value-id="<%= search_result.id %>"
                 phx-value-name="<%= search_result.name %>">
                 <%= search_result.name %>
