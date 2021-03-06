@@ -19,7 +19,7 @@ defmodule ValueFlows.Web.My.PublishAdLive do
 
   # need to alias some form posting events here to workaround having two events but one target on a form
   def handle_event("tag_suggest", data, socket) do
-    Bonfire.Web.Component.TagAutocomplete.tag_suggest(data, socket)
+    Bonfire.Tag.Autocomplete.tag_suggest(data, socket)
   end
 
   def publish_ad(data, socket) do
