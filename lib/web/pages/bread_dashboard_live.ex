@@ -5,7 +5,7 @@ defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
 
   alias Bonfire.UI.Social.{HashtagsLive, ParticipantsLive}
   alias Bonfire.UI.ValueFlows.{IntentCreateActivityLive, CreateMilestoneLive, ProposalFeedLive, FiltersLive}
-  alias Bonfire.Common.Web.LivePlugs
+  alias Bonfire.Web.LivePlugs
   alias Bonfire.Me.Users
   alias Bonfire.Me.Web.{CreateUserLive, LoggedDashboardLive}
 
@@ -41,7 +41,7 @@ defmodule Bonfire.UI.ValueFlows.BreadDashboardLive do
     IO.inspect(location, label: "LOCATION:")
     {:noreply, socket}
   end
-  
+
 
   @graphql """
     {

@@ -3,7 +3,7 @@ defmodule Bonfire.UI.ValueFlows.ProposalLive do
 
   use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
 
-  alias Bonfire.Common.Web.LivePlugs
+  alias Bonfire.Web.LivePlugs
   alias Bonfire.Me.Users
   alias Bonfire.UI.Social.{ParticipantsLive}
   alias Bonfire.Me.Web.{CreateUserLive, LoggedDashboardLive}
