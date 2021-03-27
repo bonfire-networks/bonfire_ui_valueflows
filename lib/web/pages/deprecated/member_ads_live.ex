@@ -26,7 +26,7 @@ defmodule ValueFlows.Web.MemberLive.MemberAdsLive do
   end
 
   defp fetch(socket, assigns) do
-    # IO.inspect(assigns.user)
+    #IO.inspect(assigns.user)
 
     page_opts = %{limit: 10}
 
@@ -37,7 +37,7 @@ defmodule ValueFlows.Web.MemberLive.MemberAdsLive do
         assigns.current_user.id
       )
 
-    # IO.inspect(ads, label: "ADS:")
+    #IO.inspect(ads, label: "ADS:")
 
     assign(socket,
       ads: ads.edges,

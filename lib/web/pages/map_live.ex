@@ -17,7 +17,7 @@ defmodule Bonfire.UI.ValueFlows.MapLive do
 
   defp mounted(params, session, socket) do
     # intents = Bonfire.UI.ValueFlows.ProposalLive.all_intents(socket)
-    # IO.inspect(intents)
+    #IO.inspect(intents)
 
     {:ok, socket
     |> assign(
