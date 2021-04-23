@@ -1,0 +1,4 @@
+<div class="flex items-center">
+    <div class="w-20 h-20 bg-pink-400"></div>
+    <h1>resource name</h1>
+</div>
