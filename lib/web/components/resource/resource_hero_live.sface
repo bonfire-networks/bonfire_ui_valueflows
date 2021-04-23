@@ -1,4 +1,21 @@
-<div class="flex items-center">
-    <div class="w-20 h-20 bg-pink-400"></div>
-    <h1>resource name</h1>
+<div class="flex space-x-4 p-6">
+    <div class="w-32 h-32 bg-pink-400 rounded-lg"></div>
+    <div class="flex-1">
+        <div class="text-4xl text-bold text-gray-800">resource name</div>
+        <div class="prose prose-md max-w-prose mt-2">Ieri sera, l’accesso a Rai da casa mia, era male. Quindi ascoltavo la musica medievale : Laudario di Cortona tramite You Tube, tra vari siti,  per caso.</div>
+        <div class="flex items-center space-x-8 mt-4">
+            <div class="text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+                <span class="ml-2 font-regular text-sm">5 units</span>
+            </div>
+            <div class="text-gray-800 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd" />
+                </svg>
+                <span class="ml-2 font-regular text-sm">Via Peschiera, 31 Formia (LT)</span>
+            </div>
+        </div>
+    </div>
 </div>

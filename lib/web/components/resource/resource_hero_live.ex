@@ -1,4 +1,4 @@
 defmodule Bonfire.UI.ValueFlows.ResourceHeroLive do
-  use Surface.Component
+  use Bonfire.Web, :stateless_component
 
 end
