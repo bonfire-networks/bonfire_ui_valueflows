@@ -1,0 +1,14 @@
+<nav
+  role="tabpanel"
+  class="my-4 pb-3 flex justify-between border-b-4"
+  aria-label="Switch between timeline, posts, boosts, media tabs">
+    <%= for {item, text} <- Bonfire.Common.Config.get([:ui, :process_navigation], []) do %>
+      <%= live_patch to: "/process/" <>  e(@process, "") <> "/#{item}", class: "flex-1" do %>
+        <div
+          aria-current="<%= if @selected_tab == Atom.to_string(item), do: "page" %>"
+          class="border-b-4 text-center capitalize text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-sm hover:border-b-4 border-gray-300 -mb-4 <%= if @selected_tab == Atom.to_string(item), do: "hover:text-pink-600 hover:border-pink-500 border-pink-500 text-pink-600 font-bold" %>">
+          <%= text %>
+        </div>
+      <% end %>
+    <% end %>
+</nav>
