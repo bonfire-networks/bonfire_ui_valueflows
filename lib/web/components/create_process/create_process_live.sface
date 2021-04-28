@@ -1,4 +1,4 @@
-<div x-show="open" @click.away="open = false" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">    
+<div class="pl-3 py-2 p3-4 pr-0" x-show="open" @click.away="open = false" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">    
   <div 
     x-show="open" 
     x-transition:enter="ease-out duration-300" 
