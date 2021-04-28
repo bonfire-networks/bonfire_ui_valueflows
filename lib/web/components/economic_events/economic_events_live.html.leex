@@ -1,7 +1,0 @@
-<div>
-    <%= live_component(@socket, Bonfire.UI.ValueFlows.ProcessHeroLive, assigns_clean(assigns)) %>
-    <%= live_component(@socket, Bonfire.UI.ValueFlows.ProcessNavigationLive, assigns) %>
-     <%= live_component(@socket, Bonfire.UI.ValueFlows.CreateEconomicEventLive,
-      user_image: avatar_url(@current_user)
-      )%>
-</div>
