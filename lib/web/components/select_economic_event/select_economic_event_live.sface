@@ -1,16 +1,16 @@
-<div 
+<div
   x-cloak
-  x-data="{ 
+  x-data="{
     open_select_economic_event: false,
     selected_economic_event: ''
    }"
   @keydown.escape.stop="open_select_economic_event = false"
   @click.away="open_select_economic_event = false"
   class="p-3 pb-5 border-b">
-  <div 
-    x-show="selected_economic_event === ''" 
+  <div
+    x-show="selected_economic_event === ''"
     class="flex items-start">
-    <img class="w-10 h-10 object-cover rounded-full" src={{@user_image}} alt="current user profile image" />
+    <img class="w-10 h-10 object-cover rounded-full" src={{ avatar_url(@current_user)}} alt="current user profile image" />
     <div
       class="ml-3 relative block w-full text-left">
       <div class="w-full">
@@ -22,12 +22,12 @@
           aria-haspopup="true"
           x-bind:aria-expanded="open_select_economic_event"
           aria-expanded="true">
-          <div class="w-full bg-white shadow overflow-hidden sm:rounded-md">        
+          <div class="w-full bg-white shadow overflow-hidden sm:rounded-md">
             <div class="block bg-gray-50 hover:bg-gray-100">
-              
+
               <div class="px-4 py-2.5 flex items-center">
                 <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                  <div class="font-semibold text-gray-700 truncate text-sm">What action do you want to perform?</div>  
+                  <div class="font-semibold text-gray-700 truncate text-sm">What action do you want to perform?</div>
                 </div>
                 <div class="ml-5 flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +58,7 @@
           <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use an existing resource</div>
         </div>
       </div>
-    </div>   
+    </div>
   </div>
   <div class="mt-3" x-show="selected_economic_event === 'transfer'">
     <Bonfire.UI.ValueFlows.CreateEconomicEventLive action="transfer" remove="selected_economic_event=''" />
