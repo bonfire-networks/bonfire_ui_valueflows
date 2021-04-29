@@ -1,0 +1,72 @@
+<div 
+  x-cloak
+  x-data="{ 
+    open_select_economic_event: false,
+    selected_economic_event: ''
+   }"
+  @keydown.escape.stop="open_select_economic_event = false"
+  @click.away="open_select_economic_event = false"
+  class="p-3 pb-5 border-b">
+  <div 
+    x-show="selected_economic_event === ''" 
+    class="flex items-start">
+    <img class="w-10 h-10 object-cover rounded-full" src={{@user_image}} alt="current user profile image" />
+    <div
+      class="ml-3 relative block w-full text-left">
+      <div class="w-full">
+        <button
+          type="button"
+          class="cursor-pointer w-full flex-1 flex flex-col rounded-lg border space-y-2 "
+          id="user-profile-menu"
+          @click="open_select_economic_event = !open_select_economic_event"
+          aria-haspopup="true"
+          x-bind:aria-expanded="open_select_economic_event"
+          aria-expanded="true">
+          <div class="w-full bg-white shadow overflow-hidden sm:rounded-md">        
+            <div class="block bg-gray-50 hover:bg-gray-100">
+              
+              <div class="px-4 py-2.5 flex items-center">
+                <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
+                  <div class="font-semibold text-gray-700 truncate text-sm">What action do you want to perform?</div>  
+                </div>
+                <div class="ml-5 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        x-description="Usr profile dropdown menu, show/hide based on menu state."
+        x-show="open_select_economic_event"
+        x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="transform opacity-0 scale-95"
+        x-transition:enter-end="transform opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-75"
+        x-transition:leave-start="transform opacity-100 scale-100"
+        x-transition:leave-end="transform opacity-0 scale-95"
+        class="origin-top-right absolute left-0 right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="user-profile-menu">
+        <div class="py-1" role="none">
+          <div @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Transfer an existing resource</div>
+          <div @click="{selected_economic_event = 'consume'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Consume an existing resource</div>
+          <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use an existing resource</div>
+        </div>
+      </div>
+    </div>   
+  </div>
+  <div class="mt-3" x-show="selected_economic_event === 'transfer'">
+    <Bonfire.UI.ValueFlows.CreateEconomicEventLive action="transfer" remove="selected_economic_event=''" />
+  </div>
+  <div class="mt-3" x-show="selected_economic_event === 'consume'">
+    <Bonfire.UI.ValueFlows.CreateEconomicEventLive action="consume" remove="selected_economic_event=''" />
+  </div>
+  <div class="mt-3" x-show="selected_economic_event === 'use'">
+    <Bonfire.UI.ValueFlows.CreateEconomicEventLive action="use" remove="selected_economic_event=''" />
+  </div>
+</div>
