@@ -2,7 +2,7 @@
   role="tabpanel"
   class="my-4 pb-3 flex justify-between border-b-4"
   aria-label="Switch between resource page tabs">
-    <%= for {route, item} <- Bonfire.Common.Config.get([:ui, :resource_navigation], []) do %>
+    <%= for {route, item} <- Bonfire.Common.Config.get([:ui, :resource, :navigation], []) do %>
       <%= live_patch to: "/resource/" <>  e(@resource, :id, "") <> "/#{route}", class: "flex-1" do %>
         <div
           aria-current="<%= if @selected_tab == item, do: "page" %>"
