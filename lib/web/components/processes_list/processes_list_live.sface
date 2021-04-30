@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="mt-8">
   <div class="flex items-center">
     <h3 class="px-3 flex-1 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="teams-headline">
-      List
+      {{@title}}
     </h3>
     <button @keydown.window.escape="open = false" x-show="!open" @click="open = true" type="button" class="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       <svg xmlns="http://www.w3.org/2000/svg" class="-ml-0.5 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,25 +18,14 @@
   </div>
   <Bonfire.UI.ValueFlows.CreateProcessLive />
   <div class="mt-1 space-y-1" role="group" aria-labelledby="teams-headline">
-    <a href="#" class="group flex items-center px-3 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-      <span class="w-2.5 h-2.5 mr-2 bg-indigo-500 rounded-full" aria-hidden="true"></span>
-      <span class="truncate">
-        List abc
-      </span>
-    </a>
+    <div :for={{ process <- @processes }}>
+      <LivePatch to="{{@process_url}}{{process.id}}" class="group flex items-center px-3 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+        <span class="w-2.5 h-2.5 mr-2 bg-indigo-500 rounded-full" aria-hidden="true"></span>
+        <span class="truncate">
+          {{process.name}}
+        </span>
+      </LivePatch>
+    </div>
 
-    <a href="#" class="group flex items-center px-3 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-      <span class="w-2.5 h-2.5 mr-2 bg-green-500 rounded-full" aria-hidden="true"></span>
-      <span class="truncate">
-        List abc
-      </span>
-    </a>
-
-    <a href="#" class="group flex items-center px-3 py-2 text-sm leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
-      <span class="w-2.5 h-2.5 mr-2 bg-yellow-500 rounded-full" aria-hidden="true"></span>
-      <span class="truncate">
-        List abc
-      </span>
-    </a>
   </div>
 </nav>

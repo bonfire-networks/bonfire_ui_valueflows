@@ -2,16 +2,19 @@
   <div class="sm:flex sm:justify-between sm:items-baseline">
     <div class="sm:w-0 sm:flex-1">
       <h1 id="message-heading" class="text-3xl font-extrabold text-gray-800">
-        Process name
+        {{@process.name}}
       </h1>
       <p class="mt-1 text-sm text-gray-500 overflow-hidden overflow-ellipsis">
-        La relazione del governo sulle vendite nel 2020 non spiega chi ha comprato cosa. Ma nella selva di sigle compaiono contratti singolari. Come le forniture hi-tech alla Turchia o i clienti ignoti di droni bombardieri. Fino alle vendite militari al Vaticano
+        {{@process.note}}
       </p>
     </div>
 
     <div class="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
-      <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+      <span :if={{!@process.finished}} class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
         Open
+      </span>
+      <span :if={{@process.finished}} class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+        Completed
       </span>
     </div>
   </div>
