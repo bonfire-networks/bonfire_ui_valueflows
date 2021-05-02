@@ -1,3 +1,4 @@
+<Context get={{ current_user: current_user }}>
 <div
   x-cloak
   x-data="{
@@ -6,7 +7,7 @@
   @click.away="open_create_intent=false"
   class="p-3 pb-5 border-b">
   <div class="flex items-start">
-    <img class="w-10 h-10 object-cover rounded-full" src={{ avatar_url(@current_user)}} alt="current user profile image" />
+    <img class="w-10 h-10 object-cover rounded-full" src={{ avatar_url(current_user)}} alt="current user profile image" />
     <div
       @keydown.window.escape="open_create_intent = false"
       @click = "open_create_intent = true"
@@ -43,7 +44,7 @@
       for={{ e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.LiveHandler.changeset() ) }}
       submit="ValueFlows.Planning.Intent:create">
 
-      <input name="redirect_after" value={{@intent_url}} type="hidden" />
+      <input name="redirect_after" value={{""}} type="hidden" />
 
       <HiddenInput :if={{e(assigns, :action, nil)}} name="action" value={{@action}} />
       <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{@output_of_id}} />
@@ -67,3 +68,4 @@
     </div>
   </div>
 </div>
+</Context>
