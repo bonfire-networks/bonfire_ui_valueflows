@@ -3,8 +3,7 @@
     for={{ e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.LiveHandler.changeset() ) }}
     submit="ValueFlows.Planning.Intent:create">
 
-    <input name="redirect_after" value={{""}} type="hidden" />
-
+    <HiddenInput :if={{e(assigns, :intent_url, nil)}} name="redirect_after" value={{@intent_url}} />
     <HiddenInput :if={{e(assigns, :action, nil)}} name="action" value={{@action}} />
     <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{@output_of_id}} />
     <HiddenInput :if={{e(assigns, :provider_id, nil)}} name="provider_id" value={{@provider_id}} />
