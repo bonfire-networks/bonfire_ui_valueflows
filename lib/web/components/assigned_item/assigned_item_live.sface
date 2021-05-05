@@ -39,8 +39,8 @@
       selected_options={{[]}}
       label={{"Assigned"}}
       form_input_name={{"circles[]"}}
-      pick_event={{"boundary_select"}}
-      remove_event={{"boundary_deselect"}}
+      pick_event={{""}}
+      remove_event={{""}}
       />
 
 

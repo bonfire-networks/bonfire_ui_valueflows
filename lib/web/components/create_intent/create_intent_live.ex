@@ -5,5 +5,6 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
   prop action, :string, required: false
   prop output_of_id, :string, required: false
   prop provider_id, :string, required: false
+  prop provider, :any
 
 end

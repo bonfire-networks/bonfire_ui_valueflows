@@ -19,6 +19,17 @@
       <TextArea class="mt-1 block w-full h-20 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></TextArea>
     </Field>
 
+    <div class="flex items-center space-x-3 mt-3">
+      <div>
+        <span class="block uppercase text-gray-600 text-xs mb-2 tracking-wide">Assigned to</span>
+          <Bonfire.UI.ValueFlows.AssignedItemLive is_editable={{true}} />
+      </div>
+      <div>
+        <span class="block uppercase text-gray-600 text-xs mb-2 tracking-wide">Due</span>
+          <Bonfire.UI.ValueFlows.DueItemLive date={{""}} is_editable={{true}}  />
+      </div>
+    </div>
+
     <div class="flex mt-3 items-center space-x-3 justify-end">
       <button type="submit" class="btn-primary">Create</button>
     </div>
