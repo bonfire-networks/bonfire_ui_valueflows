@@ -1,36 +1,36 @@
 <Context get={{ current_user: current_user }}>
-  <Form
-    for={{ e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.LiveHandler.changeset() ) }}
-    submit="ValueFlows.Planning.Intent:create">
-
-    <HiddenInput :if={{e(assigns, :intent_url, nil)}} name="redirect_after" value={{@intent_url}} />
-    <HiddenInput :if={{e(assigns, :action, nil)}} name="action" value={{@action}} />
-    <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{@output_of_id}} />
-    <HiddenInput :if={{e(assigns, :provider_id, nil)}} name="provider_id" value={{@provider_id}} />
-
-    <Field name="name">
-      <Label class="block text-sm font-medium text-gray-700">Enter a name for the task</Label>
-      <TextInput class="mt-1 flex-grow block w-full min-w-0 p-2 transition-all duration-300 ease-in-out border border-gray-300 rounded focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm" />
-    </Field>
-
-    <Field name="note">
-      <Label class="block mt-3 text-sm font-medium text-gray-700">Write an optional description of the task</Label>
-      <TextArea class="mt-1 block w-full h-20 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></TextArea>
-    </Field>
-
-    <div class="flex items-center space-x-3 mt-3">
-      <div>
-        <span class="block uppercase text-gray-600 text-xs mb-2 tracking-wide">Assigned to</span>
-          <Bonfire.UI.ValueFlows.AssignedItemLive is_editable={{true}} />
-      </div>
-      <div>
-        <span class="block uppercase text-gray-600 text-xs mb-2 tracking-wide">Due</span>
-          <Bonfire.UI.ValueFlows.DueItemLive date={{""}} is_editable={{true}}  />
-      </div>
+  <div>
+    <div class="flex items-center p-6 pb-3 mb-4 pt-0 border-b -mx-6">
+      <div class="font-extrabold text-gray-800 text-base">Create a new task</div>
     </div>
+    <Form
+      for={{ e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.LiveHandler.changeset() ) }}
+      submit="ValueFlows.Planning.Intent:create">
 
-    <div class="flex mt-3 items-center space-x-3 justify-end">
-      <button type="submit" class="btn-primary">Create</button>
-    </div>
-  </Form>
+      <HiddenInput :if={{e(assigns, :intent_url, nil)}} name="redirect_after" value={{@intent_url}} />
+      <HiddenInput :if={{e(assigns, :action, nil)}} name="action" value={{@action}} />
+      <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{@output_of_id}} />
+      <HiddenInput :if={{e(assigns, :provider_id, nil)}} name="provider_id" value={{@provider_id}} />
+
+      <Field name="name">
+        <Label class="block text-sm font-medium text-gray-700">Enter a name for the task</Label>
+        <TextInput class="mt-1 flex-grow block w-full min-w-0 p-2 transition-all duration-300 ease-in-out border border-gray-300 rounded focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm" />
+      </Field>
+
+      <Field name="note">
+        <Label class="block mt-3 text-sm font-medium text-gray-700">Write an optional description of the task</Label>
+        <TextArea class="mt-1 block w-full h-20 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></TextArea>
+      </Field>
+
+      <div class="flex items-center space-x-3 mt-3">
+        <Bonfire.UI.ValueFlows.AssignedItemLive is_editable={{true}} />
+        <Bonfire.UI.ValueFlows.DueItemLive date={{"Anytime"}} is_editable={{true}}  />
+        <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={{true}}  />
+      </div>
+
+      <div class="flex mt-3 items-center space-x-3 justify-end">
+        <button type="submit" class="btn-primary">Create</button>
+      </div>
+    </Form>
+  </div>
 </Context>
