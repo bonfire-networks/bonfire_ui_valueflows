@@ -1,49 +1,56 @@
+<Context get={{current_user: current_user}}>
 <div
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
   @click.away="open = false"
-  class="relative h-9 flex items-center text-xs text-medium bg-blueGray-200 rounded py-1.5 px-2.5 text-gray-600">
+  class="relative h-9 flex items-center text-xs text-medium bg-blueGray-200 rounded py-1.5 px-2.5 text-gray-600"
+  >
   <div class="flex-1">
-    <img :if={{@agent && @agent.image}} class="inline-block h-5 w-5 mr-1 rounded-full" src="{{@agent.image}}" alt="">
-    <span :if={{@agent && @agent.name}} class="">{{@agent.name}}</span>
-  </div>
-  <div 
-    :if={{@is_editable}} 
-    @click="open = !open"
-    aria-haspopup="true"
-    x-bind:aria-expanded="open"
-    aria-expanded="true"
-    type="button" 
-    class="h-9 ml-3 flex items-center place-content-center bg-blueGray-300 hover:bg-blueGray-400 cursor-pointer -mr-2.5 px-2 rounded-r">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
-    </svg>
+    <img :if={{@agent}} class="inline-block h-5 w-5 mr-1 rounded-full" src="{{avatar_url(@agent)}}" alt="">
+    <span :if={{@agent}} class="">{{e(@agent, :name, e(@agent, :profile, :name, ""))}}</span>
   </div>
 
   <div
-    x-description="sort tasks dropdown menu, show/hide based on menu state."
-    x-show="open"
-    x-transition:enter="transition ease-out duration-100"
-    x-transition:enter-start="transform opacity-0 scale-95"
-    x-transition:enter-end="transform opacity-100 scale-100"
-    x-transition:leave="transition ease-in duration-75"
-    x-transition:leave-start="transform opacity-100 scale-100"
-    x-transition:leave-end="transform opacity-0 scale-95"
-    class="z-20 origin-top-right absolute top-8 left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
-    role="menu"
-    aria-orientation="vertical">
+    :if={{@is_editable}}
+  >
+    <div
+      @click="open = !open"
+      aria-haspopup="true"
+      x-bind:aria-expanded="open"
+      aria-expanded="true"
+      type="button"
+      class="h-9 ml-3 flex items-center place-content-center bg-blueGray-300 hover:bg-blueGray-400 cursor-pointer -mr-2.5 px-2 rounded-r">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+      </svg>
+    </div>
 
-    <Bonfire.UI.Social.MultiselectLive
-      preloaded_options={{[]}}
-      selected_options={{[]}}
-      label={{"Assigned"}}
-      form_input_name={{"circles[]"}}
-      pick_event={{""}}
-      remove_event={{""}}
-      />
+    <div
+      x-description="select who to assign, dropdown menu, show/hide based on menu state."
+      x-show="open"
+      x-transition:enter="transition ease-out duration-100"
+      x-transition:enter-start="transform opacity-0 scale-95"
+      x-transition:enter-end="transform opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-75"
+      x-transition:leave-start="transform opacity-100 scale-100"
+      x-transition:leave-end="transform opacity-0 scale-95"
+      class="z-20 origin-top-right absolute top-8 left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+      role="menu"
+      aria-orientation="vertical"
+      style="margin-bottom:200px"
+      >
 
+      <Bonfire.UI.Social.MultiselectLive
+        preloaded_options={{@preloaded_options}}
+        selected_options={{@selected_options}}
+        label={{"Assign to..."}}
+        form_input_name={{"provider"}}
+        pick_event={{e(assigns, :pick_event, "Bonfire.UI.ValueFlows.AssignedItemLive:select")}}
+        remove_event={{e(assigns, :remove_event, "Bonfire.UI.ValueFlows.AssignedItemLive:deselect")}}
+        />
 
+    </div>
   </div>
-
 </div>
+</Context>

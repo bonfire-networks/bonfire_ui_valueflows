@@ -7,10 +7,9 @@
       for={{ e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.LiveHandler.changeset() ) }}
       submit="ValueFlows.Planning.Intent:create">
 
-      <HiddenInput :if={{e(assigns, :intent_url, nil)}} name="redirect_after" value={{@intent_url}} />
-      <HiddenInput :if={{e(assigns, :action, nil)}} name="action" value={{@action}} />
-      <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{@output_of_id}} />
-      <HiddenInput :if={{e(assigns, :provider_id, nil)}} name="provider_id" value={{@provider_id}} />
+    <HiddenInput :if={{e(assigns, :intent_url, nil)}} name="redirect_after" value={{@intent_url}} />
+    <HiddenInput :if={{e(assigns, :action, nil)}} name="action" value={{@action}} />
+    <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{@output_of_id}} />
 
       <Field name="name">
         <Label class="block text-sm font-medium text-gray-700">Enter a name for the task</Label>
@@ -23,7 +22,7 @@
       </Field>
 
       <div class="flex items-center space-x-3 mt-3">
-        <Bonfire.UI.ValueFlows.AssignedItemLive is_editable={{true}} />
+        <Bonfire.UI.ValueFlows.AssignedItemLive is_editable={{true}} agent={{current_user}} />
         <Bonfire.UI.ValueFlows.DueItemLive date={{"Anytime"}} is_editable={{true}}  />
         <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={{true}}  />
       </div>
