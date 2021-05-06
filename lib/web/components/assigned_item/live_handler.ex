@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.AssignedItemLive.LiveHandler do
-  import Bonfire.Common.Utils
+  use Bonfire.Web, :live_handler
 
   def handle_event("select", %{"id" => id, "name"=>name} = _attrs, socket) when is_binary(id) do
 
