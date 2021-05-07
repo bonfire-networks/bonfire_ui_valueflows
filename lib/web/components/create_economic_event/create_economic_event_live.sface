@@ -1,8 +1,19 @@
-<Form change="ValueFlows.Knowledge.ResourceSpecification:autocomplete" class="bg-white rounded-xl shadow-xl flex-1 flex flex-col space-y-2 m-6">
+<Form
+for={{ValueFlows.EconomicEvent.validate_changeset()}}
+submit="ValueFlows.EconomicEvent:create"
+change="ValueFlows.Knowledge.ResourceSpecification:autocomplete"
+class="bg-white rounded-xl shadow-xl flex-1 flex flex-col space-y-2 m-6">
+
+    <HiddenInput name="action" value="{{@action}}" />
+
     <div class="flex items-center p-3 pb-6 border-b">
     <div :if={{@action == "produce"}} class="flex-1">
       <div class="font-extrabold text-gray-800 text-base">Produce a resource</div>
       <div class="mt-1 font-regular text-gray-600 text-sm">Specify which resource you want to produce</div>
+
+      <HiddenInput name="provider" value="{{e(assigns, :current_user, :id, "")}}" />
+      <HiddenInput name="receiver" value="{{e(assigns, :current_user, :id, "")}}" />
+
     </div>
     <div :if={{@action == "transfer"}} class="flex-1">
       <div class="font-extrabold text-gray-800 text-base">Transfer a resource</div>
@@ -51,7 +62,7 @@
             <span>Max.</span>
           </button>
           <div class="relative flex items-stretch flex-grow focus-within:z-10">
-            <input type="number" name="email" id="email" class="border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0">
+            <input type="number" name="quantity" id="email" class="border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0">
           </div>
         </div>
         <select class="hover:bg-indigo-200 border-none font-regular text-indigo-900 placeholder-indigo-900 text-opacity-70 bg-transparent"><option>each</option></select>
@@ -67,11 +78,11 @@
         <label class="text-sm text-indigo-900 ml-3 mt-2">To</label>
         <select class="w-full border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-indigo-900 bg-transparent"><option>Select the receiver</option></select>
       </div>
-      <div class="flex items-center">
-        <textarea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></textarea>
-      </div>
+      <Field name="note" class="flex items-center">
+        <TextArea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></TextArea>
+      </Field>
     </div>
-    <button type="button" class="w-full place-content-center mt-3 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <button type="submit" class="w-full place-content-center mt-3 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       {{@action}}
     </button>
   </div>
