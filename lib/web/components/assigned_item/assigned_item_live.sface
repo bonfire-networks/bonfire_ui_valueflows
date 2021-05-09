@@ -1,4 +1,3 @@
-<Context get={{current_user: current_user}}>
 <div
   x-cloak
   x-data="{ open: false }"
@@ -41,16 +40,14 @@
       style="margin-bottom:200px"
       >
 
-      <Bonfire.UI.Social.MultiselectLive
-        preloaded_options={{@preloaded_options}}
+      <Bonfire.UI.Social.MultiselectLive.UserSelectorLive 
         selected_options={{@selected_options}}
         label={{"Assign to..."}}
         form_input_name={{"provider"}}
-        pick_event={{e(assigns, :pick_event, "Bonfire.UI.ValueFlows.AssignedItemLive:select")}}
-        remove_event={{e(assigns, :remove_event, "Bonfire.UI.ValueFlows.AssignedItemLive:deselect")}}
+        pick_event={{e(assigns, :pick_event, nil)}}
+        remove_event={{e(assigns, :remove_event, nil)}}
         />
 
     </div>
   </div>
 </div>
-</Context>
