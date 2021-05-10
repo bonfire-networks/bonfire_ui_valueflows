@@ -1,8 +1,8 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="p-5 border-b border-gray-200">
+<div class="p-5">
   <div class="sm:flex sm:justify-between sm:items-baseline">
     <div class="sm:w-0 sm:flex-1">
-      <h1 id="message-heading" class="text-xl font-bold text-gray-800 sm:text-2xl">
+      <h1 id="message-heading" class="text-xl font-bold text-gray-800">
         {{@process.name}}
       </h1>
       <p class="mt-1 text-sm text-gray-500 overflow-hidden overflow-ellipsis">
@@ -53,10 +53,7 @@
             aria-orientation="vertical">
               <div class="py-1" role="none">
                 <div class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
-                  Edit description
-                </div>
-                <div class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
-                  Oldest
+                  Edit
                 </div>
                 <div class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
                   Archive
