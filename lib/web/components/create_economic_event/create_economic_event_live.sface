@@ -1,7 +1,7 @@
 <Form
 for={{ValueFlows.EconomicEvent.validate_changeset()}}
 submit="ValueFlows.EconomicEvent:create"
-change="ValueFlows.Knowledge.ResourceSpecification:autocomplete">
+change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
 
     <HiddenInput name="action" value="{{@action}}" />
 
@@ -38,7 +38,7 @@ change="ValueFlows.Knowledge.ResourceSpecification:autocomplete">
   </div>
   <div class="p-3">
     <div class="rounded-xl shadow-inner bg-indigo-50 p-3">
-      <div class="flex flex-col">
+      <div :if={{@action == "produce" }} class="flex flex-col">
         <Bonfire.UI.Social.MultiselectLive
         preloaded_options={{ e(assigns, :resource_specifications_autocomplete, [])}}
         selected_options={{ e(assigns, :resource_specification_selected, [])}}
@@ -47,7 +47,16 @@ change="ValueFlows.Knowledge.ResourceSpecification:autocomplete">
         pick_event={{e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}}
         remove_event={{e(assigns, :remove_event, "")}}
         />
-
+      </div>
+      <div :if={{@action != "produce" }} class="flex flex-col">
+        <Bonfire.UI.Social.MultiselectLive
+        preloaded_options={{ e(assigns, :resources_inventoried_as_autocomplete, [])}}
+        selected_options={{ e(assigns, :resource_inventoried_as_selected, [])}}
+        label={{"Pick a resource..."}}
+        form_input_name={{"resource_inventoried_as"}}
+        pick_event={{e(assigns, :pick_event, "ValueFlows.EconomicResource:select")}}
+        remove_event={{e(assigns, :remove_event, "")}}
+        />
       </div>
       <div
         :if={{@action == "transfer" || @action == "consume" }}
