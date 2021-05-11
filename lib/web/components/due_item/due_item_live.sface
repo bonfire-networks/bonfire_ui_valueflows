@@ -1,5 +1,5 @@
 <div 
-  class="h-9 flex relative items-center text-xs text-medium bg-blueGray-200 rounded py-1.5 px-2.5 text-gray-600"
+  class="h-8 flex relative items-center text-xs text-medium bg-blueGray-200 rounded py-1 px-2 text-gray-600"
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
@@ -19,7 +19,7 @@
     x-bind:aria-expanded="open"
     aria-expanded="true"
     type="button" 
-    class="h-9 ml-3 flex items-center place-content-center bg-blueGray-300 hover:bg-blueGray-400 cursor-pointer -mr-2.5 px-2 rounded-r">
+    class="h-8 ml-2 flex items-center place-content-center bg-blueGray-200 hover:bg-blueGray-300 cursor-pointer -mr-2.5 px-2 rounded-r">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
     </svg>
@@ -37,6 +37,6 @@
     class="z-20 origin-top-right absolute top-8 left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
     role="menu"
     aria-orientation="vertical">
-      <DateTimeLocalInput />
+      <DateInput class="w-full" />
   </div>
 </div>
