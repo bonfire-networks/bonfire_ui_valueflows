@@ -1,17 +1,16 @@
+<Context get={{current_user: current_user}}>
 <Form
 for={{ValueFlows.EconomicEvent.validate_changeset()}}
 submit="ValueFlows.EconomicEvent:create"
 change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
-
     <HiddenInput name="action" value="{{@action}}" />
-
     <div class="flex items-center p-3 pb-6 border-b">
     <div :if={{@action == "produce"}} class="flex-1">
       <div class="font-extrabold text-gray-800 text-base">Produce a resource</div>
       <div class="mt-1 font-regular text-gray-600 text-sm">Specify which resource you want to produce</div>
 
-      <HiddenInput name="provider" value="{{e(assigns, :current_user, :id, "")}}" />
-      <HiddenInput name="receiver" value="{{e(assigns, :current_user, :id, "")}}" />
+      <HiddenInput name="provider" value="{{e(current_user, :id, "")}}" />
+      <HiddenInput name="receiver" value="{{e(current_user, :id, "")}}" />
 
     </div>
     <div :if={{@action == "transfer"}} class="flex-1">
@@ -47,21 +46,23 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
         pick_event={{e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}}
         remove_event={{e(assigns, :remove_event, "")}}
         />
-        <div
+        <Inputs for={{:resource_quantity}}
           class="flex items-center">
           <div class="flex flex-1 mt-3">
-            <div class="relative flex items-stretch flex-grow focus-within:z-10">
-              <input type="number" name="quantity" id="email" class="border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0">
-            </div>
+            <Field name="has_numerical_value" class="relative flex items-stretch flex-grow focus-within:z-10">
+              <NumberInput type="number" class="border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0"/>
+            </Field>
           </div>
-          <select class="hover:bg-indigo-200 border-none font-regular text-indigo-900 placeholder-indigo-900 text-opacity-70 bg-transparent"><option>each</option></select>
-        </div>
+          <Field name="has_unit">
+            <Select options={{"each": "each"}} class="hover:bg-indigo-200 border-none font-regular text-indigo-900 placeholder-indigo-900 text-opacity-70 bg-transparent"/>
+          </Field>
+        </Inputs>
       </div>
       <div :if={{@action != "produce" }} class="flex space-x-3">
         <div
           :if={{@action == "transfer" || @action == "consume" }}
           class="flex items-start">
-          <div class="flex w-20">  
+          <div class="flex w-20">
             <div class="relative flex items-stretch flex-grow focus-within:z-10">
               <input type="number" name="quantity" class="border-none bg-indigo-200 font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0">
             </div>
@@ -89,7 +90,7 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
         <label class="text-sm text-indigo-900 ml-3 mt-2">To</label>
         <select class="w-full border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-indigo-900 bg-transparent"><option>Select the receiver</option></select>
       </div>
-      <Field class="flex items-center">
+      <Field name="note" class="flex items-center">
         <TextArea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></TextArea>
       </Field>
     </div>
@@ -98,3 +99,4 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
     </button>
   </div>
 </Form>
+</Context>
