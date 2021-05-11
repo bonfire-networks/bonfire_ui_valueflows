@@ -2,13 +2,8 @@
 <div class="p-5">
   <div class="sm:flex sm:justify-between sm:items-baseline">
     <div class="sm:w-0 sm:flex-1">
-<<<<<<< HEAD
-      <h1 id="message-heading" class="text-xl font-bold text-gray-800">
-        {{@process.name}}
-=======
       <h1 id="message-heading" class="text-xl font-bold text-gray-800 sm:text-2xl">
         {{rich @process.name}}
->>>>>>> e8066bfcd953a26834caf7d86bf2c93e915bd8d5
       </h1>
       <p class="mt-1 text-sm text-gray-500 overflow-hidden overflow-ellipsis prose prose-sm max-w-prose">
         {{rich @process.note}}
