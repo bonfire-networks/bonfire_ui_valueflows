@@ -5,37 +5,26 @@
     selected_economic_event: ''
    }"
   @keydown.escape.stop="open_select_economic_event = false"
-  @click.away="open_select_economic_event = false"
-  class="p-3 pb-5 border-b">
+  @click.away="open_select_economic_event = false">
   <div
     x-show="selected_economic_event === ''"
     class="flex items-start">
-    <img class="w-10 h-10 object-cover rounded-full" src={{ avatar_url(@current_user)}} alt="current user profile image" />
     <div
-      class="ml-3 relative block w-full text-left">
+      class="relative block w-full text-left">
       <div class="w-full">
         <button
           type="button"
-          class="cursor-pointer w-full flex-1 flex flex-col rounded-lg border space-y-2 "
+          class="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           id="user-profile-menu"
           @click="open_select_economic_event = !open_select_economic_event"
           aria-haspopup="true"
           x-bind:aria-expanded="open_select_economic_event"
           aria-expanded="true">
-          <div class="w-full bg-white shadow overflow-hidden sm:rounded-md">
-            <div class="block bg-gray-50 hover:bg-gray-100">
-
-              <div class="px-4 py-2.5 flex items-center">
-                <div class="min-w-0 flex-1 sm:flex sm:items-center sm:justify-between">
-                  <div class="font-semibold text-gray-700 truncate text-sm">What action do you want to perform?</div>
-                </div>
-                <div class="ml-5 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
-                  </svg>
-                </div>
-              </div>
-            </div>
+          <div class="">Select an action</div>
+          <div class="ml-4 flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
           </div>
         </button>
       </div>
@@ -53,9 +42,9 @@
         aria-orientation="vertical"
         aria-labelledby="user-profile-menu">
         <div class="py-1" role="none">
-          <div @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Transfer an existing resource</div>
-          <div @click="{selected_economic_event = 'consume'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Consume an existing resource</div>
-          <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use an existing resource</div>
+          <div @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Transfer a resource</div>
+          <div @click="{selected_economic_event = 'consume'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Consume a resource</div>
+          <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use a resource</div>
         </div>
       </div>
     </div>
