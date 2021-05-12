@@ -10,8 +10,8 @@
           <Bonfire.UI.ValueFlows.DueItemLive date={{@process.has_end}} is_editable={{true}} />
         </div>
       </div>
-      <div class="mt-4">
-        <Bonfire.UI.ValueFlows.EditDescriptionLive item={{@process}} />
+      <div :if={{@process.note}} class="mt-4 prose prose-sm w-full">
+        {{rich @process.note}}
       </div>
     </div>
 
