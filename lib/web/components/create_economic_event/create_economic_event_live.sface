@@ -88,7 +88,13 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
     <div class="rounded-xl shadow-inner bg-indigo-50 p-3 mt-4">
       <div :if={{@action == "transfer"}} class="flex flex-col">
         <label class="text-sm text-indigo-900 ml-3 mt-2">To</label>
-        <select class="w-full border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-indigo-900 bg-transparent"><option>Select the receiver</option></select>
+        <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
+        label={{"Select the receiver of the transfer"}}
+        form_input_name={{"receiver"}}
+        selected_options={{e(assigns, :receiver, [])}}
+        current_user={{current_user}}
+        />
+
       </div>
       <Field name="note" class="flex items-center">
         <TextArea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></TextArea>
