@@ -3,4 +3,5 @@ defmodule Bonfire.UI.ValueFlows.CreateEconomicEventLive do
 
   prop action, :string, required: true
   prop remove, :string, required: true
+  prop output_of_id, :string
 end
