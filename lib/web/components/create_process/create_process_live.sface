@@ -11,7 +11,7 @@
     class="transform transition-all sm:align-middle sm:w-full">
     <Form for={{ e(assigns, :globals, ValueFlows.Process, :changeset, ValueFlows.Process.LiveHandler.changeset() ) }} submit="ValueFlows.Process:create" opts={{ autocomplete: "off" }}>
       <input name="redirect_after" value={{@process_url}} type="hidden" />
-      <Field name="name">
+      <Field name={{:name}}>
         <label class="block text-sm font-medium text-gray-700">Choose a name</label>
         <div class="relative rounded-md shadow-sm mt-1">
           <TextInput class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-8 sm:text-sm border-gray-300 rounded-md" placeholder="" />

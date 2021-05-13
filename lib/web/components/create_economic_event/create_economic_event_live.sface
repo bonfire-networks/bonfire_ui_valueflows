@@ -49,11 +49,11 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
         <Inputs for={{:resource_quantity}}
           class="flex items-center">
           <div class="flex flex-1 mt-3">
-            <Field name="has_numerical_value" class="relative flex items-stretch flex-grow focus-within:z-10">
+            <Field name={{:has_numerical_value}} class="relative flex items-stretch flex-grow focus-within:z-10">
               <NumberInput type="number" class="border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0"/>
             </Field>
           </div>
-          <Field name="has_unit">
+          <Field name={{:has_unit}}>
             <Select options={{"each": "each"}} class="hover:bg-indigo-200 border-none font-regular text-indigo-900 placeholder-indigo-900 text-opacity-70 bg-transparent"/>
           </Field>
         </Inputs>
@@ -96,7 +96,7 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
         />
 
       </div>
-      <Field name="note" class="flex items-center">
+      <Field name={{:note}} class="flex items-center">
         <TextArea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></TextArea>
       </Field>
     </div>
