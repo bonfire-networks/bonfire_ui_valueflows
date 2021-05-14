@@ -6,11 +6,12 @@ defmodule Bonfire.UI.ValueFlows.AssignedItemLive do
   prop agent, :any
   prop pick_event, :string
   prop remove_event, :string
+  prop context_id, :string
 
   def update(%{is_editable: true} = assigns, socket) do
 
-    agent = e(assigns, :agent, e(assigns, :current_user, nil))
-    field_name = e(assigns, :field_name, "agent")
+    agent = e(assigns, :agent, nil)
+    field_name = e(assigns, :field_name, "agent") #|> IO.inspect
 
     {:ok, socket
       |> assigns_merge(assigns,
