@@ -37,26 +37,28 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
   </div>
   <div class="p-3">
     <div class="rounded-xl shadow-inner bg-indigo-50 p-3">
-      <div :if={{@action == "produce" }} class="flex flex-col">
-        <Bonfire.UI.Social.MultiselectLive
-        preloaded_options={{ e(assigns, :resource_specifications_autocomplete, [])}}
-        selected_options={{ e(assigns, :resource_specification_selected, [])}}
-        label={{"Pick a type of resource..."}}
-        form_input_name={{"resource_conforms_to"}}
-        pick_event={{e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}}
-        remove_event={{e(assigns, :remove_event, "")}}
-        />
+      <div :if={{@action == "produce" }} class="flex space-x-2">
         <Inputs for={{:resource_quantity}}
-          class="flex items-center">
-          <div class="flex flex-1 mt-3">
+          class="">
+          <div class="w-20">
             <Field name={{:has_numerical_value}} class="relative flex items-stretch flex-grow focus-within:z-10">
-              <NumberInput type="number" class="border-none font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0"/>
+              <NumberInput type="number" class="border-none bg-indigo-200 font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300" placeholder="0.0"/>
             </Field>
           </div>
           <Field name={{:has_unit}}>
-            <Select options={{"each": "each"}} class="hover:bg-indigo-200 border-none font-regular text-indigo-900 placeholder-indigo-900 text-opacity-70 bg-transparent"/>
+            <Select options={{"each": "each"}} class="border-none bg-indigo-200 font-extrabold text-indigo-900 text-opacity-60 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-md sm:text-sm border-gray-300"/>
           </Field>
         </Inputs>
+        <div class="flex-1 relative">
+          <Bonfire.UI.Social.MultiselectLive
+          preloaded_options={{ e(assigns, :resource_specifications_autocomplete, [])}}
+          selected_options={{ e(assigns, :resource_specification_selected, [])}}
+          label={{"Pick a type of resource..."}}
+          form_input_name={{"resource_conforms_to"}}
+          pick_event={{e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}}
+          remove_event={{e(assigns, :remove_event, "")}}
+          />
+        </div>
       </div>
       <div :if={{@action != "produce" }} class="flex space-x-3">
         <div
@@ -87,16 +89,16 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
 
     <div class="rounded-xl shadow-inner bg-indigo-50 p-3 mt-4">
       <div :if={{@action == "transfer"}} class="flex flex-col">
-        <label class="text-sm text-indigo-900 ml-3 mt-2">To</label>
+        <label class="text-sm text-indigo-900 mt-2">To</label>
         <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
         label={{"Select the receiver of the transfer"}}
         form_input_name={{"receiver"}}
         selected_options={{e(assigns, :receiver, [])}}
         current_user={{current_user}}
         />
-
       </div>
-      <Field name={{:note}} class="flex items-center">
+      <Field name={{:note}} class="flex flex-col mt-2">
+         <label class="text-sm text-indigo-900 mt-b">Add an optional message</label>
         <TextArea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></TextArea>
       </Field>
     </div>
