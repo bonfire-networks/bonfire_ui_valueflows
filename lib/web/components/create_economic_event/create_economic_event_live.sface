@@ -3,15 +3,14 @@
 for={{ValueFlows.EconomicEvent.validate_changeset()}}
 submit="ValueFlows.EconomicEvent:create"
 change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
+
     <HiddenInput name="action" value="{{@action}}" />
+    <HiddenInput :if={{e(assigns, :output_of_id, nil)}} name="output_of_id" value={{e(assigns, :output_of_id, "")}} />
+
     <div class="flex items-center p-3 pb-6 border-b">
     <div :if={{@action == "produce"}} class="flex-1">
       <div class="font-extrabold text-gray-800 text-base">Produce a resource</div>
       <div class="mt-1 font-regular text-gray-600 text-sm">Specify which resource you want to produce</div>
-
-      <HiddenInput name="provider" value="{{e(current_user, :id, "")}}" />
-      <HiddenInput name="receiver" value="{{e(current_user, :id, "")}}" />
-
     </div>
     <div :if={{@action == "transfer"}} class="flex-1">
       <div class="font-extrabold text-gray-800 text-base">Transfer a resource</div>
