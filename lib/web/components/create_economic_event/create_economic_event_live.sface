@@ -100,6 +100,18 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
          <label class="text-sm text-indigo-900 mt-b">Add an optional message</label>
         <TextArea placeholder="Add an optional message for the transfer" class="border-none h-20 font-regular text-sm text-indigo-800 placeholder-opacity-60 placeholder-indigo-900 flex-1 bg-transparent"></TextArea>
       </Field>
+
+      <div class="flex-1 relative">
+          <Bonfire.UI.Social.MultiselectLive
+          preloaded_options={{ e(assigns, :geolocation_autocomplete, [])}}
+          selected_options={{ e(assigns, :geolocation_selected, [])}}
+          label={{"Optionally indicate the location"}}
+          form_input_name={{"at_location"}}
+          pick_event={{e(assigns, :pick_event, "Bonfire.Geolocate:select")}}
+          remove_event={{e(assigns, :remove_event, "")}}
+          />
+        </div>
+
     </div>
     <button type="submit" class="w-full place-content-center mt-3 inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       {{@action}}

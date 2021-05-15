@@ -14,7 +14,7 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
   end
 
   def handle_event("label_search", %{"label_search" => search_for}, socket) do
-    {:ok, labels} = Bonfire.Tag.Tags.many({:name_contains, search_for})
+    {:ok, labels} = Bonfire.Tag.Tags.many({:autocomplete, search_for})
     IO.inspect(labels)
     # labels = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [

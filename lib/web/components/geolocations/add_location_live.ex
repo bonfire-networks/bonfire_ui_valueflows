@@ -20,7 +20,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
 
   def handle_event("location_search", %{"location_input" => search_for}, socket) do
     IO.inspect("heeyyyyy")
-    {:ok, locations} = Geolocations.many({:name_contains, search_for})
+    {:ok, locations} = Geolocations.many({:autocomplete, search_for})
     IO.inspect(locations)
     # locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
