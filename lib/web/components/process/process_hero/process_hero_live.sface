@@ -2,16 +2,16 @@
 <div class="p-5">
   <div class="sm:flex sm:justify-between sm:items-baseline">
     <div class="sm:w-0 sm:flex-1">
-      <h1 id="message-heading" class="text-xl font-bold text-gray-700 sm:text-2xl">
+      <h1 id="message-heading" class="text-base font-bold text-gray-700">
         {{rich @process.name}}
       </h1>
+      <div :if={{@process.note}} class="mt-1 prose prose-sm w-full">
+        {{rich @process.note}}
+      </div>
       <div class="flex items-center">
-        <div class="w-40 mt-4">
+        <div class="w-32 mt-2">
           <Bonfire.UI.ValueFlows.DueItemLive date={{@process.has_end}} is_editable={{true}} />
         </div>
-      </div>
-      <div :if={{@process.note}} class="mt-4 prose prose-sm w-full">
-        {{rich @process.note}}
       </div>
     </div>
 
