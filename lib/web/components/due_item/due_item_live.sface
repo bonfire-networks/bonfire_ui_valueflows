@@ -1,28 +1,22 @@
-<div 
-  class="h-8 flex relative items-center text-xs text-medium bg-blueGray-200 rounded py-1 px-2 text-gray-600"
+<div
+  :if={{@is_editable}} 
+  class="flex relative items-center text-sm text-medium text-gray-600"
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
   @click.away="open = false"
   >
-  <div class="flex flex-1 items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-    </svg>
-    <span>{{@date || "Anytime"}}</span>
-  </div>
-
-  <div 
-    :if={{@is_editable}} 
+  <div
     @click="open = !open"
     aria-haspopup="true"
     x-bind:aria-expanded="open"
     aria-expanded="true"
-    type="button" 
-    class="h-8 ml-2 flex items-center place-content-center bg-blueGray-200 hover:bg-blueGray-300 cursor-pointer -mr-2.5 px-2 rounded-r">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+    type="button"  
+    class="flex flex-1 items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
     </svg>
+    <span class="text-xs hover:underline font-medium cursor-pointer ml-1">{{@date || "Anytime"}}</span>
   </div>
 
   <div
@@ -34,9 +28,32 @@
     x-transition:leave="transition ease-in duration-75"
     x-transition:leave-start="transform opacity-100 scale-100"
     x-transition:leave-end="transform opacity-0 scale-95"
-    class="p-1 w-full z-20 origin-top-right absolute top-8 left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+    class="p-1 w-40 z-20 origin-top-right absolute top-8 right-0 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none"
+    style="margin-left: -20px"
     role="menu"
     aria-orientation="vertical">
       <DateInput class="w-full" />
   </div>
+</div>
+
+<div
+  :if={{!@is_editable}} 
+  class="h-8 flex relative items-center text-sm text-medium text-gray-600"
+  x-cloak
+  x-data="{ open: false }"
+  @keydown.escape.stop="open = false"
+  @click.away="open = false"
+  @click="open = !open"
+  aria-haspopup="true"
+  x-bind:aria-expanded="open"
+  aria-expanded="true"
+  type="button" 
+  >
+  <div class="flex flex-1 items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+    </svg>
+    <span class="ml-2">{{@date || "Anytime"}}</span>
+  </div>
+
 </div>
