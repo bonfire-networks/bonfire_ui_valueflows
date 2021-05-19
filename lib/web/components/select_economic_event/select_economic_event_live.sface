@@ -42,9 +42,9 @@
         aria-orientation="vertical"
         aria-labelledby="user-profile-menu">
         <div class="py-1" role="none">
-          <div @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Transfer a resource</div>
-          <div @click="{selected_economic_event = 'consume'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Consume a resource</div>
-          <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use a resource</div>
+          <div @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Transfer</div>
+          <div @click="{selected_economic_event = 'consume'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Consume</div>
+          <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use</div>
         </div>
       </div>
     </div>

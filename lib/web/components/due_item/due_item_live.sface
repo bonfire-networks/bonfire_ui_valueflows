@@ -1,6 +1,6 @@
 <div
   :if={{@is_editable}} 
-  class="flex relative items-center text-sm text-medium text-gray-600"
+  class="btn-secondary flex relative items-center text-sm text-medium text-gray-600"
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
@@ -16,7 +16,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
     </svg>
-    <span class="text-xs hover:underline font-medium cursor-pointer ml-1">{{@date || "Anytime"}}</span>
+    <span class="text-xs font-medium cursor-pointer ml-1">{{@date || "Anytime"}}</span>
   </div>
 
   <div
