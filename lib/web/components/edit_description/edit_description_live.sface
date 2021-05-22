@@ -2,19 +2,19 @@
   x-data="{ toggle_edit_description: false }"
   class="">
   <div class="flex items-center">
-    <div class="text-xs font-regular uppercase text-gray-700">Description</div>
+    <div class="text-xs text-gray-700 uppercase font-regular">Description</div>
     <button
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
       type="button"
-      class="ml-2 inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-blueGray-700 bg-blueGray-100 hover:bg-blueGray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+      class="inline-flex items-center px-2 py-1 ml-2 text-xs font-medium border border-transparent rounded text-blueGray-700 bg-blueGray-100 hover:bg-blueGray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       Edit description
     </button>
   </div>
   <div
     x-show="!toggle_edit_description"
-    class="mt-1.5 prose prose-sm w-full">
+    class="mt-1.5 prose prose-valueflows prose-sm w-full">
     {{rich @item.note}}
   </div>
   <div
@@ -30,7 +30,7 @@
     <form>
       <label for="item_note" class="sr-only">Edit the description</label>
       <textarea id="item_note" class="block w-full h-20 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-      <div class="flex mt-2 items-center space-x-3 justify-end">
+      <div class="flex items-center justify-end mt-2 space-x-3">
         <button type="button" @click = "toggle_edit_description = false" class="btn-secondary">Cancel</button>
         <button type="submit" class="btn-primary">Update</button>
       </div>
