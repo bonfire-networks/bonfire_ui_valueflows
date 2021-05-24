@@ -20,6 +20,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
       processes {
         id
         name
+        note
       }
     }
   """
