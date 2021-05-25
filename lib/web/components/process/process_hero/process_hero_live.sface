@@ -8,6 +8,25 @@
       <div :if={{@process.note}} class="w-full mt-1 prose-sm prose">
         {{rich @process.note}}
       </div>
+
+      <div class="w-60">
+        <div :if={{e(@process, :tasks_total, 0)>0}} class="relative mt-2">
+          <div class={{"flex mb-2 overflow-hidden text-xs bg-pink-100 rounded h-3"}}>
+            <div style="width:{{e(@process, :percentage, "0")}}%" class="flex flex-col justify-center text-center text-white bg-pink-500 shadow-none whitespace-nowrap"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-4 text-sm text-gray-700">
+          <div :if={{e(@process, :tasks_total, 0)>0}}><span class="font-bold text-gray-600">{{e(@process, :percentage, "0")}}%</span> complete</div>
+          <div :if={{e(@process, :tasks_completed, 0)>0}}>
+            <span class="font-bold text-gray-600">{{e(@process, :tasks_completed, "0")}}</span> out of <span class="font-bold text-gray-600">{{e(@process, :tasks_total, "0")}}</span>
+          </div>
+          <div :if={{e(@process, :tasks_total, 0)>0}}>
+            <span class="font-bold text-gray-600">{{e(@process, :tasks_total, "0")}}</span> tasks
+          </div>
+        </div>
+    </div>
+
     </div>
 
     <div class="flex items-center justify-between space-x-4 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
