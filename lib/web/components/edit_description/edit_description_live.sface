@@ -4,6 +4,7 @@
   <div class="flex items-center">
     <div class="text-xs text-gray-700 uppercase font-regular">Description</div>
     <button
+      :if={{@current_user != nil}}
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
@@ -18,6 +19,7 @@
     {{rich @item.note}}
   </div>
   <div
+    :if={{@current_user != nil}}
     x-show="toggle_edit_description"
     @click.away="toggle_edit_description=false"
     x-transition:enter="ease-out duration-300"
@@ -35,6 +37,5 @@
         <button type="submit" class="btn-primary">Update</button>
       </div>
     </form>
-
   </div>
 </div>
