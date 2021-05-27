@@ -9,7 +9,7 @@
         {{rich @process.note}}
       </div>
 
-      <div class="w-60">
+      <div class="w-80">
         <div :if={{e(@process, :tasks_total, 0)>0}} class="relative mt-2">
           <div class={{"flex mb-2 overflow-hidden text-xs bg-pink-100 rounded h-3"}}>
             <div style="width:{{e(@process, :percentage, "0")}}%" class="flex flex-col justify-center text-center text-white bg-pink-500 shadow-none whitespace-nowrap"></div>
