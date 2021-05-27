@@ -5,19 +5,18 @@
       <div
         x-cloak
         x-data="{
-          open: false,
+          open: false
         }"
         @click.away="{open=false;}">
         <div x-show="!open" class="flex items-center p-3 space-x-3 text-pink-600 cursor-pointer" @click = "open = true">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
           </svg>
-          <div class="text-base ">Add a new tasks</div>
+          <div class="text-sm">Add a new tasks</div>
         </div>
         <div class="p-3 border-t-4 bg-blueGray-100" x-show="open">
           <Bonfire.UI.ValueFlows.CreateIntentLive
             output_of_id={{@output_of_id}}
-            cancel="open=false"
             title="Create a new task"
             action={{"work"}}
             intent_url={{"/task/"}} />
