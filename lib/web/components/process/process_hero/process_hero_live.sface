@@ -19,10 +19,9 @@
         <div class="flex items-center space-x-4 text-sm text-gray-700 dark:text-gray-300">
           <div :if={{e(@process, :tasks_total, 0)>0}}><span class="font-bold text-gray-600 dark:text-gray-400">{{e(@process, :percentage, "0")}}%</span> complete</div>
           <div :if={{e(@process, :tasks_completed, 0)>0}}>
-            <span class="font-bold text-gray-600 dark:text-gray-300">{{e(@process, :tasks_completed, "0")}}</span> out of <span class="font-bold text-gray-600">{{e(@process, :tasks_total, "0")}}</span>
-          </div>
-          <div :if={{e(@process, :tasks_total, 0)>0}}>
-            <span class="font-bold text-gray-600 dark:text-gray-300">{{e(@process, :tasks_total, "0")}}</span> tasks
+            <span class="font-bold text-gray-600 dark:text-gray-400">{{e(@process, :tasks_completed, "0")}}</span>
+            of
+            <span class="font-bold text-gray-600 dark:text-gray-400">{{e(@process, :tasks_total, "0")}}</span> tasks
           </div>
         </div>
     </div>
@@ -36,8 +35,12 @@
       <span :if={{@process.finished}} class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
         Completed
       </span>
-      
-      
+
+      <Bonfire.UI.Social.LikeActionWithoutLabelLive
+        object_id={{@process.id}}
+      />
+
+
       <div class="relative inline-block text-left">
         <div
           x-cloak
