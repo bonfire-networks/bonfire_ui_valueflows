@@ -16,13 +16,13 @@
           </div>
         </div>
 
-        <div class="flex items-center space-x-4 text-sm text-gray-700">
-          <div :if={{e(@process, :tasks_total, 0)>0}}><span class="font-bold text-gray-600">{{e(@process, :percentage, "0")}}%</span> complete</div>
+        <div class="flex items-center space-x-4 text-sm text-gray-700 dark:text-gray-300">
+          <div :if={{e(@process, :tasks_total, 0)>0}}><span class="font-bold text-gray-600 dark:text-gray-400">{{e(@process, :percentage, "0")}}%</span> complete</div>
           <div :if={{e(@process, :tasks_completed, 0)>0}}>
-            <span class="font-bold text-gray-600">{{e(@process, :tasks_completed, "0")}}</span> out of <span class="font-bold text-gray-600">{{e(@process, :tasks_total, "0")}}</span>
+            <span class="font-bold text-gray-600 dark:text-gray-300">{{e(@process, :tasks_completed, "0")}}</span> out of <span class="font-bold text-gray-600">{{e(@process, :tasks_total, "0")}}</span>
           </div>
           <div :if={{e(@process, :tasks_total, 0)>0}}>
-            <span class="font-bold text-gray-600">{{e(@process, :tasks_total, "0")}}</span> tasks
+            <span class="font-bold text-gray-600 dark:text-gray-300">{{e(@process, :tasks_total, "0")}}</span> tasks
           </div>
         </div>
     </div>

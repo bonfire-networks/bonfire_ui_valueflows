@@ -2,7 +2,7 @@
   x-data="{ toggle_edit_description: false }"
   class="">
   <div class="flex items-center">
-    <div class="text-xs text-gray-700 uppercase font-regular">Description</div>
+    <div class="text-xs text-gray-700 uppercase dark:text-gray-300 font-regular">Description</div>
     <button
       :if={{e(assigns, :current_user, nil) != nil}}
       @keydown.window.escape="toggle_edit_description = false"
@@ -15,7 +15,7 @@
   </div>
   <div
     x-show="!toggle_edit_description"
-    class="mt-1.5 prose prose-valueflows prose-sm w-full">
+    class="mt-1.5 prose prose-valueflows dark:prose-light  prose-sm w-full">
     {{rich @item.note}}
   </div>
   <div
