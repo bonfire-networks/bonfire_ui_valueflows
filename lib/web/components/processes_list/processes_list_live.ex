@@ -1,6 +1,6 @@
 defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   use Bonfire.Web, :stateless_component
-  use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
+  # use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
   alias Surface.Components.LivePatch
 
   prop title, :string, default: "Lists"
@@ -9,8 +9,12 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   def update(assigns, socket) do
 
     processes =
-      Bonfire.Social.Likes.by_liker(e(assigns, :current_user, nil), ValueFlows.Process)
-      |> Enum.map(&(&1.liked))
+      if e(assigns, :current_user, nil) do
+        Bonfire.Social.Likes.by_liker(e(assigns, :current_user, nil), ValueFlows.Process)
+        |> Enum.map(&(&1.liked))
+      else
+        []
+      end
 
     {:ok,
     socket
@@ -19,15 +23,15 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
     )}
   end
 
-  @graphql """
-    {
-      processes {
-        id
-        name
-        note
-      }
-    }
-  """
-  def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
+  # @graphql """
+  #   {
+  #     processes {
+  #       id
+  #       name
+  #       note
+  #     }
+  #   }
+  # """
+  # def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
 
 end
