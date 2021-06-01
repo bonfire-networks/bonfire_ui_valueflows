@@ -105,8 +105,9 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
     <Field name={{:note}} class="flex flex-col p-3 mt-1 shadow-inner rounded-xl bg-indigo-50">
       <TextArea placeholder="Add an optional message for the transfer" class="flex-1 h-20 text-sm text-indigo-800 placeholder-indigo-900 bg-transparent border-none font-regular placeholder-opacity-60"></TextArea>
     </Field>
-  
-    <div class="relative mt-2">
+
+
+    <div :if={{@action == "transfer" || @action == "produce"}} class="relative mt-2">
       <Bonfire.UI.Social.MultiselectLive
         preloaded_options={{ e(assigns, :geolocation_autocomplete, [])}}
         selected_options={{ e(assigns, :geolocation_selected, [])}}
