@@ -2,10 +2,10 @@
 <div class="p-5 pb-0">
   <div class="sm:flex sm:justify-between sm:items-start">
     <div class="sm:w-0 sm:flex-1">
-      <h1 id="message-heading" class="text-base font-bold text-gray-700">
+      <h1 id="message-heading" class="text-base font-bold text-gray-700 dark:text-gray-200">
         {{rich @process.name}}
       </h1>
-      <div :if={{@process.note}} class="w-full mt-1 prose-sm prose">
+      <div :if={{@process.note}} class="w-full mt-1 prose-sm prose dark:prose-light">
         {{rich @process.note}}
       </div>
 
