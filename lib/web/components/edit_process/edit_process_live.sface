@@ -1,4 +1,4 @@
-<Context get={{ current_user: current_user }}>
+
   <div>
     <div class="flex items-center p-6 pb-3 mb-4 pt-0 border-b -mx-6">
       <div class="font-extrabold text-gray-800 text-base">Edit the process</div>
@@ -21,4 +21,3 @@
       </div>
     </Form>
   </div>
-</Context>

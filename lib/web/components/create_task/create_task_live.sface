@@ -1,4 +1,4 @@
-<Context get={{ current_user: current_user }}>
+
 <div class="">
   <div class="flex items-start">
     <div class="flex flex-col flex-1 space-y-2">
@@ -22,9 +22,8 @@
             intent_url={{"/task/"}} />
         </div>
 
-       
+
       </div>
     </div>
   </div>
 </div>
-</Context>

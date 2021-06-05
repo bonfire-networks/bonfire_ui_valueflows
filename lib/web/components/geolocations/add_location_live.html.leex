@@ -3,9 +3,9 @@
   role="menu"
   aria-orientation="vertical"
   aria-labelledby="add location menu">
-  <form 
+  <form
     phx-target="<%= @myself %>"
-    phx-submit="location_create">
+    phx-submit="Bonfire.Geolocate:create">
     <div class="flex items-center p-2 border-b">
       <label for="location_input" class="flex-1 text-sm font-light text-center">Add a location</label>
       <svg

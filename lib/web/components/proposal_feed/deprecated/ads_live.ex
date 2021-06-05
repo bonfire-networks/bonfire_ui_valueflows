@@ -3,7 +3,7 @@ defmodule Bonfire.Web.Component.AdsPreviewLive do
 
   # import CommonsPub.Profiles.Web.ProfilesHelper
   # def mount(_, _session, socket) do
-  #   {:ok, assign(socket, current_user: socket.assigns.current_user)}
+  #   {:ok, assign(socket, current_user: e(socket.assigns, :current_user, nil))}
   # end
 
   def update(assigns, socket) do
@@ -13,7 +13,7 @@ defmodule Bonfire.Web.Component.AdsPreviewLive do
      socket
      |> assign(
        ads: ads |> Map.merge(%{created_at: date_from_now(ads.published_at)})
-       #  current_user: assigns.current_user
+       #  current_user: e(assigns, :current_user, nil)
      )}
   end
 

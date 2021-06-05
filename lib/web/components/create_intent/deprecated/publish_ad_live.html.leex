@@ -4,7 +4,7 @@
     <dialog open class="dialog dialog__create">
       <header class="dialog__header">Publish a new ad</header>
       <section class="dialog__content">
-        <form phx-submit="publish_ad" phx-change="tag_suggest" phx-target="#ad_tags_tag_results" >
+        <form phx-submit="ValueFlows.Planning.Intent:create" phx-change="Bonfire.Tag:tag_suggest" phx-target="#ad_tags_tag_results" >
           <div class="ads__type">
             <div class="type">
               <input type="radio" id="need" name="intent" value="need" checked>
@@ -23,14 +23,14 @@
               <%= live_component(
                 @socket,
                 Bonfire.Web.My.ContextSelect,
-                current_user: @current_user,
+
                 my_communities: @my_communities,
                 current_context: @current_context
               ) %>
               <%= live_component(
                 @socket,
                 Bonfire.Web.Component.EnterTags,
-                current_user: @current_user,
+
                 id: "ad_tags"
               ) %>
               <div class="additional__due">

@@ -38,7 +38,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
 
   def handle_event("create", attrs, socket) do
 
-    user = Map.get(socket.assigns, :current_user)
+    user = e(socket.assigns, :current_user, nil)
 
     need = input_to_atoms(Map.get(attrs, "need"))
 
@@ -55,7 +55,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
         action: "work",
         is_public: socket.assigns.is_public,
         at_location: location,
-        receiver: socket.assigns.current_user
+        receiver: e(socket.assigns, :current_user, nil)
         })
 
         {:ok, intent} = Intents.create(user, data)

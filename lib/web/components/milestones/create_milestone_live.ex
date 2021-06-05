@@ -7,7 +7,7 @@ defmodule Bonfire.UI.ValueFlows.CreateMilestoneLive do
 
   def handle_event("create_milestone", %{"name" => name, "note" => note, "due_date" => due_date}, socket) do
 
-    user = Map.get(socket.assigns, :current_user)
+    user = e(socket.assigns, :current_user, nil)
 
       data = %{
         is_public: true,

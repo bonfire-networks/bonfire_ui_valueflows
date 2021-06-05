@@ -33,7 +33,7 @@
         </div>
       </div>
       <% end %>
-      
+
       <!-- SHOW LOCATION -->
       <%= if Map.get(@at_location, :id) do %>
       <div class="mb-3">
@@ -103,7 +103,7 @@
 <div class="flex">
   <form
     class="flex w-full h-full"
-    phx-submit="create"
+    phx-submit="ValueFlows.Planning.Intent:create"
     phx-target="<%= @myself %>">
     <div class="relative z-10 flex flex-col flex-grow p-4">
       <div class="flex flex-1">
@@ -177,7 +177,7 @@
         </div>
       </div>
     </div>
-  </form>   
+  </form>
   <div class="w-64 ml-3">
     <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Add to the proposal</h4>
     <nav class="space-y-2" aria-label="Sidebar">
@@ -215,7 +215,7 @@
                 aria-orientation="vertical"
                 aria-labelledby="due date menu">
                 <form
-                  phx-submit="set_due"
+                  phx-submit="ValueFlows.Planning.Intent:set_due"
                   phx-target="<%= @myself %>"
                   action="">
                   <div class="flex items-center p-2 border-b">
@@ -290,8 +290,7 @@
               <%= live_component(
                 @socket,
                 AddLocationLive,
-                id: @intention<>"_location",
-                current_user: @current_user
+                id: @intention<>"_location"
               ) %>
           </div>
       </div>
