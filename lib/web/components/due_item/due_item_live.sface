@@ -36,7 +36,7 @@
     style="margin-left: -20px"
     role="menu"
     aria-orientation="vertical">
-      <DateInput name="due" class="w-full" />
+      <DateTimeLocalInput name="due" class="w-full" />
   </div>
   </Form>
 </div>
