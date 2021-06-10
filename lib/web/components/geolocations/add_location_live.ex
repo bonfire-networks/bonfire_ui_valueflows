@@ -45,7 +45,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
 
   def handle_event("location_create", %{"location_input" => loc}, socket) do
     IO.inspect(loc)
-    assigns = with {:ok, loc} <- Bonfire.Geolocate.Geolocations.create(e(socket.assigns, :current_user, nil), %{name: loc, mappable_address: loc}) do
+    assigns = with {:ok, loc} <- Bonfire.Geolocate.Geolocations.create(current_user(socket), %{name: loc, mappable_address: loc}) do
       assigns = [
         location_search_results: [],
         location_search_phrase: "",

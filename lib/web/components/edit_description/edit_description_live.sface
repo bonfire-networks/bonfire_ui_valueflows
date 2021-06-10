@@ -4,7 +4,7 @@
   <div class="flex items-center">
     <div class="text-xs text-gray-700 uppercase dark:text-gray-300 font-regular">Description</div>
     <button
-      :if={{e(assigns, :current_user, nil) != nil}}
+      :if={{current_user(assigns) != nil}}
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
@@ -19,7 +19,7 @@
     {{rich @item.note}}
   </div>
   <div
-    :if={{e(assigns, :current_user, nil) != nil}}
+    :if={{current_user(assigns) != nil}}
     x-show="toggle_edit_description"
     @click.away="toggle_edit_description=false"
     x-transition:enter="ease-out duration-300"

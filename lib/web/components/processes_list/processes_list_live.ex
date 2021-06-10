@@ -9,8 +9,8 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   def update(assigns, socket) do
 
     processes =
-      if e(assigns, :current_user, nil) do
-        Bonfire.Social.Likes.by_liker(e(assigns, :current_user, nil), ValueFlows.Process)
+      if current_user(assigns) do
+        Bonfire.Social.Likes.by_liker(current_user(assigns), ValueFlows.Process)
         |> Enum.map(&(&1.liked))
       else
         []
