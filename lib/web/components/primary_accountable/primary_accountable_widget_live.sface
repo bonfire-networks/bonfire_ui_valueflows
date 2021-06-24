@@ -1,13 +1,13 @@
-<div :if={{ e(@primary_accountable, :name, nil) }} class="relative pt-4 text-sm text-gray-600 border-t">
+<div :if={e(@primary_accountable, :name, nil)} class="relative pt-4 text-sm text-gray-600 border-t">
   <div class="flex items-center justify-between mb-2">
     <span class="block text-sm font-semibold tracking-wide text-gray-500">Assigned to</span>
   </div>
   <div class="flex items-center mt-3">
-    <img src="{{e(@primary_accountable, :image, "")}}" class="w-8 h-8 bg-pink-600 rounded-full" />
+    <img src={"#{e(@primary_accountable, :image, "")}"} class="w-8 h-8 bg-pink-600 rounded-full" />
     <div class="ml-2">
-        <LiveRedirect to={{ "/user/"<>e(@primary_accountable, :display_username, e(@primary_accountable, :id, "")) }}
+        <LiveRedirect to={"/user/"<>e(@primary_accountable, :display_username, e(@primary_accountable, :id, ""))}
           class="text-sm text-gray-800 font-regular">
-          {{ e(@primary_accountable, :name, "") }}</LiveRedirect>
+          {e(@primary_accountable, :name, "")}</LiveRedirect>
     </div>
   </div>
 </div>

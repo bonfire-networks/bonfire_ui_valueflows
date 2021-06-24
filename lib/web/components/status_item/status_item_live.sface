@@ -6,11 +6,11 @@
   @click.away="open = false"
   >
   <div class="flex flex-1 items-center">
-    <span>{{@status || "todo"}}</span>
+    <span>{@status || "todo"}</span>
   </div>
 
   <div 
-    :if={{@is_editable}} 
+    :if={@is_editable} 
     @click="open = !open"
     aria-haspopup="true"
     x-bind:aria-expanded="open"

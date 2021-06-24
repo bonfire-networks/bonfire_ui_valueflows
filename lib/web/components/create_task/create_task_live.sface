@@ -16,10 +16,10 @@
         </div>
         <div class="p-3 border-t-4 bg-blueGray-100" x-show="open">
           <Bonfire.UI.ValueFlows.CreateIntentLive
-            output_of_id={{@output_of_id}}
+            output_of_id={@output_of_id}
             title="Create a new task"
-            action={{"work"}}
-            intent_url={{"/task/"}} />
+            action={"work"}
+            intent_url={"/task/"} />
         </div>
 
 

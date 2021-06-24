@@ -4,11 +4,11 @@
   aria-orientation="vertical"
   >
   <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
-    selected_options={{@selected_options}}
-    label={{"Assign to..."}}
-    form_input_name={{@field_name}}
-    pick_event={{e(assigns, :pick_event, nil)}}
-    remove_event={{e(assigns, :remove_event, nil)}}
-    context_id={{e(assigns, :context_id, nil)}}
+    selected_options={@selected_options}
+    label={"Assign to..."}
+    form_input_name={@field_name}
+    pick_event={e(assigns, :pick_event, nil)}
+    remove_event={e(assigns, :remove_event, nil)}
+    context_id={e(assigns, :context_id, nil)}
     />
 </div>
