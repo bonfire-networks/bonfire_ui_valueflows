@@ -27,4 +27,31 @@ defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
     }
   end
 
+  def generate_test_template(assigns) do
+    tasks = e(assigns.process, :intended_outputs, [])
+    tests = Enum.map(tasks, &task_test_template(&1))
+
+    """
+  describe "#{assigns.process.name}"
+  #{tests}
+
+  end
+    """
+
+  end
+
+  defp task_test_template(task) do
+
+    """
+
+    @tag :todo # remove the tag when starting work on this test
+    test "#{task.name}" do
+
+
+    end
+
+    """
+
+  end
+
 end

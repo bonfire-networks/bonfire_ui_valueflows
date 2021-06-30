@@ -44,7 +44,7 @@
       <div class="relative inline-block text-left">
         <div
           x-cloak
-          x-data="{ open: false, edit_process: false, archive_process: false }"
+          x-data="{ open: false, edit_process: false, archive_process: false, tests_template: false }"
           @keydown.escape.stop="open = false"
           @click.away="open = false"
           class="relative block text-left">
@@ -80,6 +80,9 @@
               <button :if={!@process.finished} :on-click="ValueFlows.Process:status:finished" phx-value-id={@process.id}  type="button" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
                 Set as completed
               </button>
+              <button type="button" @click="tests_template=true" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
+                Generate tests template
+              </button>
             </div>
             <div class="py-1" role="none">
               <button type="button" @click="archive_process=true" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
@@ -94,6 +97,18 @@
               <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
               <div x-show="edit_process" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block px-4 pt-5 pb-4 text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                 <Bonfire.UI.ValueFlows.EditProcessLive process={@process} />
+              </div>
+            </div>
+          </div>
+          <div x-show="tests_template" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
+            <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+              <div x-show="tests_template" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" @click="tests_template = false" aria-hidden="true"></div>
+              <!-- This element is to trick the browser into centering the modal contents. -->
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+              <div x-show="tests_template" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block px-4 pt-5 pb-4 text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                <textarea cols=50>
+{generate_test_template(assigns)}
+                </textarea>
               </div>
             </div>
           </div>
