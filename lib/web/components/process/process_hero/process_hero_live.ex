@@ -1,11 +1,14 @@
 defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
   use Bonfire.Web, :stateless_component
+  alias Bonfire.Social.{Likes}
 
   prop process, :map
 
 
   def update(assigns, socket) do
-
+    # IO.inspect(assigns.process.id)
+    # my_like = Likes.liked?(assigns.__context__.current_user.character.id, assigns.process.id)
+    # IO.inspect(Likes.liked?(assigns.__context__.current_user.character.id, assigns.process.id))
     tasks = e(assigns.process, :intended_outputs, [])
 
     tasks_total = Enum.count(tasks)

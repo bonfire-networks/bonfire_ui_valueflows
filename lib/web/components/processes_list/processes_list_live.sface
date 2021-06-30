@@ -27,7 +27,7 @@
       </LiveRedirect>
     </div>
 
-    <LiveRedirect to="/lists/" class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-600 rounded-md group dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-200 dark:hover:bg-gray-600 hover:bg-gray-50">
+    <!-- <LiveRedirect to="/lists/" class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-600 rounded-md group dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-200 dark:hover:bg-gray-600 hover:bg-gray-50">
       <svg
           aria-labelledby="navigation_lists"
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@
         <span class="truncate">
           More Lists
         </span>
-      </LiveRedirect>
+      </LiveRedirect> -->
 
   </div>
 </nav>
