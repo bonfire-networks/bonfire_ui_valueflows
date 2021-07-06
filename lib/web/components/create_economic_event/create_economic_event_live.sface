@@ -1,7 +1,8 @@
 <Form
-for={ValueFlows.EconomicEvent.validate_changeset()}
-submit="ValueFlows.EconomicEvent:create"
-change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
+    for={ValueFlows.EconomicEvent.validate_changeset()}
+    opts={autocomplete: "off"}
+    submit="ValueFlows.EconomicEvent:create"
+    change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
 
     <HiddenInput name="action" value={"#{@action}"} />
     <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, "")} />
@@ -40,11 +41,11 @@ change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete">
           class="">
           <div class="w-20">
             <Field name={:has_numerical_value} class="relative flex items-stretch flex-grow focus-within:z-10">
-              <NumberInput type="number" class="flex-1 block w-full font-extrabold text-indigo-900 placeholder-indigo-900 bg-transparent bg-indigo-200 border-gray-300 border-none rounded-none rounded-md text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
+              <NumberInput type="number" class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
             </Field>
           </div>
           <Field name={:has_unit}>
-            <Select options={"each": "each"} class="flex-1 block w-full font-extrabold text-indigo-900 placeholder-indigo-900 bg-transparent bg-indigo-200 border-gray-300 border-none rounded-none rounded-md text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+            <Select options={"each": "each"} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
           </Field>
         </Inputs>
         <div class="relative flex-1">
