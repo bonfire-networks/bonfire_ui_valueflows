@@ -45,11 +45,7 @@
             </Field>
           </div>
           <Field name={:has_unit}>
-            <select class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              {#for unit <- @units}
-                <option value={unit.id}>{unit.label}</option>
-              {/for}
-            </select>
+            <Select options={@units} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
           </Field>
         </Inputs>
         <div class="relative flex-1">
@@ -75,11 +71,7 @@
             </Field>
           </div>
           <Field name={:has_unit}>
-            <select class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-              {#for unit <- @units}
-                <option value={unit.id}>{unit.label}</option>
-              {/for}
-            </select>
+            <Select options={@units} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
           </Field>
         </Inputs>
         </div>
