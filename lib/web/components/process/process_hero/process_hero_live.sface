@@ -37,7 +37,7 @@
       </span>
 
       <Bonfire.UI.Social.LikeActionWithoutLabelLive
-        id={"like:"<>@object.id}
+        id={"like:"<>@process.id}
         object_id={@process.id}
         current_user={current_user(assigns)}
       />
