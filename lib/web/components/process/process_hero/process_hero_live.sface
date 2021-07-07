@@ -82,15 +82,18 @@
               <button :if={!@process.finished} :on-click="ValueFlows.Process:status:finished" phx-value-id={@process.id}  type="button" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
                 Set as completed
               </button>
+              <button :if={@process.finished} :on-click="ValueFlows.Process:status:unfinished" phx-value-id={@process.id}  type="button" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
+                Set as open
+              </button>
               <button type="button" @click="tests_template=true" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
                 Generate tests template
               </button>
             </div>
-            <div class="py-1" role="none">
+            <!-- <div class="py-1" role="none">
               <button type="button" @click="archive_process=true" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">
                 Archive
               </button>
-            </div>
+            </div> -->
           </div>
           <div x-show="edit_process" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
             <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
