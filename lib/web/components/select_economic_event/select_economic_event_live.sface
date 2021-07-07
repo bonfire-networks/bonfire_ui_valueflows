@@ -6,49 +6,36 @@
    }"
   @keydown.escape.stop="open_select_economic_event = false"
   >
-  <div
-    class="flex items-start">
-    <div
-      class="relative block w-full text-left">
-      <div class="w-full">
-        <button
-          type="button"
-          class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          id="user-profile-menu"
-          @click="open_select_economic_event = !open_select_economic_event"
-          aria-haspopup="true"
-          x-bind:aria-expanded="open_select_economic_event"
-          aria-expanded="true">
-          <div class="">Select an action</div>
-          <div class="flex-shrink-0 ml-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-          </div>
-        </button>
-      </div>
-      <div
-        x-description="Usr profile dropdown menu, show/hide based on menu state."
-        x-show="open_select_economic_event"
-        x-transition:enter="transition ease-out duration-100"
-        x-transition:enter-start="transform opacity-0 scale-95"
-        x-transition:enter-end="transform opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-75"
-        x-transition:leave-start="transform opacity-100 scale-100"
-        x-transition:leave-end="transform opacity-0 scale-95"
-        class="absolute left-0 right-0 w-full mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="user-profile-menu">
-        <div class="py-1" role="none">
-          <div @click="{selected_economic_event = 'produce'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Produce</div>
-          <div @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}" class="block w-full px-4 py-2 text-sm text-left text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Transfer</div>
-          <div @click="{selected_economic_event = 'consume'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Consume</div>
-          <div @click="{selected_economic_event = 'use'; open_select_economic_event = false}" class="block px-4 py-2 text-sm text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100">Use</div>
-        </div>
-      </div>
+  <div class="px-2 mt-4">
+    <div class="mb-2 text-xs font-semibold uppercase dark:text-gray-300">Choose which action you want to perform</div>
+    <div class="flex space-x-4">
+      <button 
+        @click="{selected_economic_event = 'produce'; open_select_economic_event = false}"
+        type="button" 
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-pink-400 bg-transparent border border-pink-400 rounded-md shadow-sm hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Produce
+      </button>
+      <button 
+        @click="{selected_economic_event = 'transfer'; open_select_economic_event = false}"
+        type="button" 
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-pink-400 bg-transparent border border-pink-400 rounded-md shadow-sm hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Transfer
+      </button>
+      <button 
+        @click="{selected_economic_event = 'consume'; open_select_economic_event = false}"
+        type="button" 
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-pink-400 bg-transparent border border-pink-400 rounded-md shadow-sm hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Consume
+      </button>
+      <button 
+        @click="{selected_economic_event = 'use'; open_select_economic_event = false}"
+        type="button" 
+        class="inline-flex items-center px-4 py-2 text-sm font-medium text-pink-400 bg-transparent border border-pink-400 rounded-md shadow-sm hover:bg-pink-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Use
+      </button>
     </div>
   </div>
+    
   <div x-show="selected_economic_event === 'transfer'" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       <div x-show="selected_economic_event === 'transfer'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"  aria-hidden="true"></div>

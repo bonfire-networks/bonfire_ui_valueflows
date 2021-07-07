@@ -42,7 +42,7 @@
         current_user={current_user(assigns)}
       />
 
-
+      
       <div class="relative inline-block text-left">
         <div
           x-cloak
