@@ -5,4 +5,12 @@ defmodule Bonfire.UI.ValueFlows.CreateEconomicEventLive do
   prop remove, :string, required: true
   prop output_of_id, :string
   prop units, :list
+
+  def mount(socket) do
+    {:ok, socket |> assign(
+      form_error: "",
+      changeset: ValueFlows.EconomicEvent.validate_changeset()
+      )}
+  end
+
 end

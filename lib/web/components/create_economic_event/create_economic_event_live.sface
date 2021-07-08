@@ -1,5 +1,5 @@
 <Form
-    for={ValueFlows.EconomicEvent.validate_changeset()}
+    for={@changeset}
     opts={autocomplete: "off"}
     submit="ValueFlows.EconomicEvent:create"
     change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete"
@@ -157,6 +157,8 @@
         remove_event={e(assigns, :remove_event, "")}
         />
     </div>
+
+    <div>{@form_error}</div>
 
     <button type="submit" class="inline-flex items-center w-full px-6 py-3 mt-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full shadow-sm place-content-center hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       {@action}
