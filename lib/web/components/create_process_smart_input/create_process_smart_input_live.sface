@@ -1,0 +1,14 @@
+<div cloak x-data="{ open: false }">
+  <button
+    @click="open = true"
+    x-show="!open" 
+    type="button" 
+    class="inline-flex place-content-center items-center w-full px-4 py-1.5 text-base font-medium text-center text-white bg-green-600 border border-transparent rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+  {l "Create a new process"}
+  </button>
+  <div x-show="open">
+    <Bonfire.UI.ValueFlows.CreateProcessLive 
+      close="open = false"
+      process_url={@process_url} />
+  </div>
+</div>
