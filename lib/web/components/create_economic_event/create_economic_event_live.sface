@@ -5,7 +5,7 @@
     change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete"
     >
 
-    <HiddenInput name="action" value={"#{@action}"} />
+    <HiddenInput name="action" value={@action} />
     <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, "")} />
 
     <div class="flex items-center p-3 pb-6 border-b">
@@ -26,7 +26,7 @@
       <div class="mt-1 text-sm text-gray-600 font-regular">Specify which resource you want to use</div>
     </div>
     <svg
-      @click={"#{@remove}"}
+      @click={@remove}
       xmlns="http://www.w3.org/2000/svg"
       class="w-10 h-10 text-indigo-900 cursor-pointer hover:text-opacity-90 text-opacity-70"
       fill="none"
@@ -62,7 +62,7 @@
                   remove_event={e(assigns, :remove_event, "")}
                   />
               
-                <div class="flex mt-2 space-x-2">
+                <div id="event_quantity" phx-update="ignore" class="flex mt-2 space-x-2">
                   <Inputs for={:resource_quantity}>
                     <div class="w-20">
                       <Field name={:has_numerical_value} class="relative flex items-stretch flex-grow focus-within:z-10">
@@ -89,7 +89,7 @@
               </div>
           </div>
         </div>
-        <div class="mt-2">
+        <div id="resource_note" phx-update="ignore" class="mt-2">
           <label class="block mt-2 text-sm text-blueGray-800">Add a resource description</label>
           <Field name={:resource_note} class="flex flex-col p-3 mt-1 bg-white border shadow-sm rounded-xl">
             <TextArea placeholder="Add an optional resource description" class="flex-1 h-20 text-sm text-gray-800 placeholder-gray-800 bg-white border-none font-regular placeholder-opacity-60"></TextArea>
@@ -100,9 +100,9 @@
       <div :if={@action != "produce"} class="flex space-x-3">
         <div
           :if={@action == "transfer" || @action == "consume"}
+          id="event_quantity" phx-update="ignore"
           class="flex items-start space-x-2">
-            <Inputs for={:resource_quantity}
-          class="">
+          <Inputs for={:resource_quantity}>
           <div class="w-20">
             <Field name={:has_numerical_value} class="relative flex items-stretch flex-grow focus-within:z-10">
               <NumberInput opts={placeholder: "00.00"} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
@@ -113,6 +113,7 @@
           </Field>
         </Inputs>
         </div>
+
         <div class="relative flex-1">
           <Bonfire.UI.Social.MultiselectLive
             preloaded_options={e(assigns, :resources_inventoried_as_autocomplete, [])}
@@ -138,10 +139,12 @@
         />
     </div>
 
-    <label class="block mt-2 text-sm text-blueGray-800">Add an optional message</label>
-    <Field name={:note} class="flex flex-col p-3 mt-1 shadow-inner rounded-xl bg-indigo-50">
-      <TextArea placeholder="Add an optional message for the transfer" class="flex-1 h-20 text-sm text-indigo-800 placeholder-indigo-900 bg-transparent border-none font-regular placeholder-opacity-60"></TextArea>
-    </Field>
+    <div id="event_note" phx-update="ignore">
+      <label class="block mt-2 text-sm text-blueGray-800">Add an optional note about the event</label>
+      <Field name={:note} class="flex flex-col p-3 mt-1 shadow-inner rounded-xl bg-indigo-50">
+        <TextArea placeholder="Add an optional message for the transfer" class="flex-1 h-20 text-sm text-indigo-800 placeholder-indigo-900 bg-transparent border-none font-regular placeholder-opacity-60"></TextArea>
+      </Field>
+    </div>
 
 
     <div :if={@action == "transfer" || @action == "produce"} class="relative mt-2">
