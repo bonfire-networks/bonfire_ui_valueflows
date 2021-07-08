@@ -1,7 +1,7 @@
-<div class="flex p-6 space-x-4">
+<div class="flex p-4 space-x-4">
     <div class="w-32 h-32 bg-pink-400 rounded-lg" style={"background-image: url('#{e(@resource, :image, nil) || e(@resource, :conforms_to, :image, "")}'"}></div>
     <div class="flex-1">
-        <div class="text-4xl text-gray-800 text-bold dark:text-gray-200">
+        <div class="text-4xl font-semibold text-gray-800 dark:text-gray-200">
             {rich( e(@resource, :name, nil) || e(@resource, :conforms_to, :name, "Unknown Resource") )}
             <span :if={e(@resource, :conforms_to, :name, nil) && e(@resource, :conforms_to, :name, nil) !=e(@resource, :name, nil)}> {rich( e(@resource, :conforms_to, :name, "") )} </span>
         </div>
@@ -22,4 +22,28 @@
             </div>
         </div>
     </div>
+</div>
+<div class="flex p-3 m-4 space-x-8 border border-pink-400 border-opacity-50 rounded-sm">
+  <div :if={e(@resource, :primary_accountable, :name, nil)} class="">
+    <div class="flex items-center justify-between mb-2">
+        <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">Assigned to</span>
+    </div>
+    <div class="flex items-center mt-3">
+      <img src={"#{e(@resource, :primary_accountable, :image, "")}"} class="w-8 h-8 bg-pink-600 rounded-full" />
+      <div class="ml-2">
+          <LiveRedirect to={"/user/"<>e(@resource, :primary_accountable, :display_username, e(@resource, :primary_accountable, :id, ""))}
+          class="text-sm text-gray-800 dark:text-gray-300 font-regular">
+          {e(@resource, :primary_accountable, :name, "")}</LiveRedirect>
+      </div>
+    </div>
+  </div>
+  <div :if={e(@resource, :current_location, :name, nil)} class="">
+    <div class="flex items-center justify-between mb-2">
+      <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">Current location</span>
+    </div>
+    <div class="p-2 bg-gray-200 rounded dark:bg-gray-600">
+      <div class="text-sm text-gray-800 font-regular dark:text-gray-400">{e(@resource, :current_location, :name, "")}</div>
+      <div class="text-sm text-gray-600 dark:text-gray-300 font-regular">{if e(@resource, :current_location, :name, "") != e(@resource, :current_location, :mappable_address, ""), do: e(@resource, :current_location, :mappable_address, "")}</div>
+    </div>
+  </div>
 </div>

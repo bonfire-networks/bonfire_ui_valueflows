@@ -66,11 +66,13 @@
                   <Inputs for={:resource_quantity}>
                     <div class="w-20">
                       <Field name={:has_numerical_value} class="relative flex items-stretch flex-grow focus-within:z-10">
-                        <NumberInput type="number" class="flex-1 block w-full font-bold text-gray-800 placeholder-gray-600 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
+                        <TextInput opts={placeholder: "00.00"} type="number" class="flex-1 block w-full font-bold text-gray-800 placeholder-gray-600 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
+                        <ErrorTag class="p-3 bg-red-300" />
                       </Field>
                     </div>
                     <Field name={:has_unit} class="flex-1">
                       <Select options={@units} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                      <ErrorTag />
                     </Field>
                   </Inputs>
                 </div>
