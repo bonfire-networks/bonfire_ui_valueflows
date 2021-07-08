@@ -60,6 +60,7 @@
                   form_input_name={"resource_conforms_to"}
                   pick_event={e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}
                   remove_event={e(assigns, :remove_event, "")}
+                  focus_event="ValueFlows.Knowledge.ResourceSpecification:autocomplete"
                   />
               
                 <div id="event_quantity" phx-update="ignore" class="flex mt-2 space-x-2">
@@ -116,12 +117,13 @@
 
         <div class="relative flex-1">
           <Bonfire.UI.Social.MultiselectLive
-            preloaded_options={e(assigns, :resources_inventoried_as_autocomplete, [])}
-            selected_options={e(assigns, :resource_inventoried_as_selected, [])}
+            preloaded_options={e(assigns, :economic_resources_autocomplete, [])}
+            selected_options={e(assigns, :economic_resource_selected, [])}
             label={"Pick a resource..."}
             form_input_name={"resource_inventoried_as"}
             pick_event={e(assigns, :pick_event, "ValueFlows.EconomicResource:select")}
             remove_event={e(assigns, :remove_event, "")}
+            focus_event="ValueFlows.EconomicResource:autocomplete"
             />
         </div>
       </div>
@@ -135,7 +137,8 @@
       <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
         label={"Select the receiver of the transfer"}
         form_input_name={"receiver"}
-        selected_options={e(assigns, :receiver, [])}
+        preloaded_options={e(assigns, :users_autocomplete, nil)}
+        selected_options={e(assigns, :receiver, [])} 
         />
     </div>
 
@@ -155,6 +158,7 @@
         form_input_name={"at_location"}
         pick_event={e(assigns, :pick_event, "Bonfire.Geolocate:select")}
         remove_event={e(assigns, :remove_event, "")}
+        focus_event="Bonfire.Geolocate:autocomplete"
         />
     </div>
 
