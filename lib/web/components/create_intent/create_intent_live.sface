@@ -11,7 +11,7 @@
       submit="ValueFlows.Planning.Intent:create">
 
       <HiddenInput :if={e(assigns, :intent_url, nil)} name="redirect_after" value={@intent_url} />
-      <HiddenInput :if={e(assigns, :action, nil)} name="action" value={@action} />
+      <HiddenInput :if={e(assigns, :action, nil)} name="action_id" value={@action} />
       <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, nil)} />
 
       <Field name={:name}>
