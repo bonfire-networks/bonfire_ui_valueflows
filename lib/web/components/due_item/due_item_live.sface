@@ -8,7 +8,7 @@
   >
   <Form change={"ValueFlows.Planning.Intent:update:due"} >
   <div class="flex items-center justify-between mb-2">
-    <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">Due</span>
+    <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">{l "Due"}</span>
     <svg
       @click="open = !open"
       aria-haspopup="true"

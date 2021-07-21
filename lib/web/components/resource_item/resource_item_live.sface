@@ -23,7 +23,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-600 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
                   </svg>
-                  <span class="ml-2 text-sm font-light text-gray-700 dark:text-gray-400">Last activity {date_from_now(@resource)}</span>
+                  <span class="ml-2 text-sm font-light text-gray-700 dark:text-gray-400">{l "Last activity"} {date_from_now(@resource)}</span>
               </div>
           </div>
       </div>

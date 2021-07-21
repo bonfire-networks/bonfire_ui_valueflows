@@ -17,7 +17,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-600 dark:text-gray-300" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
                 </svg>
-                <span class="ml-2 text-sm font-regular">Last activity {date_from_now(@resource)}</span>
+                <span class="ml-2 text-sm font-regular">{l "Last activity"} {date_from_now(@resource)}</span>
 
             </div>
         </div>
@@ -26,7 +26,7 @@
 <div class="flex p-3 m-4 space-x-8 border border-pink-400 border-opacity-50 rounded-sm">
   <div :if={e(@resource, :primary_accountable, :name, nil)} class="">
     <div class="flex items-center justify-between mb-2">
-        <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">Assigned to</span>
+        <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">{l "Assigned to"}</span>
     </div>
     <div class="flex items-center mt-3">
       <img src={"#{e(@resource, :primary_accountable, :image, "")}"} class="w-8 h-8 bg-pink-600 rounded-full" />
@@ -39,7 +39,7 @@
   </div>
   <div :if={e(@resource, :current_location, :name, nil)} class="">
     <div class="flex items-center justify-between mb-2">
-      <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">Current location</span>
+      <span class="block text-sm font-semibold tracking-wide text-gray-500 dark:text-gray-400">{l "Current location"}</span>
     </div>
     <div class="p-2 bg-gray-200 rounded dark:bg-gray-600">
       <div class="text-sm text-gray-800 font-regular dark:text-gray-400">{e(@resource, :current_location, :name, "")}</div>

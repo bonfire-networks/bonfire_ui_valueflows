@@ -10,20 +10,20 @@
 
     <div class="flex items-center p-3 pb-6 border-b">
     <div :if={@action == "produce"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">Produce a resource</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">Specify which resource you want to produce</div>
+      <div class="text-base font-extrabold text-gray-800">{l "Produce a resource"}</div>
+      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to produce"}</div>
     </div>
     <div :if={@action == "transfer"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">Transfer a resource</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">Specify which resource you want to transfer to another user</div>
+      <div class="text-base font-extrabold text-gray-800">{l "Transfer a resource"}</div>
+      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to transfer to another user"}</div>
     </div>
     <div :if={@action == "consume"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">Consume a resource</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">Specify which resource you want to consume</div>
+      <div class="text-base font-extrabold text-gray-800">{l "Consume a resource"}</div>
+      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to consume"}</div>
     </div>
     <div :if={@action == "use"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">Use a resource</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">Specify which resource you want to use</div>
+      <div class="text-base font-extrabold text-gray-800">{l "Use a resource"}</div>
+      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to use"}</div>
     </div>
     <svg
       @click={@remove}
@@ -91,7 +91,7 @@
           </div>
         </div>
         <div id="resource_note" phx-update="ignore" class="mt-2">
-          <label class="block mt-2 text-sm text-blueGray-800">Add a resource description</label>
+          <label class="block mt-2 text-sm text-blueGray-800">{l "Add a resource description"}</label>
           <Field name={:resource_note} class="flex flex-col p-3 mt-1 bg-white border shadow-sm rounded-xl">
             <TextArea placeholder="Add an optional resource description" class="flex-1 h-20 text-sm text-gray-800 placeholder-gray-800 bg-white border-none font-regular placeholder-opacity-60"></TextArea>
           </Field>
@@ -143,7 +143,7 @@
     </div>
 
     <div id="event_note" phx-update="ignore">
-      <label class="block mt-2 text-sm text-blueGray-800">Add an optional note about the event</label>
+      <label class="block mt-2 text-sm text-blueGray-800">{l "Add an optional note about the event"}</label>
       <Field name={:note} class="flex flex-col p-3 mt-1 shadow-inner rounded-xl bg-indigo-50">
         <TextArea placeholder="Add an optional message for the transfer" class="flex-1 h-20 text-sm text-indigo-800 placeholder-indigo-900 bg-transparent border-none font-regular placeholder-opacity-60"></TextArea>
       </Field>
