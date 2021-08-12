@@ -36,7 +36,7 @@
     </div>
   </div>
     
-  <div x-show="selected_economic_event === 'transfer'" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
+  <div x-show="selected_economic_event === 'transfer'" class="fixed inset-0 z-30 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       <div x-show="selected_economic_event === 'transfer'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"  aria-hidden="true"></div>
       <!-- This element is to trick the browser into centering the modal contents. -->
@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <div x-show="selected_economic_event === 'produce'" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
+  <div x-show="selected_economic_event === 'produce'" class="fixed inset-0 z-30 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       <div x-show="selected_economic_event === 'produce'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"  aria-hidden="true"></div>
       <!-- This element is to trick the browser into centering the modal contents. -->
@@ -64,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div x-show="selected_economic_event === 'consume'" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
+  <div x-show="selected_economic_event === 'consume'" class="fixed inset-0 z-30 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       <div x-show="selected_economic_event === 'consume'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"  aria-hidden="true"></div>
       <!-- This element is to trick the browser into centering the modal contents. -->
@@ -78,7 +78,7 @@
       </div>
     </div>
   </div>
-  <div x-show="selected_economic_event === 'use'" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
+  <div x-show="selected_economic_event === 'use'" class="fixed inset-0 z-30 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       <div x-show="selected_economic_event === 'use'" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"  aria-hidden="true"></div>
       <!-- This element is to trick the browser into centering the modal contents. -->
