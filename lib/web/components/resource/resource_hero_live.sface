@@ -31,7 +31,7 @@
     <div class="flex items-center mt-3">
       <img src={"#{e(@resource, :primary_accountable, :image, "")}"} class="w-8 h-8 bg-pink-600 rounded-full" />
       <div class="ml-2">
-          <LiveRedirect to={"/user/"<>e(@resource, :primary_accountable, :display_username, e(@resource, :primary_accountable, :id, ""))}
+          <LiveRedirect to={path(e(@resource, :primary_accountable, nil))}
           class="text-sm text-gray-800 dark:text-gray-300 font-regular">
           {e(@resource, :primary_accountable, :name, "")}</LiveRedirect>
       </div>
