@@ -6,7 +6,7 @@
       meta: false
     }">
     <Form
-      for={e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.LiveHandler.changeset() )}
+      for={e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.validate_changeset() )}
       opts={autocomplete: "off"}
       submit="ValueFlows.Planning.Intent:create">
 
