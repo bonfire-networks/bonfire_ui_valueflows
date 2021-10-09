@@ -5,4 +5,5 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
   prop action, :string, required: false
   prop output_of_id, :string, required: false
   prop title, :string, default: "Create a new intent"
+  prop default_tag, :string
 end

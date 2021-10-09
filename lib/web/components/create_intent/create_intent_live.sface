@@ -13,6 +13,7 @@
       <HiddenInput :if={e(assigns, :intent_url, nil)} name="redirect_after" value={@intent_url} />
       <HiddenInput :if={e(assigns, :action, nil)} name="action_id" value={@action} />
       <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, nil)} />
+      <HiddenInput name="classified_as[]" value={e(assigns, :default_tag, "")} />
 
       <Field name={:name}>
         <Label class="block text-sm text-gray-700 font-regular">{l "Enter a name for the task"}</Label>
