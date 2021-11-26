@@ -5,6 +5,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
   prop process, :map
 
 
+  # FIXME! update no longer works in stateless
   def update(assigns, socket) do
     # IO.inspect(assigns.process.id)
     # my_like = Likes.liked?(assigns.__context__.current_user.character.id, assigns.process.id)

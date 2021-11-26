@@ -8,6 +8,7 @@ defmodule Bonfire.UI.ValueFlows.AssignedItemLive do
   prop remove_event, :string
   prop context_id, :string
 
+  # FIXME! update no longer works in stateless
   def update(%{is_editable: true} = assigns, socket) do
 
     agent = e(assigns, :agent, nil)

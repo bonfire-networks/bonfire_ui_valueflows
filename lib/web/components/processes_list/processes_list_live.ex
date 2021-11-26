@@ -6,6 +6,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   prop title, :string, default: "Lists"
   prop process_url, :string, default: "/list/"
 
+  # FIXME! update no longer works in stateless
   def update(assigns, socket) do
 
     processes =
