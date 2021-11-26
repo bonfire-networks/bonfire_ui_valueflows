@@ -3,7 +3,7 @@
     <input class="w-5 h-5" type="checkbox" name="intent" id="">
   </div>
   <div class="flex-1 ml-4">
-    <a href="/breadpub/intent/<%= e(@intent, :id, "new")%>"><h4 class="font-bold tracking-wide text-gray-800 text-md"><%= e(@intent, :name, "Untitled")%></h4></a>
+    <a href={"/breadpub/intent/"<> e(@intent, :id, "new")}><h4 class="font-bold tracking-wide text-gray-800 text-md"><%= e(@intent, :name, "Untitled")%></h4></a>
     <p class="text-sm italic text-gray-600">Opened 1 month ago by <a class="not-italic font-bold text-gray-700 underline" href="#">Kawen</a></p>
 
 

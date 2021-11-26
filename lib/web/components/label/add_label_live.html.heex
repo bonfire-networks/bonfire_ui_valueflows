@@ -6,7 +6,7 @@
   aria-labelledby="due date menu">
   <form
   phx-change="Bonfire.Classify:label"
-  phx-target="<%= @parent %>"
+  phx-target={ @parent }
   action="">
   <div class="flex items-center p-2 border-b">
     <label for="due_date" class="flex-1 text-sm font-light text-center">labels</label>
@@ -31,10 +31,10 @@
       <%= for label <- @label_search_results do %>
         <li class="flex items-center"
                 phx-click="label_pick"
-                phx-target="<%= @parent %>"
-                phx-value-id="<%= e(label, :id, nil) %>"
-                phx-value-name="<%= e(label, :name, e(label, :profile, :name, "Label")) %>">
-          <div class="border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-<%= e(label, :color, "gray") %>-400 rounded-sm hover:border-<%= e(label, :color, "gray") %>-600 hover:border-l-4">
+                phx-target={ @parent}
+                phx-value-id={ e(label, :id, nil) }
+                phx-value-name={ e(label, :name, e(label, :profile, :name, "Label"))} >
+          <div class={"border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-"<> e(label, :color, "gray") <>"-400 rounded-sm hover:border-"<> e(label, :color, "gray") <>"-600 hover:border-l-4"}>
             <h3 class="text-sm font-semibold text-white"><%= e(label, :name, e(label, :profile, :name, "Label")) %></h3>
           </div>
           <span class="mx-2">
@@ -48,10 +48,10 @@
       <%= for label <- @main_labels do %>
         <li class="flex items-center"
                 phx-click="label_pick"
-                phx-target="<%= @parent %>"
-                phx-value-id="<%= label.id %>"
-                phx-value-name="<%= e(label, :name, e(label, :profile, :name, "Label")) %>">
-          <div class="border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-<%= e(label, :color, "gray") %>-400 rounded-sm hover:border-<%= e(label, :color, "gray") %>-600 hover:border-l-4">
+                phx-target={ @parent}
+                phx-value-id={ label.id} 
+                phx-value-name={e(label, :name, e(label, :profile, :name, "Label"))} >
+          <div class={"border-green-400 cursor-pointer transform transition duration-200 ease-in-out flex-1 p-1.5 bg-"<> e(label, :color, "gray") <>"-400 rounded-sm hover:border-"<> e(label, :color, "gray") <>"-600 hover:border-l-4"}>
             <h3 class="text-sm font-semibold text-white"><%= e(label, :name, e(label, :profile, :name, "Label")) %></h3>
           </div>
           <span class="mx-2">

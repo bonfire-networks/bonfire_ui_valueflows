@@ -1,6 +1,6 @@
 <div id="publish_ad" class="dialog__create">
   <%= if @toggle_ad do %>
-    <div id="<%= @toggle_ad %>" phx-target="<%= @myself %>" phx-click="toggle_ad" class="dialog__backdrop"></div>
+    <div id={@toggle_ad} phx-target={@myself}  phx-click="toggle_ad" class="dialog__backdrop"></div>
     <dialog open class="dialog dialog__create">
       <header class="dialog__header">Publish a new ad</header>
       <section class="dialog__content">

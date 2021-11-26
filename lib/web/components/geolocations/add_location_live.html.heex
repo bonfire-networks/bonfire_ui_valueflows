@@ -4,7 +4,7 @@
   aria-orientation="vertical"
   aria-labelledby="add location menu">
   <form
-    phx-target="<%= @myself %>"
+    phx-target={@myself}
     phx-submit="Bonfire.Geolocate:create">
     <div class="flex items-center p-2 border-b">
       <label for="location_input" class="flex-1 text-sm font-light text-center">Add a location</label>
@@ -27,7 +27,7 @@
             autocomplete="off"
             type="text"
             name="location_input"
-            value="<%= @location_search_phrase %>"
+            value={@location_search_phrase }
             phx-debounce="500"
             placeholder="Search or enter address..."
             class="block w-full pl-10 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-l-md sm:text-sm" placeholder="John Doe">
@@ -50,9 +50,10 @@
                 class="p-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-200 focus:bg-gray-200"
                 phx-click="location_pick"
                 @click ="toggle_add_location = false"
-                phx-target="<%= @myself %>"
-                phx-value-id="<%= search_result.id %>"
-                phx-value-name="<%= search_result.name %>">
+                phx-target={@myself} 
+                phx-value-id={ search_result.id }
+                phx-value-name={ search_result.name }
+                >
                 <%= search_result.name %>
               </div>
             <% end %>

@@ -52,7 +52,8 @@
             </div>
             <form
               phx-submit="ValueFlows.Process:create"
-              phx-target="<%= @myself %>">
+              phx-target={@myself} 
+              >
                 <div class="p-3">
                   <div class="">
                     <label for="name" class="block text-sm font-medium text-gray-700">
@@ -82,7 +83,7 @@
                           class="block w-full pl-10 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                           type="date"
                           name="due_date"
-                          min="<%= Date.utc_today %>"
+                          min={Date.utc_today}
                           id="due_date">
                       </div>
                     </div>

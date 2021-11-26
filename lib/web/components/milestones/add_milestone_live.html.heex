@@ -27,7 +27,7 @@
       <form
         phx-change="ValueFlows.Process:search"
         phx-submit="ValueFlows.Process:create"
-        phx-target="<%= @parent %>"
+        phx-target={ @parent}
         action="">
         <div class="p-2">
           <input
@@ -43,9 +43,9 @@
               <div
                 class="p-2 cursor-pointer hover:bg-gray-100 focus:bg-gray-100"
                 phx-click="milestone_pick"
-                phx-target="<%= @parent %>"
-                phx-value-id="<%= milestone.id %>"
-                phx-value-name="<%= milestone.name %>">
+                phx-target={ @parent}
+                phx-value-id={ milestone.id }
+                phx-value-name={ milestone.name }>
                 <h5 class="text-sm font-semibold text-gray-700 "><%= milestone.name %></h5>
                 <div class="flex items-center mt-2 text-sm text-gray-500 sm:mt-0">
                   <!-- Heroicon name: calendar -->
