@@ -1,5 +1,5 @@
 <Form
-    for={@changeset}
+    for={@changeset || ValueFlows.EconomicEvent.validate_changeset()}
     opts={autocomplete: "off"}
     submit="ValueFlows.EconomicEvent:create"
     change="Bonfire.UI.ValueFlows.CreateEconomicEventLive:autocomplete"
@@ -137,7 +137,7 @@
       <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
         label={"Select the receiver of the transfer"}
         form_input_name={"receiver"}
-        preloaded_options={e(assigns, :users_autocomplete, nil)}
+        preloaded_options={e(assigns, :users_autocomplete, [])}
         selected_options={e(assigns, :receiver, [])} 
         />
     </div>

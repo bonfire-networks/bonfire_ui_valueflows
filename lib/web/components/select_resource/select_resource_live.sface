@@ -1,8 +1,0 @@
-<Bonfire.UI.Social.MultiselectLive
-  preloaded_options={e(assigns, :resource_specifications_autocomplete, [])}
-  selected_options={e(assigns, :resource_specification_selected, [])}
-  label={"Pick a type of resource..."}
-  form_input_name={"resource_conforms_to"}
-  pick_event={e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}
-  remove_event={e(assigns, :remove_event, "")}
-  />
