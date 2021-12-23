@@ -3,7 +3,7 @@
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
-  @click.away="open = false"
+  @click.outside="open = false"
   >
   <div class="flex items-center flex-1">
     <span>{@status || "todo"}</span>

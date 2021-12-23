@@ -184,7 +184,7 @@
       <div
         x-data="{toggle_due_date: false}"
         @keydown.window.escape="toggle_due_date = false"
-        @click.away = "toggle_due_date = false" >
+        @click.outside = "toggle_due_date = false" >
         <button
           type="button"
           @click ="toggle_due_date = !toggle_due_date"
@@ -261,7 +261,7 @@
       <div
         x-data="{toggle_add_location: false}"
         @keydown.window.escape="toggle_add_location = false"
-        @click.away = "toggle_add_location = false" >
+        @click.outside = "toggle_add_location = false" >
         <button
         @click ="toggle_add_location = !toggle_add_location"
         type="button"

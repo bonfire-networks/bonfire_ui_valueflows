@@ -48,7 +48,7 @@
           x-cloak
           x-data="{ open: false, edit_process: false, archive_process: false, tests_template: false }"
           @keydown.escape.stop="open = false"
-          @click.away="open = false"
+          @click.outside="open = false"
           class="relative block text-left">
           <button
             @click="open = !open"

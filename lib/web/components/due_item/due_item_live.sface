@@ -4,7 +4,7 @@
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
-  @click.away="open = false"
+  @click.outside="open = false"
   >
   <Form change={"ValueFlows.Planning.Intent:update:due"} >
   <div class="flex items-center justify-between mb-2">
@@ -48,7 +48,7 @@
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
-  @click.away="open = false"
+  @click.outside="open = false"
   @click="open = !open"
   aria-haspopup="true"
   x-bind:aria-expanded="open"
