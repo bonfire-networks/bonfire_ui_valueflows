@@ -17,7 +17,7 @@
       </Field>
 
       <div class="flex items-center justify-end mt-3 space-x-3">
-        <button type="submit" class="btn-primary">{l "Edit"}</button>
+        <button type="submit" class="btn btn-primary">{l "Edit"}</button>
       </div>
     </Form>
   </div>

@@ -9,7 +9,7 @@
     x-description="Modal panel, show/hide based on modal state."
     class="transition-all transform sm:align-middle sm:w-full">
     <Form for={e(assigns, :globals, ValueFlows.Process, :changeset, ValueFlows.Process.LiveHandler.changeset() )} submit="ValueFlows.Process:create" opts={autocomplete: "off"}>
-      <input name="redirect_after" value={@process_url} type="hidden" />
+      <input name="redirect_after" value={e(assigns, :process_url, path(ValueFlows.Process))} type="hidden" />
       <Field name={:name}>
         <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">{l "Choose a name"}</label>
         <div class="mt-1 rounded-md shadow-sm">
@@ -23,8 +23,8 @@
         </div>
       </Field>
       <div class="flex items-center justify-end mt-2 space-x-2">
-        <button type="button" @click={@close} class="btn-secondary">{l "Cancel"}</button>
-        <button type="submit" class="btn-primary">
+        <button type="button" @click={@close} class="btn btn-secondary">{l "Cancel"}</button>
+        <button type="submit" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-200 transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
           </svg> {l "Publish"}

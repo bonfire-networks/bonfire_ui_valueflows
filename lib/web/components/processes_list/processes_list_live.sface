@@ -18,10 +18,10 @@
       Cancel
     </button> -->
   </div>
-  <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={@process_url} /> -->
+  <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(assigns, :process_url, path(ValueFlows.Process))} /> -->
   <div class="mt-1 space-y-1" role="group" aria-labelledby="teams-headline">
     <div :for={process <- @processes}>
-      <LiveRedirect to={"#{@process_url}#{process.id}"} class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-600 rounded-md group dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-200 dark:hover:bg-gray-600 hover:bg-gray-50">
+      <LiveRedirect to={"#{e(assigns, :process_url, path(ValueFlows.Process))}#{process.id}"} class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-gray-600 rounded-md group dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-200 dark:hover:bg-gray-600 hover:bg-gray-50">
         <span class="w-2.5 h-2.5 mr-2 bg-indigo-500 rounded-full" aria-hidden="true"></span>
         <span class="truncate">
           {process.name}

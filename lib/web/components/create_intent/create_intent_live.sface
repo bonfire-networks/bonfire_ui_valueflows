@@ -63,7 +63,7 @@
           </div>
         </div>
         <div class="flex items-center space-x-3">
-          <button type="submit" class="btn-primary">{l "Create"}</button>
+          <button type="submit" class="btn btn-primary">{l "Create"}</button>
         </div>
       </div>
     </Form>

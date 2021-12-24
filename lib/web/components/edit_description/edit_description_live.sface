@@ -33,8 +33,8 @@
       <label for="item_note" class="sr-only">{l "Edit the description"}</label>
       <textarea id="item_note" class="block w-full h-20 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
       <div class="flex items-center justify-end mt-2 space-x-3">
-        <button type="button" @click = "toggle_edit_description = false" class="btn-secondary">{l "Cancel"}</button>
-        <button type="submit" class="btn-primary">{l "Update"}</button>
+        <button type="button" @click = "toggle_edit_description = false" class="btn btn-secondary">{l "Cancel"}</button>
+        <button type="submit" class="btn btn-primary">{l "Update"}</button>
       </div>
     </form>
   </div>
