@@ -10,20 +10,20 @@
 
     <div class="flex items-center p-3 pb-6 border-b">
     <div :if={@action == "produce"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">{l "Produce a resource"}</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to produce"}</div>
+      <div class="text-base font-extrabold text-primary-content-800">{l "Produce a resource"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to produce"}</div>
     </div>
     <div :if={@action == "transfer"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">{l "Transfer a resource"}</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to transfer to another user"}</div>
+      <div class="text-base font-extrabold text-primary-content-800">{l "Transfer a resource"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to transfer to another user"}</div>
     </div>
     <div :if={@action == "consume"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">{l "Consume a resource"}</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to consume"}</div>
+      <div class="text-base font-extrabold text-primary-content-800">{l "Consume a resource"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to consume"}</div>
     </div>
     <div :if={@action == "use"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-gray-800">{l "Use a resource"}</div>
-      <div class="mt-1 text-sm text-gray-600 font-regular">{l "Specify which resource you want to use"}</div>
+      <div class="text-base font-extrabold text-primary-content-800">{l "Use a resource"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to use"}</div>
     </div>
     <svg
       @click={@remove}
@@ -36,17 +36,17 @@
     </svg>
   </div>
   <div class="p-3">
-    <div class="p-3 shadow-inner rounded-xl bg-indigo-50">
+    <div class="p-3 shadow-inner rounded-xl bg-base-200">
       <div :if={@action == "produce"}>
         <div class="flex space-x-2">
           <div class="flex flex-1 space-x-4">
             <!-- <div class="relative block w-32 h-32 mb-4 overflow-hidden rounded-md ring-4 ring-white">
               <div class="flex items-center w-32 h-32 bg-cover rounded-md shadow-lg place-content-center bg-blueGray-100" style="background-image: url('')">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary-content-400" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                 </svg>
               </div>
-              <label for="" class="absolute inset-0 flex items-center justify-center w-full h-full text-sm font-medium text-white transition duration-150 ease-in-out bg-gray-700 bg-opacity-75 opacity-0 cursor-pointer hover:opacity-100 focus-within:opacity-100">
+              <label for="" class="absolute inset-0 flex items-center justify-center w-full h-full text-sm font-medium text-white transition duration-150 ease-in-out bg-neutral-700 bg-opacity-75 opacity-0 cursor-pointer hover:opacity-100 focus-within:opacity-100">
                 <span>Upload or drop</span>
                 <span class="sr-only"> avatar</span>
                 
@@ -63,16 +63,16 @@
                   focus_event="ValueFlows.Knowledge.ResourceSpecification:autocomplete"
                   />
               
-                <div id="event_quantity" phx-update="ignore" class="flex mt-2 space-x-2">
+                <div id="event_quantity" phx-update="ignore" class="flex mt-3 space-x-2">
                   <Inputs for={:resource_quantity}>
                     <div class="w-20">
                       <Field name={:has_numerical_value} class="relative flex items-stretch flex-grow focus-within:z-10">
-                        <NumberInput opts={placeholder: "00.00"} class="flex-1 block w-full font-bold text-gray-800 placeholder-gray-600 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
+                        <NumberInput opts={placeholder: "00.00"} class="flex-1 block w-full font-bold text-primary-content-800 placeholder-gray-600 bg-base-100 border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
                         <ErrorTag class="p-3 bg-red-300" />
                       </Field>
                     </div>
                     <Field name={:has_unit} class="flex-1">
-                      <Select options={@units} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                      <Select options={@units} class="flex-1 block w-full font-bold text-primary-content-800 bg-base-100 border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                       <ErrorTag />
                     </Field>
                   </Inputs>
@@ -90,10 +90,10 @@
               </div>
           </div>
         </div>
-        <div id="resource_note" phx-update="ignore" class="mt-2">
-          <label class="block mt-2 text-sm text-blueGray-800">{l "Add a resource description"}</label>
-          <Field name={:resource_note} class="flex flex-col p-3 mt-1 bg-white border shadow-sm rounded-xl">
-            <TextArea placeholder="Add an optional resource description" class="flex-1 h-20 text-sm text-gray-800 placeholder-gray-800 bg-white border-none font-regular placeholder-opacity-60"></TextArea>
+        <div id="resource_note" phx-update="ignore" class="mt-3">
+          <label class="block mt-2 text-sm text-primary-content">{l "Add a resource description"}</label>
+          <Field name={:resource_note} class="flex flex-col p-3 mt-1 bg-base-100 border shadow-sm rounded-xl">
+            <TextArea placeholder="Add an optional resource description" class="flex-1 h-20 text-sm textarea border-none font-regular placeholder-opacity-60"></TextArea>
           </Field>
         </div>
       </div>
@@ -106,11 +106,11 @@
           <Inputs for={:resource_quantity}>
           <div class="w-20">
             <Field name={:has_numerical_value} class="relative flex items-stretch flex-grow focus-within:z-10">
-              <NumberInput opts={placeholder: "00.00"} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
+              <NumberInput opts={placeholder: "00.00"} class="flex-1 block w-full font-bold text-primary-content-800 bg-base-100 border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="0.0"/>
             </Field>
           </div>
           <Field name={:has_unit}>
-            <Select options={@units} class="flex-1 block w-full font-bold text-gray-800 bg-white border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+            <Select options={@units} class="flex-1 block w-full font-bold text-primary-content-800 bg-base-100 border-gray-300 rounded-md shadow-sm text-opacity-60 placeholder-opacity-60 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
           </Field>
         </Inputs>
         </div>
@@ -142,15 +142,15 @@
         />
     </div>
 
-    <div id="event_note" phx-update="ignore">
-      <label class="block mt-2 text-sm text-blueGray-800">{l "Add an optional note about the event"}</label>
-      <Field name={:note} class="flex flex-col p-3 mt-1 shadow-inner rounded-xl bg-indigo-50">
-        <TextArea placeholder="Add an optional message for the transfer" class="flex-1 h-20 text-sm text-indigo-800 placeholder-indigo-900 bg-transparent border-none font-regular placeholder-opacity-60"></TextArea>
+    <div id="event_note" phx-update="ignore" class="mt-3">
+      <Field name={:note} class="flex flex-col p-3 rounded-xl bg-base-200">
+        <label class="block text-sm text-primary-content">{l "Add an optional note about the event"}</label>
+        <TextArea placeholder="Add an optional message for the transfer" class="flex-1 h-20 mt-1 text-sm textarea border-none font-regular placeholder-opacity-60"></TextArea>
       </Field>
     </div>
 
 
-    <div :if={@action == "transfer" || @action == "produce"} class="relative mt-2">
+    <div :if={@action == "transfer" || @action == "produce"} class="relative mt-3">
       <Bonfire.UI.Social.MultiselectLive
         preloaded_options={e(assigns, :geolocation_autocomplete, [])}
         selected_options={e(assigns, :geolocation_selected, [])}

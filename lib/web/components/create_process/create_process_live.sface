@@ -11,21 +11,21 @@
     <Form for={e(assigns, :globals, ValueFlows.Process, :changeset, ValueFlows.Process.LiveHandler.changeset() )} submit="ValueFlows.Process:create" opts={autocomplete: "off"}>
       <input name="redirect_after" value={e(assigns, :process_url, path(ValueFlows.Process))} type="hidden" />
       <Field name={:name}>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">{l "Choose a name"}</label>
+        <label class="block text-sm font-medium text-primary-700">{l "Choose a name"}</label>
         <div class="mt-1 rounded-md shadow-sm">
-          <TextInput class="block w-full pr-8 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="" />
+          <TextInput class="block w-full pr-8 rounded-md input sm:text-sm" placeholder="" />
         </div>
       </Field>
       <Field name={:note}>
-        <label class="block mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">{l "Add an optional description"}</label>
+        <label class="block mt-2 text-sm font-medium text-primary-700">{l "Add an optional description"}</label>
         <div class="mt-1 rounded-md shadow-sm">
-          <TextArea placeholder="What the process is about..." class="flex-1 w-full h-20 text-sm text-gray-800 placeholder-gray-800 bg-white border-none rounded-md font-regular placeholder-opacity-60"></TextArea>
+          <TextArea placeholder="What the process is about..." class="flex-1 w-full h-20 text-sm textarea rounded-md font-regular placeholder-opacity-60"></TextArea>
         </div>
       </Field>
       <div class="flex items-center justify-end mt-2 space-x-2">
         <button type="button" @click={@close} class="btn btn-secondary">{l "Cancel"}</button>
         <button type="submit" class="btn btn-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-gray-200 transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2 text-primary-200 transform rotate-90" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
           </svg> {l "Publish"}
         </button>
