@@ -1,12 +1,12 @@
 <div :if={e(@primary_accountable, :name, nil)} class="relative pt-4 text-sm text-primary-content-600 border-t">
   <div class="flex items-center justify-between mb-2">
-    <span class="block text-sm font-semibold tracking-wide text-primary-content-500 dark:text-primary-content-400">{l "Assigned to"}</span>
+    <span class="block text-sm font-semibold tracking-wide text-primary-content-500 ">{l "Assigned to"}</span>
   </div>
   <div class="flex items-center mt-3">
-    <img src={"#{e(@primary_accountable, :image, "")}"} class="w-8 h-8 bg-pink-600 rounded-full" />
+    <img src={"#{avatar_url(e(@primary_accountable, :image, nil))}"} class="w-8 h-8  rounded-full" />
     <div class="ml-2">
         <LiveRedirect to={path(@primary_accountable)}
-          class="text-sm text-primary-content-800 dark:text-primary-content-300 font-regular">
+          class="text-sm text-primary-content-800  font-regular">
           {e(@primary_accountable, :name, "")}</LiveRedirect>
     </div>
   </div>

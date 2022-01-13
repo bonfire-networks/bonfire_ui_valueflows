@@ -34,14 +34,14 @@
             autocomplete="off"
             type="text"
             name="milestone_input"
-            id="milestone" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Filter milestones">
+            id="milestone" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm" placeholder="Filter milestones">
         </div>
         <%= if @milestone_search_results != [] do %>
           <h5 class="px-2 my-2 text-xs font-semibold text-primary-content-600">Open</h5>
           <div class="border-t">
             <%= for {milestone, idx} <- Enum.with_index(@milestone_search_results) do %>
               <div
-                class="p-2 cursor-pointer hover:bg-neutral-100 focus:bg-neutral-100"
+                class="p-2 cursor-pointer hover:bg-neutral focus:bg-neutral"
                 phx-click="milestone_pick"
                 phx-target={ @parent}
                 phx-value-id={ milestone.id }

@@ -23,7 +23,7 @@
       <div x-show="note">
         <Field name={:note}>
           <Label class="block mt-3 text-sm text-primary-content-700 font-regular">{l "Write an optional description of the task"}</Label>
-          <TextArea class="block w-full h-20 mt-1 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></TextArea>
+          <TextArea class="block w-full h-20 mt-1 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500"></TextArea>
         </Field>
       </div>
 

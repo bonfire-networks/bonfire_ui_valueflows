@@ -1,6 +1,6 @@
 <div
   :if={@is_editable}
-  class="relative pt-4 text-sm text-primary-content-600 border-t dark:text-primary-content-400 dark:border-gray-600"
+  class="relative pt-4 text-sm text-primary-content-600 border-t  "
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
@@ -8,7 +8,7 @@
   >
   <Form change={"ValueFlows.Planning.Intent:update:due"} >
   <div class="flex items-center justify-between mb-2">
-    <span class="block text-sm font-semibold tracking-wide text-primary-content-500 dark:text-primary-content-400">{l "Due"}</span>
+    <span class="block text-sm font-semibold tracking-wide text-primary-content-500 ">{l "Due"}</span>
     <svg
       @click="open = !open"
       aria-haspopup="true"
@@ -20,7 +20,7 @@
   </div>
 
   <div class="flex items-center flex-1">
-    <span class="text-base cursor-pointer dark:text-primary-content-300">{@date || "No due date"}</span>
+    <span class="text-base cursor-pointer ">{@date || "No due date"}</span>
   </div>
 
   <div

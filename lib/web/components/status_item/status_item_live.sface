@@ -35,7 +35,7 @@
     role="menu"
     aria-orientation="vertical">
     <div class="py-1" role="none">
-      <!-- Active: "bg-neutral-100 text-primary-content-900", Not Active: "text-primary-content-700" -->
+      <!-- Active: "bg-neutral text-primary-content-900", Not Active: "text-primary-content-700" -->
       <div class="block px-4 py-2 text-sm text-primary-content-700" role="menuitem" tabindex="-1" id="menu-item-0">{l "Backlog"}</div>
       <div class="block px-4 py-2 text-sm text-primary-content-700" role="menuitem" tabindex="-1" id="menu-item-1">{l "Todo"}</div>
       <div class="block px-4 py-2 text-sm text-primary-content-700" role="menuitem" tabindex="-1" id="menu-item-2">{l "In progress"}</div>

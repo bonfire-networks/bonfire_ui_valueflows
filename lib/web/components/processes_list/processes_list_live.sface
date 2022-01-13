@@ -2,16 +2,16 @@
   :if={Enum.count(@processes) > 0} 
   x-data="{ open: false }" class="mt-8">
   <div class="flex items-center">
-    <div class="flex-1 px-3 text-xs font-semibold tracking-wider text-primary-content-500 uppercase dark:text-primary-content-300" id="teams-headline">
+    <div class="flex-1 px-3 text-xs font-semibold tracking-wider text-primary-content-500 uppercase " id="teams-headline">
       {@title}
     </div>
-    <!-- <button @keydown.window.escape="open = false" x-show="!open" @click="open = true" type="button" class="inline-flex items-center px-2 py-1 text-xs font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <!-- <button @keydown.window.escape="open = false" x-show="!open" @click="open = true" type="button" class="inline-flex items-center px-2 py-1 text-xs font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
       <svg xmlns="http://www.w3.org/2000/svg" class="-ml-0.5 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
       </svg>
       Add new
     </button>
-    <button @keydown.window.escape="open = false" x-show="open" @click="open = false" type="button" class="inline-flex items-center px-2 py-1 text-xs font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <button @keydown.window.escape="open = false" x-show="open" @click="open = false" type="button" class="inline-flex items-center px-2 py-1 text-xs font-medium text-indigo-700 bg-indigo-100 border border-transparent rounded hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
       <svg xmlns="http://www.w3.org/2000/svg" class="-ml-0.5 mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
@@ -21,7 +21,7 @@
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(assigns, :process_url, path(ValueFlows.Process))} /> -->
   <div class="mt-1 space-y-1" role="group" aria-labelledby="teams-headline">
     <div :for={process <- @processes}>
-      <LiveRedirect to={"#{e(assigns, :process_url, path(ValueFlows.Process))}#{process.id}"} class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-primary-content-600 rounded-md group dark:text-primary-content-300 hover:text-primary-content-900 dark:hover:text-primary-content-200 dark:hover:bg-neutral-600 hover:bg-neutral-50">
+      <LiveRedirect to={"#{e(assigns, :process_url, path(ValueFlows.Process))}#{process.id}"} class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-primary-content-600 rounded-md group  hover:text-primary-content-900 dark:hover:text-primary-content-200  hover:bg-neutral">
         <span class="w-2.5 h-2.5 mr-2 bg-base-2000 rounded-full" aria-hidden="true"></span>
         <span class="truncate">
           {process.name}
@@ -29,7 +29,7 @@
       </LiveRedirect>
     </div>
 
-    <!-- <LiveRedirect to="/lists/" class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-primary-content-600 rounded-md group dark:text-primary-content-300 hover:text-primary-content-900 dark:hover:text-primary-content-200 dark:hover:bg-neutral-600 hover:bg-neutral-50">
+    <!-- <LiveRedirect to="/lists/" class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-primary-content-600 rounded-md group  hover:text-primary-content-900 dark:hover:text-primary-content-200  hover:bg-neutral">
       <svg
           aria-labelledby="navigation_lists"
           xmlns="http://www.w3.org/2000/svg"
