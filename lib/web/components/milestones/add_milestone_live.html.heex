@@ -41,7 +41,7 @@
           <div class="border-t">
             <%= for {milestone, idx} <- Enum.with_index(@milestone_search_results) do %>
               <div
-                class="p-2 cursor-pointer hover:bg-neutral focus:bg-neutral"
+                class="p-2 cursor-pointer hover:bg-neutral hover:bg-opacity-30  "
                 phx-click="milestone_pick"
                 phx-target={ @parent}
                 phx-value-id={ milestone.id }
