@@ -6,25 +6,35 @@
     >
 
     <HiddenInput name="action" value={@action} />
+    <HiddenInput :if={e(assigns, :input_of_id, nil)} name="input_of_id" value={e(assigns, :input_of_id, "")} />
     <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, "")} />
 
-    <div class="flex items-center p-3 pb-6 border-b">
+    <div data-id="create_event_title" class="flex items-center p-3 pb-6 border-b">
     <div :if={@action == "produce"} class="flex-1 p-2 pb-0">
       <div class="text-base font-extrabold text-primary-content-800">{l "Produce a resource"}</div>
-      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to produce"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify the resource you want to produce"}</div>
+    </div>
+    <div :if={@action == "raise"} class="flex-1 p-2 pb-0">
+      <div class="text-base font-extrabold text-primary-content-800">{l "Add a resource to inventory"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify the resource you want to add"}</div>
     </div>
     <div :if={@action == "transfer"} class="flex-1 p-2 pb-0">
       <div class="text-base font-extrabold text-primary-content-800">{l "Transfer a resource"}</div>
-      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to transfer to another user"}</div>
-    </div>
-    <div :if={@action == "consume"} class="flex-1 p-2 pb-0">
-      <div class="text-base font-extrabold text-primary-content-800">{l "Consume a resource"}</div>
-      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to consume"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Indicate which resource you want to transfer to another user"}</div>
     </div>
     <div :if={@action == "use"} class="flex-1 p-2 pb-0">
       <div class="text-base font-extrabold text-primary-content-800">{l "Use a resource"}</div>
-      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Specify which resource you want to use"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Indicate which resource you want to use"}</div>
     </div>
+    <div :if={@action == "consume"} class="flex-1 p-2 pb-0">
+      <div class="text-base font-extrabold text-primary-content-800">{l "Consume a resource"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Indicate which resource you want to consume"}</div>
+    </div>
+    <div :if={@action == "lower"} class="flex-1 p-2 pb-0">
+      <div class="text-base font-extrabold text-primary-content-800">{l "Remove a resource from iventory"}</div>
+      <div class="mt-1 text-sm text-primary-content-600 font-regular">{l "Indicate which resource you want to lower"}</div>
+    </div>
+
     <svg
       @click={@remove}
       xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +47,7 @@
   </div>
   <div class="p-3">
     <div class="p-3 shadow-inner rounded-xl bg-base-200">
-      <div :if={@action == "produce"}>
+      <div :if={@action in ["produce", "raise"]}>
         <div class="flex space-x-2">
           <div class="flex flex-1 space-x-4">
             <!-- <div class="relative block w-32 h-32 mb-4 overflow-hidden rounded-md ring-4 ring-white">
@@ -46,7 +56,7 @@
                   <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                 </svg>
               </div>
-              <label for="" class="absolute inset-0 flex items-center justify-center w-full h-full text-sm font-medium text-white transition duration-150 ease-in-out bg-neutral bg-opacity-40 opacity-0 cursor-pointer hover:opacity-100 focus-within:opacity-100">
+              <label for="" class="absolute inset-0 flex items-center justify-center w-full h-full text-sm font-medium text-white transition duration-150 ease-in-out bg-base-100 bg-opacity-40 opacity-0 cursor-pointer hover:opacity-100 focus-within:opacity-100">
                 <span>Upload or drop</span>
                 <span class="sr-only"> avatar</span>
                 
@@ -98,9 +108,9 @@
         </div>
       </div>
       
-      <div :if={@action != "produce"} class="flex space-x-3">
+      <div :if={@action not in ["produce", "raise"]} class="flex space-x-3">
         <div
-          :if={@action == "transfer" || @action == "consume"}
+          :if={@action in ["transfer", "consume", "lower"]}
           id="event_quantity" phx-update="ignore"
           class="flex items-start space-x-2">
           <Inputs for={:resource_quantity}>
@@ -118,7 +128,7 @@
         <div class="relative flex-1">
           <Bonfire.UI.Social.MultiselectLive
             preloaded_options={e(assigns, :economic_resources_autocomplete, [])}
-            selected_options={e(assigns, :economic_resource_selected, [])}
+            selected_options={e(assigns, :economic_resource_selected, [])} 
             label={"Pick a resource..."}
             form_input_name={"resource_inventoried_as"}
             pick_event={e(assigns, :pick_event, "ValueFlows.EconomicResource:select")}
@@ -150,7 +160,7 @@
     </div>
 
 
-    <div :if={@action == "transfer" || @action == "produce"} class="relative mt-3">
+    <div :if={@action in ["transfer", "produce", "raise"]} class="relative mt-3">
       <Bonfire.UI.Social.MultiselectLive
         preloaded_options={e(assigns, :geolocation_autocomplete, [])}
         selected_options={e(assigns, :geolocation_selected, [])}

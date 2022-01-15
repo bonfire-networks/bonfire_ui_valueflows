@@ -3,10 +3,12 @@ defmodule Bonfire.UI.ValueFlows.CreateEconomicEventLive do
 
   prop action, :string, required: true
   prop remove, :string, required: true
+  prop input_of_id, :string
   prop output_of_id, :string
   prop units, :list
   prop changeset, :any
   prop form_error, :string, default: ""
+  prop economic_resource_selected, :any, default: []
 
   def mount(socket) do
     {:ok, socket |> assign(

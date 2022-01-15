@@ -154,7 +154,7 @@
           <% end %>
           <div class="flex p-4 rounded-lg shadow-lg bg-blueGray-100">
             <div class="flex items-center flex-1">
-              <button name="is_public" checked="{false: !on, true: on}" type="button" @click="on = !on" :aria-pressed="on.toString()" aria-pressed="false" x-data="{ on: false }" :class="{ 'bg-neutral': !on, 'bg-indigo-600': on }" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-neutral border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
+              <button name="is_public" checked="{false: !on, true: on}" type="button" @click="on = !on" :aria-pressed="on.toString()" aria-pressed="false" x-data="{ on: false }" :class="{ 'bg-neutral': !on, 'bg-indigo-600': on }" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-base-100 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
                 <span class="sr-only">Make it public</span>
                 <span aria-hidden="true" :class="{'translate-x-5': on, 'translate-x-0': !on }" class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-base-100 rounded-full shadow ring-0"></span>
               </button>
@@ -244,7 +244,7 @@
                         <button
                           @click ="toggle_due_date = false"
                           type="submit"
-                          class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-primary-content-700 border border-gray-300 rounded-r-md bg-neutral hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500">
+                          class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-primary-content-700 border border-gray-300 rounded-r-md bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500">
                           <svg class="w-5 h-5 text-primary-content-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
                           </svg>

@@ -1,5 +1,4 @@
 <nav 
-  :if={Enum.count(@processes) > 0} 
   x-data="{ open: false }" class="mt-8">
   <div class="flex items-center">
     <div class="flex-1 px-3 text-xs font-semibold tracking-wider text-primary-content-500 uppercase " id="teams-headline">
@@ -20,7 +19,7 @@
   </div>
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(assigns, :process_url, path(ValueFlows.Process))} /> -->
   <div class="mt-1 space-y-1" role="group" aria-labelledby="teams-headline">
-    <div :for={process <- @processes}>
+    <div :for={process <- processes(assigns)}>
       <LiveRedirect to={"#{e(assigns, :process_url, path(ValueFlows.Process))}#{process.id}"} class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-primary-content-600 rounded-md group  hover:text-primary-content-900 dark:hover:text-primary-content-200  hover:bg-neutral hover:bg-opacity-30 ">
         <span class="w-2.5 h-2.5 mr-2 bg-base-2000 rounded-full" aria-hidden="true"></span>
         <span class="truncate">

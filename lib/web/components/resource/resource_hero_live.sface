@@ -48,7 +48,7 @@
     <div class="flex items-center justify-between mb-2">
       <span class="block text-sm font-semibold tracking-wide text-primary-content-500 ">{l "Current location"}</span>
     </div>
-    <div class="p-2 bg-neutral rounded ">
+    <div class="p-2 bg-base-100 rounded ">
       <div class="text-sm text-primary-content-800 font-regular ">{e(@resource, :current_location, :name, "")}</div>
       <div class="text-sm text-primary-content-600  font-regular">{if e(@resource, :current_location, :name, "") != e(@resource, :current_location, :mappable_address, ""), do: e(@resource, :current_location, :mappable_address, "")}</div>
     </div>

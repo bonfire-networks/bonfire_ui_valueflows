@@ -1,6 +1,6 @@
 
 <LivePatch to={@resource_url_prefix <> e(@resource, :id, "")}>
-  <div class="flex p-3 bg-neutral rounded shadow-md dark:bg-neutral-800 dark:shadow-none items-top">
+  <div class="flex p-3 bg-base-100 rounded shadow-md items-top">
       <div class="w-20 h-20 bg-secondary rounded-md"></div>
       <div class="ml-3">
           <div class="text-lg font-medium text-primary-content-800 ">{e(@resource, :name, "Unknown Resource")}</div>

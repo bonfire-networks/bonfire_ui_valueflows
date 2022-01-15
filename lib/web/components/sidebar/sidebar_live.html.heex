@@ -70,7 +70,7 @@
 
             <nav class="space-y-1" aria-label="Sidebar">
             <%= for label <- @main_labels do %>
-              <a href={"/breadpub/label/"<> e(label, :id, "new")} class="flex items-center px-2 py-2 text-sm font-medium text-primary-content-900 bg-neutral rounded-md group" aria-current="page">
+              <a href={"/breadpub/label/"<> e(label, :id, "new")} class="flex items-center px-2 py-2 text-sm font-medium text-primary-content-900 bg-base-100 rounded-md group" aria-current="page">
                 <span class={"w-4 h-4 mr-2 bg-"<> e(label, :color, "gray") <>"-200 rounded-md"}></span>
                 <span class="truncate">
                   <%= e(label, :name, "Label") %>
