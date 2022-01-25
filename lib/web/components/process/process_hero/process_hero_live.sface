@@ -38,7 +38,7 @@
 
       <Bonfire.UI.Social.LikeActionWithoutLabelLive
           id={ComponentID.new(Bonfire.UI.Social.LikeActionWithoutLabelLive, @process)} 
-        object_id={e(@process, :id, nil)}
+        object={@process}
         current_user={current_user(assigns)}
       />
 
