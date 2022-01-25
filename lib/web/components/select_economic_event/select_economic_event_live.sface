@@ -72,6 +72,7 @@
           action="produce" 
           output_of_id={e(assigns, :process, :id, nil)} 
           remove="selected_economic_event=''" 
+          extra_components={@extra_components}
           />
       </div>
     </div>
@@ -89,6 +90,7 @@
           units={e(assigns, :units, [])} 
           action="raise" 
           remove="selected_economic_event=''" 
+          extra_components={@extra_components}
           />
       </div>
     </div>
@@ -107,6 +109,7 @@
           action="transfer" 
           remove="selected_economic_event=''" 
           economic_resource_selected={preselect(e(assigns, :resource, nil))}
+          extra_components={@extra_components}
           />
       </div>
     </div>
@@ -125,7 +128,9 @@
           action="use" 
           input_of_id={e(assigns, :process, :id, nil)} 
           economic_resource_selected={preselect(e(assigns, :resource, nil))}
-          remove="selected_economic_event=''" />
+          remove="selected_economic_event=''"
+          extra_components={@extra_components}
+           />
       </div>
     </div>
   </div>
@@ -144,6 +149,7 @@
           input_of_id={e(assigns, :process, :id, nil)} 
           remove="selected_economic_event=''" 
           economic_resource_selected={preselect(e(assigns, :resource, nil))}
+          extra_components={@extra_components}
           />
       </div>
     </div>
@@ -162,7 +168,9 @@
           units={e(assigns, :units, [])} 
           action="lower" 
           economic_resource_selected={preselect(e(assigns, :resource, nil))}
-          remove="selected_economic_event=''" />
+          remove="selected_economic_event=''"
+          extra_components={@extra_components} 
+        />
       </div>
     </div>
   </div>

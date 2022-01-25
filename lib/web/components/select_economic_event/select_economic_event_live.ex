@@ -4,6 +4,7 @@ defmodule Bonfire.UI.ValueFlows.SelectEconomicEventLive do
   prop process, :any
   prop units, :list
   prop resource, :any, default: nil
+  prop extra_components, :list
 
   def preselect(%{id: id} = resource) do
     [{e(resource, :name, "Unnamed resource"), id}]

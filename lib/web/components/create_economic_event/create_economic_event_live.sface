@@ -172,6 +172,12 @@
         />
     </div>
 
+    {#for component <- @extra_components}
+        <Surface.Components.Dynamic.Component
+          module={component}
+        />
+    {/for}
+
     <div>{@form_error}</div>
 
     <button type="submit" class="inline-flex items-center w-full px-6 py-3 mt-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full shadow-sm place-content-center hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
