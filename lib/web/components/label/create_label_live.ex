@@ -20,7 +20,7 @@ defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
         chosen_labels: [Bonfire.Repo.preload(label, :profile)] ++ Map.get(socket.assigns, :chosen_labels, []),
       ]
     else e ->
-      IO.inspect(error: e)
+      debug(error: e)
       []
     end
 

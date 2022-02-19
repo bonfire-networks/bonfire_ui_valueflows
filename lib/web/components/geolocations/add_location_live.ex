@@ -19,15 +19,15 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
   end
 
   def handle_event("location_search", %{"location_input" => search_for}, socket) do
-    IO.inspect("heeyyyyy")
+    debug("heeyyyyy")
     {:ok, locations} = Geolocations.many({:autocomplete, search_for})
-    IO.inspect(locations)
+    debug(locations)
     # locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
       location_search_results: locations, # search(Enum.map(locations, fn x -> x.name end), search_for),
       location_search_phrase: search_for
     ]
-    IO.inspect(assigns)
+    debug(assigns)
 
     {:noreply, assign(socket, assigns)}
   end
@@ -44,17 +44,17 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
   end
 
   def handle_event("location_create", %{"location_input" => loc}, socket) do
-    IO.inspect(loc)
+    debug(loc)
     assigns = with {:ok, loc} <- Bonfire.Geolocate.Geolocations.create(current_user(socket), %{name: loc, mappable_address: loc}) do
       assigns = [
         location_search_results: [],
         location_search_phrase: "",
         at_location: loc,
       ]
-      IO.inspect(send(self(), {:loc, assigns}))
+      debug(send(self(), {:loc, assigns}))
       assigns
     else e ->
-      IO.inspect(error: e)
+      debug(error: e)
       []
     end
 

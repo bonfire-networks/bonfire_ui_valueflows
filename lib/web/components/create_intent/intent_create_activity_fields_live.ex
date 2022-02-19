@@ -59,7 +59,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
         })
 
         {:ok, intent} = Intents.create(user, data)
-        IO.inspect(intent)
+        debug(intent)
 
       end
 
@@ -70,14 +70,14 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
     # START EVENT PROXY FUNCTIONS - TODO: find a better approach (hopefully LiveView implements per-input events rather than per-form only)
 
     def handle_event("milestone_"<>_action = event, params, socket) do
-      IO.inspect(proxy_event: event)
-      IO.inspect(proxy_params: params)
+      debug(proxy_event: event)
+      debug(proxy_params: params)
       Bonfire.UI.ValueFlows.AddMilestoneLive.handle_event(event, params, socket)
     end
 
     def handle_event("label_"<>_action = event, params, socket) do
-      IO.inspect(proxy_event: event)
-      IO.inspect(proxy_params: params)
+      debug(proxy_event: event)
+      debug(proxy_params: params)
       Bonfire.UI.ValueFlows.AddLabelLive.handle_event(event, params, socket)
     end
 

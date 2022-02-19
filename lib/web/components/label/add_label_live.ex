@@ -15,13 +15,13 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
 
   def handle_event("label_search", %{"label_search" => search_for}, socket) do
     {:ok, labels} = Bonfire.Tag.Tags.many({:autocomplete, search_for})
-    IO.inspect(labels)
+    debug(labels)
     # labels = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
       label_search_results: labels, # search(Enum.map(labels, fn x -> x.name end), search_for),
       label_search_phrase: search_for
     ]
-    IO.inspect(assigns)
+    debug(assigns)
 
     {:noreply, assign(socket, assigns)}
   end
@@ -39,8 +39,8 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
   # START EVENT PROXY FUNCTIONS - TODO: find a better approach (hopefully LiveView implements per-input events rather than per-form only)
 
   def handle_event("label_create" = event, params, socket) do
-    IO.inspect(proxy_event: event)
-    IO.inspect(proxy_params: params)
+    debug(proxy_event: event)
+    debug(proxy_params: params)
     Bonfire.UI.ValueFlows.CreateLabelLive.handle_event(event, params, socket)
   end
 

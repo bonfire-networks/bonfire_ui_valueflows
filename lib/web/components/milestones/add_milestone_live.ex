@@ -13,15 +13,15 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
 
   def handle_event("milestone_search", %{"milestone_input" => search_for}, socket) do
     processes = all_processes(socket)
-    IO.inspect("search_for")
-    IO.inspect(search_for)
+    debug("search_for")
+    debug(search_for)
 
     # locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
       milestone_search_results: search(processes, search_for),
       milestone_search_phrase: search_for
     ]
-    IO.inspect(assigns)
+    debug(assigns)
 
     {:noreply, assign(socket, assigns)}
   end

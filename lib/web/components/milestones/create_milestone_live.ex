@@ -17,7 +17,7 @@ defmodule Bonfire.UI.ValueFlows.CreateMilestoneLive do
       }
 
       {:ok, process} = Processes.create(user, data)
-      IO.inspect(process)
+      debug(process)
     {:noreply, socket}
   end
 
