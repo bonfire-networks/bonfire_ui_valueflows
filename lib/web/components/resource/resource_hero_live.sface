@@ -36,7 +36,7 @@
         <span class="block text-sm font-semibold tracking-wide text-primary-content-500 ">{l "Assigned to"}</span>
     </div>
     <div class="flex items-center mt-3">
-      <img src={"#{avatar_url(e(@resource, :primary_accountable, nil))}"} class="w-8 h-8 bg-secondary rounded-btn" />
+      <LazyImage src={"#{avatar_url(e(@resource, :primary_accountable, nil))}"} class="w-8 h-8 bg-secondary rounded-btn" />
       <div class="ml-2">
           <LiveRedirect to={path(e(@resource, :primary_accountable, nil))}
           class="text-sm text-primary-content-800  font-regular">
