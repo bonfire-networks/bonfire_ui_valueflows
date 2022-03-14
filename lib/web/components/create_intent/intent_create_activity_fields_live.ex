@@ -3,7 +3,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
   alias ValueFlows.Planning.Intent.Intents
   alias Bonfire.UI.ValueFlows.{AddLocationLive, CreateLabelLive, AddLabelLive, AddMilestoneLive}
   alias Bonfire.Geolocate.Geolocations
-  use AbsintheClient, schema: Bonfire.GraphQL.Schema, action: [mode: :internal]
+  use AbsintheClient, schema: Bonfire.API.GraphQL.Schema, action: [mode: :internal]
 
   def mount(socket) do
     processes = all_processes(socket)
