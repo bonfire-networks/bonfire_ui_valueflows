@@ -16,7 +16,6 @@
   aria-haspopup="true"
   x-bind:aria-expanded="open"
   aria-expanded="true"
-  type="button"
   >
   <div class="flex items-center flex-1">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary-content-500" viewBox="0 0 20 20" fill="currentColor">
