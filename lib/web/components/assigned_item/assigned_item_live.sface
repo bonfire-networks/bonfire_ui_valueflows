@@ -4,7 +4,7 @@
   aria-orientation="vertical"
   >
   <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
-    selected_options={@selected_options}
+    selected_options={e(assigns, :selected_options, [])}
     label={"Assign to..."}
     form_input_name={@field_name}
     pick_event={e(assigns, :pick_event, nil)}

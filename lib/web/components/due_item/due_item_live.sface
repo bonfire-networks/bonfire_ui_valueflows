@@ -6,7 +6,7 @@
   @keydown.escape.stop="open = false"
   @click.outside="open = false"
   >
-  <Form change={"ValueFlows.Planning.Intent:update:due"} >
+  <form change={"ValueFlows.Planning.Intent:update:due"} >
   <div class="flex items-center justify-between mb-2">
     <span class="block text-sm font-semibold tracking-wide text-primary-content-500 ">{l "Due"}</span>
     <svg
@@ -38,7 +38,7 @@
     aria-orientation="vertical">
       <DateTimeLocalInput name="due" class="w-full" />
   </div>
-  </Form>
+  </form>
 </div>
 
 

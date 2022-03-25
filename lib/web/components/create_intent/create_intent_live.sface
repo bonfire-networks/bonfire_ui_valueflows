@@ -32,7 +32,10 @@
         class="flex items-center mt-3 space-x-3">
         <div class="w-60">
           <span class="block mb-1 text-sm text-primary-content-700 font-regular">{l "Assign to"}</span>
-          <Bonfire.UI.ValueFlows.AssignedItemLive field_name="provider" is_editable={true} />
+          <Bonfire.UI.ValueFlows.AssignedItemLive 
+            field_name="provider" 
+            is_editable={true} 
+          />
         </div>
 
         <div>

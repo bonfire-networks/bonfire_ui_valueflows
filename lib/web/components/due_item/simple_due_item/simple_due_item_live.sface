@@ -1,7 +1,7 @@
 <div :if={@is_editable} >
-  <Form change={"ValueFlows.Planning.Intent:update:due"} >
+  <form change={"ValueFlows.Planning.Intent:update:due"} >
     <DateInput name="due" class="w-full h-9" />
-  </Form>
+  </form>
 </div>
 
 
