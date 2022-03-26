@@ -64,7 +64,7 @@
             </svg>
           </button>
           <div
-            x-description="sort tasks dropdown menu, show/hide based on menu state."
+            x-description="process dropdown menu, show/hide based on menu state."
             x-show="open"
             x-transition:enter="transition ease-out duration-100"
             x-transition:enter-start="transform opacity-0 scale-95"
