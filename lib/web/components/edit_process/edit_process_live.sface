@@ -1,18 +1,18 @@
 
   <div>
     <div class="flex items-center p-6 pt-0 pb-3 mb-4 -mx-6 border-b">
-      <div class="text-base font-extrabold text-primary-content-800">{l "Edit the process"}</div>
+      <div class="text-base font-extrabold text-base-content-800">{l "Edit the process"}</div>
     </div>
     <Form
       for={:process}
       submit="ValueFlows.Process:update">
       <Field name={:name}>
-        <Label class="block text-sm font-medium text-primary-content-700">{l "Edit the process title"}</Label>
+        <Label class="block text-sm font-medium text-base-content-700">{l "Edit the process title"}</Label>
         <TextInput value={@process.name} class="flex-grow block w-full min-w-0 p-2 mt-1 transition-all duration-300 ease-in-out border border-gray-300 rounded focus:ring-light-blue-500 focus:border-light-blue-500 sm:text-sm" />
       </Field>
 
       <Field name={:note}>
-        <Label class="block mt-3 text-sm font-medium text-primary-content-700">{l "Edit the description"}</Label>
+        <Label class="block mt-3 text-sm font-medium text-base-content-700">{l "Edit the description"}</Label>
         <TextArea value={@process.note} class="block w-full h-20 mt-1 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500"></TextArea>
       </Field>
 

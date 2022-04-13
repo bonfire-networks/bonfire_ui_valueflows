@@ -2,7 +2,7 @@
   x-data="{ toggle_edit_description: false }"
   class="">
   <div class="flex items-center">
-    <div class="text-xs text-primary-content-700 uppercase  font-regular">{l "Description"}</div>
+    <div class="text-xs text-base-content-700 uppercase  font-regular">{l "Description"}</div>
     <button
       :if={current_user(assigns) != nil}
       @keydown.window.escape="toggle_edit_description = false"

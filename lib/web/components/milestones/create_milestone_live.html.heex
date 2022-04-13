@@ -13,7 +13,7 @@
         <div
         @click="toggleMilestone = true"
         class='flex items-center p-1 rounded-md cursor-pointer'>
-          <button class="flex justify-center px-4 py-2 text-sm font-medium text-primary-content-100 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-primary-content-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-primary-content-200 active:bg-neutral">
+          <button class="flex justify-center px-4 py-2 text-sm font-medium text-base-content-100 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-base-content-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content-200 active:bg-neutral">
             Create a new milestone
           </button>
         </div>
@@ -48,7 +48,7 @@
             x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             class="inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-100 rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full sm:p-0" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <div class="p-2 border-b bg-blueGray-50">
-              <h4 class="text-sm font-medium text-primary-content-800">Create a new milestone</h4>
+              <h4 class="text-sm font-medium text-base-content-800">Create a new milestone</h4>
             </div>
             <form
               phx-submit="ValueFlows.Process:create"
@@ -56,7 +56,7 @@
               >
                 <div class="p-3">
                   <div class="">
-                    <label for="name" class="block text-sm font-medium text-primary-content-700">
+                    <label for="name" class="block text-sm font-medium text-base-content-700">
                       Title
                     </label>
                     <div class="mt-1">
@@ -64,20 +64,20 @@
                     </div>
                   </div>
                   <div class="mt-3">
-                    <label for="note" class="block text-sm font-medium text-primary-content-700">
+                    <label for="note" class="block text-sm font-medium text-base-content-700">
                       Description
                     </label>
                     <div class="mt-1">
                       <textarea id="note" name="note" rows="3" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"></textarea>
                     </div>
-                    <p class="mt-2 text-sm text-primary-content-500">What the milestone is about to accomplish.</p>
+                    <p class="mt-2 text-sm text-base-content-500">What the milestone is about to accomplish.</p>
                   </div>
                   <div class="mt-3">
-                    <label for="due_date" class="block text-sm font-medium text-primary-content-700">Set a due date</label>
+                    <label for="due_date" class="block text-sm font-medium text-base-content-700">Set a due date</label>
                     <div class="flex mt-1 rounded-md shadow-sm">
                       <div class="relative flex items-stretch flex-1 flex-grow w-full focus-within:z-10">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <svg class="w-5 h-5 text-primary-content-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                          <svg class="w-5 h-5 text-base-content-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
                         </div>
                         <input
                           class="block w-full pl-10 border-gray-300 rounded-md focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
@@ -93,10 +93,10 @@
                     <button
                       @click="toggleMilestone = false"
                       type="button"
-                      class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
+                      class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
                       Cancel
                     </button>
-                    <button type="submit" class="flex justify-center px-4 py-2 text-sm font-medium text-primary-content-100 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-primary-content-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-primary-content-200 active:bg-neutral">
+                    <button type="submit" class="flex justify-center px-4 py-2 text-sm font-medium text-base-content-100 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-base-content-200 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content-200 active:bg-neutral">
                       Publish
                     </button>
                 </div>
@@ -109,8 +109,8 @@
     <div class="flex items-center justify-end flex-1">
       <%= link to: path(Bonfire.Breadpub.ProcessesLive) do %>
         <div class="flex items-center">
-          <h3 class="ml-3 text-sm font-normal tracking-wide text-right text-primary-content-600 ">View all milestones</h3>
-          <svg class="w-6 h-6 ml-4 text-primary-content-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          <h3 class="ml-3 text-sm font-normal tracking-wide text-right text-base-content-600 ">View all milestones</h3>
+          <svg class="w-6 h-6 ml-4 text-base-content-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </div>
       <% end %>
     </div>
