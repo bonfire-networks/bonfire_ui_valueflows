@@ -1,5 +1,5 @@
 <div 
-  class="h-9 flex relative items-center text-xs text-medium bg-blueGray-200 rounded py-1.5 px-2.5 text-base-content-600"
+  class="h-9 flex relative items-center text-xs text-medium bg-blueGray-200 rounded py-1.5 px-2.5 text-base-content opacity-60"
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
@@ -17,7 +17,7 @@
     aria-expanded="true"
     type="button" 
     class="h-9 ml-3 flex items-center place-content-center bg-blueGray-300 hover:bg-blueGray-400 cursor-pointer -mr-2.5 px-2 rounded-r">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-base-content-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-base-content opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
     </svg>
   </div>
@@ -27,21 +27,21 @@
     x-show="open"
     x-transition:enter="transition ease-out duration-100"
     x-transition:enter-start="transform opacity-0 scale-95"
-    x-transition:enter-end="transform opacity-100 scale-100"
+    x-transition:enter-end="transform opacity-60 scale-100"
     x-transition:leave="transition ease-in duration-75"
-    x-transition:leave-start="transform opacity-100 scale-100"
+    x-transition:leave-start="transform opacity-60 scale-100"
     x-transition:leave-end="transform opacity-0 scale-95"
     class="absolute left-0 z-20 w-56 w-full p-1 mt-2 origin-top-right bg-base-100 divide-y divide-gray-100 rounded-md shadow-lg top-8 ring-1 ring-black ring-opacity-5 focus:outline-none"
     role="menu"
     aria-orientation="vertical">
     <div class="py-1" role="none">
-      <!-- Active: "bg-neutral text-base-content-900", Not Active: "text-base-content-700" -->
-      <div class="block px-4 py-2 text-sm text-base-content-700" role="menuitem" tabindex="-1" id="menu-item-0">{l "Backlog"}</div>
-      <div class="block px-4 py-2 text-sm text-base-content-700" role="menuitem" tabindex="-1" id="menu-item-1">{l "Todo"}</div>
-      <div class="block px-4 py-2 text-sm text-base-content-700" role="menuitem" tabindex="-1" id="menu-item-2">{l "In progress"}</div>
-      <div class="block px-4 py-2 text-sm text-base-content-700" role="menuitem" tabindex="-1" id="menu-item-3">{l "In review"}</div>
-      <div class="block px-4 py-2 text-sm text-base-content-700" role="menuitem" tabindex="-1" id="menu-item-4">{l "Done"}</div>
-      <div class="block px-4 py-2 text-sm text-base-content-700" role="menuitem" tabindex="-1" id="menu-item-5">{l "Cancelled"}</div>
+      <!-- Active: "bg-neutral text-base-content opacity-90", Not Active: "text-base-content opacity-70" -->
+      <div class="block px-4 py-2 text-sm text-base-content opacity-70" role="menuitem" tabindex="-1" id="menu-item-0">{l "Backlog"}</div>
+      <div class="block px-4 py-2 text-sm text-base-content opacity-70" role="menuitem" tabindex="-1" id="menu-item-1">{l "Todo"}</div>
+      <div class="block px-4 py-2 text-sm text-base-content opacity-70" role="menuitem" tabindex="-1" id="menu-item-2">{l "In progress"}</div>
+      <div class="block px-4 py-2 text-sm text-base-content opacity-70" role="menuitem" tabindex="-1" id="menu-item-3">{l "In review"}</div>
+      <div class="block px-4 py-2 text-sm text-base-content opacity-70" role="menuitem" tabindex="-1" id="menu-item-4">{l "Done"}</div>
+      <div class="block px-4 py-2 text-sm text-base-content opacity-70" role="menuitem" tabindex="-1" id="menu-item-5">{l "Cancelled"}</div>
     </div>
   </div>
 </div>

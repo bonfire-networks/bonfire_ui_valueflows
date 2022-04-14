@@ -6,7 +6,7 @@
     :for={{item, route} <- Bonfire.Common.Config.get([:ui, :resource, :navigation], [])}
     to={"/resource/#{e(@resource, :id, "")}/#{route}"} 
     class="flex-1 pt-2 group">
-    <div class={"group-hover: text-center w-full capitalize text-base-content-500  px-3 font-medium text-sm border-gray-200", "  dark: font-bold": @selected_tab == Atom.to_string(item)}>
+    <div class={"group-hover: text-center w-full capitalize text-base-content opacity-60  px-3 font-medium text-sm border-gray-200", "  dark: font-bold": @selected_tab == Atom.to_string(item)}>
       {item}
     </div>
       <span

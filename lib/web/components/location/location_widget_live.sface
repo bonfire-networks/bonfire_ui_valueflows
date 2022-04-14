@@ -1,9 +1,9 @@
-<div :if={e(@location, :name, nil)} class="relative pt-4 text-sm text-base-content-600">
+<div :if={e(@location, :name, nil)} class="relative pt-4 text-sm text-base-content opacity-60">
    <div class="flex items-center justify-between mb-2">
-    <span class="block text-sm font-semibold tracking-wide text-base-content-500">{l "Location"}</span>
+    <span class="block text-sm font-semibold tracking-wide text-base-content opacity-60">{l "Location"}</span>
   </div>
   <div class="p-2 bg-base-100 rounded ">
-    <div class="text-sm text-base-content-800 font-regular ">{e(@location, :name, "")}</div>
-    <div class="text-sm text-base-content-600  font-regular">{if e(@location, :name, "") != e(@location, :mappable_address, ""), do: e(@location, :mappable_address, "")}</div>
+    <div class="text-sm text-base-content opacity-80 font-regular ">{e(@location, :name, "")}</div>
+    <div class="text-sm text-base-content opacity-60  font-regular">{if e(@location, :name, "") != e(@location, :mappable_address, ""), do: e(@location, :mappable_address, "")}</div>
   </div>
 </div>

@@ -2,7 +2,7 @@
   <div class="px-4 py-4 pb-0">
     <div class="flex items-center mb-3">
       <img class="inline-block w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-      <h3 class="ml-3 text-sm font-normal tracking-wide text-base-content-600">Hey Ivan, do you want to post something?</h3>
+      <h3 class="ml-3 text-sm font-normal tracking-wide text-base-content opacity-60">Hey Ivan, do you want to post something?</h3>
     </div>
     <div class="flex items-center py-4 space-x-8 border-t">
       <div
@@ -17,8 +17,8 @@
         <div
           @click="toggleIntent = true"
           class='flex items-center p-1 rounded-md cursor-pointer'>
-          <svg class="w-5 h-5 mr-3 text-base-content-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z" clip-rule="evenodd"></path></svg>
-          <span class="block text-sm font-normal text-base-content-700">Publish a need</span>
+          <svg class="w-5 h-5 mr-3 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z" clip-rule="evenodd"></path></svg>
+          <span class="block text-sm font-normal text-base-content opacity-70">Publish a need</span>
         </div>
         <div
           x-show="toggleIntent"
@@ -30,9 +30,9 @@
               x-description="Background overlay, show/hide based on modal state."
               x-transition:enter="ease-out duration-300"
               x-transition:enter-start="opacity-0"
-              x-transition:enter-end="opacity-100"
+              x-transition:enter-end="opacity-60"
               x-transition:leave="ease-in duration-200"
-              x-transition:leave-start="opacity-100"
+              x-transition:leave-start="opacity-60"
               x-transition:leave-end="opacity-0"
               class="fixed inset-0 transition-opacity"
               aria-hidden="true">
@@ -45,9 +45,9 @@
               x-description="Modal panel, show/hide based on modal state."
               x-transition:enter="ease-out duration-300"
               x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+              x-transition:enter-end="opacity-60 translate-y-0 sm:scale-100"
               x-transition:leave="ease-in duration-200"
-              x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+              x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100"
               x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               class="inline-flex flex-col px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-100 rounded-lg shadow-xl h-90vh sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full sm:p-0" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
               <%= live_component(
@@ -73,8 +73,8 @@
         <div
           @click="toggleIntent = true"
           class='flex items-center p-1 rounded-md cursor-pointer'>
-          <svg class="w-5 h-5 mr-3 text-base-content-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z" clip-rule="evenodd"></path></svg>
-          <span class="block text-sm font-normal text-base-content-700">Publish a offer</span>
+          <svg class="w-5 h-5 mr-3 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 3a1 1 0 012 0v5.5a.5.5 0 001 0V4a1 1 0 112 0v4.5a.5.5 0 001 0V6a1 1 0 112 0v5a7 7 0 11-14 0V9a1 1 0 012 0v2.5a.5.5 0 001 0V4a1 1 0 012 0v4.5a.5.5 0 001 0V3z" clip-rule="evenodd"></path></svg>
+          <span class="block text-sm font-normal text-base-content opacity-70">Publish a offer</span>
         </div>
         <div
           x-show="toggleIntent"
@@ -86,9 +86,9 @@
               x-description="Background overlay, show/hide based on modal state."
               x-transition:enter="ease-out duration-300"
               x-transition:enter-start="opacity-0"
-              x-transition:enter-end="opacity-100"
+              x-transition:enter-end="opacity-60"
               x-transition:leave="ease-in duration-200"
-              x-transition:leave-start="opacity-100"
+              x-transition:leave-start="opacity-60"
               x-transition:leave-end="opacity-0"
               class="fixed inset-0 transition-opacity"
               aria-hidden="true">
@@ -101,9 +101,9 @@
                 x-description="Modal panel, show/hide based on modal state."
                 x-transition:enter="ease-out duration-300"
                 x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                x-transition:enter-end="opacity-60 translate-y-0 sm:scale-100"
                 x-transition:leave="ease-in duration-200"
-                x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100"
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 class="inline-block h-screen px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-100 rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full sm:p-0" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                   <%= live_component(
