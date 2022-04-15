@@ -42,6 +42,14 @@
         current_user={current_user(assigns)}
       />
 
+      <Bonfire.UI.Social.BoundaryIconLive 
+            id={ComponentID.new(Bonfire.UI.Social.BoundaryIconLive, @process)} 
+            object={@process} 
+          />
+
+      <Bonfire.UI.Social.Activity.InstanceIconLive
+        object={@process} 
+      />
       
       <div class="relative inline-block text-left">
         <div
