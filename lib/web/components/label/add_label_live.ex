@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.AddLabelLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
 
   alias Bonfire.Tag.Tags
   alias Bonfire.UI.ValueFlows.{CreateLabelLive, AddLabelLive}

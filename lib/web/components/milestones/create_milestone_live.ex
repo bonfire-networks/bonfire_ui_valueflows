@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.CreateMilestoneLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
 
   alias ValueFlows.Process.Processes
 

@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
 
 
   def mount(socket) do
@@ -17,7 +17,7 @@ defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
       [
         label_search_results: [],
         label_search_phrase: "",
-        chosen_labels: [Bonfire.Repo.preload(label, :profile)] ++ Map.get(socket.assigns, :chosen_labels, []),
+        chosen_labels: [Bonfire.Common.Repo.preload(label, :profile)] ++ Map.get(socket.assigns, :chosen_labels, []),
       ]
     else e ->
       debug(error: e)

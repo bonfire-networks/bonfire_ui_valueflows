@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.CreateEconomicEventLive.LiveHandler do
-  use Bonfire.Web, :live_handler
+  use Bonfire.UI.Common.Web, :live_handler
 
   #FIXME: refactor if/when LiveView supports even on field rather than on form only
 

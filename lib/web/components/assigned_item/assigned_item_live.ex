@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.AssignedItemLive do
-  use Bonfire.Web, :stateless_component
+  use Bonfire.UI.Common.Web, :stateless_component
 
   prop is_editable, :boolean, default: false
   prop field_name, :string

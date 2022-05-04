@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
   alias ValueFlows.Planning.Intent.Intents
   alias Bonfire.UI.ValueFlows.{AddLocationLive, CreateLabelLive, AddLabelLive, AddMilestoneLive}
   alias Bonfire.Geolocate.Geolocations

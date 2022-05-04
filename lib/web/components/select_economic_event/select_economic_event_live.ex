@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.SelectEconomicEventLive do
-  use Bonfire.Web, :stateless_component
+  use Bonfire.UI.Common.Web, :stateless_component
 
   prop process, :any
   prop units, :list

@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.FiltersLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
 
   def mount(socket) do
     {:ok, socket

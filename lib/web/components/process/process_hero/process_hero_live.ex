@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
-  use Bonfire.Web, :stateless_component
+  use Bonfire.UI.Common.Web, :stateless_component
   alias Bonfire.Social.{Likes}
 
   prop process, :map

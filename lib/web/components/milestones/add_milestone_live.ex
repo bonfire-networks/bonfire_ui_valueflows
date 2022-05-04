@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
   use AbsintheClient, schema: Bonfire.API.GraphQL.Schema, action: [mode: :internal]
 
   alias Bonfire.UI.ValueFlows.CreateMilestoneLive

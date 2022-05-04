@@ -1,5 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
-  use Bonfire.Web, :stateless_component
+  use Bonfire.UI.Common.Web, :stateless_component
   # use AbsintheClient, schema: Bonfire.API.GraphQL.Schema, action: [mode: :internal]
   alias Surface.Components.LivePatch
 

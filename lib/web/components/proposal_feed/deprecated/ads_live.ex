@@ -1,5 +1,5 @@
 defmodule Bonfire.Web.Component.AdsPreviewLive do
-  use Bonfire.Web, :live_component
+  use Bonfire.UI.Common.Web, :live_component
 
   # import CommonsPub.Profiles.Web.ProfilesHelper
   # def mount(_, _session, socket) do
