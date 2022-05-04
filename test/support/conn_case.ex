@@ -26,7 +26,7 @@ defmodule Bonfire.UI.ValueFlows.ConnCase do
       import Bonfire.UI.Common.Testing.Helpers
 
       import Phoenix.LiveViewTest
-      import Bonfire.UI.ValueFlows.ConnCase
+      # import Bonfire.UI.ValueFlows.ConnCase
       import Bonfire.UI.ValueFlows.Test.ConnHelpers
       import Bonfire.UI.ValueFlows.Test.FakeHelpers
       # alias Bonfire.UI.ValueFlows.Fake

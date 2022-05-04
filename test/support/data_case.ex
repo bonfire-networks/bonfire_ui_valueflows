@@ -23,7 +23,7 @@ defmodule Bonfire.UI.ValueFlows.DataCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Bonfire.UI.ValueFlows.DataCase
+      # import Bonfire.UI.ValueFlows.DataCase
     end
   end
 
