@@ -172,7 +172,7 @@
         />
     </div>
 
-    {#for component <- @extra_components}
+    {#for component <- e(assigns, :extra_components, [])}
         <Surface.Components.Dynamic.Component
           module={component}
         />
