@@ -3,7 +3,7 @@
   role="menu"
   aria-orientation="vertical"
   >
-  <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
+  <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
     selected_options={e(assigns, :selected_options, [])}
     label={"Assign to..."}
     form_input_name={@field_name}

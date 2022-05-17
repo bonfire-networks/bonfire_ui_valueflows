@@ -36,14 +36,14 @@
         {l "Completed"}
       </span>
 
-      <Bonfire.UI.Social.LikeActionWithoutLabelLive
-          id={ComponentID.new(Bonfire.UI.Social.LikeActionWithoutLabelLive, @process)} 
+      <Bonfire.UI.Common.LikeActionWithoutLabelLive
+          id={ComponentID.new(Bonfire.UI.Common.LikeActionWithoutLabelLive, @process)} 
         object={@process}
         current_user={current_user(assigns)}
       />
 
-      <Bonfire.UI.Social.BoundaryIconLive 
-            id={ComponentID.new(Bonfire.UI.Social.BoundaryIconLive, @process)} 
+      <Bonfire.Boundaries.Web.BoundaryIconLive 
+            id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @process)} 
             object={@process} 
           />
 

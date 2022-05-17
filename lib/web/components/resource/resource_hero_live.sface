@@ -30,8 +30,8 @@
 
             </div>
 
-            <Bonfire.UI.Social.BoundaryIconLive 
-                  id={ComponentID.new(Bonfire.UI.Social.BoundaryIconLive, @resource)} 
+            <Bonfire.Boundaries.Web.BoundaryIconLive 
+                  id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @resource)} 
                   object={@resource} 
                 />
 

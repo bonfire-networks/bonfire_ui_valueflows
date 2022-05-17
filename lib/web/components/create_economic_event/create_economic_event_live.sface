@@ -63,7 +63,7 @@
               </label>
             </div> -->
             <div class="relative flex-1">
-              <Bonfire.UI.Social.MultiselectLive
+              <Bonfire.UI.Common.MultiselectLive
                   preloaded_options={e(assigns, :resource_specifications_autocomplete, [])}
                   selected_options={e(assigns, :resource_specification_selected, [])}
                   label={"Pick a type of resource..."}
@@ -88,7 +88,7 @@
                   </Inputs>
                 </div>
                 <!-- <div class="mt-2">
-                  <Bonfire.UI.Social.MultiselectLive
+                  <Bonfire.UI.Common.MultiselectLive
                     preloaded_options={e(assigns, :resource_specifications_autocomplete, [])}
                     selected_options={e(assigns, :resource_specification_selected, [])}
                     label={"Add to one or more categories"}
@@ -126,7 +126,7 @@
         </div>
 
         <div class="relative flex-1">
-          <Bonfire.UI.Social.MultiselectLive
+          <Bonfire.UI.Common.MultiselectLive
             preloaded_options={e(assigns, :economic_resources_autocomplete, [])}
             selected_options={e(assigns, :economic_resource_selected, [])} 
             label={"Pick a resource..."}
@@ -144,7 +144,7 @@
     </svg>
 
     <div :if={@action == "transfer"} class="flex flex-col">
-      <Bonfire.UI.Social.MultiselectLive.UserSelectorLive
+      <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
         label={"Select the receiver of the transfer"}
         form_input_name={"receiver"}
         preloaded_options={e(assigns, :users_autocomplete, [])}
@@ -161,7 +161,7 @@
 
 
     <div :if={@action in ["transfer", "produce", "raise"]} class="relative mt-3">
-      <Bonfire.UI.Social.MultiselectLive
+      <Bonfire.UI.Common.MultiselectLive
         preloaded_options={e(assigns, :geolocation_autocomplete, [])}
         selected_options={e(assigns, :geolocation_selected, [])}
         label={"Optionally indicate the location"}
