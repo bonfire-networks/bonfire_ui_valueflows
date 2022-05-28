@@ -35,6 +35,6 @@ defmodule ValueFlows.Web.My.PublishAdLive do
 
     {:noreply,
      socket
-     |> put_flash(:info, "intent created !")}
+     |> assign_flash(:info, "intent created !")}
   end
 end
