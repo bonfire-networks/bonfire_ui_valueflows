@@ -48,7 +48,7 @@
         <span class="block text-sm font-semibold tracking-wide text-base-content opacity-60 ">{l "Assigned to"}</span>
     </div>
     <div class="flex items-center mt-3">
-      <LazyImage src={"#{avatar_url(e(@resource, :primary_accountable, nil))}"} class="w-8 h-8 bg-secondary rounded-btn" />
+      <Bonfire.UI.Common.AvatarLive user={e(@resource, :primary_accountable, nil)} class="w-8 h-8 bg-secondary rounded-btn" />
       <div class="ml-2">
           <LiveRedirect to={path(e(@resource, :primary_accountable, nil))}
           class="text-sm text-base-content opacity-80  font-regular">
