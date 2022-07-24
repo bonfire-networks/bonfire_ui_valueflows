@@ -39,7 +39,7 @@
       <Bonfire.UI.Common.LikeActionWithoutLabelLive
           id={ComponentID.new(Bonfire.UI.Common.LikeActionWithoutLabelLive, @process)} 
         object={@process}
-        current_user={current_user(assigns)}
+        current_user={current_user(@__context__)}
       />
 
       <Bonfire.Boundaries.Web.BoundaryIconLive 
