@@ -6,18 +6,18 @@
       meta: false
     }">
     <Form
-      for={e(assigns, :globals, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.validate_changeset() )}
+      for={e(@__context__, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.validate_changeset() )}
       opts={autocomplete: "off"}
       submit="ValueFlows.Planning.Intent:create">
 
-      <HiddenInput :if={e(assigns, :intent_url, nil)} name="redirect_after" value={@intent_url} />
-      <HiddenInput :if={e(assigns, :action, "produce")} name="action_id" value={@action} />
-      <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, nil)} />
-      <HiddenInput name="classified_as[]" value={e(assigns, :default_tag, "")} />
+      <HiddenInput :if={e(@intent_url, nil)} name="redirect_after" value={@intent_url} />
+      <HiddenInput :if={e(@action, "produce")} name="action_id" value={@action} />
+      <HiddenInput :if={e(@output_of_id, nil)} name="output_of_id" value={e(@output_of_id, nil)} />
+      <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
       <Field name={:name}>
         <Label class="block text-sm text-base-content opacity-70 font-regular">
-          {#if e(assigns, :action, "produce")=="work" }
+          {#if e(@action, "produce")=="work" }
             {l "Enter a name for the task"}
           {#else}
             {l "Enter a name for the intent"}

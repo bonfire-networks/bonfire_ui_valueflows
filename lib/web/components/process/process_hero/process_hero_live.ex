@@ -31,12 +31,12 @@ defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
     }
   end
 
-  def generate_test_template(assigns) do
-    tasks = e(assigns.process, :intended_outputs, [])
+  def generate_test_template(process) do
+    tasks = e(process, :intended_outputs, [])
     tests = Enum.map(tasks, &task_test_template(&1))
 
     """
-  describe "#{assigns.process.name}"
+  describe "#{process.name}"
   #{tests}
 
   end

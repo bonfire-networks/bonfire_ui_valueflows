@@ -8,8 +8,24 @@ defmodule Bonfire.UI.ValueFlows.CreateEconomicEventLive do
   prop units, :list
   prop changeset, :any
   prop form_error, :string, default: ""
-  prop economic_resource_selected, :any, default: []
   prop extra_components, :list
+
+  prop provider, :any, default: nil
+  prop receiver, :any, default: nil
+
+  prop users_autocomplete, :any, default: nil
+
+  prop economic_resources_autocomplete, :any, default: nil
+  prop economic_resource_selected, :any, default: nil
+
+  prop geolocation_autocomplete, :any, default: nil
+  prop geolocation_selected, :any, default: nil
+
+  prop resource_specifications_autocomplete, :any, default: nil
+  prop resource_specification_selected, :any, default: nil
+
+  prop pick_event, :any, default: nil
+  prop remove_event, :any, default: nil
 
   def mount(socket) do
     {:ok, socket |> assign(

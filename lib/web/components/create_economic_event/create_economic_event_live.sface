@@ -6,8 +6,8 @@
     >
 
     <HiddenInput name="action" value={@action} />
-    <HiddenInput :if={e(assigns, :input_of_id, nil)} name="input_of_id" value={e(assigns, :input_of_id, "")} />
-    <HiddenInput :if={e(assigns, :output_of_id, nil)} name="output_of_id" value={e(assigns, :output_of_id, "")} />
+    <HiddenInput :if={e(@input_of_id, nil)} name="input_of_id" value={e(@input_of_id, "")} />
+    <HiddenInput :if={e(@output_of_id, nil)} name="output_of_id" value={e(@output_of_id, "")} />
 
     <div data-id="create_event_title" class="flex items-center p-3 pb-6 border-b">
     <div :if={@action == "produce"} class="flex-1 p-2 pb-0">
@@ -64,12 +64,12 @@
             </div> -->
             <div class="relative flex-1">
               <Bonfire.UI.Common.MultiselectLive
-                  preloaded_options={e(assigns, :resource_specifications_autocomplete, [])}
-                  selected_options={e(assigns, :resource_specification_selected, [])}
+                  preloaded_options={e(@resource_specifications_autocomplete, [])}
+                  selected_options={e(@resource_specification_selected, [])}
                   label={"Pick a type of resource..."}
                   form_input_name={"resource_conforms_to"}
-                  pick_event={e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}
-                  remove_event={e(assigns, :remove_event, "")}
+                  pick_event={e(@pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}
+                  remove_event={e(@remove_event, "")}
                   focus_event="ValueFlows.Knowledge.ResourceSpecification:autocomplete"
                   />
               
@@ -89,12 +89,12 @@
                 </div>
                 <!-- <div class="mt-2">
                   <Bonfire.UI.Common.MultiselectLive
-                    preloaded_options={e(assigns, :resource_specifications_autocomplete, [])}
-                    selected_options={e(assigns, :resource_specification_selected, [])}
+                    preloaded_options={e(@resource_specifications_autocomplete, [])}
+                    selected_options={e(@resource_specification_selected, [])}
                     label={"Add to one or more categories"}
                     form_input_name={"resource_conforms_to"}
-                    pick_event={e(assigns, :pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}
-                    remove_event={e(assigns, :remove_event, "")}
+                    pick_event={e(@pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}
+                    remove_event={e(@remove_event, "")}
                     />
                 </div> -->
               </div>
@@ -127,12 +127,12 @@
 
         <div class="relative flex-1">
           <Bonfire.UI.Common.MultiselectLive
-            preloaded_options={e(assigns, :economic_resources_autocomplete, [])}
-            selected_options={e(assigns, :economic_resource_selected, [])} 
+            preloaded_options={e(@economic_resources_autocomplete, [])}
+            selected_options={e(@economic_resource_selected, [])} 
             label={"Pick a resource..."}
             form_input_name={"resource_inventoried_as"}
-            pick_event={e(assigns, :pick_event, "ValueFlows.EconomicResource:select")}
-            remove_event={e(assigns, :remove_event, "")}
+            pick_event={e(@pick_event, "ValueFlows.EconomicResource:select")}
+            remove_event={e(@remove_event, "")}
             focus_event="ValueFlows.EconomicResource:autocomplete"
             />
         </div>
@@ -147,8 +147,8 @@
       <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
         label={"Select the receiver of the transfer"}
         form_input_name={"receiver"}
-        preloaded_options={e(assigns, :users_autocomplete, [])}
-        selected_options={e(assigns, :receiver, [])} 
+        preloaded_options={e(@users_autocomplete, [])}
+        selected_options={e(@receiver, [])} 
         />
     </div>
 
@@ -162,17 +162,17 @@
 
     <div :if={@action in ["transfer", "produce", "raise"]} class="relative mt-3">
       <Bonfire.UI.Common.MultiselectLive
-        preloaded_options={e(assigns, :geolocation_autocomplete, [])}
-        selected_options={e(assigns, :geolocation_selected, [])}
+        preloaded_options={e(@geolocation_autocomplete, [])}
+        selected_options={e(@geolocation_selected, [])}
         label={"Optionally indicate the location"}
         form_input_name={"at_location"}
-        pick_event={e(assigns, :pick_event, "Bonfire.Geolocate:select")}
-        remove_event={e(assigns, :remove_event, "")}
+        pick_event={e(@pick_event, "Bonfire.Geolocate:select")}
+        remove_event={e(@remove_event, "")}
         focus_event="Bonfire.Geolocate:autocomplete"
         />
     </div>
 
-    {#for component <- e(assigns, :extra_components, [])}
+    {#for component <- e(@extra_components, [])}
         <Surface.Components.Dynamic.Component
           module={component}
         />

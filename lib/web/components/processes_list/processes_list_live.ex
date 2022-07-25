@@ -6,9 +6,9 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   prop title, :string, default: "Lists"
   prop process_url, :string, default: "/list/"
 
-  def processes(assigns) do
-    if current_user(assigns) do
-      Bonfire.Social.Likes.by_liker(current_user(assigns), ValueFlows.Process)
+  def processes(current_user) do
+    if current_user do
+      Bonfire.Social.Likes.by_liker(current_user, ValueFlows.Process)
       |> Enum.map(&(&1.liked))
     else
       []
