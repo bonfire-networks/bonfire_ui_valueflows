@@ -2,7 +2,7 @@
     <div class="w-32 h-32 bg-secondary rounded-lg" style={
       "background-image: url(\""<>
       image_url(
-        e(@resource, nil) || e(@resource, :conforms_to, nil)
+        @resource || e(@resource, :conforms_to, nil)
       )
       <>
       "\")"

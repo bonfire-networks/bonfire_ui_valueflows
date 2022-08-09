@@ -108,7 +108,7 @@
           units={e(@units, [])}
           action="transfer" 
           remove="selected_economic_event=''" 
-          economic_resource_selected={preselect(e(@resource, nil))}
+          economic_resource_selected={preselect(@resource)}
           extra_components={@extra_components}
           />
       </div>
@@ -127,7 +127,7 @@
           units={e(@units, [])} 
           action="use" 
           input_of_id={e(@process, :id, nil)} 
-          economic_resource_selected={preselect(e(@resource, nil))}
+          economic_resource_selected={preselect(@resource)}
           remove="selected_economic_event=''"
           extra_components={@extra_components}
            />
@@ -148,7 +148,7 @@
           action="consume" 
           input_of_id={e(@process, :id, nil)} 
           remove="selected_economic_event=''" 
-          economic_resource_selected={preselect(e(@resource, nil))}
+          economic_resource_selected={preselect(@resource)}
           extra_components={@extra_components}
           />
       </div>
@@ -167,7 +167,7 @@
         <Bonfire.UI.ValueFlows.CreateEconomicEventLive 
           units={e(@units, [])} 
           action="lower" 
-          economic_resource_selected={preselect(e(@resource, nil))}
+          economic_resource_selected={preselect(@resource)}
           remove="selected_economic_event=''"
           extra_components={@extra_components} 
         />

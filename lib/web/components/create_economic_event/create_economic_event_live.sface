@@ -6,8 +6,8 @@
     >
 
     <HiddenInput name="action" value={@action} />
-    <HiddenInput :if={e(@input_of_id, nil)} name="input_of_id" value={e(@input_of_id, "")} />
-    <HiddenInput :if={e(@output_of_id, nil)} name="output_of_id" value={e(@output_of_id, "")} />
+    <HiddenInput :if={@input_of_id} name="input_of_id" value={e(@input_of_id, "")} />
+    <HiddenInput :if={@output_of_id} name="output_of_id" value={e(@output_of_id, "")} />
 
     <div data-id="create_event_title" class="flex items-center p-3 pb-6 border-b">
     <div :if={@action == "produce"} class="flex-1 p-2 pb-0">

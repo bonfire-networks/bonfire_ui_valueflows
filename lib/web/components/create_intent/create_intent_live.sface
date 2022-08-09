@@ -10,9 +10,9 @@
       opts={autocomplete: "off"}
       submit="ValueFlows.Planning.Intent:create">
 
-      <HiddenInput :if={e(@intent_url, nil)} name="redirect_after" value={@intent_url} />
+      <HiddenInput :if={@intent_url} name="redirect_after" value={@intent_url} />
       <HiddenInput :if={e(@action, "produce")} name="action_id" value={@action} />
-      <HiddenInput :if={e(@output_of_id, nil)} name="output_of_id" value={e(@output_of_id, nil)} />
+      <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} />
       <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
       <Field name={:name}>
