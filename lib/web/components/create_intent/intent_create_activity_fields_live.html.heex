@@ -1,8 +1,8 @@
-<div class="p-3 border-b bg-blueGray-50">
+<div class="p-3 border-b ">
   <h4 class="text-base font-medium text-blueGray-700">What are you looking for?</h4>
 </div>
-<div class="grid h-40 bg-blueGray-100 place-content-center">
-  <div class="flex items-center px-3 py-2 rounded bg-blueGray-200">
+<div class="grid h-40 place-content-center">
+  <div class="flex items-center px-3 py-2 rounded ">
     <svg class="w-5 h-5 mr-2 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
     <span class="text-sm font-semibold text-base-content opacity-60">Add an image</span>
   </div>
@@ -12,10 +12,10 @@
     <!-- SHOW LABELS -->
     <%= if length(@chosen_labels) > 0 do %>
       <div class="mb-3">
-        <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Labels</h4>
+        <h4 class="mb-1 text-xs font-medium uppercase ">Labels</h4>
         <div class="flex items-center">
           <%= for label <- @chosen_labels do %>
-            <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded bg-blueGray-200">
+            <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
               <%= e(label, :name, e(label, :profile, :name, "Label")) %>
               <input type="hidden" name="need[tags][]" value={} Map.get(label, :id)} />
               <button
@@ -39,7 +39,7 @@
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Location</h4>
         <div class="flex items-center">
-          <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded bg-blueGray-200">
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
             <%= Map.get(@at_location, :name) %>
             <input type="hidden" name="need[at_location]" value={ Map.get(@at_location, :id)} />
             <button
@@ -62,7 +62,7 @@
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Due date</h4>
         <div class="flex items-center">
-          <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded bg-blueGray-200">
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
             <%= @due_date %>
             <button
               type="button"
@@ -84,7 +84,7 @@
 <div class="mb-3">
   <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Milestone</h4>
   <div class="flex items-center">
-    <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded bg-blueGray-200">
+    <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
       <%= @milestone.name %>
       <button
         type="button"
@@ -152,7 +152,7 @@
           <% true -> %>
           <div></div>
           <% end %>
-          <div class="flex p-4 rounded-lg shadow-lg bg-blueGray-100">
+          <div class="flex p-4 rounded-lg shadow-lg ">
             <div class="flex items-center flex-1">
               <button name="is_public" checked="{false: !on, true: on}" type="button" @click="on = !on" :aria-pressed="on.toString()" aria-pressed="false" x-data="{ on: false }" :class="{ 'bg-neutral': !on, 'bg-indigo-600': on }" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-base-100 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
                 <span class="sr-only">Make it public</span>
@@ -191,7 +191,7 @@
           aria-haspopup="true"
           aria-expanded="true"
           x-bind:aria-expanded="toggle_due_date"
-          class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md bg-blueGray-100 active:bg-blueGray-100 hover:bg-blueGray-200 group" aria-current="page">
+          class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md  active:  group" aria-current="page">
           <svg x-description="Heroicon name: calendar" class="flex-shrink-0 w-5 h-5 mr-3 -ml-1 text-base-content opacity-60" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
@@ -268,7 +268,7 @@
         aria-haspopup="true"
         aria-expanded="true"
         x-bind:aria-expanded="toggle_add_location"
-        class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md bg-blueGray-100 active:bg-blueGray-100 hover:bg-blueGray-200 group" aria-current="page">
+        class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md  active:  group" aria-current="page">
           <svg class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-base-content opacity-60 hover:text-base-content opacity-60 group-hover:text-base-content opacity-60" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>

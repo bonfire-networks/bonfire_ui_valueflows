@@ -32,11 +32,11 @@
     x-transition:leave="transition ease-in duration-75"
     x-transition:leave-start="transform opacity-60 scale-100"
     x-transition:leave-end="transform opacity-0 scale-95"
-    class="absolute right-0 z-20 w-40 w-56 p-1 mt-0 origin-top-right bg-base-100 divide-y divide-gray-100 rounded-md shadow-lg top-8 ring-1 ring-black ring-opacity-5 focus:outline-none"
+    class="absolute right-0 z-20 w-40 w-56 p-1 mt-0 origin-top-right divide-y divide-gray-100 rounded-md shadow-lg top-8 ring-1 ring-black ring-opacity-5 focus:outline-none"
     style="margin-left: -20px"
     role="menu"
     aria-orientation="vertical">
-      <DateTimeLocalInput name="due" class="w-full" />
+      <DateTimeLocalInput name="due" class="input w-full" />
   </div>
   </form>
 </div>

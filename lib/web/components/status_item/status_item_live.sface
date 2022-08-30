@@ -1,5 +1,5 @@
 <div 
-  class="h-9 flex relative items-center text-xs text-medium bg-blueGray-200 rounded py-1.5 px-2.5 text-base-content opacity-60"
+  class="h-9 flex relative items-center text-xs text-medium  rounded py-1.5 px-2.5 text-base-content opacity-60"
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
@@ -16,7 +16,7 @@
     x-bind:aria-expanded="open"
     aria-expanded="true"
     type="button" 
-    class="h-9 ml-3 flex items-center place-content-center bg-blueGray-300 hover:bg-blueGray-400 cursor-pointer -mr-2.5 px-2 rounded-r">
+    class="h-9 ml-3 flex items-center place-content-center  hover:bg-blueGray-400 cursor-pointer -mr-2.5 px-2 rounded-r">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-base-content opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
     </svg>
