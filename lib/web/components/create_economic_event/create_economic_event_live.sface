@@ -173,7 +173,7 @@
     </div>
 
     {#for component <- e(@extra_components, [])}
-        <Surface.Components.Dynamic.Component
+        <Dynamic.Component
           module={component}
         />
     {/for}
