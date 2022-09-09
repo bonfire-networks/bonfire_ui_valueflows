@@ -6,7 +6,7 @@
       meta: false
     }">
     <Form
-      for={e(@__context__, ValueFlows.Planning.Intent, :changeset, ValueFlows.Planning.Intent.validate_changeset() )}
+      for={e(@__context__, ValueFlows.Planning.Intent, :changeset, nil ) || (if module_enabled?(ValueFlows.Planning.Intent), do: ValueFlows.Planning.Intent.validate_changeset(), else: :intent)}
       opts={autocomplete: "off"}
       submit="ValueFlows.Planning.Intent:create">
 
