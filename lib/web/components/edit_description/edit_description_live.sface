@@ -2,14 +2,14 @@
   x-data="{ toggle_edit_description: false }"
   class="">
   <div class="flex items-center">
-    <div class="text-xs text-base-content opacity-70 uppercase  font-regular">{l "Description"}</div>
+    <div class="text-xs uppercase text-base-content opacity-70 font-regular">{l "Description"}</div>
     <button
       :if={@current_user != nil}
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
       type="button"
-      class="inline-flex items-center px-2 py-1 ml-2 text-xs font-medium border border-transparent rounded text-blueGray-700   focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
+      class="ml-2 normal-case btn btn-xs btn-outline border-base-content/70">
       {l "Edit description"}
     </button>
   </div>
@@ -31,10 +31,10 @@
     class="mt-1.5 propse prose-sm w-full">
     <form>
       <label for="item_note" class="sr-only">{l "Edit the description"}</label>
-      <textarea id="item_note" class="block w-full h-20 text-sm transition-all duration-300 ease-in-out border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500"></textarea>
+      <textarea id="item_note" class="w-full textarea h-30 textarea-bordered">{@item.note}</textarea>
       <div class="flex items-center justify-end mt-2 space-x-3">
-        <button type="button" @click = "toggle_edit_description = false" class="btn btn-secondary">{l "Cancel"}</button>
-        <button type="submit" class="btn btn-primary">{l "Update"}</button>
+        <button type="button" @click = "toggle_edit_description = false" class="normal-case border-base-content/70 btn btn-outline btn-sm">{l "Cancel"}</button>
+        <button type="submit" class="normal-case btn btn-sm btn-primary">{l "Update"}</button>
       </div>
     </form>
   </div>
