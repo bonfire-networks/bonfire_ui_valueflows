@@ -1,9 +1,4 @@
 defmodule Bonfire.UI.ValueFlows.FiltersLive do
-  use Bonfire.UI.Common.Web, :live_component
+  use Bonfire.UI.Common.Web, :stateless_component
 
-  def mount(socket) do
-    {:ok,
-     socket
-     |> assign(selected_tab: "")}
-  end
 end
