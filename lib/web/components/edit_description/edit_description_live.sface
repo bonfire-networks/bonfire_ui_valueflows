@@ -1,22 +1,19 @@
-<div
-  x-data="{ toggle_edit_description: false }"
-  class="">
+<div x-data="{ toggle_edit_description: false }" class="">
   <div class="flex items-center">
-    <div class="text-xs uppercase text-base-content opacity-70 font-regular">{l "Description"}</div>
+    <div class="text-xs uppercase text-base-content opacity-70 font-regular">{l("Description")}</div>
     <button
       :if={@current_user != nil}
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
       type="button"
-      class="ml-2 normal-case btn btn-xs btn-outline border-base-content/70">
-      {l "Edit description"}
+      class="ml-2 normal-case btn btn-xs btn-outline border-base-content/70"
+    >
+      {l("Edit description")}
     </button>
   </div>
-  <div
-    x-show="!toggle_edit_description"
-    class="mt-1.5 prose prose-valueflows prose-sm w-full">
-    {rich @item.note}
+  <div x-show="!toggle_edit_description" class="mt-1.5 prose prose-valueflows prose-sm w-full">
+    {rich(@item.note)}
   </div>
   <div
     :if={@current_user != nil}
@@ -28,13 +25,18 @@
     x-transition:leave="ease-in duration-200"
     x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100"
     x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-    class="mt-1.5 propse prose-sm w-full">
+    class="mt-1.5 propse prose-sm w-full"
+  >
     <form>
-      <label for="item_note" class="sr-only">{l "Edit the description"}</label>
+      <label for="item_note" class="sr-only">{l("Edit the description")}</label>
       <textarea id="item_note" class="w-full textarea h-30 textarea-bordered">{@item.note}</textarea>
       <div class="flex items-center justify-end mt-2 space-x-3">
-        <button type="button" @click = "toggle_edit_description = false" class="normal-case border-base-content/70 btn btn-outline btn-sm">{l "Cancel"}</button>
-        <button type="submit" class="normal-case btn btn-sm btn-primary">{l "Update"}</button>
+        <button
+          type="button"
+          @click="toggle_edit_description = false"
+          class="normal-case border-base-content/70 btn btn-outline btn-sm"
+        >{l("Cancel")}</button>
+        <button type="submit" class="normal-case btn btn-sm btn-primary">{l("Update")}</button>
       </div>
     </form>
   </div>

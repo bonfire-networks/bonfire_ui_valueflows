@@ -3,7 +3,19 @@
 </div>
 <div class="grid h-40 place-content-center">
   <div class="flex items-center px-3 py-2 rounded ">
-    <svg class="w-5 h-5 mr-2 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+    <svg
+      class="w-5 h-5 mr-2 text-base-content opacity-60"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+        clip-rule="evenodd"
+      >
+      </path>
+    </svg>
     <span class="text-sm font-semibold text-base-content opacity-60">Add an image</span>
   </div>
 </div>
@@ -19,12 +31,18 @@
               <%= e(label, :name, e(label, :profile, :name, "Label")) %>
               <input type="hidden" name="need[tags][]" value={} Map.get(label, :id)} />
               <button
-                phx-target={@myself} 
+                phx-target={@myself}
                 phx-click="label_clear"
                 type="button"
-                class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white">
+                class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white"
+              >
                 <span class="sr-only">Remove large option</span>
-                <svg class="w-2 h-2 text-base-content opacity-70" stroke="currentColor" fill="none" viewBox="0 0 8 8">
+                <svg
+                  class="w-2 h-2 text-base-content opacity-70"
+                  stroke="currentColor"
+                  fill="none"
+                  viewBox="0 0 8 8"
+                >
                   <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
                 </svg>
               </button>
@@ -32,33 +50,37 @@
           <% end %>
         </div>
       </div>
-      <% end %>
-
-      <!-- SHOW LOCATION -->
-      <%= if Map.get(@at_location, :id) do %>
+    <% end %>
+    <!-- SHOW LOCATION -->
+    <%= if Map.get(@at_location, :id) do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Location</h4>
         <div class="flex items-center">
           <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
             <%= Map.get(@at_location, :name) %>
-            <input type="hidden" name="need[at_location]" value={ Map.get(@at_location, :id)} />
+            <input type="hidden" name="need[at_location]" value={Map.get(@at_location, :id)} />
             <button
-              phx-target={@myself} 
+              phx-target={@myself}
               phx-click="location_clear"
               type="button"
-              class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white">
+              class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white"
+            >
               <span class="sr-only">Remove large option</span>
-              <svg class="w-2 h-2 text-base-content opacity-70" stroke="currentColor" fill="none" viewBox="0 0 8 8">
+              <svg
+                class="w-2 h-2 text-base-content opacity-70"
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 8 8"
+              >
                 <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
               </svg>
             </button>
           </span>
         </div>
       </div>
-      <% end %>
-
-      <!-- SHOW DUE DATE -->
-      <%= if  @due_date != "" do %>
+    <% end %>
+    <!-- SHOW DUE DATE -->
+    <%= if  @due_date != "" do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Due date</h4>
         <div class="flex items-center">
@@ -66,110 +88,170 @@
             <%= @due_date %>
             <button
               type="button"
-              phx-target={@myself} 
+              phx-target={@myself}
               phx-click="clear_due_date"
-              class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white">
+              class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white"
+            >
               <span class="sr-only">Remove large option</span>
-              <svg class="w-2 h-2 text-base-content opacity-70" stroke="currentColor" fill="none" viewBox="0 0 8 8">
+              <svg
+                class="w-2 h-2 text-base-content opacity-70"
+                stroke="currentColor"
+                fill="none"
+                viewBox="0 0 8 8"
+              >
                 <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
               </svg>
             </button>
           </span>
         </div>
       </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
 <%= if Map.get(@milestone, :id) do %>
-<div class="mb-3">
-  <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Milestone</h4>
-  <div class="flex items-center">
-    <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
-      <%= @milestone.name %>
-      <button
-        type="button"
-        phx-target={@myself} 
-        phx-click="clear_milestone"
-        class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white">
-        <span class="sr-only">Remove large option</span>
-        <svg class="w-2 h-2 text-base-content opacity-70" stroke="currentColor" fill="none" viewBox="0 0 8 8">
-          <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
-        </svg>
-      </button>
-    </span>
+  <div class="mb-3">
+    <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Milestone</h4>
+    <div class="flex items-center">
+      <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
+        <%= @milestone.name %>
+        <button
+          type="button"
+          phx-target={@myself}
+          phx-click="clear_milestone"
+          class="inline-flex items-center justify-center flex-shrink-0 w-4 h-4 ml-2 text-indigo-400 rounded-full hover:bg-indigo-200 hover:text-indigo-500 focus:outline-none focus:bg-base-2000 focus:text-white"
+        >
+          <span class="sr-only">Remove large option</span>
+          <svg
+            class="w-2 h-2 text-base-content opacity-70"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 8 8"
+          >
+            <path stroke-linecap="round" stroke-width="1.5" d="M1 1l6 6m0-6L1 7" />
+          </svg>
+        </button>
+      </span>
+    </div>
   </div>
-</div>
 <% end %>
 <div class="flex">
   <form
     class="flex w-full h-full"
     phx-submit="ValueFlows.Planning.Intent:create"
-    phx-target={@myself} >
+    phx-target={@myself}
+  >
     <div class="relative z-10 flex flex-col flex-grow p-4">
       <div class="flex flex-1">
         <div class="flex flex-col flex-1 h-full bg-base-100">
           <%= cond do %>
-          <% @intention == "need" -> %>
-            <div class="flex-grow bg-base-100">
-              <div class="">
-                <label for="name" class="block text-sm font-medium text-base-content opacity-70">
-                  Title
-                </label>
-                <div class="mt-1">
-                  <input type="text" name="need[name]" id="name" autocomplete="street-address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm">
+            <% @intention == "need" -> %>
+              <div class="flex-grow bg-base-100">
+                <div class="">
+                  <label for="name" class="block text-sm font-medium text-base-content opacity-70">
+                    Title
+                  </label>
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="need[name]"
+                      id="name"
+                      autocomplete="street-address"
+                      class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <label for="note" class="block text-sm font-medium text-base-content opacity-70">
+                    Description
+                  </label>
+                  <div class="mt-1">
+                    <textarea
+                      id="note"
+                      name="need[note]"
+                      rows="5"
+                      class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                    ></textarea>
+                  </div>
+                  <p class="mt-2 text-sm text-base-content opacity-60">
+                    Write a description of what you're looking for
+                  </p>
                 </div>
               </div>
-              <div class="mt-3">
-                <label for="note" class="block text-sm font-medium text-base-content opacity-70">
-                  Description
-                </label>
-                <div class="mt-1">
-                  <textarea id="note" name="need[note]" rows="5" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"></textarea>
+            <% @intention == "offer" -> %>
+              <div class="flex-grow bg-base-100">
+                <div class="">
+                  <label for="name" class="block text-sm font-medium text-base-content opacity-70">
+                    Title
+                  </label>
+                  <div class="mt-1">
+                    <input
+                      type="text"
+                      name="offer[name]"
+                      id="name"
+                      autocomplete="street-address"
+                      class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                    />
+                  </div>
                 </div>
-                <p class="mt-2 text-sm text-base-content opacity-60">Write a description of what you're looking for</p>
-              </div>
-            </div>
-          <% @intention == "offer" -> %>
-            <div class="flex-grow bg-base-100">
-              <div class="">
-                <label for="name" class="block text-sm font-medium text-base-content opacity-70">
-                  Title
-                </label>
-                <div class="mt-1">
-                  <input type="text" name="offer[name]" id="name" autocomplete="street-address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm">
+                <div class="mt-3">
+                  <label for="note" class="block text-sm font-medium text-base-content opacity-70">
+                    Description
+                  </label>
+                  <div class="mt-1">
+                    <textarea
+                      id="note"
+                      name="offer[note]"
+                      rows="3"
+                      class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                    ></textarea>
+                  </div>
+                  <p class="mt-2 text-sm text-base-content opacity-60">
+                    Write a few sentences about yourself.
+                  </p>
                 </div>
               </div>
-              <div class="mt-3">
-                <label for="note" class="block text-sm font-medium text-base-content opacity-70">
-                  Description
-                </label>
-                <div class="mt-1">
-                  <textarea id="note" name="offer[note]" rows="3" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"></textarea>
-                </div>
-                <p class="mt-2 text-sm text-base-content opacity-60">Write a few sentences about yourself.</p>
-              </div>
-            </div>
-          <% true -> %>
-          <div></div>
+            <% true -> %>
+              <div></div>
           <% end %>
           <div class="flex p-4 rounded-lg shadow-lg ">
             <div class="flex items-center flex-1">
-              <button name="is_public" checked="{false: !on, true: on}" type="button" @click="on = !on" :aria-pressed="on.toString()" aria-pressed="false" x-data="{ on: false }" :class="{ 'bg-neutral': !on, 'bg-indigo-600': on }" class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-base-100 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
+              <button
+                name="is_public"
+                checked="{false: !on, true: on}"
+                type="button"
+                @click="on = !on"
+                :aria-pressed="on.toString()"
+                aria-pressed="false"
+                x-data="{ on: false }"
+                :class="{ 'bg-neutral': !on, 'bg-indigo-600': on }"
+                class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-base-100 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
+              >
                 <span class="sr-only">Make it public</span>
-                <span aria-hidden="true" :class="{'translate-x-5': on, 'translate-x-0': !on }" class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-base-100 rounded-full shadow ring-0"></span>
+                <span
+                  aria-hidden="true"
+                  :class="{'translate-x-5': on, 'translate-x-0': !on }"
+                  class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-base-100 rounded-full shadow ring-0"
+                >
+                </span>
               </button>
               <span class="ml-3" id="toggleLabel">
-                <span class="text-sm font-medium text-base-content opacity-90">Make it public</span>
+                <span class="text-sm font-medium text-base-content opacity-90">
+                  Make it public
+                </span>
               </span>
             </div>
             <div class="flex items-center">
               <button
                 @click="toggleIntent = false"
                 type="button"
-                class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
+                class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
+              >
                 Cancel
               </button>
-              <button type="submit" class="flex justify-center px-4 py-2 text-sm font-medium text-base-content opacity-60 transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md hover:bg-green-700 hover:text-base-content opacity-60 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral">
+              <button
+                type="submit"
+                class="flex justify-center px-4 py-2 text-sm font-medium text-base-content opacity-60 transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md hover:bg-green-700 hover:text-base-content opacity-60 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral"
+              >
                 Publish
               </button>
             </div>
@@ -184,93 +266,165 @@
       <div
         x-data="{toggle_due_date: false}"
         @keydown.window.escape="toggle_due_date = false"
-        @click.outside = "toggle_due_date = false" >
+        @click.outside="toggle_due_date = false"
+      >
         <button
           type="button"
-          @click ="toggle_due_date = !toggle_due_date"
+          @click="toggle_due_date = !toggle_due_date"
           aria-haspopup="true"
           aria-expanded="true"
           x-bind:aria-expanded="toggle_due_date"
-          class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md  active:  group" aria-current="page">
-          <svg x-description="Heroicon name: calendar" class="flex-shrink-0 w-5 h-5 mr-3 -ml-1 text-base-content opacity-60" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md  active:  group"
+          aria-current="page"
+        >
+          <svg
+            x-description="Heroicon name: calendar"
+            class="flex-shrink-0 w-5 h-5 mr-3 -ml-1 text-base-content opacity-60"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+            >
+            </path>
           </svg>
           <span class="truncate">
             Set a due date
           </span>
         </button>
+        <div
+          x-show="toggle_due_date"
+          x-description="Dropdown panel, show/hide based on dropdown state."
+          x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-60 scale-100"
+          x-transition:leave="transition ease-out duration-75"
+          x-transition:leave-start="transform opacity-60 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 mt-2 mr-2 origin-top-right bg-base-100 rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5"
+        >
           <div
-            x-show="toggle_due_date"
-            x-description="Dropdown panel, show/hide based on dropdown state."
-            x-transition:enter="transition ease-out duration-100"
-            x-transition:enter-start="transform opacity-0 scale-95"
-            x-transition:enter-end="transform opacity-60 scale-100"
-            x-transition:leave="transition ease-out duration-75"
-            x-transition:leave-start="transform opacity-60 scale-100"
-            x-transition:leave-end="transform opacity-0 scale-95"
-            class="absolute right-0 mt-2 mr-2 origin-top-right bg-base-100 rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5">
-              <div
-                class="py-1 rounded-md shadow-xs"
-                role="menu"
-                aria-orientation="vertical"
-                aria-labelledby="due date menu">
-                <form
-                  phx-submit="ValueFlows.Planning.Intent:set_due"
-                  phx-target={@myself} 
-                  action="">
-                  <div class="flex items-center p-2 border-b">
-                    <label for="due_date" class="flex-1 text-sm font-light text-center">Set a due date</label>
-                    <svg
-                      @click ="toggle_due_date = false"
-                      class="w-6 h-6 text-base-content opacity-60 bg-transparent border-none cursor-pointer hover:text-base-content opacity-60"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-                      </svg>
-                  </div>
-                  <div class="p-2">
-                    <div class="flex mt-1 rounded-md shadow-sm">
-                      <div class="relative flex items-stretch flex-1 flex-grow w-full focus-within:z-10">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <svg class="w-5 h-5 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <input
-                          class="block w-full pl-10 border-gray-300 rounded-none focus:ring-secondary-500 focus:border-indigo-500 rounded-l-md sm:text-sm"
-                          type="date"
-                          name="due_date"
-                          min={ Date.utc_today }
-                          id="due_date">
-                        <button
-                          @click ="toggle_due_date = false"
-                          type="submit"
-                          class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-base-content opacity-70 border border-gray-300 rounded-r-md bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500">
-                          <svg class="w-5 h-5 text-base-content opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
-                          </svg>
-                          <span>Add</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+            class="py-1 rounded-md shadow-xs"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="due date menu"
+          >
+            <form phx-submit="ValueFlows.Planning.Intent:set_due" phx-target={@myself} action="">
+              <div class="flex items-center p-2 border-b">
+                <label for="due_date" class="flex-1 text-sm font-light text-center">
+                  Set a due date
+                </label>
+                <svg
+                  @click="toggle_due_date = false"
+                  class="w-6 h-6 text-base-content opacity-60 bg-transparent border-none cursor-pointer hover:text-base-content opacity-60"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd"
+                  >
+                  </path>
+                </svg>
               </div>
+              <div class="p-2">
+                <div class="flex mt-1 rounded-md shadow-sm">
+                  <div class="relative flex items-stretch flex-1 flex-grow w-full focus-within:z-10">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg
+                        class="w-5 h-5 text-base-content opacity-60"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                          clip-rule="evenodd"
+                        >
+                        </path>
+                      </svg>
+                    </div>
+                    <input
+                      class="block w-full pl-10 border-gray-300 rounded-none focus:ring-secondary-500 focus:border-indigo-500 rounded-l-md sm:text-sm"
+                      type="date"
+                      name="due_date"
+                      min={Date.utc_today()}
+                      id="due_date"
+                    />
+                    <button
+                      @click="toggle_due_date = false"
+                      type="submit"
+                      class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-base-content opacity-70 border border-gray-300 rounded-r-md bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500"
+                    >
+                      <svg
+                        class="w-5 h-5 text-base-content opacity-60"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                          clip-rule="evenodd"
+                        >
+                        </path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
+        </div>
       </div>
 
       <div
         x-data="{toggle_add_location: false}"
         @keydown.window.escape="toggle_add_location = false"
-        @click.outside = "toggle_add_location = false" >
+        @click.outside="toggle_add_location = false"
+      >
         <button
-        @click ="toggle_add_location = !toggle_add_location"
-        type="button"
-        aria-haspopup="true"
-        aria-expanded="true"
-        x-bind:aria-expanded="toggle_add_location"
-        class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md  active:  group" aria-current="page">
-          <svg class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-base-content opacity-60 hover:text-base-content opacity-60 group-hover:text-base-content opacity-60" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          @click="toggle_add_location = !toggle_add_location"
+          type="button"
+          aria-haspopup="true"
+          aria-expanded="true"
+          x-bind:aria-expanded="toggle_add_location"
+          class="flex items-center w-full px-3 py-2 text-sm font-normal text-base-content opacity-70 rounded-md  active:  group"
+          aria-current="page"
+        >
+          <svg
+            class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-base-content opacity-60 hover:text-base-content opacity-60 group-hover:text-base-content opacity-60"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+            >
+            </path>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+            >
+            </path>
           </svg>
           <span class="truncate">
             Add a location
@@ -286,16 +440,15 @@
           x-transition:leave="transition ease-out duration-75"
           x-transition:leave-start="transform opacity-60 scale-100"
           x-transition:leave-end="transform opacity-0 scale-95"
-          class="absolute right-0 mt-2 mr-2 origin-top-right bg-base-100 rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5">
-              <%= live_component(
-                @socket,
-                AddLocationLive,
-                id: @intention<>"_location"
-              ) %>
-          </div>
+          class="absolute right-0 mt-2 mr-2 origin-top-right bg-base-100 rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5"
+        >
+          <%= live_component(
+            @socket,
+            AddLocationLive,
+            id: @intention <> "_location"
+          ) %>
+        </div>
       </div>
-
-
     </nav>
   </div>
 </div>

@@ -7,25 +7,33 @@
     x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100"
     x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     x-description="Modal panel, show/hide based on modal state."
-    class="transition-all transform sm:align-middle sm:w-full">
-    <Form for={e(@__context__, ValueFlows.Process, :changeset, ValueFlows.Process.LiveHandler.changeset() )} submit="ValueFlows.Process:create" opts={autocomplete: "off"}>
-      <input name="redirect_after" value={e(@process_url, path(ValueFlows.Process))} type="hidden" />
+    class="transition-all transform sm:align-middle sm:w-full"
+  >
+    <Form
+      for={e(@__context__, ValueFlows.Process, :changeset, ValueFlows.Process.LiveHandler.changeset())}
+      submit="ValueFlows.Process:create"
+      opts={autocomplete: "off"}
+    >
+      <input name="redirect_after" value={e(@process_url, path(ValueFlows.Process))} type="hidden">
       <Field name={:name}>
-        <label class="block text-sm font-medium text-primary-700">{l "Choose a name"}</label>
+        <label class="block text-sm font-medium text-primary-700">{l("Choose a name")}</label>
         <div class="mt-1 rounded-md shadow-sm">
           <TextInput class="block w-full pr-8 rounded-md input-bordered input sm:text-sm" placeholder="" />
         </div>
       </Field>
       <Field name={:note}>
-        <label class="block mt-2 text-sm font-medium text-primary-700">{l "Add an optional description"}</label>
+        <label class="block mt-2 text-sm font-medium text-primary-700">{l("Add an optional description")}</label>
         <div class="mt-1 rounded-md shadow-sm">
-          <TextArea placeholder="What the process is about..." class="flex-1 w-full h-20 text-sm rounded-md textarea textarea-bordered font-regular placeholder-opacity-60"></TextArea>
+          <TextArea
+            placeholder="What the process is about..."
+            class="flex-1 w-full h-20 text-sm rounded-md textarea textarea-bordered font-regular placeholder-opacity-60"
+          />
         </div>
       </Field>
       <div class="flex items-center justify-end mt-2 space-x-2">
-        <button type="button" @click={@close} class="normal-case btn btn-outline btn-sm">{l "Cancel"}</button>
+        <button type="button" @click={@close} class="normal-case btn btn-outline btn-sm">{l("Cancel")}</button>
         <button type="submit" class="normal-case btn btn-primary btn-sm">
-          {l "Publish"}
+          {l("Publish")}
         </button>
       </div>
     </Form>

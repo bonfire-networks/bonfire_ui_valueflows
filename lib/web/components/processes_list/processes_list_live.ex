@@ -9,7 +9,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   def processes(current_user) do
     if current_user do
       Bonfire.Social.Likes.by_liker(current_user, ValueFlows.Process)
-      |> Enum.map(&(&1.liked))
+      |> Enum.map(& &1.liked)
     else
       []
     end
@@ -25,5 +25,4 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   #   }
   # """
   # def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
-
 end

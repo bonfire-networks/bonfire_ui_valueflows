@@ -2,15 +2,16 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
   use Bonfire.UI.Common.Web, :live_component
 
   alias Bonfire.Tag.Tags
-  alias Bonfire.UI.ValueFlows.{CreateLabelLive, AddLabelLive}
+  alias Bonfire.UI.ValueFlows.CreateLabelLive
+  alias Bonfire.UI.ValueFlows.AddLabelLive
 
   def mount(socket) do
-
-    {:ok, socket
-    |> assign(
-      label_search_results: [],
-      label_search_phrase: ""
-    )}
+    {:ok,
+     socket
+     |> assign(
+       label_search_results: [],
+       label_search_phrase: ""
+     )}
   end
 
   def handle_event("label_search", %{"label_search" => search_for}, socket) do
@@ -18,9 +19,11 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
     debug(labels)
     # labels = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
-      label_search_results: labels, # search(Enum.map(labels, fn x -> x.name end), search_for),
+      # search(Enum.map(labels, fn x -> x.name end), search_for),
+      label_search_results: labels,
       label_search_phrase: search_for
     ]
+
     debug(assigns)
 
     {:noreply, assign(socket, assigns)}
@@ -30,7 +33,7 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
     assigns = [
       label_search_results: [],
       label_search_phrase: label_name,
-      chosen_labels: [input_to_atoms(label)] ++ Map.get(socket.assigns, :chosen_labels, []),
+      chosen_labels: [input_to_atoms(label)] ++ Map.get(socket.assigns, :chosen_labels, [])
     ]
 
     {:noreply, assign(socket, assigns)}

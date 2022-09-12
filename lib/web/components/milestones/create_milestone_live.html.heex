@@ -11,109 +11,171 @@
           });"
       >
         <div
-        @click="toggleMilestone = true"
-        class='flex items-center p-1 rounded-md cursor-pointer'>
+          @click="toggleMilestone = true"
+          class="flex items-center p-1 rounded-md cursor-pointer"
+        >
           <button class="flex justify-center px-4 py-2 text-sm font-medium text-base-content opacity-60 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-base-content opacity-60 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral">
             Create a new milestone
           </button>
         </div>
-      <div
-        x-show="toggleMilestone"
-        class="fixed inset-0 z-10 overflow-y-auto">
-        <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-          <div
-            @click="toggleMilestone = false"
-            x-show="toggleMilestone"
-            x-description="Background overlay, show/hide based on modal state."
-            x-transition:enter="ease-out duration-300"
-            x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-60"
-            x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="opacity-60"
-            x-transition:leave-end="opacity-0"
-            class="fixed inset-0 transition-opacity"
-            aria-hidden="true">
-            <div class="absolute inset-0 bg-base-100 opacity-75"></div>
-          </div>
-
-          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-          <div
-            x-show="toggleMilestone"
-            x-description="Modal panel, show/hide based on modal state."
-            x-transition:enter="ease-out duration-300"
-            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            x-transition:enter-end="opacity-60 translate-y-0 sm:scale-100"
-            x-transition:leave="ease-in duration-200"
-            x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100"
-            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            class="inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-100 rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full sm:p-0" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-            <div class="p-2 border-b bg-blueGray-50">
-              <h4 class="text-sm font-medium text-base-content opacity-80">Create a new milestone</h4>
+        <div x-show="toggleMilestone" class="fixed inset-0 z-10 overflow-y-auto">
+          <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div
+              @click="toggleMilestone = false"
+              x-show="toggleMilestone"
+              x-description="Background overlay, show/hide based on modal state."
+              x-transition:enter="ease-out duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-60"
+              x-transition:leave="ease-in duration-200"
+              x-transition:leave-start="opacity-60"
+              x-transition:leave-end="opacity-0"
+              class="fixed inset-0 transition-opacity"
+              aria-hidden="true"
+            >
+              <div class="absolute inset-0 bg-base-100 opacity-75"></div>
             </div>
-            <form
-              phx-submit="ValueFlows.Process:create"
-              phx-target={@myself} 
-              >
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+              &#8203;
+            </span>
+            <div
+              x-show="toggleMilestone"
+              x-description="Modal panel, show/hide based on modal state."
+              x-transition:enter="ease-out duration-300"
+              x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              x-transition:enter-end="opacity-60 translate-y-0 sm:scale-100"
+              x-transition:leave="ease-in duration-200"
+              x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100"
+              x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              class="inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-base-100 rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full sm:p-0"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-headline"
+            >
+              <div class="p-2 border-b bg-blueGray-50">
+                <h4 class="text-sm font-medium text-base-content opacity-80">
+                  Create a new milestone
+                </h4>
+              </div>
+              <form phx-submit="ValueFlows.Process:create" phx-target={@myself}>
                 <div class="p-3">
                   <div class="">
-                    <label for="name" class="block text-sm font-medium text-base-content opacity-70">
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-base-content opacity-70"
+                    >
                       Title
                     </label>
                     <div class="mt-1">
-                      <input type="text" name="name" id="name" autocomplete="street-address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm">
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        autocomplete="street-address"
+                        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                      />
                     </div>
                   </div>
                   <div class="mt-3">
-                    <label for="note" class="block text-sm font-medium text-base-content opacity-70">
+                    <label
+                      for="note"
+                      class="block text-sm font-medium text-base-content opacity-70"
+                    >
                       Description
                     </label>
                     <div class="mt-1">
-                      <textarea id="note" name="note" rows="3" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                      <textarea
+                        id="note"
+                        name="note"
+                        rows="3"
+                        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                      ></textarea>
                     </div>
-                    <p class="mt-2 text-sm text-base-content opacity-60">What the milestone is about to accomplish.</p>
+                    <p class="mt-2 text-sm text-base-content opacity-60">
+                      What the milestone is about to accomplish.
+                    </p>
                   </div>
                   <div class="mt-3">
-                    <label for="due_date" class="block text-sm font-medium text-base-content opacity-70">Set a due date</label>
+                    <label
+                      for="due_date"
+                      class="block text-sm font-medium text-base-content opacity-70"
+                    >
+                      Set a due date
+                    </label>
                     <div class="flex mt-1 rounded-md shadow-sm">
                       <div class="relative flex items-stretch flex-1 flex-grow w-full focus-within:z-10">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <svg class="w-5 h-5 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                          <svg
+                            class="w-5 h-5 text-base-content opacity-60"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                              clip-rule="evenodd"
+                            >
+                            </path>
+                          </svg>
                         </div>
                         <input
                           class="block w-full pl-10 border-gray-300 rounded-md focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
                           type="date"
                           name="due_date"
-                          min={Date.utc_today}
-                          id="due_date">
+                          min={Date.utc_today()}
+                          id="due_date"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="flex items-center justify-end px-3 py-3 border-b border-l">
-                    <button
-                      @click="toggleMilestone = false"
-                      type="button"
-                      class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
-                      Cancel
-                    </button>
-                    <button type="submit" class="flex justify-center px-4 py-2 text-sm font-medium text-base-content opacity-60 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-base-content opacity-60 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral">
-                      Publish
-                    </button>
+                  <button
+                    @click="toggleMilestone = false"
+                    type="button"
+                    class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="flex justify-center px-4 py-2 text-sm font-medium text-base-content opacity-60 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-base-content opacity-60 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral"
+                  >
+                    Publish
+                  </button>
                 </div>
               </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="flex items-center justify-end flex-1">
-      <%= link to: path(Bonfire.Breadpub.ProcessesLive) do %>
-        <div class="flex items-center">
-          <h3 class="ml-3 text-sm font-normal tracking-wide text-right text-base-content opacity-60 ">View all milestones</h3>
-          <svg class="w-6 h-6 ml-4 text-base-content opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-        </div>
-      <% end %>
-    </div>
+      <div class="flex items-center justify-end flex-1">
+        <%= link to: path(Bonfire.Breadpub.ProcessesLive) do %>
+          <div class="flex items-center">
+            <h3 class="ml-3 text-sm font-normal tracking-wide text-right text-base-content opacity-60 ">
+              View all milestones
+            </h3>
+            <svg
+              class="w-6 h-6 ml-4 text-base-content opacity-60"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              >
+              </path>
+            </svg>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

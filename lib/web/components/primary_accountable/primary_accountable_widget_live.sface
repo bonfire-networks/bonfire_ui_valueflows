@@ -1,13 +1,18 @@
-<div :if={e(@primary_accountable, :name, nil)} class="relative pt-4 text-sm text-base-content opacity-60 border-t">
+<div
+  :if={e(@primary_accountable, :name, nil)}
+  class="relative pt-4 text-sm text-base-content opacity-60 border-t"
+>
   <div class="flex items-center justify-between mb-2">
-    <span class="block text-sm font-semibold tracking-wide text-base-content opacity-60 ">{l "Assigned to"}</span>
+    <span class="block text-sm font-semibold tracking-wide text-base-content opacity-60">{l("Assigned to")}</span>
   </div>
   <div class="flex items-center mt-3">
     <Bonfire.UI.Common.AvatarLive user={@primary_accountable} class="w-8 h-8  rounded-full" />
     <div class="ml-2">
-        <LiveRedirect to={path(@primary_accountable)}
-          class="text-sm text-base-content opacity-80  font-regular">
-          {e(@primary_accountable, :name, "")}</LiveRedirect>
+      <LiveRedirect
+        to={path(@primary_accountable)}
+        class="text-sm text-base-content opacity-80  font-regular"
+      >
+        {e(@primary_accountable, :name, "")}</LiveRedirect>
     </div>
   </div>
 </div>

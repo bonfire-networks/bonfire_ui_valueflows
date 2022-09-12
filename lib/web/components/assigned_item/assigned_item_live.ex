@@ -11,22 +11,24 @@ defmodule Bonfire.UI.ValueFlows.AssignedItemLive do
 
   # FIXME! update no longer works in stateless
   def update(%{is_editable: true} = assigns, socket) do
-
     agent = e(assigns, :agent, nil)
-    field_name = e(assigns, :field_name, "agent") #|> IO.inspect
+    # |> IO.inspect
+    field_name = e(assigns, :field_name, "agent")
 
-    {:ok, socket
-      |> assigns_merge(assigns,
-      field_name: field_name,
-      selected_options: e(assigns, field_name, [{e(agent, :name, e(agent, :profile, :name, nil)), e(agent, :id, nil)}])
-      )}
+    {:ok,
+     socket
+     |> assigns_merge(assigns,
+       field_name: field_name,
+       selected_options:
+         e(assigns, field_name, [
+           {e(agent, :name, e(agent, :profile, :name, nil)), e(agent, :id, nil)}
+         ])
+     )}
   end
 
   def update(assigns, socket) do
-
-    {:ok, socket
-      |> assign(assigns)}
+    {:ok,
+     socket
+     |> assign(assigns)}
   end
-
-
 end

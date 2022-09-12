@@ -8,6 +8,7 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
     assigns = [
       milestone: ""
     ]
+
     {:noreply, assign(socket, assigns)}
   end
 
@@ -21,6 +22,7 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
       milestone_search_results: search(processes, search_for),
       milestone_search_phrase: search_for
     ]
+
     debug(assigns)
 
     {:noreply, assign(socket, assigns)}
@@ -28,10 +30,11 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
 
   def handle_event("milestone_pick", %{"id" => _id, "name" => milestone_name} = milestone, socket) do
     processes = all_processes(socket)
+
     assigns = [
       milestone_search_results: processes,
       milestone_search_phrase: milestone_name,
-      milestone: input_to_atoms(milestone),
+      milestone: input_to_atoms(milestone)
     ]
 
     {:noreply, assign(socket, assigns)}
@@ -47,8 +50,6 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
     String.starts_with?(String.downcase(item.name), String.downcase(prefix))
   end
 
-
-
   @graphql """
     {
       processes {
@@ -59,5 +60,4 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
   """
   def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
   def all_processes(socket), do: processes(socket)
-
 end

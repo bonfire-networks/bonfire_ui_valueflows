@@ -24,14 +24,14 @@ defmodule ValueFlows.Web.My.PublishAdLive do
 
   def publish_ad(data, socket) do
     intent = input_to_atoms(data)
-    #debug(intent, "intent to create")
+    # debug(intent, "intent to create")
 
     {:ok, _new_intent} =
       ValueFlows.Planning.Intent.GraphQL.create_intent(%{intent: intent}, %{
         context: %{current_user: current_user(socket)}
       })
 
-    #debug(new_intent)
+    # debug(new_intent)
 
     {:noreply,
      socket

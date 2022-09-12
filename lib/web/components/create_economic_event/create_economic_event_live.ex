@@ -28,10 +28,11 @@ defmodule Bonfire.UI.ValueFlows.CreateEconomicEventLive do
   prop remove_event, :any, default: nil
 
   def mount(socket) do
-    {:ok, socket |> assign(
-      form_error: "",
-      changeset: ValueFlows.EconomicEvent.validate_changeset()
-      )}
+    {:ok,
+     socket
+     |> assign(
+       form_error: "",
+       changeset: ValueFlows.EconomicEvent.validate_changeset()
+     )}
   end
-
 end

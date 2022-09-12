@@ -2,41 +2,74 @@
   class="py-1 rounded-md shadow-xs"
   role="menu"
   aria-orientation="vertical"
-  aria-labelledby="add location menu">
-  <form
-    phx-target={@myself}
-    phx-submit="Bonfire.Geolocate:create">
+  aria-labelledby="add location menu"
+>
+  <form phx-target={@myself} phx-submit="Bonfire.Geolocate:create">
     <div class="flex items-center p-2 border-b">
-      <label for="location_input" class="flex-1 text-sm font-light text-center">Add a location</label>
+      <label for="location_input" class="flex-1 text-sm font-light text-center">
+        Add a location
+      </label>
       <svg
-        @click ="toggle_add_location = false"
+        @click="toggle_add_location = false"
         class="w-6 h-6 text-base-content opacity-60 bg-transparent border-none cursor-pointer hover:text-base-content opacity-60"
         fill="currentColor"
         viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-        </svg>
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+          clip-rule="evenodd"
+        >
+        </path>
+      </svg>
     </div>
     <div class="p-2">
       <div class="flex mt-1 rounded-md shadow-sm">
         <div class="relative flex items-stretch flex-grow focus-within:z-10">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg class="w-5 h-5 text-base-content opacity-60" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+            <svg
+              class="w-5 h-5 text-base-content opacity-60"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clip-rule="evenodd"
+              >
+              </path>
+            </svg>
           </div>
           <input
             autocomplete="off"
             type="text"
             name="location_input"
-            value={@location_search_phrase }
+            value={@location_search_phrase}
             phx-debounce="500"
             placeholder="Search or enter address..."
-            class="block w-full pl-10 border-gray-300 rounded-none focus:ring-secondary-500 focus:border-indigo-500 rounded-l-md sm:text-sm" placeholder="John Doe">
+            class="block w-full pl-10 border-gray-300 rounded-none focus:ring-secondary-500 focus:border-indigo-500 rounded-l-md sm:text-sm"
+            placeholder="John Doe"
+          />
         </div>
         <button
           type="submit"
-          class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-base-content opacity-70 border border-gray-300 rounded-r-md bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500">
-          <svg class="w-5 h-5 text-base-content opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
+          class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-base-content opacity-70 border border-gray-300 rounded-r-md bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500"
+        >
+          <svg
+            class="w-5 h-5 text-base-content opacity-60"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+              clip-rule="evenodd"
+            >
+            </path>
           </svg>
           <span>Add</span>
         </button>
@@ -49,11 +82,11 @@
               <div
                 class="p-2 text-sm text-base-content opacity-70 cursor-pointer hover:bg-neutral hover:bg-opacity-30  "
                 phx-click="location_pick"
-                @click ="toggle_add_location = false"
-                phx-target={@myself} 
-                phx-value-id={ search_result.id }
-                phx-value-name={ search_result.name }
-                >
+                @click="toggle_add_location = false"
+                phx-target={@myself}
+                phx-value-id={search_result.id}
+                phx-value-name={search_result.name}
+              >
                 <%= search_result.name %>
               </div>
             <% end %>

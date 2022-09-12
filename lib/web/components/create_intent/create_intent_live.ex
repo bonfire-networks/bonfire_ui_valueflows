@@ -7,5 +7,4 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
   prop title, :string, default: "Create a new intent"
   prop default_tag, :string
   prop textarea_class, :css_class, required: false
-
 end

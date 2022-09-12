@@ -3,5 +3,4 @@ defmodule Bonfire.UI.ValueFlows.CreateProcessLive do
 
   prop close, :string
   prop process_url, :string
-
 end
