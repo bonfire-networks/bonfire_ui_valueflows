@@ -1,11 +1,11 @@
-<Bonfire.UI.Common.WidgetBlockLive widget_title={"Advanced filters"}>
+<Bonfire.UI.Common.WidgetBlockLive widget_title="Advanced filters">
   <div class="p-3">
     <fieldset>
       <div>
-        <legend class="text-sm font-normal text-base-content/70">{l "Search for"}</legend>
+        <legend class="text-sm font-normal text-base-content/70">{l("Search for")}</legend>
       </div>
-      <div class="mt-2 border rounded-lg border-base-content/10 bg-base-100 ">
-        <div class="flex items-center p-3 ">
+      <div class="mt-2 border rounded-lg border-base-content/10 bg-base-100">
+        <div class="flex items-center p-3">
           <input
             id="push_everything"
             name="push_notifications"
@@ -13,11 +13,8 @@
             checked
             class="w-5 h-5 text-base-content/70"
           />
-          <label
-            for="push_everything"
-            class="block ml-3 text-sm font-normal text-base-content/70"
-          >
-            {l "Needs"}
+          <label for="push_everything" class="block ml-3 text-sm font-normal text-base-content/70">
+            {l("Needs")}
           </label>
         </div>
         <div class="flex items-center p-3 border-t border-base-content/10">
@@ -28,20 +25,17 @@
             checked
             class="w-5 h-5 text-base-content/70"
           />
-          <label
-            for="push_email"
-            class="block ml-3 text-sm font-normal text-base-content/70"
-          >
-            {l "Offers"}
+          <label for="push_email" class="block ml-3 text-sm font-normal text-base-content/70">
+            {l("Offers")}
           </label>
         </div>
       </div>
     </fieldset>
     <fieldset class="mt-2">
       <label for="milestone" class="text-sm font-normal text-base-content/70">
-        {l "Milestone"}
+        {l("Milestone")}
       </label>
-      <div class="flex mt-1 rounded-md ">
+      <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
           <Icon solid="BadgeCheck" />
         </span>
@@ -56,9 +50,9 @@
     </fieldset>
     <fieldset class="mt-2">
       <label for="milestone" class="text-sm font-normal text-base-content opacity-70">
-        {l "Due date"}
+        {l("Due date")}
       </label>
-      <div class="flex mt-1 rounded-md ">
+      <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
           <Icon solid="Calendar" />
         </span>
@@ -73,9 +67,9 @@
     </fieldset>
     <fieldset class="mt-2">
       <label for="milestone" class="text-sm font-normal text-base-content opacity-70">
-        {l "Where"}
+        {l("Where")}
       </label>
-      <div class="flex mt-1 rounded-md ">
+      <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
           <Icon solid="LocationMarker" />
         </span>
@@ -90,9 +84,9 @@
     </fieldset>
     <fieldset class="mt-2">
       <label for="milestone" class="text-sm font-normal text-base-content opacity-70">
-        {l "Provider"}
+        {l("Provider")}
       </label>
-      <div class="flex mt-1 rounded-md ">
+      <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
           <Icon solid="UserCircle" />
         </span>
@@ -107,9 +101,9 @@
     </fieldset>
     <fieldset class="mt-2">
       <label for="milestone" class="text-sm font-normal text-base-content opacity-70">
-        {l "Receiver"}
+        {l("Receiver")}
       </label>
-      <div class="flex mt-1 rounded-md ">
+      <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
           <Icon solid="UserCircle" />
         </span>
