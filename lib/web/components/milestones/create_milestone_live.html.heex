@@ -53,7 +53,7 @@
               aria-modal="true"
               aria-labelledby="modal-headline"
             >
-              <div class="p-2 border-b bg-blueGray-50">
+              <div class="p-2 border-b ">
                 <h4 class="text-sm font-medium text-base-content opacity-80">
                   Create a new milestone
                 </h4>
@@ -73,7 +73,7 @@
                         name="name"
                         id="name"
                         autocomplete="street-address"
-                        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                        class="input block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
                       />
                     </div>
                   </div>
@@ -89,7 +89,7 @@
                         id="note"
                         name="note"
                         rows="3"
-                        class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                        class="textarea block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
                       ></textarea>
                     </div>
                     <p class="mt-2 text-sm text-base-content opacity-60">
@@ -121,7 +121,7 @@
                           </svg>
                         </div>
                         <input
-                          class="block w-full pl-10 border-gray-300 rounded-md focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
+                          class="input block w-full pl-10 border-gray-300 rounded-md focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
                           type="date"
                           name="due_date"
                           min={Date.utc_today()}

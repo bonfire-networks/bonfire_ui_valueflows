@@ -1,0 +1,124 @@
+<div>
+  <%= form_for @changeset, "#", [phx_submit: "submit_value_calculation", phx_change: "validate_value_calculation", phx_target: @myself], fn f -> %>
+    <div id="value_calculation" class="mt-6 mb-8">
+      <div class="p-3">
+        <h3 class="mb-4 text-2xl font-semibold text-base-content opacity-80 ">
+          Create a new value calculation
+        </h3>
+        <div>
+          <%= label(f, :name, "Choose a name of the value calculation",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= text_input(f, :name, class: "input w-full") %>
+          </div>
+          <%= error_tag(f, :name) %>
+        </div>
+
+        <div class="mt-3">
+          <%= label(f, :note, "Type a description for the value calculation") %>
+          <div class="mt-1">
+            <%= textarea(f, :note, class: "textarea w-full") %>
+          </div>
+          <%= error_tag(f, :note) %>
+        </div>
+      </div>
+
+      <div class="p-3 text-lg leading-loose">
+        When
+        <div class="inline-block mx-2 mb-2">
+          <%= label(f, :resource_conforms_to, "Pick a resource",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= select(f, :resource_conforms_to, Enum.map(@all_resources, &{&1.name, &1.id}),
+              class: "select w-full"
+            ) %>
+          </div>
+          <%= error_tag(f, :resource_conforms_to) %>
+        </div>
+        is
+        <div class="inline-block mx-2 mb-2">
+          <%= label(f, :action, "Pick an action",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= select(f, :action, Enum.map(@actions, &{&1.label, &1.id}), class: "select w-full") %>
+          </div>
+          <%= error_tag(f, :action) %>
+        </div>
+        then
+        <div class="inline-block mx-2 mb-2">
+          <%= label(f, :value_action, "Pick an action",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= select(f, :value_action, Enum.map(@actions, &{&1.label, &1.id}),
+              class: "select w-full"
+            ) %>
+          </div>
+          <%= error_tag(f, :value_action) %>
+        </div>
+        <div class="inline-block mx-2 mb-2">
+          <%= label(f, :formula, "Create the formula",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= text_input(f, :formula, class: "input w-72") %>
+          </div>
+          <%= error_tag(f, :formula) %>
+        </div>
+        <div class="inline-block mx-2 mb-2">
+          <%= label(f, :value_unit, "Select the default unit for the resource",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= select(f, :value_unit, Enum.map(@all_units, &{e(&1, :label, nil), &1.id}),
+              class: "select w-full"
+            ) %>
+          </div>
+          <%= error_tag(f, :value_unit) %>
+        </div>
+        of
+        <div class="inline-block mx-2 mb-2">
+          <%= label(f, :value_resource_conforms_to, "Pick a resource",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= select(
+              f,
+              :value_resource_conforms_to,
+              Enum.map(@all_resources, &{e(&1, :name, nil), &1.id}),
+              class: "select w-full"
+            ) %>
+          </div>
+          <%= error_tag(f, :value_resource_conforms_to) %>
+        </div>
+      </div>
+    </div>
+    <button
+      style="background-color: #52E277"
+      type="submit"
+      phx-disable-with="Creating (this takes some time while we run some calculations, please be patient)..."
+      class="flex justify-center w-full px-4 py-2 mt-8 text-sm font-medium text-base-content opacity-80 transition duration-150 ease-in-out bg-green-300 border border-transparent rounded-md hover:bg-green-400 hover:text-base-content opacity-90 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral"
+    >
+      Create value calculation
+    </button>
+  <% end %>
+
+  <div class="p-3 border-t divide-y divide-gray-200 ">
+    <h3 class="mb-3 text-xs font-semibold tracking-wider text-base-content opacity-70 uppercase">
+      All value calculations
+    </h3>
+    <%= for x <- @all_value_calculations do %>
+      <div class="flex items-center p-3 -mx-3">
+        <div>
+          <h4 class="text-lg font-semibold text-base-content opacity-70">
+            <%= e(x, :name, nil) %>
+          </h4>
+          <p class="text-base italic text-base-content opacity-60"><%= e(x, :note, nil) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div>
+  <div id="units" class="mt-6 mb-8">
+    <%= form_for @changeset, "#", [phx_submit: "submit_unit", phx_change: "validate_unit", phx_target: @myself], fn f -> %>
+      <div class="p-3">
+        <h3 class="mb-4 text-lg font-medium text-base-content opacity-80 ">Create a new unit</h3>
+        <div>
+          <%= label(f, :label, "Choose a label (eg. kilo)?",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= text_input(f, :label, required: true, class: "input w-full") %>
+          </div>
+          <%= error_tag(f, :label) %>
+        </div>
+        <div class="mt-3">
+          <%= label(f, :symbol, "Choose a symbol (eg. kg)",
+            class: "block text-sm font-medium text-base-content opacity-70"
+          ) %>
+          <div class="mt-1">
+            <%= text_input(f, :symbol, required: true, class: "input w-full") %>
+          </div>
+          <%= error_tag(f, :symbol) %>
+        </div>
+        <button
+          style="background-color: #52E277"
+          type="submit"
+          phx-disable-with="Creating..."
+          class="flex justify-center w-full px-4 py-2 mt-8 text-sm font-medium text-base-content opacity-80 transition duration-150 ease-in-out bg-green-300 border border-transparent rounded-md hover:bg-green-400 hover:text-base-content opacity-90 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral"
+        >
+          Create
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <div class="p-3 border-t divide-y divide-gray-200 ">
+    <h3 class="mb-3 text-xs font-semibold tracking-wider text-base-content opacity-70 uppercase">
+      All units
+    </h3>
+    <%= for x <- @all_units do %>
+      <div class="flex items-center p-3 -mx-3">
+        <div>
+          <h4 class="text-base font-semibold text-indigo-500">Label: <%= e(x, :label, nil) %></h4>
+          <p class="text-base text-base-content opacity-60">Symbol: <%= e(x, :symbol, nil) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

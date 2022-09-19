@@ -1,0 +1,129 @@
+<main class="relative mt-6">
+  <div class="max-w-screen-xl px-4 pb-6 mx-auto sm:px-6 lg:pb-16 lg:px-8">
+    <div class="overflow-hidden bg-base-100 rounded-lg shadow">
+      <div
+        x-data="{ tab: 'units' }"
+        class="divide-y divide-gray-200 lg:grid lg:grid-cols-12 lg:divide-y-0 lg:divide-x"
+      >
+        <aside class="py-6 lg:col-span-3">
+          <nav>
+            <button
+              x-bind:class="{'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700' : tab === 'units'}"
+              @click="tab = 'units'"
+              class="flex items-center w-full px-3 py-2 mt-1 text-sm font-medium text-base-content opacity-90 border-l-4 border-transparent hover:bg-neutral hover:bg-opacity-30  hover:text-base-content opacity-90 group"
+              aria-current="page"
+            >
+              <svg
+                x-bind:class="{'text-teal-500 group-hover:text-teal-500' : tab === 'units'}"
+                class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-base-content opacity-60 group-hover:text-base-content opacity-60"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+                >
+                </path>
+              </svg>
+              <span class="truncate">
+                Units
+              </span>
+            </button>
+
+            <button
+              @click="tab = 'res'"
+              x-bind:class="{'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700' : tab === 'res'}"
+              class="flex items-center w-full px-3 py-2 mt-1 text-sm font-medium text-base-content opacity-90 border-l-4 border-transparent hover:bg-neutral hover:bg-opacity-30  hover:text-base-content opacity-90 group"
+            >
+              <svg
+                x-bind:class="{'text-teal-500 group-hover:text-teal-500' : tab === 'res'}"
+                class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-base-content opacity-60 group-hover:text-base-content opacity-60"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                >
+                </path>
+              </svg>
+              <span class="truncate">
+                Resource specifications
+              </span>
+            </button>
+
+            <button
+              @click="tab = 'value_calculation'"
+              x-bind:class="{'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700' : tab === 'value_calculation'}"
+              class="flex items-center w-full px-3 py-2 mt-1 text-sm font-medium text-base-content opacity-90 border-l-4 border-transparent hover:bg-neutral hover:bg-opacity-30  hover:text-base-content opacity-90 group"
+            >
+              <svg
+                x-bind:class="{'text-teal-500 group-hover:text-teal-500' : tab === 'value_calculation'}"
+                class="flex-shrink-0 w-6 h-6 mr-3 -ml-1 text-base-content opacity-60 group-hover:text-base-content opacity-60"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                >
+                </path>
+              </svg>
+              <span class="truncate">
+                Value calculations
+              </span>
+            </button>
+          </nav>
+        </aside>
+        <div class="divide-y divide-gray-200 lg:col-span-9">
+          <div x-show="tab === 'units'">
+            <%= live_component(
+              @socket,
+              CreateUnitLive,
+              id: "create_unit",
+              all_units: @all_units,
+              current_user: @current_user
+            ) %>
+          </div>
+          <div x-show="tab === 'res'">
+            <%= live_component(
+              @socket,
+              CreateResourceSpecificationLive,
+              id: "create_resource_specification",
+              all_resources: @all_resources,
+              all_units: @all_units,
+              current_user: @current_user
+            ) %>
+          </div>
+          <div x-show="tab === 'value_calculation'">
+            <%= live_component(
+              @socket,
+              CreateValueCalculationLive,
+              id: "create_value_calculation",
+              all_resources: @all_resources,
+              all_units: @all_units,
+              all_value_calculations: @all_value_calculations,
+              actions: @actions,
+              current_user: @current_user
+            ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
