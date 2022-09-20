@@ -1,0 +1,12 @@
+<div class="w-full" role="menu" aria-orientation="vertical">
+  <Bonfire.UI.Common.MultiselectLive
+    id={Pointers.ULID.generate()}
+    preloaded_options={Bonfire.UI.ValueFlows.ProcessesListLive.processes(@__context__)}
+    selected_options={@selected_options}
+    label="Select list..."
+    form_input_name={@field_name}
+    pick_event={@pick_event}
+    remove_event={@remove_event}
+    context_id={@context_id}
+  />
+</div>

@@ -9,12 +9,15 @@
   >
     <HiddenInput :if={@intent_url} name="redirect_after" value={@intent_url} />
     <HiddenInput :if={e(@action, "produce")} name="action_id" value={@action} />
+    <HiddenInput :if={@in_scope_of} name="in_scope_of" value={@in_scope_of} />
     <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} />
     <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
     <Field name={:name}>
       <Label class="block text-sm text-base-content opacity-70 font-regular">
-        {#if e(@action, "produce") == "work"}
+        {#if @name_prompt}
+          {@name_prompt}
+        {#elseif e(@action, "produce") == "work"}
           {l("Enter a name for the task")}
         {#else}
           {l("Enter a name for the intent")}
@@ -33,7 +36,7 @@
     <div class="flex items-center mt-3 space-x-3">
       <div class="flex-1">
         <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l("Assign to")}</span>
-        <Bonfire.UI.ValueFlows.AssignedItemLive field_name="provider" is_editable />
+        <Bonfire.UI.ValueFlows.AssignItemLive field_name={:provider} is_editable />
       </div>
 
       <div class="flex-1">
@@ -42,7 +45,7 @@
           <DateInput name="due" class="w-full input input-bordered h-9" />
         </Field>
       </div>
-      <!-- <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={{true}}  /> -->
+      <!-- <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={true}  /> -->
     </div>
     <div class="flex items-center w-full mt-4">
       <button type="submit" class="w-full btn btn-primary">{l("Create")}</button>

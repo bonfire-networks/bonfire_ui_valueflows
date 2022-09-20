@@ -21,7 +21,7 @@
   </div>
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(@process_url, path(ValueFlows.Process))} /> -->
   <div class="mt-1 space-y-1" role="group" aria-labelledby="lists-headline">
-    <div :for={process <- processes(@current_user)}>
+    <div :for={process <- processes(@__context__)}>
       <LiveRedirect
         to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
         class="flex items-center px-3 py-2 text-sm font-medium leading-5 text-base-content opacity-60 rounded-md group  hover:text-base-content opacity-90 dark:hover:text-base-content opacity-60  hover:bg-neutral hover:bg-opacity-30"

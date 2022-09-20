@@ -3,8 +3,9 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
 
   prop intent_url, :string, required: false, default: ""
   prop action, :string, required: false, default: "produce"
+  prop in_scope_of, :string, required: false
   prop output_of_id, :string, required: false
-  prop title, :string, default: "Create a new intent"
+  prop name_prompt, :string, default: nil
   prop default_tag, :string
   prop textarea_class, :css_class, required: false
 end
