@@ -7,5 +7,6 @@
     remove_event={@remove_event}
     event_target={@event_target}
     context_id={@context_id}
+    class={@class}
   />
 </div>

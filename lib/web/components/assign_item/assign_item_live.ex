@@ -9,6 +9,7 @@ defmodule Bonfire.UI.ValueFlows.AssignItemLive do
   prop context_id, :string, default: nil
   prop selected_options, :list, default: nil
   prop event_target, :any, default: nil
+  prop class, :css_class, default: nil
 
   def selected_options(selected_options, field_name, agent, context) do
     selected_options || e(context, field_name, nil) ||
