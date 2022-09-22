@@ -1,4 +1,4 @@
-<LivePatch to={@resource_url_prefix <> e(@resource, :id, "")}>
+<LiveRedirect to={@resource_url_prefix <> e(@resource, :id, "")}>
   <div class="flex p-3 bg-base-100 rounded shadow-md items-top">
     <div
       class="w-20 h-20 bg-secondary rounded-md"
@@ -65,4 +65,4 @@
       </div>
     </div>
   </div>
-</LivePatch>
+</LiveRedirect>

@@ -3,7 +3,7 @@
   class="flex justify-between my-2 border-b"
   aria-label="Switch between track and trace tabs"
 >
-  <LivePatch
+  <LiveRedirect
     :for={{item, route} <- Config.get([:ui, :resource, :navigation], [])}
     to={"/resource/#{e(@resource, :id, "")}/#{route}"}
     class="flex-1 pt-2 group"
@@ -18,5 +18,5 @@
       :if={@selected_tab == Atom.to_string(item)}
       class="block w-20 h-1 mx-auto mt-2 bg-secondary rounded-full"
     />
-  </LivePatch>
+  </LiveRedirect>
 </nav>
