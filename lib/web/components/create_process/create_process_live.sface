@@ -15,6 +15,13 @@
       opts={autocomplete: "off"}
     >
       <input name="redirect_after" value={e(@process_url, path(ValueFlows.Process))} type="hidden">
+
+      <Bonfire.UI.Common.InputBoundariesLive
+        create_object_type={:process}
+        to_boundaries={@to_boundaries}
+        open_boundaries={@open_boundaries}
+      />
+
       <Field name={:name}>
         <label class="block text-sm font-medium text-primary-700">{l("Choose a name")}</label>
         <div class="mt-1 rounded-md shadow-sm">

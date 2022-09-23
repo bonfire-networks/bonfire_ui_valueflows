@@ -8,4 +8,7 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
   prop name_prompt, :string, default: nil
   prop default_tag, :string
   prop textarea_class, :css_class, required: false
+
+  prop to_boundaries, :list, default: nil
+  prop open_boundaries, :boolean, default: false
 end

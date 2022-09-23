@@ -55,7 +55,12 @@
 
       <div class="relative inline-block text-left">
         <div
-          x-data="{ open_process_dropdown: false, edit_process: false, archive_process: false, tests_template: false }"
+          x-data="{ 
+            open_process_dropdown: false, 
+            edit_process: false, 
+            archive_process: false, 
+            tests_template: false 
+          }"
           @keydown.escape.stop="open_process_dropdown = false"
           @click.outside="open_process_dropdown = false"
           class="relative block text-left"

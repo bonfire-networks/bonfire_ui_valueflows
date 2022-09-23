@@ -12,6 +12,12 @@
     <HiddenInput :if={@in_scope_of} name="in_scope_of" value={@in_scope_of} />
     <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
+    <Bonfire.UI.Common.InputBoundariesLive
+      create_object_type={:intent}
+      to_boundaries={@to_boundaries}
+      open_boundaries={@open_boundaries}
+    />
+
     <!-- <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} /> -->
     <Bonfire.UI.ValueFlows.SelectProcessLive
       field_name={:output_of_id}
