@@ -70,8 +70,8 @@
             <div class="relative flex-1">
               <Bonfire.UI.Common.MultiselectLive
                 id="resource_conforms_to"
-                preloaded_options={e(@resource_specifications_autocomplete, [])}
-                selected_options={e(@resource_specification_selected, [])}
+                preloaded_options={@resource_specifications_autocomplete}
+                selected_options={@resource_specification_selected}
                 label="Pick a type of resource..."
                 form_input_name="resource_conforms_to"
                 pick_event={e(@pick_event, "ValueFlows.Knowledge.ResourceSpecification:select")}

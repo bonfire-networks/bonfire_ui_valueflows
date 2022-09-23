@@ -5,7 +5,7 @@
     type="button"
     class="btn btn-secondary inline-flex place-content-center items-center w-full px-4 py-1.5 text-base font-medium text-center normal-case"
   >
-    {l("Create a new process")}
+    {@title || l("Create a new process")}
   </button>
   <div x-show="open">
     <Bonfire.UI.ValueFlows.CreateProcessLive

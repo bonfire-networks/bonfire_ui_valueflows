@@ -4,17 +4,14 @@
       class="flex-1 px-5 text-xs font-semibold tracking-wider uppercase text-base-content opacity-60"
       id="lists-headline"
     >
-      {l "Favourited lists"}
+      {l("Favourited lists")}
     </div>
   </div>
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(@process_url, path(ValueFlows.Process))} /> -->
   <ul class="mt-1 ml-1 menu" role="group" aria-labelledby="lists-headline">
     <li :for={process <- processes(@__context__)}>
-      <LiveRedirect
-        to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
-        class="rounded-md"
-      > 
-      <span class="truncate">
+      <LiveRedirect to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"} class="rounded-md">
+        <span class="truncate">
           {process.name}
         </span>
       </LiveRedirect>

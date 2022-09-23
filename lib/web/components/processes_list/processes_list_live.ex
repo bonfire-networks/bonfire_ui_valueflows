@@ -27,7 +27,8 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
     Bonfire.Social.Likes.by_liker(current_user, object_type: ValueFlows.Process)
     |> repo().maybe_preload(edge: [:object])
     |> Enum.map(&e(&1, :edge, :object, nil))
-    |> debug()
+
+    # |> debug()
   end
 
   # @graphql """

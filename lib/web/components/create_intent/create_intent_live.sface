@@ -10,11 +10,17 @@
     <HiddenInput :if={@intent_url} name="redirect_after" value={@intent_url} />
     <HiddenInput :if={e(@action, "produce")} name="action_id" value={@action} />
     <HiddenInput :if={@in_scope_of} name="in_scope_of" value={@in_scope_of} />
-    <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} />
     <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
+    <!-- <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} /> -->
+    <Bonfire.UI.ValueFlows.SelectProcessLive
+      field_name={:output_of_id}
+      is_editable
+      selected_options={@output_of_id}
+    />
+
     <Field name={:name}>
-      <Label class="block text-sm text-base-content opacity-70 font-regular">
+      <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">
         {#if @name_prompt}
           {@name_prompt}
         {#elseif e(@action, "produce") == "work"}

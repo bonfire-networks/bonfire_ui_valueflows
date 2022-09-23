@@ -1,4 +1,4 @@
-<Bonfire.UI.Common.WidgetBlockLive widget_title="Advanced filters">
+<Bonfire.UI.Common.WidgetBlockLive widget_title={l("Filters")}>
   <div class="p-3">
     <fieldset>
       <div>

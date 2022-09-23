@@ -12,7 +12,6 @@ defmodule Bonfire.UI.ValueFlows.AssignItemLive do
   prop class, :css_class, default: nil
 
   def selected_options(selected_options, field_name, agent, context) do
-    selected_options || e(context, field_name, nil) ||
-      [{e(agent, :name, e(agent, :profile, :name, nil)), e(agent, :id, nil)}]
+    selected_options || e(context, field_name, nil) || agent
   end
 end

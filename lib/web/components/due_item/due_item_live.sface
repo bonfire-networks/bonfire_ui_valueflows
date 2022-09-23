@@ -32,7 +32,7 @@
       role="menu"
       aria-orientation="vertical"
     >
-      <input type="date" name="due" class="w-full input text-base-content" />
+      <input type="date" name="due" class="w-full input text-base-content">
     </div>
   </form>
 </div>

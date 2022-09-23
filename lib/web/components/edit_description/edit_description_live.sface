@@ -27,17 +27,16 @@
     x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     class="mt-1.5 propse prose-sm w-full"
   >
-    <form>
+    <Form for={:item} submit={@submit_event || "update"}>
       <label for="item_note" class="sr-only">{l("Edit the description")}</label>
-      <textarea id="item_note" class="w-full textarea h-30 textarea-bordered">{@item.note}</textarea>
-      <div class="flex items-center justify-end mt-2 space-x-3">
-        <button
-          type="button"
-          @click="toggle_edit_description = false"
-          class="normal-case border-base-content/70 btn btn-outline btn-sm"
-        >{l("Cancel")}</button>
+      <textarea name="note" id="item_note" class="w-full textarea h-30 textarea-bordered">{e(@item, :note, nil)}</textarea>
+      <div
+        @click="toggle_edit_description = false"
+        class="flex items-center justify-end mt-2 space-x-3"
+      >
+        <button type="button" class="normal-case border-base-content/70 btn btn-outline btn-sm">{l("Cancel")}</button>
         <button type="submit" class="normal-case btn btn-sm btn-primary">{l("Update")}</button>
       </div>
-    </form>
+    </Form>
   </div>
 </div>
