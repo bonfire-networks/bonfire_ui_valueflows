@@ -29,7 +29,7 @@
           <%= for label <- @chosen_labels do %>
             <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
               <%= e(label, :name, e(label, :profile, :name, "Label")) %>
-              <input type="hidden" name="need[tags][]" value={} Map.get(label, :id)} />
+              <input type="hidden" name="need[tags][]" value={Map.get(label, :id)} />
               <button
                 phx-target={@myself}
                 phx-click="label_clear"
@@ -170,7 +170,8 @@
                       name="need[note]"
                       rows="5"
                       class="textarea block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
-                    ></textarea>
+                    >
+                    </textarea>
                   </div>
                   <p class="mt-2 text-sm text-base-content opacity-60">
                     Write a description of what you're looking for
@@ -203,7 +204,8 @@
                       name="offer[note]"
                       rows="3"
                       class="textarea block w-full border-gray-300 rounded-md shadow-sm focus:ring-secondary-500 focus:border-indigo-500 sm:text-sm"
-                    ></textarea>
+                    >
+                    </textarea>
                   </div>
                   <p class="mt-2 text-sm text-base-content opacity-60">
                     Write a few sentences about yourself.
@@ -220,16 +222,13 @@
                 checked="{false: !on, true: on}"
                 type="button"
                 @click="on = !on"
-                :aria-pressed="on.toString()"
                 aria-pressed="false"
                 x-data="{ on: false }"
-                :class="{ 'bg-neutral': !on, 'bg-indigo-600': on }"
                 class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-base-100 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
               >
                 <span class="sr-only">Make it public</span>
                 <span
                   aria-hidden="true"
-                  :class="{'translate-x-5': on, 'translate-x-0': !on }"
                   class="inline-block w-5 h-5 transition duration-200 ease-in-out transform translate-x-0 bg-base-100 rounded-full shadow ring-0"
                 >
                 </span>
