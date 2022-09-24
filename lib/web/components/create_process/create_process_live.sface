@@ -1,4 +1,4 @@
-<div class="" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
+<div class="p-3" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
   <div
     x-transition:enter="ease-out duration-300"
     x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -38,7 +38,6 @@
         </div>
       </Field>
       <div class="flex items-center justify-end mt-2 space-x-2">
-        <button type="button" @click={@close} class="normal-case btn btn-outline btn-sm">{l("Cancel")}</button>
         <button type="submit" class="normal-case btn btn-primary btn-sm">
           {l("Publish")}
         </button>
