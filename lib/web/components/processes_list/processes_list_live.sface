@@ -13,7 +13,7 @@
   <ul x-collapse x-show="open" class="mt-2 ml-0 menu menu-compact" role="group" aria-labelledby="lists-headline">
     <li :for={process <- processes(@__context__)}>
       <LiveRedirect to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"} class="rounded-md">
-        <span class="truncate w-[230px] desktop-lg:w-[280px] text-ellipsis">
+        <span class="truncate w-[190px] desktop-lg:w-[240px] text-ellipsis">
           {process.name}
         </span>
       </LiveRedirect>
