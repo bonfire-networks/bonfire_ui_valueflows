@@ -7,7 +7,7 @@
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
       type="button"
-      class="ml-2 normal-case btn btn-xs btn-outline border-base-content/70"
+      class="ml-2 normal-case btn btn-xs btn-outline border-base-content/30 !font-normal"
     >
       {l("Edit description")}
     </button>
