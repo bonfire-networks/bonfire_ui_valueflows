@@ -41,7 +41,10 @@
     <div>
       <Field name={:note}>
         <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">{l("Add an optional description")}</Label>
-        <TextArea class="w-full textarea textarea-bordered" />
+        <TextArea
+          value={@smart_input_text}
+          class={@textarea_class, "w-full textarea textarea-bordered p-2"}
+        />
       </Field>
     </div>
 

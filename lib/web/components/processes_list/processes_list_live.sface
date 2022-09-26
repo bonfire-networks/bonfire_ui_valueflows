@@ -10,7 +10,13 @@
     <span @click="open = ! open" x-show="open == false"><Icon outline="Plus" class="w-4 h-4" /></span>
   </div>
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(@process_url, path(ValueFlows.Process))} /> -->
-  <ul x-collapse x-show="open" class="mt-2 ml-0 menu menu-compact" role="group" aria-labelledby="lists-headline">
+  <ul
+    x-collapse
+    x-show="open"
+    class="mt-2 ml-0 menu menu-compact"
+    role="group"
+    aria-labelledby="lists-headline"
+  >
     <li :for={process <- processes(@__context__)}>
       <LiveRedirect to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"} class="rounded-md">
         <span class="truncate w-[190px] desktop-lg:w-[240px] text-ellipsis">

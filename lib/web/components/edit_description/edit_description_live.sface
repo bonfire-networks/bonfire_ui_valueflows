@@ -13,7 +13,7 @@
     </button>
   </div>
   <div x-show="!toggle_edit_description" class="mt-1.5 prose prose-valueflows prose-sm w-full">
-    {rich(@item.note)}
+    {markdown(@item.note)}
   </div>
   <div
     :if={@current_user != nil}
