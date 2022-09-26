@@ -1,17 +1,19 @@
-<div x-data="{ open: false }" class="block !bg-base-300 hover:!bg-base-300 p-0 pt-4">
+<div x-data="{ open: true }" class="block  !bg-base-200 hover:!bg-base-200 p-0 pt-4">
   <div class="flex items-center">
     <div
-      class="flex-1 px-5 text-xs font-semibold tracking-wider uppercase text-base-content opacity-60"
+      class="flex-1 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
       id="lists-headline"
     >
       {l("Favourited lists")}
     </div>
+    <span @click="open = ! open" x-show="open == true"><Icon outline="Minus" class="w-4 h-4" /></span>
+    <span @click="open = ! open" x-show="open == false"><Icon outline="Plus" class="w-4 h-4" /></span>
   </div>
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(@process_url, path(ValueFlows.Process))} /> -->
-  <ul class="mt-1 ml-1 menu" role="group" aria-labelledby="lists-headline">
+  <ul x-collapse x-show="open" class="mt-2 ml-0 menu menu-compact" role="group" aria-labelledby="lists-headline">
     <li :for={process <- processes(@__context__)}>
       <LiveRedirect to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"} class="rounded-md">
-        <span class="truncate">
+        <span class="truncate w-[230px] desktop-lg:w-[280px] text-ellipsis">
           {process.name}
         </span>
       </LiveRedirect>
