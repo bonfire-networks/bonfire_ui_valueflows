@@ -9,7 +9,7 @@
       type="button"
       class="ml-2 normal-case btn btn-xs btn-outline border-base-content/30 !font-normal"
     >
-      {l("Edit description")}
+      {l("Edit")}
     </button>
   </div>
   <div x-show="!toggle_edit_description" class="mt-1.5 prose prose-valueflows prose-sm w-full">
@@ -28,8 +28,14 @@
     class="mt-1.5 propse prose-sm w-full"
   >
     <Form for={:item} submit={@submit_event || "update"}>
-      <label for="item_note" class="sr-only">{l("Edit the description")}</label>
+      <div :if={e(@item, :name, nil)}>
+        <label for="item_name">{l("Edit the name")}</label>
+        <textarea name="name" id="item_name" class="w-full textarea h-30 textarea-bordered">{e(@item, :name, nil)}</textarea>
+      </div>
+
+      <label for="item_note">{l("Edit the description")}</label>
       <textarea name="note" id="item_note" class="w-full textarea h-30 textarea-bordered">{e(@item, :note, nil)}</textarea>
+
       <div
         @click="toggle_edit_description = false"
         class="flex items-center justify-end mt-2 space-x-3"
