@@ -19,7 +19,7 @@ defmodule Bonfire.UI.ValueFlows.CreateUnitForm do
   end
 
   def send(changeset, %{"label" => label, "symbol" => symbol} = _params, socket) do
-    user = Utils.current_user(socket)
+    user = Utils.current_user_required(socket)
 
     case apply_action(changeset, :insert) do
       {:ok, _} ->

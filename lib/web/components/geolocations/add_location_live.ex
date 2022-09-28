@@ -49,7 +49,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
 
     assigns =
       with {:ok, loc} <-
-             Bonfire.Geolocate.Geolocations.create(current_user(socket), %{
+             Bonfire.Geolocate.Geolocations.create(current_user_required(socket), %{
                name: loc,
                mappable_address: loc
              }) do

@@ -33,7 +33,7 @@
           @keydown.escape.stop="open_process_dropdown = false"
           @click.outside="open_process_dropdown = false"
           class="relative block text-left"
-          >
+        >
           <button
             @click="open_process_dropdown = !open_process_dropdown"
             aria-haspopup="true"
@@ -267,21 +267,18 @@
     </span>
   </div>
 
-  
   <nav
     role="tabpanel"
     class="flex justify-start pt-2 mt-8 border-t border-b md:border-b-0 border-base-content/10 md:rounded-b-xl tabs bg-base-100"
-    aria-label={l "Switch between timeline and tasks"}
-    >
+    aria-label={l("Switch between timeline and tasks")}
+  >
     <LivePatch
       to="#"
       class="flex px-2 pt-2 text-base capitalize md:px-4 hover:bg-base-content/10 group place-content-center"
-      >
-      <div class={
-        "tab tab-bordered group-hover:text-opacity-100 tab-active"}>
-        {l "Tasks"}
+    >
+      <div class="tab tab-bordered group-hover:text-opacity-100 tab-active">
+        {l("Tasks")}
       </div>
     </LivePatch>
   </nav>
-
 </div>
