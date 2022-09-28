@@ -1,4 +1,4 @@
-<div class="relative p-4 pb-0 mb-6 shadow-xl bg-base-100 md:rounded-xl">
+<div class="relative p-4 pb-0 mb-6 shadow bg-base-100 md:rounded-xl">
   <div class="flex z-50  items-start justify-between h-[56px]">
     <div class="flex items-center gap-3">
       <a
@@ -264,7 +264,7 @@
       </div>
     </div>
 
-    <span :if={!@process.finished} class="badge badge-accent badge-outline">
+    <span :if={!@process.finished} class="badge badge-outline">
       {l("Open")}
     </span>
     <span :if={@process.finished} class="badge badge-accent badge-success">
@@ -272,7 +272,7 @@
     </span>
   </div>
 
-  <!-- 
+  
   <nav
     role="tabpanel"
     class="flex justify-start pt-2 mt-8 border-t border-b md:border-b-0 border-base-content/10 md:rounded-b-xl tabs bg-base-100"
@@ -284,10 +284,10 @@
       >
       <div class={
         "tab tab-bordered group-hover:text-opacity-100 tab-active"}>
-        {l "Timeline"}
+        {l "Tasks"}
       </div>
     </LivePatch>
-    <LivePatch
+    <!-- <LivePatch
       to="/tasks"
       class="flex px-2 pt-2 text-base capitalize md:px-4 hover:bg-base-content/10 group place-content-center"
       >
@@ -295,7 +295,7 @@
         "tab tab-bordered group-hover:text-opacity-100"}>
         {l "Tasks"}
       </div>
-    </LivePatch>
+    </LivePatch> -->
   </nav>
- -->
+
 </div>
