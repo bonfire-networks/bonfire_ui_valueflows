@@ -33,17 +33,12 @@
           @keydown.escape.stop="open_process_dropdown = false"
           @click.outside="open_process_dropdown = false"
           class="relative block text-left"
-        >
+          >
           <button
             @click="open_process_dropdown = !open_process_dropdown"
             aria-haspopup="true"
-            x-bind:aria-expanded="open_process_dropdown"
-            aria-expanded="true"
             type="button"
-            class="btn btn-xs btn-square btn-ghost"
-            id="menu-0-button"
-            aria-expanded="false"
-            aria-haspopup="true"
+            class="btn btn-ghost btn-sm btn-circle"
           >
             <span class="sr-only">{l("Open_process_dropdown options")}</span>
             <!-- Heroicon name: solid/dots-vertical -->
@@ -277,7 +272,7 @@
     role="tabpanel"
     class="flex justify-start pt-2 mt-8 border-t border-b md:border-b-0 border-base-content/10 md:rounded-b-xl tabs bg-base-100"
     aria-label={l "Switch between timeline and tasks"}
-  >
+    >
     <LivePatch
       to="#"
       class="flex px-2 pt-2 text-base capitalize md:px-4 hover:bg-base-content/10 group place-content-center"
@@ -287,15 +282,6 @@
         {l "Tasks"}
       </div>
     </LivePatch>
-    <!-- <LivePatch
-      to="/tasks"
-      class="flex px-2 pt-2 text-base capitalize md:px-4 hover:bg-base-content/10 group place-content-center"
-      >
-      <div class={
-        "tab tab-bordered group-hover:text-opacity-100"}>
-        {l "Tasks"}
-      </div>
-    </LivePatch> -->
   </nav>
 
 </div>
