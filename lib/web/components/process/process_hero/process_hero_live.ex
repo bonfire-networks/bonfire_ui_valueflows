@@ -3,6 +3,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
   alias Bonfire.Social.Likes
 
   prop process, :map
+  prop showing_within, :any, default: :process
 
   # FIXME! update no longer works in stateless
   def update(assigns, socket) do

@@ -1,13 +1,7 @@
 <div class="relative p-4 pb-0 mb-6 shadow bg-base-100 md:rounded-xl">
   <div class="flex z-50  items-start justify-between h-[56px]">
     <div class="flex items-center gap-3">
-      <a
-        aria-label="Navigate to the previous page"
-        href="javascript:window.history.back()"
-        class="btn btn-ghost btn-sm btn-circle"
-      >
-        <Icon outline="ArrowLeft" class="w-4 h-4 text-base-content" />
-      </a>
+      <Bonfire.UI.Common.BackButtonLive showing_within={@showing_within} />
       <span class="text-base capitalize text-base-content/80">{l("List")}</span>
     </div>
     <div class="flex items-center gap-4">
