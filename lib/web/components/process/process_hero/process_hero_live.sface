@@ -261,7 +261,6 @@
     </span>
   </div>
 
-  <!-- TODO
   <nav
     role="tabpanel"
     class="flex justify-start pt-2 mt-8 border-t border-b md:border-b-0 border-base-content/10 md:rounded-b-xl tabs bg-base-100"
@@ -275,5 +274,5 @@
         {l("Tasks")}
       </div>
     </LivePatch>
-  </nav> -->
+  </nav>
 </div>
