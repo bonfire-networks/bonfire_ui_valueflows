@@ -25,4 +25,14 @@
       </LiveRedirect>
     </li>
   </ul>
+  <button
+    phx-click="select_smart_input"
+    phx-target="#smart_input"
+    phx-value-component={Bonfire.UI.ValueFlows.CreateProcessSmartInputLive}
+    @click={"show_smart_input('#{l("Create a list")}')"}
+    class="justify-start w-full mt-3 text-left normal-case btn btn-ghost btn-sm"
+  >
+    <Icon outline="Plus" class="inline-block w-5 h-5 tablet-lg:mr-2" />
+    <span class="hidden tablet-lg:inline-block">{l("New list")}</span>
+  </button>
 </div>

@@ -1,10 +1,16 @@
-<div class="relative p-4 pb-0 mb-6 shadow bg-base-100 md:rounded-xl">
-  <div class="flex z-50  items-start justify-between h-[56px]">
+<div class="relative p-4 mb-6 shadow bg-base-100 md:rounded-xl">
+  <div class="z-50 flex items-start justify-between ">
     <div class="flex items-center gap-3">
       <Bonfire.UI.Common.BackButtonLive showing_within={@showing_within} />
-      <span class="text-base capitalize text-base-content/80">{l("List")}</span>
+      <span class="text-base capitalize text-base-content/80">{rich(@process.name)}</span>
     </div>
     <div class="flex items-center gap-4">
+      <span :if={!@process.finished} class="badge badge-outline border-base-content/40">
+        {l("Open")}
+      </span>
+      <span :if={@process.finished} class="badge badge-accent badge-success">
+        {l("Completed")}
+      </span>
       <Bonfire.UI.Common.LikeActionWithoutLabelLive
         id={ComponentID.new(Bonfire.UI.Common.LikeActionWithoutLabelLive, @process)}
         object={@process}
@@ -27,13 +33,13 @@
           @keydown.escape.stop="open_process_dropdown = false"
           @click.outside="open_process_dropdown = false"
           class="relative block text-left"
-        >
+          >
           <button
             @click="open_process_dropdown = !open_process_dropdown"
             aria-haspopup="true"
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
-          >
+            >
             <span class="sr-only">{l("Open_process_dropdown options")}</span>
             <!-- Heroicon name: solid/dots-vertical -->
             <Icon solid="DotsVertical" class="w-4 h-4" />
@@ -50,7 +56,7 @@
             class="absolute right-0 z-20 w-56 mt-2 origin-top-left divide-y divide-gray-100 rounded-md shadow-lg bg-base-100 ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
-          >
+            >
             <div class="py-1" role="none">
               <button
                 type="button"
@@ -93,7 +99,7 @@
             aria-labelledby="modal-title"
             x-ref="dialog"
             aria-modal="true"
-          >
+            >
             <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               <div
                 x-show="edit_process"
@@ -125,24 +131,13 @@
               </div>
             </div>
           </div>
-          <!-- <div x-show="tests_template" class="fixed inset-0 z-10 overflow-y-auto" aria-labelledby="modal-title" x-ref="dialog" aria-modal="true">
-            <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-              <div x-show="tests_template" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-60" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-60" x-transition:leave-end="opacity-0" x-description="Background overlay, show/hide based on modal state." class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40" @click="tests_template = false" aria-hidden="true"></div>
-              <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-              <div x-show="tests_template" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-60 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-60 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-description="Modal panel, show/hide based on modal state." class="inline-block px-4 pt-5 pb-4 text-left align-bottom transition-all transform rounded-lg shadow-xl bg-base-100 sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                <textarea cols=50>
-                  {generate_test_template(@process)}
-                </textarea>
-              </div>
-            </div>
-          </div> -->
           <div
             x-show="archive_process"
             class="fixed inset-0 z-10 overflow-y-auto"
             aria-labelledby="modal-title"
             x-ref="dialog"
             aria-modal="true"
-          >
+            >
             <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               <div
                 x-show="archive_process"
@@ -223,7 +218,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col gap-2">
+  <!-- <div class="flex flex-col gap-2">
     <div class="">
       <div id="message-heading" class="text-2xl font-bold text-base-content">
         {rich(@process.name)}
@@ -259,13 +254,13 @@
     <span :if={@process.finished} class="badge badge-accent badge-success">
       {l("Completed")}
     </span>
-  </div>
+  </div> -->
 
-  <nav
+  <!-- <nav
     role="tabpanel"
     class="flex justify-start pt-2 mt-8 border-t border-b md:border-b-0 border-base-content/10 md:rounded-b-xl tabs bg-base-100"
     aria-label={l("Switch between timeline and tasks")}
-  >
+    >
     <LivePatch
       to="#"
       class="flex px-2 pt-2 text-base capitalize md:px-4 hover:bg-base-content/10 group place-content-center"
@@ -274,5 +269,5 @@
         {l("Tasks")}
       </div>
     </LivePatch>
-  </nav>
+  </nav> -->
 </div>
