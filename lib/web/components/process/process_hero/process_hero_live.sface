@@ -1,5 +1,5 @@
-<div class="relative mb-6">
-  <div class="z-50 flex items-start justify-between pt-2">
+<div class="relative p-4 mb-6 shadow bg-base-100 md:rounded-xl">
+  <div class="z-50 flex items-start justify-between">
     <div class="flex items-center gap-3">
       <Bonfire.UI.Common.BackButtonLive showing_within={@showing_within} />
       <span class="text-2xl font-bold capitalize ">{rich(@process.name)}</span>
@@ -33,13 +33,13 @@
           @keydown.escape.stop="open_process_dropdown = false"
           @click.outside="open_process_dropdown = false"
           class="relative block text-left"
-          >
+        >
           <button
             @click="open_process_dropdown = !open_process_dropdown"
             aria-haspopup="true"
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
-            >
+          >
             <span class="sr-only">{l("Open_process_dropdown options")}</span>
             <!-- Heroicon name: solid/dots-vertical -->
             <Icon solid="DotsVertical" class="w-4 h-4" />
@@ -56,7 +56,7 @@
             class="absolute right-0 z-20 w-56 mt-2 origin-top-left divide-y divide-gray-100 rounded-md shadow-lg bg-base-100 ring-1 ring-black ring-opacity-5 focus:outline-none"
             role="menu"
             aria-orientation="vertical"
-            >
+          >
             <div class="py-1" role="none">
               <button
                 type="button"
@@ -99,7 +99,7 @@
             aria-labelledby="modal-title"
             x-ref="dialog"
             aria-modal="true"
-            >
+          >
             <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               <div
                 x-show="edit_process"
@@ -137,7 +137,7 @@
             aria-labelledby="modal-title"
             x-ref="dialog"
             aria-modal="true"
-            >
+          >
             <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               <div
                 x-show="archive_process"

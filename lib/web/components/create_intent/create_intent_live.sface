@@ -12,8 +12,6 @@
     <HiddenInput :if={@in_scope_of} name="in_scope_of" value={@in_scope_of} />
     <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
-    
-
     <!-- <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} /> -->
     <Bonfire.UI.ValueFlows.SelectProcessLive
       field_name={:output_of_id}
@@ -69,6 +67,5 @@
     <div class="flex items-center w-full mt-4">
       <button type="submit" class="w-full btn btn-primary">{l("Create")}</button>
     </div>
-
   </Form>
 </div>
