@@ -1,8 +1,8 @@
-<div class="relative p-4 mb-6 shadow bg-base-100 md:rounded-xl">
-  <div class="z-50 flex items-start justify-between ">
+<div class="relative mb-6">
+  <div class="z-50 flex items-start justify-between pt-2">
     <div class="flex items-center gap-3">
       <Bonfire.UI.Common.BackButtonLive showing_within={@showing_within} />
-      <span class="text-base capitalize text-base-content/80">{rich(@process.name)}</span>
+      <span class="text-2xl font-bold capitalize ">{rich(@process.name)}</span>
     </div>
     <div class="flex items-center gap-4">
       <span :if={!@process.finished} class="badge badge-outline border-base-content/40">
@@ -217,7 +217,17 @@
       </div>
     </div>
   </div>
-
+  <div :if={@process.note} class="!max-w-full mt-3 prose-sm prose">
+    {rich(@process.note)}
+  </div>
+  <!-- <div class="p-4 bg-base-content/5">
+    <div id="message-heading" class="text-2xl font-bold text-base-content">
+      {rich(@process.name)}
+    </div>
+    <div :if={@process.note} class="w-full mt-1 prose-sm prose">
+      {rich(@process.note)}
+    </div>
+  </div> -->
   <!-- <div class="flex flex-col gap-2">
     <div class="">
       <div id="message-heading" class="text-2xl font-bold text-base-content">

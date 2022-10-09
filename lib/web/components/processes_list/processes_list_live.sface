@@ -1,4 +1,4 @@
-<div x-data="{ open: true }" class="block  !bg-base-200 hover:!bg-base-200 p-0 pt-4">
+<div x-data="{ open: true }" class="block hover:!bg-base-100 p-0 pt-4">
   <div class="flex items-center">
     <div
       class="flex-1 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
@@ -19,7 +19,7 @@
   >
     <li :for={process <- processes(@__context__)}>
       <LiveRedirect to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"} class="rounded-md">
-        <span class="truncate w-[190px] desktop-lg:w-[240px] text-ellipsis">
+        <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
           {process.name}
         </span>
       </LiveRedirect>
