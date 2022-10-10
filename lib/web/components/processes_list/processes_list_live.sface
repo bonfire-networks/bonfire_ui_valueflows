@@ -1,4 +1,4 @@
-<div x-data="{ open: true }" class="block hover:!bg-base-100 p-0 pt-4">
+<div x-data="{ open: true }" class="block hover:!bg-base-300 p-0 pt-4">
   <div class="flex items-center">
     <div
       class="flex-1 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
