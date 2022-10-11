@@ -36,7 +36,7 @@
       <Field name={:note}>
         <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">{l("Add an optional description")}</Label>
         <TextArea
-          value={@smart_input_text}
+          value={e(@smart_input_opts, :text, nil)}
           class={@textarea_class, "w-full textarea textarea-bordered p-2"}
         />
       </Field>
