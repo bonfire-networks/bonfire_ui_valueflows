@@ -25,6 +25,7 @@
       </LiveRedirect>
     </li>
   </ul>
+  <!-- FIXME
   <button
     phx-click="select_smart_input"
     phx-target="#smart_input"
@@ -34,5 +35,5 @@
   >
     <Icon outline="Plus" class="inline-block w-5 h-5 tablet-lg:mr-2" />
     <span class="hidden tablet-lg:inline-block">{l("New list")}</span>
-  </button>
+  </button> -->
 </div>

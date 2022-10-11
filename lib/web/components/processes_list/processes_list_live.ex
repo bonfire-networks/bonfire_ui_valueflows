@@ -20,7 +20,8 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
         []
       end
     end
-    |> debug("my_processes")
+
+    # |> debug("my_processes")
   end
 
   def my_processes(current_user) do
