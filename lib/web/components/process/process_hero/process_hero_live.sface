@@ -11,8 +11,8 @@
       <span :if={@process.finished} class="badge badge-accent badge-success">
         {l("Completed")}
       </span>
-      <Bonfire.UI.Common.LikeActionWithoutLabelLive
-        id={ComponentID.new(Bonfire.UI.Common.LikeActionWithoutLabelLive, @process)}
+      <Bonfire.UI.Common.LikeActionLive
+        id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, @process)}
         object={@process}
       />
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
