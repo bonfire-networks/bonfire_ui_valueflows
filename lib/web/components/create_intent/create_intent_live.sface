@@ -6,6 +6,7 @@
         else: :intent}
     opts={autocomplete: "off"}
     submit="ValueFlows.Planning.Intent:create"
+    change="validate"
   >
     <HiddenInput :if={@intent_url} name="redirect_after" value={@intent_url} />
     <HiddenInput :if={e(@action, "produce")} name="action_id" value={@action} />
