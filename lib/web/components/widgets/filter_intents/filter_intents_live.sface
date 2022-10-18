@@ -68,16 +68,16 @@
       </fieldset>
 
       <fieldset class="mt-4">
-          <legend class="text-sm font-normal text-base-content/70">{l "Sort by"}</legend>
-          <Select
-            class="block w-full h-[2.5rem] !min-h-[auto] mt-2 select select-bordered"
-            options={
-              "Date Posted": "dateposted",
-              "Expiration Date": "expirationdate",
-              Distance: "distance",
-              Organization: "organization"
-            }
-          />
+        <legend class="text-sm font-normal text-base-content/70">{l("Sort by")}</legend>
+        <Select
+          class="block w-full h-[2.5rem] !min-h-[auto] mt-2 select select-bordered"
+          options={
+            "Date Posted": "dateposted",
+            "Expiration Date": "expirationdate",
+            Distance: "distance",
+            Organization: "organization"
+          }
+        />
       </fieldset>
       <!-- <fieldset class="mt-4">
       <div class="mt-2 border rounded-lg border-base-content/10 bg-base-100 ">
@@ -133,39 +133,22 @@
     </fieldset> -->
 
       <fieldset class="mt-4">
-      <legend class="text-sm font-normal text-base-content/70">{l "From"}</legend>
-      <div class="flex items-center mt-2 border rounded-lg border-base-content/10 bg-base-100 ">
-        <div class="flex items-center flex-1 p-3 ">
-          <input
-            id="Local"
-            name="from"
-            type="radio"
-            checked
-            class="w-5 h-5 radio"
-          />
-          <label
-            for="Local"
-            class="block ml-3 text-sm text-base-content/70"
-          >
-            {l "Local"}
-          </label>
+        <legend class="text-sm font-normal text-base-content/70">{l("From")}</legend>
+        <div class="flex items-center mt-2 border rounded-lg border-base-content/10 bg-base-100">
+          <div class="flex items-center flex-1 p-3">
+            <input id="Local" name="from" type="radio" checked class="w-5 h-5 radio">
+            <label for="Local" class="block ml-3 text-sm text-base-content/70">
+              {l("Local")}
+            </label>
+          </div>
+          <div class="flex items-center flex-1 p-3 border-l border-base-content/10">
+            <input id="Federated" name="from" type="radio" class="w-5 h-5 radio">
+            <label for="Federated" class="block ml-3 text-sm text-base-content/70">
+              {l("Federated")}
+            </label>
+          </div>
         </div>
-        <div class="flex items-center flex-1 p-3 border-l border-base-content/10">
-          <input
-            id="Federated"
-            name="from"
-            type="radio"
-            class="w-5 h-5 radio"
-          />
-          <label
-            for="Federated"
-            class="block ml-3 text-sm text-base-content/70"
-          >
-            {l "Federated"}
-          </label>
-        </div>
-      </div>
-    </fieldset>
+      </fieldset>
     </Form>
   </div>
 </Bonfire.UI.Common.WidgetBlockLive>
