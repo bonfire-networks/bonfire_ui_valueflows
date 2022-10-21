@@ -1,13 +1,17 @@
 <div x-data="{ open: true }" class="block hover:!bg-base-300 p-0 pt-4">
   <div class="flex items-center">
     <div
-      class="flex-1 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
+      @click="open = ! open"
+      class="flex items-center flex-1 gap-3 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
       id="lists-headline"
-    >
-      {l("Favourited lists")}
+      >
+      <div :class="{'rotate-180' : open}" class="transition-all ">
+        <Icon solid="ChevronUp" class="w-6 h-6 text-base-content/100" />
+      </div>
+      <span>{l("Favourited lists")}</span>
     </div>
-    <span @click="open = ! open" x-show="open == true"><Icon outline="Minus" class="w-4 h-4" /></span>
-    <span @click="open = ! open" x-show="open == false"><Icon outline="Plus" class="w-4 h-4" /></span>
+    <!-- <span @click="open = ! open" x-show="open == true"><Icon outline="Minus" class="w-4 h-4" /></span>
+    <span @click="open = ! open" x-show="open == false"><Icon outline="Plus" class="w-4 h-4" /></span> -->
   </div>
   <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(@process_url, path(ValueFlows.Process))} /> -->
   <ul
