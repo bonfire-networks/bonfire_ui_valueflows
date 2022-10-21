@@ -4,8 +4,8 @@
       @click="open = ! open"
       class="flex items-center flex-1 gap-3 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
       id="lists-headline"
-      >
-      <div :class="{'rotate-180' : open}" class="transition-all ">
+    >
+      <div :class="{'rotate-180' : open}" class="transition-all">
         <Icon solid="ChevronUp" class="w-6 h-6 text-base-content/100" />
       </div>
       <span>{l("Favourited lists")}</span>
