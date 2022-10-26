@@ -9,7 +9,7 @@ defmodule ValueFlows.Knowledge.ResourceSpecification.LiveHandler do
   end
 
   def handle_event("create", attrs, socket) do
-    creator = current_user_required(socket)
+    creator = current_user_required!(socket)
 
     with uploaded_media <-
            live_upload_files(

@@ -8,7 +8,7 @@ defmodule Bonfire.UI.ValueFlows.CreateMilestoneLive do
         %{"name" => name, "note" => note, "due_date" => due_date},
         socket
       ) do
-    user = current_user_required(socket)
+    user = current_user_required!(socket)
 
     data = %{
       is_public: true,

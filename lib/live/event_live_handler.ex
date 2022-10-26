@@ -7,7 +7,7 @@ defmodule ValueFlows.EconomicEvent.LiveHandler do
 
   def handle_event("create", attrs, socket) do
     # |> debug("creator")
-    creator = current_user_required(socket)
+    creator = current_user_required!(socket)
     # debug(socket: socket)
 
     with uploaded_media <-
@@ -69,7 +69,7 @@ defmodule ValueFlows.EconomicEvent.LiveHandler do
     ~> NaiveDateTime.new(~T[00:00:00])
     ~> Ecto.Type.cast(:utc_datetime_usec, ...)
     # |> debug()
-    |> ok_or()
+    |> ok_unwrap()
   end
 
   defp maybe_date(_d) do

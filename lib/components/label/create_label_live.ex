@@ -13,7 +13,7 @@ defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
   def handle_event("label_create", %{"label_input" => label_entered}, socket) do
     assigns =
       with {:ok, label} <-
-             Bonfire.Classify.Categories.create(current_user_required(socket), %{
+             Bonfire.Classify.Categories.create(current_user_required!(socket), %{
                name: label_entered
              }) do
         [

@@ -28,7 +28,7 @@ defmodule ValueFlows.Web.My.PublishAdLive do
 
     {:ok, _new_intent} =
       ValueFlows.Planning.Intent.GraphQL.create_intent(%{intent: intent}, %{
-        context: %{current_user: current_user_required(socket)}
+        context: %{current_user: current_user_required!(socket)}
       })
 
     # debug(new_intent)

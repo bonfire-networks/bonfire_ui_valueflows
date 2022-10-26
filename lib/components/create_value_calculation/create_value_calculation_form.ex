@@ -46,7 +46,7 @@ defmodule Bonfire.UI.ValueFlows.CreateValueCalculationForm do
         } = _params,
         socket
       ) do
-    user = Utils.current_user_required(socket)
+    user = Utils.current_user_required!(socket)
 
     value_attrs = %{
       name: name,

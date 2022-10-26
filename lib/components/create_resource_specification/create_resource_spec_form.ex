@@ -25,7 +25,7 @@ defmodule Bonfire.UI.ValueFlows.CreateResourceSpecForm do
         %{"name" => name, "note" => note, "unit" => unit} = _params,
         socket
       ) do
-    user = Utils.current_user_required(socket)
+    user = Utils.current_user_required!(socket)
 
     case apply_action(changeset, :insert) do
       {:ok, _} ->

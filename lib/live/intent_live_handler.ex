@@ -74,7 +74,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
 
   def handle_event("create", attrs, socket) do
     # debug(attrs)
-    current_user = current_user_required(socket)
+    current_user = current_user_required!(socket)
     attrs = Map.merge(attrs, e(attrs, "intent", %{}))
     type = e(attrs, "type", %{}) || e(attrs, "intent_type", %{})
 
@@ -220,7 +220,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
       |> debug("attrs")
 
     with {:ok, intent} <-
-           Intents.update(current_user_required(socket), intent, attrs, update_verb(what)) do
+           Intents.update(current_user_required!(socket), intent, attrs, update_verb(what)) do
       debug(intent, "updated")
 
       {:noreply,
@@ -244,7 +244,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
   end
 
   def assign_to(assign_to, intent, socket, field \\ :provider) do
-    assign_to_id = if assign_to == "me", do: current_user_required(socket), else: assign_to
+    assign_to_id = if assign_to == "me", do: current_user_required!(socket), else: assign_to
 
     update(:assign, intent, Map.put(%{}, field || :provider, assign_to_id), socket)
   end
@@ -276,7 +276,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
   end
 
   # def handle_event("delete", %{"id" => id} = attrs, socket) do
-  #   with {:ok, intent} <- Intents.soft_delete(id, current_user_required(socket)) do
+  #   with {:ok, intent} <- Intents.soft_delete(id, current_user_required!(socket)) do
   #     # debug(intent)
 
   #     redir =
