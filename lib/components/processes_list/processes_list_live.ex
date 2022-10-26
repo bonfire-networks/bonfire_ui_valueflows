@@ -6,7 +6,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   prop title, :string, default: nil
   prop process_url, :string, default: nil
 
-  declare_nav_component("List of lists/processes")
+  # declare_nav_component("List of lists/processes")
 
   def processes(context) do
     if context[:my_processes] do

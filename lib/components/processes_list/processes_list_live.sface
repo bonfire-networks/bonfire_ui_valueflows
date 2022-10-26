@@ -1,43 +1,14 @@
-<div x-data="{ open: true }" class="block hover:!bg-base-300 p-0 pt-4">
-  <div class="flex items-center">
-    <div
-      @click="open = ! open"
-      class="flex items-center flex-1 gap-3 pl-4 text-xs font-semibold tracking-wider uppercase text-base-content/60"
-      id="lists-headline"
+<div class="px-0 py-4 mt-4 ml-4 text-sm font-medium tracking-wide text-base-content/60">{@title}</div>
+<ul class="space-y-1 menu menu-compact">
+  <li :for={process <- processes(@__context__)}>
+    <LiveRedirect
+      class="flex items-center gap-5 rounded-md"
+      to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
     >
-      <div :class="{'rotate-180' : open}" class="transition-all">
-        <Icon solid="ChevronUp" class="w-6 h-6 text-base-content/100" />
-      </div>
-      <span>{l("Favourited lists")}</span>
-    </div>
-    <!-- <span @click="open = ! open" x-show="open == true"><Icon outline="Minus" class="w-4 h-4" /></span>
-    <span @click="open = ! open" x-show="open == false"><Icon outline="Plus" class="w-4 h-4" /></span> -->
-  </div>
-  <!-- <Bonfire.UI.ValueFlows.CreateProcessLive process_url={e(@process_url, path(ValueFlows.Process))} /> -->
-  <ul
-    x-collapse
-    x-show="open"
-    class="mt-2 ml-0 menu menu-compact"
-    role="group"
-    aria-labelledby="lists-headline"
-  >
-    <li :for={process <- processes(@__context__)}>
-      <LiveRedirect to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"} class="rounded-md">
-        <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
-          {process.name}
-        </span>
-      </LiveRedirect>
-    </li>
-  </ul>
-  <!-- FIXME
-  <button
-    phx-click="select_smart_input"
-    phx-target="#smart_input"
-    phx-value-component={Bonfire.UI.ValueFlows.CreateProcessSmartInputLive}
-    @click={"show_smart_input('#{l("Create a list")}')"}
-    class="justify-start w-full mt-3 text-left normal-case btn btn-ghost btn-sm"
-  >
-    <Icon outline="Plus" class="inline-block w-5 h-5 tablet-lg:mr-2" />
-    <span class="hidden tablet-lg:inline-block">{l("New list")}</span>
-  </button> -->
-</div>
+      <Icon solid="LightningBolt" class="w-5 h-5 text-base-content/80" />
+      <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
+        {process.name}
+      </span>
+    </LiveRedirect>
+  </li>
+</ul>
