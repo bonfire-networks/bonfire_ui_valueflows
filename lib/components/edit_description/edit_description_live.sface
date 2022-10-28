@@ -1,18 +1,19 @@
 <div x-data="{ toggle_edit_description: false }" class="">
-  <div class="flex items-center">
-    <div class="text-xs uppercase text-base-content opacity-70 font-regular">{l("Description")}</div>
+  <div class="flex items-center gap-4">
+    <Icon iconify="akar-icons:text-align-left" class="w-5 h-5" />
+    <div class="text-base font-medium capitalise text-base-content/80">{l("Description")}</div>
     <button
       :if={@current_user != nil}
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       @click="toggle_edit_description = true"
       type="button"
-      class="ml-2 normal-case btn btn-xs btn-outline border-base-content/30 !font-normal"
+      class="normal-case btn btn-xs btn-outline border-base-content/30 !font-normal"
     >
       {l("Edit")}
     </button>
   </div>
-  <div x-show="!toggle_edit_description" class="mt-1.5 prose prose-valueflows prose-sm w-full">
+  <div x-show="!toggle_edit_description" class="ml-[2.5rem] mt-1.5 prose prose-valueflows prose-sm">
     {markdown(@item.note)}
   </div>
   <div

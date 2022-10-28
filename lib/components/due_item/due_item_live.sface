@@ -1,67 +1,12 @@
-<div
-  :if={@is_editable}
-  class="relative pt-4 text-sm border-t text-base-content/70 border-base-content/30"
-  x-cloak
-  x-data="{ open: false }"
-  @keydown.escape.stop="open = false"
-  @click.outside="open = false"
->
-  <form phx-change="ValueFlows.Planning.Intent:update:due">
-    <div class="flex items-center justify-between mb-2">
-      <span class="block text-sm font-semibold tracking-wide text-base-content/70">{l("Due")}</span>
-      <div @click="open = !open" aria-haspopup="true" x-bind:aria-expanded="open" aria-expanded="true">
-        <Icon iconify="bx:calendar-edit" class="w-5 h-5 cursor-pointer text-base-content/70" />
-      </div>
-    </div>
-
-    <div class="flex items-center flex-1">
-      <span class="text-base cursor-pointer">{date_from_now(@date) || "No due date"}</span>
-    </div>
-
-    <div
-      x-description="sort tasks dropdown menu, show/hide based on menu state."
-      x-show="open"
-      x-transition:enter="transition ease-out duration-100"
-      x-transition:enter-start="transform opacity-0 scale-95"
-      x-transition:enter-end="transform opacity-60 scale-100"
-      x-transition:leave="transition ease-in duration-75"
-      x-transition:leave-start="transform opacity-60 scale-100"
-      x-transition:leave-end="transform opacity-0 scale-95"
-      class="absolute right-0 z-20 w-56 p-1 mt-0 origin-top-right rounded-md shadow top-8 border-3 border-base-content/30 focus:outline-none"
-      style="margin-left: -20px"
-      role="menu"
-      aria-orientation="vertical"
-    >
-      <input type="date" name="due" class="w-full input text-base-content">
-    </div>
+<div :if={@is_editable}>
+  <form class="flex items-center gap-2 text-base-content/80" phx-change="ValueFlows.Planning.Intent:update:due">
+    <input type="date" value={Date.to_iso8601(@date)} name="due" class="w-full h-9 input input-bordered">
   </form>
 </div>
-
-<div
-  :if={!@is_editable}
-  class="relative flex items-center h-8 text-sm text-base-content opacity-60 text-medium"
-  x-cloak
-  x-data="{ open: false }"
-  @keydown.escape.stop="open = false"
-  @click.outside="open = false"
-  @click="open = !open"
-  aria-haspopup="true"
-  x-bind:aria-expanded="open"
-  aria-expanded="true"
->
-  <div class="flex items-center flex-1">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-5 h-5 text-base-content opacity-60"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-        clip-rule="evenodd"
-      />
-    </svg>
-    <span class="ml-2">{date_from_now(@date) || "No due date"}</span>
+<div :if={!@is_editable}>
+  <div class="flex items-center gap-2 text-base-content/80">
+    <Icon iconify="akar-icons:calendar" class="w-4 h-4 " />
+    <span>{date_from_now(@date) || "No due date"}</span>
   </div>
 </div>
+
