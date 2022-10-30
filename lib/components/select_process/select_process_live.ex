@@ -7,4 +7,5 @@ defmodule Bonfire.UI.ValueFlows.SelectProcessLive do
   prop remove_event, :string, default: nil
   prop context_id, :string
   prop selected_options, :any
+  prop class, :css_class, required: false
 end
