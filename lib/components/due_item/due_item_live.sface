@@ -1,6 +1,7 @@
 <div class="w-full" :if={@is_editable}>
   <form class="flex items-center gap-2 text-base-content/80" phx-change="ValueFlows.Planning.Intent:update:due">
-    <input type="date" value={Date.to_iso8601(@date)} name="due" class="h-9 flex items-center w-full max-w-[240px] px-2 rounded-md cursor-pointer bg-base-content/5 sm:text-sm">
+    <input :if={@date} type="date" value={Date.to_iso8601(@date)} name="due" class="h-9 flex items-center w-full max-w-[240px] px-2 rounded-md cursor-pointer bg-base-content/5 sm:text-sm">
+    <input :if={!@date} type="date" name="due" class="h-9 flex items-center w-full max-w-[240px] px-2 rounded-md cursor-pointer bg-base-content/5 sm:text-sm">
   </form>
 </div>
 <div :if={!@is_editable}>
