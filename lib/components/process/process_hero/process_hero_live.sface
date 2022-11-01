@@ -1,4 +1,4 @@
-<div class="pb-3 mt-6 mb-3 border-b border-base-content/20">
+<div class="pb-3 mx-3 mt-6 mb-3 border-b md:mx-0 border-base-content/20">
   <div class="z-50 flex items-start justify-between">
     <div class="flex flex-col gap-3">
       <!-- <Bonfire.UI.Common.BackButtonLive showing_within={@showing_within} /> -->
