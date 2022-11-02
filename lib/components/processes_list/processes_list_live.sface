@@ -1,16 +1,16 @@
 {#if Enum.count(processes(@__context__)) > 0}
-<div class="px-0 py-4 mt-2 ml-4 text-sm font-medium tracking-wide text-base-content/60">{@title}</div>
-<ul class="space-y-1 menu menu-compact">
-  <li :for={process <- processes(@__context__)}>
-    <LiveRedirect
-      class="flex items-center gap-5 rounded-md"
-      to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
-    >
-      <Icon solid="LightningBolt" class="w-5 h-5 text-base-content/80" />
-      <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
-        {process.name}
-      </span>
-    </LiveRedirect>
-  </li>
-</ul>
+  <div class="px-0 py-4 mt-2 ml-4 text-sm font-medium tracking-wide text-base-content/60">{@title}</div>
+  <ul class="space-y-1 menu menu-compact">
+    <li :for={process <- processes(@__context__)}>
+      <LiveRedirect
+        class="flex items-center gap-5 rounded-md"
+        to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
+      >
+        <Icon solid="LightningBolt" class="w-5 h-5 text-base-content/80" />
+        <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
+          {process.name}
+        </span>
+      </LiveRedirect>
+    </li>
+  </ul>
 {/if}
