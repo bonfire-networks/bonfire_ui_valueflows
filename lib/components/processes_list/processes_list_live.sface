@@ -1,3 +1,4 @@
+{#if Enum.count(processes(@__context__)) > 0}
 <div class="px-0 py-4 mt-2 ml-4 text-sm font-medium tracking-wide text-base-content/60">{@title}</div>
 <ul class="space-y-1 menu menu-compact">
   <li :for={process <- processes(@__context__)}>
@@ -12,3 +13,4 @@
     </LiveRedirect>
   </li>
 </ul>
+{/if}
