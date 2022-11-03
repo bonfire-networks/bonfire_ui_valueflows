@@ -1,10 +1,18 @@
-<div class="pb-3 mx-3 mt-6 mb-3 border-b md:mx-0 border-base-content/20">
-  <div class="z-50 flex items-start justify-between">
-    <div class="flex flex-col gap-3">
-      <!-- <Bonfire.UI.Common.BackButtonLive showing_within={@showing_within} /> -->
-      <span class="text-2xl font-bold capitalize">{rich(@process.name)}</span>
+<div class="relative p-6 mb-6 border-b border-base-content/10">
+  <div class="z-50 flex items-center justify-between mb-5 top-6">
+    <div class="flex items-center gap-3">
+      <LiveRedirect to="/lists" class="btn btn-xs btn-circle btn-ghost">
+        <Icon outline="ArrowLeft" class="w-4 h-4 text-base-content" />
+      </LiveRedirect>
+      <span class="hidden text-sm font-medium tracking-wide md:block text-base-content/60">{l("All lists")}</span>
     </div>
     <div class="flex items-center gap-4">
+      <span :if={!@process.finished} class="badge badge-outline border-base-content/40">
+        {l("Open")}
+      </span>
+      <span :if={@process.finished} class="badge badge-accent badge-success">
+        {l("Completed")}
+      </span>
       <Bonfire.UI.Common.LikeActionLive
         id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, @process)}
         object={@process}
@@ -88,6 +96,7 @@
             </div> -->
           </div>
           <div
+            x-cloak
             x-show="edit_process"
             class="fixed inset-0 z-10 overflow-y-auto"
             aria-labelledby="modal-title"
@@ -211,13 +220,22 @@
       </div>
     </div>
   </div>
-  <!-- <div :if={@process.note} class="!max-w-full mt-3 prose-sm prose">
-    {rich(@process.note)}
+  <div class="flex flex-col">
+    <div class="flex items-start gap-4">
+      <div class="flex flex-col">
+        <span class="text-2xl font-semibold text-base-content">{e(@process, :name, "")}</span>
+        <span
+          :if={String.length(e(@process, :note, "")) > 0}
+          class="mt-1 text-base font-normal prose text-base-content/70"
+        >{e(@process, :note, "")}</span>
+      </div>
+    </div>
+    <div class="flex mt-3">
+      <Bonfire.UI.Common.SmartInputButtonLive
+        component={Bonfire.UI.Coordination.CreateTaskLive}
+        smart_input_prompt={l("Add task to list")}
+        icon="heroicons-solid:pencil-alt"
+      />
+    </div>
   </div>
-  <span :if={!@process.finished} class="mt-3 badge badge-outline border-base-content/40">
-    {l("Open")}
-  </span>
-  <span :if={@process.finished} class="mt-3 badge badge-accent badge-success">
-    {l("Completed")}
-  </span> -->
 </div>
