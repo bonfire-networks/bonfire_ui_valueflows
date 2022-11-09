@@ -7,6 +7,24 @@
           :if={String.length(e(@process, :note, "")) > 0}
           class="mt-1 text-base font-normal prose text-base-content/70"
         >{e(@process, :note, "")}</span>
+        <div class="flex items-center gap-3 mt-4">
+          <span :if={!@process.finished} class="badge badge-outline border-base-content/40">
+            {l("Open")}
+          </span>
+          <span :if={@process.finished} class="badge badge-accent badge-success">
+            {l("Completed")}
+          </span>
+          <Bonfire.UI.Common.LikeActionLive
+            id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, @process)}
+            object={@process}
+          />
+          <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
+          <Bonfire.Boundaries.Web.BoundaryIconLive
+            with_label
+            id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @process)}
+            object={@process}
+          />
+        </div>
       </div>
     </div>
   </div>
