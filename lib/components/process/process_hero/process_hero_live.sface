@@ -1,31 +1,31 @@
 <div class="m-3 rounded shadow md:m-6">
-  <div class="grid grid-cols-1 tablet:grid-cols-[1fr_300px] items-start gap-4 bg-base-content/5 ">
+  <div class="grid grid-cols-1 tablet:grid-cols-[1fr_300px] items-start gap-4 bg-base-content/5">
     <div class="relative flex flex-col flex-1 p-4">
-     <div class="text-2xl font-semibold text-base-content">{e(@process, :name, "")}</div>
+      <div class="text-2xl font-semibold text-base-content">{e(@process, :name, "")}</div>
       <span
-          :if={String.length(e(@process, :note, "")) > 0}
-          class="mt-1 text-sm font-normal prose text-base-content/70"
-        >{e(@process, :note, "")}</span>
-         <div class="flex items-center gap-3 mt-4">
-          <span :if={!@process.finished} class="badge badge-ghost">
-            {l("Open")}
-          </span>
-          <span :if={@process.finished} class="badge badge-accent badge-success">
-            {l("Completed")}
-          </span>
-          <div class={"flex items-center gap-1 text-xs p-2 py-1 rounded text-medium"}>
-            <Icon solid="Calendar" class="w-4 h-4" />
-            <span>{date_from_now(e(@process, :due, nil)) || l("No due date")}</span>
-          </div>
-          <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
-          <Bonfire.Boundaries.Web.BoundaryIconLive
-            with_label
-            id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @process)}
-            object={@process}
-          />
+        :if={String.length(e(@process, :note, "")) > 0}
+        class="mt-1 text-sm font-normal prose text-base-content/70"
+      >{e(@process, :note, "")}</span>
+      <div class="flex items-center gap-3 mt-4">
+        <span :if={!@process.finished} class="badge badge-ghost">
+          {l("Open")}
+        </span>
+        <span :if={@process.finished} class="badge badge-accent badge-success">
+          {l("Completed")}
+        </span>
+        <div class="flex items-center gap-1 text-xs p-2 py-1 rounded text-medium">
+          <Icon solid="Calendar" class="w-4 h-4" />
+          <span>{date_from_now(e(@process, :due, nil)) || l("No due date")}</span>
         </div>
+        <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
+        <Bonfire.Boundaries.Web.BoundaryIconLive
+          with_label
+          id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @process)}
+          object={@process}
+        />
+      </div>
     </div>
-    <div class="flex items-center justify-end gap-3 p-4">  
+    <div class="flex items-center justify-end gap-3 p-4">
       <Bonfire.UI.Common.LikeActionLive
         id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, @process)}
         object={@process}
@@ -41,17 +41,11 @@
   <div class="flex items-center justify-between px-4 py-4 bg-base-content/10">
     <div class="flex items-center gap-6">
       <div class="flex items-center gap-2">
-        <Icon
-          iconify="carbon:software-resource"
-          class="w-4 h-4 text-info"
-        />
+        <Icon iconify="carbon:software-resource" class="w-4 h-4 text-info" />
         <span class="text-sm font-semibold">100 Open</span>
       </div>
-      <div class="flex items-center gap-2"> 
-        <Icon
-          iconify="carbon:checkmark-filled"
-          class="w-4 h-4 text-success"
-        />
+      <div class="flex items-center gap-2">
+        <Icon iconify="carbon:checkmark-filled" class="w-4 h-4 text-success" />
         <span class="text-sm">83 Closed</span>
       </div>
     </div>
