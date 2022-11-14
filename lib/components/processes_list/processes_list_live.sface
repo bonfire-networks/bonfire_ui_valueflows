@@ -4,7 +4,7 @@
     <li :for={process <- processes(@__context__)}>
       <LiveRedirect
         class="flex items-center gap-5 rounded-md"
-        to={~p"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
+        to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
       >
         <Icon solid="LightningBolt" class="w-5 h-5 text-base-content/80" />
         <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
