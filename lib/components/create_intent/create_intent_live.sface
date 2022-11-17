@@ -13,9 +13,23 @@
     <HiddenInput :if={@in_scope_of} name="in_scope_of" value={@in_scope_of} />
     <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
+    <div class="flex-1">
+      <!-- <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l "Select topic(s)..."}</span> -->
+      <div class="w-full" role="menu" aria-orientation="vertical">
+        <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
+          type={Bonfire.Classify.Category}
+          label={l("Select topic(s)...")}
+          form_input_name={:tags}
+          class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
+          is_editable
+        />
+      </div>
+    </div>
+
     <!-- <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} /> -->
     <Bonfire.UI.ValueFlows.SelectProcessLive
       field_name={:output_of_id}
+      label={@process_prompt}
       is_editable
       class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
       selected_options={@output_of_id}

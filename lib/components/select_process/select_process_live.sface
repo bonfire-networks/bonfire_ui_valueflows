@@ -3,11 +3,12 @@
     id={Pointers.ULID.generate()}
     preloaded_options={Bonfire.UI.ValueFlows.ProcessesListLive.processes(@__context__)}
     selected_options={@selected_options}
-    label={l("Move to a list...")}
+    label={@label || l("Select a process...")}
     form_input_name={@field_name}
     pick_event={@pick_event}
     remove_event={@remove_event}
     class={@class}
     context_id={@context_id}
+    is_editable={@is_editable}
   />
 </div>

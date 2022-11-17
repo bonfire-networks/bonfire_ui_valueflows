@@ -1,12 +1,13 @@
 <div class="w-full" role="menu" aria-orientation="vertical">
   <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
     selected_options={selected_options(@selected_options, @field_name, @agent, @__context__)}
-    label="Assign to..."
+    label={@label || l("Assign to...")}
     form_input_name={@field_name}
     pick_event={@pick_event}
     remove_event={@remove_event}
     event_target={@event_target}
     context_id={@context_id}
     class={@class}
+    is_editable={@is_editable}
   />
 </div>

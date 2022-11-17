@@ -19,8 +19,7 @@
   </form>
 </div>
 <div :if={!@is_editable}>
-  <div class="flex items-center gap-2 text-base-content/80">
-    <Icon iconify="akar-icons:calendar" class="w-4 h-4" />
+  <div class="flex items-center text-base-content/80">
     <span>{date_from_now(@date) || "No due date"}</span>
   </div>
 </div>

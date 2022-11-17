@@ -1,6 +1,7 @@
 defmodule Bonfire.UI.ValueFlows.AssignItemLive do
   use Bonfire.UI.Common.Web, :stateless_component
 
+  prop label, :string, default: nil
   prop is_editable, :boolean, default: false
   prop field_name, :string, required: true
   prop agent, :any, default: nil
