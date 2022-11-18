@@ -18,7 +18,7 @@
       <div class="w-full" role="menu" aria-orientation="vertical">
         <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
           type={Bonfire.Classify.Category}
-          label={l("Select topic(s)...")}
+          label={l("Select label(s) or topic(s)...")}
           form_input_name={:tags}
           class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
           is_editable
