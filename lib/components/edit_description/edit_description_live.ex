@@ -3,4 +3,5 @@ defmodule Bonfire.UI.ValueFlows.EditDescriptionLive do
 
   prop item, :map
   prop submit_event, :any, default: nil
+  prop is_editable?, :boolean, default: true
 end
