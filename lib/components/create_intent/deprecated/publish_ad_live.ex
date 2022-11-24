@@ -9,16 +9,16 @@ defmodule ValueFlows.Web.My.PublishAdLive do
     }
   end
 
-  def handle_event("toggle_ad", _data, socket) do
+  def do_handle_event("toggle_ad", _data, socket) do
     {:noreply, assign(socket, :toggle_ad, !socket.assigns.toggle_ad)}
   end
 
-  def handle_event("publish_ad", data, socket) do
+  def do_handle_event("publish_ad", data, socket) do
     publish_ad(data, socket)
   end
 
   # need to alias some form posting events here to workaround having two events but one target on a form
-  def handle_event("tag_suggest", data, socket) do
+  def do_handle_event("tag_suggest", data, socket) do
     Bonfire.Tag.Autocomplete.tag_suggest(data, socket)
   end
 

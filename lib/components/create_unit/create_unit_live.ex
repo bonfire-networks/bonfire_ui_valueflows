@@ -11,7 +11,7 @@ defmodule Bonfire.UI.ValueFlows.CreateUnitLive do
      )}
   end
 
-  def handle_event("validate_unit", %{"create_unit_form" => params}, socket) do
+  def do_handle_event("validate_unit", %{"create_unit_form" => params}, socket) do
     debug(params)
     changeset = CreateUnitForm.changeset(params)
     changeset = Map.put(changeset, :action, :insert)
@@ -19,7 +19,7 @@ defmodule Bonfire.UI.ValueFlows.CreateUnitLive do
     {:noreply, socket}
   end
 
-  def handle_event("submit_unit", %{"create_unit_form" => params}, socket) do
+  def do_handle_event("submit_unit", %{"create_unit_form" => params}, socket) do
     changeset = CreateUnitForm.changeset(params)
 
     case CreateUnitForm.send(changeset, params, socket) do

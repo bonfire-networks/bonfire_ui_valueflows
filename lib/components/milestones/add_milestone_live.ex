@@ -4,7 +4,7 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
 
   alias Bonfire.UI.ValueFlows.CreateMilestoneLive
 
-  def handle_event("milestone_clear", _, socket) do
+  def do_handle_event("milestone_clear", _, socket) do
     assigns = [
       milestone: ""
     ]
@@ -12,7 +12,7 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def handle_event("milestone_search", %{"milestone_input" => search_for}, socket) do
+  def do_handle_event("milestone_search", %{"milestone_input" => search_for}, socket) do
     processes = all_processes(socket)
     debug("search_for")
     debug(search_for)
@@ -28,7 +28,11 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def handle_event("milestone_pick", %{"id" => _id, "name" => milestone_name} = milestone, socket) do
+  def do_handle_event(
+        "milestone_pick",
+        %{"id" => _id, "name" => milestone_name} = milestone,
+        socket
+      ) do
     processes = all_processes(socket)
 
     assigns = [
@@ -60,4 +64,18 @@ defmodule Bonfire.UI.ValueFlows.AddMilestoneLive do
   """
   def processes(params \\ %{}, socket), do: liveql(socket, :processes, params)
   def all_processes(socket), do: processes(socket)
+
+  def handle_event(
+        action,
+        attrs,
+        socket
+      ),
+      do:
+        Bonfire.UI.Common.LiveHandlers.handle_event(
+          action,
+          attrs,
+          socket,
+          __MODULE__,
+          &do_handle_event/3
+        )
 end

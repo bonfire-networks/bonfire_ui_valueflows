@@ -12,7 +12,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
      )}
   end
 
-  def handle_event("location_clear", _, socket) do
+  def do_handle_event("location_clear", _, socket) do
     assigns = [
       at_location: ""
     ]
@@ -20,7 +20,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def handle_event("location_search", %{"location_input" => search_for}, socket) do
+  def do_handle_event("location_search", %{"location_input" => search_for}, socket) do
     {:ok, locations} = Geolocations.many({:autocomplete, search_for})
     # locations = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
@@ -34,7 +34,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def handle_event("location_pick", %{"id" => _id, "name" => location_name} = loc, socket) do
+  def do_handle_event("location_pick", %{"id" => _id, "name" => location_name} = loc, socket) do
     assigns = [
       location_search_results: [],
       location_search_phrase: location_name,
@@ -44,7 +44,7 @@ defmodule Bonfire.UI.ValueFlows.AddLocationLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def handle_event("location_create", %{"location_input" => loc}, socket) do
+  def do_handle_event("location_create", %{"location_input" => loc}, socket) do
     debug(loc)
 
     assigns =
