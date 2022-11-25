@@ -5,7 +5,7 @@ defmodule ValueFlows.Knowledge.ResourceSpecification.LiveHandler do
   alias ValueFlows.Knowledge.ResourceSpecification.ResourceSpecifications
 
   def changeset(attrs \\ %{}) do
-    ResourceSpecification.validate_changeset(attrs)
+    ResourceSpecification.create_changeset(nil, attrs)
   end
 
   def handle_event("create", attrs, socket) do
