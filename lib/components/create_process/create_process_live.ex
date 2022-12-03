@@ -8,6 +8,6 @@ defmodule Bonfire.UI.ValueFlows.CreateProcessLive do
   # unused but workaround surface "invalid value for property" issue
   prop textarea_container_class, :css_class
 
-  prop to_boundaries, :list, default: []
+  prop to_boundaries, :any, default: nil
   prop open_boundaries, :boolean, default: false
 end

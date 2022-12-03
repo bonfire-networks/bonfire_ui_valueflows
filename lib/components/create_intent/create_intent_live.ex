@@ -12,6 +12,6 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
   prop smart_input_opts, :any, default: nil
   prop textarea_class, :css_class, required: false
 
-  prop to_boundaries, :list, default: []
+  prop to_boundaries, :any, default: nil
   prop open_boundaries, :boolean, default: false
 end
