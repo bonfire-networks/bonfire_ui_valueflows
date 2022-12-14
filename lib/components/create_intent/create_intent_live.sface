@@ -77,15 +77,10 @@
       <!-- <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={true}  /> -->
     </div>
 
-    <div class="mt-2 -mx-2">
-      <Bonfire.UI.Common.InputBoundariesLive
-        create_object_type={:intent}
-        to_boundaries={@to_boundaries}
-        open_boundaries={@open_boundaries}
-      />
-    </div>
-    <div class="flex items-center w-full mt-4">
-      <button type="submit" class="w-full btn btn-primary">{l("Create")}</button>
-    </div>
+    <Bonfire.UI.Common.InputControlsLive
+      create_object_type={:process}
+      to_boundaries={@to_boundaries}
+      open_boundaries={@open_boundaries}
+    />
   </Form>
 </div>
