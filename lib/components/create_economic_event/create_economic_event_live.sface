@@ -35,7 +35,7 @@
     </div>
 
     <svg
-      @click={@remove}
+      x-on:click={@remove}
       xmlns="http://www.w3.org/2000/svg"
       class="w-10 h-10 cursor-pointer hover:text-opacity-90 text-opacity-70"
       fill="none"

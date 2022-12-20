@@ -9,7 +9,7 @@
     <div class="flex items-center p-2 border-b">
       <label for="due_date" class="flex-1 text-sm font-light text-center">labels</label>
       <svg
-        @click="toggle_labels = false"
+        x-on:click="toggle_labels = false"
         class="w-6 h-6 text-base-content opacity-60 bg-transparent border-none cursor-pointer hover:text-base-content opacity-60"
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -103,7 +103,7 @@
         </ul>
 
         <button
-          @click="create_new_label = true"
+          x-on:click="create_new_label = true"
           type="button"
           class="items-center block w-full px-3 py-2 mt-2 text-sm font-medium leading-4 text-center text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
         >

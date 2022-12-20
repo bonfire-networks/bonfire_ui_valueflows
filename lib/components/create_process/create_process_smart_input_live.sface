@@ -1,6 +1,6 @@
 <div cloak x-data="{ open: false }">
   <button
-    @click="open = true"
+    x-on:click="open = true"
     x-show="!open"
     type="button"
     class="btn btn-secondary inline-flex place-content-center items-center w-full px-4 py-1.5 text-base font-medium text-center normal-case"

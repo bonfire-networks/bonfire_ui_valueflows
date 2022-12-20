@@ -3,7 +3,7 @@
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
-  @click.outside="open = false"
+  x-on:click.outside="open = false"
 >
   <div class="flex items-center flex-1">
     <span>{@status || "todo"}</span>
@@ -11,7 +11,7 @@
 
   <div
     :if={@is_editable}
-    @click="open = !open"
+    x-on:click="open = !open"
     aria-haspopup="true"
     x-bind:aria-expanded="open"
     aria-expanded="true"

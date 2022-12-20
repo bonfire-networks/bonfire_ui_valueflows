@@ -11,7 +11,7 @@
           });"
       >
         <div
-          @click="toggleMilestone = true"
+          x-on:click="toggleMilestone = true"
           class="flex items-center p-1 rounded-md cursor-pointer"
         >
           <button class="flex justify-center px-4 py-2 text-sm font-medium text-base-content opacity-60 transition duration-150 ease-in-out bg-neutral-900 border border-transparent rounded-md hover:bg-neutral hover:bg-opacity-30 -800 hover:text-base-content opacity-60 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-base-content opacity-60 active:bg-neutral">
@@ -21,7 +21,7 @@
         <div x-show="toggleMilestone" class="fixed inset-0 z-10 overflow-y-auto">
           <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div
-              @click="toggleMilestone = false"
+              x-on:click="toggleMilestone = false"
               x-show="toggleMilestone"
               x-description="Background overlay, show/hide based on modal state."
               x-transition:enter="ease-out duration-300"
@@ -134,7 +134,7 @@
                 </div>
                 <div class="flex items-center justify-end px-3 py-3 border-b border-l">
                   <button
-                    @click="toggleMilestone = false"
+                    x-on:click="toggleMilestone = false"
                     type="button"
                     class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
                   >

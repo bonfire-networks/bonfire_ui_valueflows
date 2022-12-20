@@ -16,7 +16,7 @@
     <div class="flex space-x-3">
       <button
         :if={!e(@resource, :id, nil)}
-        @click="selected_economic_event = 'produce'; open_select_economic_event = false"
+        x-on:click="selected_economic_event = 'produce'; open_select_economic_event = false"
         type="button"
         class="btn btn-primary inline-flex items-center text-sm font-medium  normal-case"
       >
@@ -24,35 +24,35 @@
       </button>
       <button
         :if={!e(@resource, :id, nil)}
-        @click="selected_economic_event = 'raise'; open_select_economic_event = false"
+        x-on:click="selected_economic_event = 'raise'; open_select_economic_event = false"
         type="button"
         class="btn btn-primary inline-flex items-center text-sm font-medium  normal-case"
       >
         {l("Raise")}
       </button>
       <button
-        @click="selected_economic_event = 'transfer'; open_select_economic_event = false"
+        x-on:click="selected_economic_event = 'transfer'; open_select_economic_event = false"
         type="button"
         class="btn btn-primary inline-flex items-center text-sm font-medium  normal-case"
       >
         {l("Transfer")}
       </button>
       <button
-        @click="selected_economic_event = 'use'; open_select_economic_event = false"
+        x-on:click="selected_economic_event = 'use'; open_select_economic_event = false"
         type="button"
         class="btn btn-primary inline-flex items-center text-sm font-medium  normal-case"
       >
         {l("Use")}
       </button>
       <button
-        @click="selected_economic_event = 'consume'; open_select_economic_event = false"
+        x-on:click="selected_economic_event = 'consume'; open_select_economic_event = false"
         type="button"
         class="btn btn-primary inline-flex items-center text-sm font-medium  normal-case"
       >
         {l("Consume")}
       </button>
       <button
-        @click="selected_economic_event = 'lower'; open_select_economic_event = false"
+        x-on:click="selected_economic_event = 'lower'; open_select_economic_event = false"
         type="button"
         class="btn btn-primary inline-flex items-center text-sm font-medium  normal-case"
       >

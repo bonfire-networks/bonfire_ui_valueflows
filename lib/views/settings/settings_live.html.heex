@@ -9,7 +9,7 @@
           <nav>
             <button
               x-bind:class="{'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700' : tab === 'units'}"
-              @click="tab = 'units'"
+              x-on:click="tab = 'units'"
               class="flex items-center w-full px-3 py-2 mt-1 text-sm font-medium text-base-content opacity-90 border-l-4 border-transparent hover:bg-neutral hover:bg-opacity-30  hover:text-base-content opacity-90 group"
               aria-current="page"
             >
@@ -36,7 +36,7 @@
             </button>
 
             <button
-              @click="tab = 'res'"
+              x-on:click="tab = 'res'"
               x-bind:class="{'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700' : tab === 'res'}"
               class="flex items-center w-full px-3 py-2 mt-1 text-sm font-medium text-base-content opacity-90 border-l-4 border-transparent hover:bg-neutral hover:bg-opacity-30  hover:text-base-content opacity-90 group"
             >
@@ -63,7 +63,7 @@
             </button>
 
             <button
-              @click="tab = 'value_calculation'"
+              x-on:click="tab = 'value_calculation'"
               x-bind:class="{'bg-teal-50 border-teal-500 text-teal-700 hover:bg-teal-50 hover:text-teal-700' : tab === 'value_calculation'}"
               class="flex items-center w-full px-3 py-2 mt-1 text-sm font-medium text-base-content opacity-90 border-l-4 border-transparent hover:bg-neutral hover:bg-opacity-30  hover:text-base-content opacity-90 group"
             >

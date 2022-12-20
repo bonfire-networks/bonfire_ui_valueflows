@@ -221,7 +221,7 @@
                 name="is_public"
                 checked="{false: !on, true: on}"
                 type="button"
-                @click="on = !on"
+                x-on:click="on = !on"
                 aria-pressed="false"
                 x-data="{ on: false }"
                 class="relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out bg-base-100 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
@@ -241,7 +241,7 @@
             </div>
             <div class="flex items-center">
               <button
-                @click="toggleIntent = false"
+                x-on:click="toggleIntent = false"
                 type="button"
                 class="inline-flex items-center px-4 py-2 mr-3 text-base font-medium text-base-content opacity-70 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500"
               >
@@ -265,11 +265,11 @@
       <div
         x-data="{toggle_due_date: false}"
         @keydown.window.escape="toggle_due_date = false"
-        @click.outside="toggle_due_date = false"
+        x-on:click.outside="toggle_due_date = false"
       >
         <button
           type="button"
-          @click="toggle_due_date = !toggle_due_date"
+          x-on:click="toggle_due_date = !toggle_due_date"
           aria-haspopup="true"
           aria-expanded="true"
           x-bind:aria-expanded="toggle_due_date"
@@ -320,7 +320,7 @@
                   Set a due date
                 </label>
                 <svg
-                  @click="toggle_due_date = false"
+                  x-on:click="toggle_due_date = false"
                   class="w-6 h-6 text-base-content opacity-60 bg-transparent border-none cursor-pointer hover:text-base-content opacity-60"
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -360,7 +360,7 @@
                       id="due_date"
                     />
                     <button
-                      @click="toggle_due_date = false"
+                      x-on:click="toggle_due_date = false"
                       type="submit"
                       class="relative inline-flex items-center px-4 py-2 -ml-px space-x-2 text-sm font-medium text-base-content opacity-70 border border-gray-300 rounded-r-md bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-1 focus:ring-secondary-500 focus:border-indigo-500"
                     >
@@ -391,10 +391,10 @@
       <div
         x-data="{toggle_add_location: false}"
         @keydown.window.escape="toggle_add_location = false"
-        @click.outside="toggle_add_location = false"
+        x-on:click.outside="toggle_add_location = false"
       >
         <button
-          @click="toggle_add_location = !toggle_add_location"
+          x-on:click="toggle_add_location = !toggle_add_location"
           type="button"
           aria-haspopup="true"
           aria-expanded="true"

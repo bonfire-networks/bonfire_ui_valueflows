@@ -20,7 +20,10 @@
             else { document.body.classList.remove('overflow-hidden') }
           });"
       >
-        <div @click="toggleIntent = true" class="flex items-center p-1 rounded-md cursor-pointer">
+        <div
+          x-on:click="toggleIntent = true"
+          class="flex items-center p-1 rounded-md cursor-pointer"
+        >
           <svg
             class="w-5 h-5 mr-3 text-base-content opacity-60"
             fill="currentColor"
@@ -41,7 +44,7 @@
         <div x-show="toggleIntent" class="fixed inset-0 z-10 overflow-y-auto">
           <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div
-              @click="toggleIntent = false"
+              x-on:click="toggleIntent = false"
               x-show="toggleIntent"
               x-description="Background overlay, show/hide based on modal state."
               x-transition:enter="ease-out duration-300"
@@ -93,7 +96,10 @@
             else { document.body.classList.remove('overflow-hidden') }
           });"
       >
-        <div @click="toggleIntent = true" class="flex items-center p-1 rounded-md cursor-pointer">
+        <div
+          x-on:click="toggleIntent = true"
+          class="flex items-center p-1 rounded-md cursor-pointer"
+        >
           <svg
             class="w-5 h-5 mr-3 text-base-content opacity-60"
             fill="currentColor"
@@ -114,7 +120,7 @@
         <div x-show="toggleIntent" class="fixed inset-0 z-10 overflow-y-auto">
           <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div
-              @click="toggleIntent = false"
+              x-on:click="toggleIntent = false"
               x-show="toggleIntent"
               x-description="Background overlay, show/hide based on modal state."
               x-transition:enter="ease-out duration-300"

@@ -10,7 +10,7 @@
         Add a location
       </label>
       <svg
-        @click="toggle_add_location = false"
+        x-on:click="toggle_add_location = false"
         class="w-6 h-6 text-base-content opacity-60 bg-transparent border-none cursor-pointer hover:text-base-content opacity-60"
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -82,7 +82,7 @@
               <div
                 class="p-2 text-sm text-base-content opacity-70 cursor-pointer hover:bg-neutral hover:bg-opacity-30  "
                 phx-click="location_pick"
-                @click="toggle_add_location = false"
+                x-on:click="toggle_add_location = false"
                 phx-target={@myself}
                 phx-value-id={search_result.id}
                 phx-value-name={search_result.name}

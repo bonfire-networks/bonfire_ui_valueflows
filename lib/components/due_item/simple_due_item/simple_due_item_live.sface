@@ -10,8 +10,8 @@
   x-cloak
   x-data="{ open: false }"
   @keydown.escape.stop="open = false"
-  @click.outside="open = false"
-  @click="open = !open"
+  x-on:click.outside="open = false"
+  x-on:click="open = !open"
   aria-haspopup="true"
   x-bind:aria-expanded="open"
   aria-expanded="true"
