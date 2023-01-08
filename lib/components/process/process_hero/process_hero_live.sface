@@ -9,14 +9,14 @@
     </div>
     <div class="flex items-center justify-end gap-3 p-4">
       <Bonfire.UI.Common.LikeActionLive
-        id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, @process)}
-        object={@process}
+        id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, ulid(@process))}
+        object_id={ulid(@process)}
       />
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
       <Bonfire.Boundaries.Web.BoundaryIconLive
         with_label
         id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @process)}
-        object={@process}
+        object_id={ulid(@process)}
       />
     </div>
   </div>
