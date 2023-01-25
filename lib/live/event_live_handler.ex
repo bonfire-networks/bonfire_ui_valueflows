@@ -46,10 +46,10 @@ defmodule ValueFlows.EconomicEvent.LiveHandler do
 
       # else
       #   {:error, error} ->
-      #     {:noreply, assign(socket, form_error: error_msg(error))}
+      #     {:noreply, assign(socket, form_error: Errors.error_msg(error))}
 
       #   %Ecto.Changeset{} = cs ->
-      #     {:noreply, assign(socket, changeset: cs, form_error: error_msg(cs))} #|> IO.inspect
+      #     {:noreply, assign(socket, changeset: cs, form_error: Errors.error_msg(cs))} #|> IO.inspect
     end
   end
 

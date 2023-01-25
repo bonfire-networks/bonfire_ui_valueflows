@@ -12,7 +12,7 @@ defmodule Bonfire.Web.Component.AdsPreviewLive do
     {:ok,
      socket
      |> assign(
-       ads: ads |> Map.merge(%{created_at: date_from_now(ads.published_at)})
+       ads: ads |> Map.merge(%{created_at: DatesTimes.date_from_now(ads.published_at)})
        #  current_user: current_user(assigns)
      )}
   end

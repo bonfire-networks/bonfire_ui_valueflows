@@ -20,6 +20,6 @@
 </div>
 <div :if={!@is_editable}>
   <div class="flex items-center text-base-content/80">
-    <span>{date_from_now(@date) || "No due date"}</span>
+    <span>{DatesTimes.date_from_now(@date) || "No due date"}</span>
   </div>
 </div>

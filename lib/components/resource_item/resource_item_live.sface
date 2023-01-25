@@ -3,7 +3,7 @@
     <div
       class="w-20 h-20 bg-secondary rounded-md"
       style={"background-image: url(\"" <>
-        image_url(@resource || e(@resource, :conforms_to, nil)) <>
+        Media.image_url(@resource || e(@resource, :conforms_to, nil)) <>
         "\")"}
     />
     <div class="ml-3">
@@ -60,7 +60,7 @@
               clip-rule="evenodd"
             />
           </svg>
-          <span class="ml-2 text-sm font-light text-base-content opacity-70">{date_from_now(@resource)}</span>
+          <span class="ml-2 text-sm font-light text-base-content opacity-70">{DatesTimes.date_from_now(@resource)}</span>
         </div>
       </div>
     </div>
