@@ -6,7 +6,11 @@
     <span class="block text-sm font-semibold tracking-wide text-base-content opacity-60">{l("Assigned to")}</span>
   </div>
   <div class="flex items-center mt-3">
-    <Bonfire.UI.Common.AvatarLive user={@primary_accountable} class="w-8 h-8  rounded-full" />
+    <Bonfire.UI.Common.AvatarLive
+      user={@primary_accountable}
+      class="w-8 h-8"
+      bg_class="rounded-full"
+    />
     <div class="ml-2">
       <LiveRedirect
         to={path(@primary_accountable)}
