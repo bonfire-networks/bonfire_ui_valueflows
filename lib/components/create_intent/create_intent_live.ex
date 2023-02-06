@@ -9,7 +9,7 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
   prop process_prompt, :string, default: nil
   prop default_tag, :string, default: nil
 
-  prop smart_input_opts, :any, default: nil
+  prop smart_input_opts, :list, default: []
   prop textarea_class, :css_class, required: false
 
   prop to_boundaries, :any, default: nil
