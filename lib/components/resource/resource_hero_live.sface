@@ -50,7 +50,7 @@
       </div>
 
       <Bonfire.Boundaries.Web.BoundaryIconLive
-        id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, @resource)}
+        id={ComponentID.new(Bonfire.Boundaries.Web.BoundaryIconLive, id(@resource), __MODULE__)}
         object={@resource}
       />
 
@@ -65,6 +65,7 @@
     </div>
     <div class="flex items-center mt-3">
       <Bonfire.UI.Common.AvatarLive
+        parent_id={"resource_hero-#{id(@resource)}"}
         user={e(@resource, :primary_accountable, nil)}
         class="w-8 h-8 bg-secondary rounded-btn"
       />
