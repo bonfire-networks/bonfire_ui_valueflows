@@ -5,23 +5,13 @@ defmodule Bonfire.UI.ValueFlows.SettingsLive do
     schema: Bonfire.API.GraphQL.Schema,
     action: [mode: :internal]
 
-  alias Bonfire.UI.Me.LivePlugs
   alias Bonfire.UI.ValueFlows.CreateUnitLive
   alias Bonfire.UI.ValueFlows.CreateValueCalculationLive
   alias Bonfire.UI.ValueFlows.CreateResourceSpecificationLive
 
-  def mount(params, session, socket) do
-    live_plug(params, session, socket, [
-      LivePlugs.LoadCurrentAccount,
-      LivePlugs.LoadCurrentUser,
-      Bonfire.UI.Common.LivePlugs.StaticChanged,
-      Bonfire.UI.Common.LivePlugs.Csrf,
-      Bonfire.UI.Common.LivePlugs.Locale,
-      &mounted/3
-    ])
-  end
+  on_mount {LivePlugs, [Bonfire.UI.Me.LivePlugs.LoadCurrentUser]}
 
-  defp mounted(params, session, socket) do
+  def mount(params, session, socket) do
     settings_queries = settings_queries(socket)
 
     {:ok,
