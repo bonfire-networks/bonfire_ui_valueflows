@@ -37,7 +37,7 @@
       </label>
       <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
-          <Icon solid="BadgeCheck" />
+          <#Icon solid="BadgeCheck" />
         </span>
         <input
           value="Anyone"
@@ -54,7 +54,7 @@
       </label>
       <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
-          <Icon solid="Calendar" />
+          <#Icon solid="Calendar" />
         </span>
         <input
           value="No due date"
@@ -71,7 +71,7 @@
       </label>
       <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
-          <Icon solid="LocationMarker" />
+          <#Icon solid="LocationMarker" />
         </span>
         <input
           value="Anywhere"
@@ -88,7 +88,7 @@
       </label>
       <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
-          <Icon solid="UserCircle" />
+          <#Icon solid="UserCircle" />
         </span>
         <input
           value="Anyone"
@@ -105,7 +105,7 @@
       </label>
       <div class="flex mt-1 rounded-md">
         <span class="inline-flex items-center px-3 text-sm border border-r-0 border-base-content/30 text-base-content/60 rounded-l-md bg-base-100 bg-opacity-30">
-          <Icon solid="UserCircle" />
+          <#Icon solid="UserCircle" />
         </span>
         <input
           value="Anyone"

@@ -17,7 +17,7 @@
             type="submit"
             class="absolute top-[4px] right-[8px] z-30 flex items-center pl-1  cursor-pointer btn  btn-sm w-[32px] h-[32px] btn-ghost btn-circle"
           >
-            <Icon solid="Search" class="w-5 h-5 text-base-content text-opacity-80" />
+            <#Icon solid="Search" class="w-5 h-5 text-base-content text-opacity-80" />
           </button>
         </div>
       </fieldset>

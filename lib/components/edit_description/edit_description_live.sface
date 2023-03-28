@@ -1,6 +1,6 @@
 <div x-data="{ toggle_edit_description: false }" class="">
   <div class="flex items-center gap-4">
-    <Icon iconify="akar-icons:text-align-left" class="w-5 h-5" />
+    <#Icon iconify="akar-icons:text-align-left" class="w-5 h-5" />
     <div class="mb-2 text-xs font-semibold text-base-content/70">{l("Description")}</div>
     <button
       :if={@is_editable? && not is_nil(@current_user)}

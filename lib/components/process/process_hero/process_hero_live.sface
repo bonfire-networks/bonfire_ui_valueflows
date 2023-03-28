@@ -30,7 +30,7 @@
           "tab-active": @selected_tab == "open"
         }
       >
-        <Icon iconify="carbon:software-resource" class="w-4 h-4 text-info" />
+        <#Icon iconify="carbon:software-resource" class="w-4 h-4 text-info" />
         <span class="text-sm">{l("Open")}</span>
       </LivePatch>
       <LivePatch
@@ -40,7 +40,7 @@
           "tab-active": @selected_tab == "closed"
         }
       >
-        <Icon iconify="carbon:checkmark-filled" class="w-4 h-4 text-success" />
+        <#Icon iconify="carbon:checkmark-filled" class="w-4 h-4 text-success" />
         <span class="text-sm">{l("Closed")}</span>
       </LivePatch>
     </div>

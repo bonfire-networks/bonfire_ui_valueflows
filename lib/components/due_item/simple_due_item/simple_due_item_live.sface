@@ -17,7 +17,7 @@
   aria-expanded="true"
 >
   <div class="flex items-center flex-1">
-    <Icon iconify="bx:calendar-edit" class="w-5 h-5 text-base-content opacity-60" />
+    <#Icon iconify="bx:calendar-edit" class="w-5 h-5 text-base-content opacity-60" />
 
     <span class="ml-2">{DatesTimes.date_from_now(@date) || "No due date"}</span>
   </div>
