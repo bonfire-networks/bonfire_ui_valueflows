@@ -1,6 +1,6 @@
 <Bonfire.UI.Common.WidgetBlockLive widget_title={l("Filters")}>
   <div class="p-3">
-    <Form for={:filter} submit="search" change="filter" method="get">
+    <Form for={%{}} as={:filter} submit="search" change="filter" method="get">
       <fieldset>
         <!-- <legend class="text-sm font-normal text-base-content/70">{l("Search for")}</legend> -->
         <div class="relative w-full rounded">

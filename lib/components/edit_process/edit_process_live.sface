@@ -1,4 +1,4 @@
-<Form for={:process} submit="ValueFlows.Process:update">
+<Form for={%{}} as={:process} submit="ValueFlows.Process:update">
   <Field name={:name}>
     <Label class="block text-sm font-medium text-base-content opacity-70">{l("Edit the process title")}</Label>
     <TextInput

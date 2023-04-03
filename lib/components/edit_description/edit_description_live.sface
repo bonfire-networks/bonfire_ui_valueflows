@@ -28,7 +28,7 @@
     x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
     class="mt-1.5 propse prose-sm w-full"
   >
-    <Form for={:item} submit={@submit_event || "update"}>
+    <Form for={%{}} as={:item} submit={@submit_event || "update"}>
       <div :if={e(@item, :name, nil)}>
         <label for="item_name">{l("Edit the name")}</label>
         <textarea name="name" id="item_name" class="w-full textarea h-30 textarea-bordered">{e(@item, :name, nil)}</textarea>
