@@ -13,74 +13,74 @@
     <HiddenInput :if={@in_scope_of} name="in_scope_of" value={@in_scope_of} />
     <HiddenInput name="classified_as[]" value={e(@default_tag, "")} />
 
-    <div class="flex-1">
-      <!-- <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l "Select topic(s)..."}</span> -->
-      <div class="w-full" role="menu" aria-orientation="vertical">
-        <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
-          type={Bonfire.Classify.Category}
-          label={l("Select label(s) or topic(s)...")}
-          form_input_name={:tags}
-          class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
-          is_editable
-        />
-      </div>
-    </div>
-
-    <!-- <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} /> -->
-    <Bonfire.UI.ValueFlows.SelectProcessLive
-      field_name={:output_of_id}
-      label={@process_prompt}
-      is_editable
-      class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
-      selected_options={@output_of_id}
-    />
-
-    <Field name={:name}>
-      <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">
-        {#if @name_prompt}
-          {@name_prompt}
-        {#elseif e(@action, "produce") == "work"}
-          {l("Enter a name for the task")}
-        {#else}
-          {l("Enter a name for the intent")}
-        {/if}
-      </Label>
-      <TextInput class="w-full input input-bordered" />
-    </Field>
-
-    <div>
-      <Field name={:note}>
-        <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">{l("Add an optional description")}</Label>
-        <TextArea
-          value={e(@smart_input_opts, :text, nil) || e(@smart_input_opts, :text_suggestion, nil)}
-          class={@textarea_class, "w-full textarea textarea-bordered p-2"}
-        />
-      </Field>
-    </div>
-
-    <div class="flex items-center mt-3 space-x-3">
-      <div class="flex-1">
-        <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l("Assign to")}</span>
-        <Bonfire.UI.ValueFlows.AssignItemLive
-          class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
-          field_name={:provider}
-          is_editable
-        />
-      </div>
-
-      <div class="flex-1">
-        <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l("Due on")}</span>
-        <Field name={:due}>
-          <DateInput name="due" class="w-full input input-bordered h-9" />
-        </Field>
-      </div>
-      <!-- <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={true}  /> -->
-    </div>
-
     <Bonfire.UI.Common.InputControlsLive
       create_object_type={:process}
       to_boundaries={@to_boundaries}
       open_boundaries={@open_boundaries}
-    />
+    >
+      <div class="flex-1">
+        <!-- <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l "Select topic(s)..."}</span> -->
+        <div class="w-full" role="menu" aria-orientation="vertical">
+          <Bonfire.UI.Common.MultiselectLive.UserSelectorLive
+            type={Bonfire.Classify.Category}
+            label={l("Select label(s) or topic(s)...")}
+            form_input_name={:tags}
+            class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
+            is_editable
+          />
+        </div>
+      </div>
+
+      <!-- <HiddenInput :if={@output_of_id} name="output_of_id" value={@output_of_id} /> -->
+      <Bonfire.UI.ValueFlows.SelectProcessLive
+        field_name={:output_of_id}
+        label={@process_prompt}
+        is_editable
+        class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
+        selected_options={@output_of_id}
+      />
+
+      <Field name={:name}>
+        <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">
+          {#if @name_prompt}
+            {@name_prompt}
+          {#elseif e(@action, "produce") == "work"}
+            {l("Enter a name for the task")}
+          {#else}
+            {l("Enter a name for the intent")}
+          {/if}
+        </Label>
+        <TextInput class="w-full input input-bordered" />
+      </Field>
+
+      <div>
+        <Field name={:note}>
+          <Label class="block mt-3 text-sm text-base-content opacity-70 font-regular">{l("Add an optional description")}</Label>
+          <TextArea
+            value={e(@smart_input_opts, :text, nil) || e(@smart_input_opts, :text_suggestion, nil)}
+            class={@textarea_class, "w-full textarea textarea-bordered p-2"}
+          />
+        </Field>
+      </div>
+
+      <div class="flex items-center mt-3 space-x-3">
+        <div class="flex-1">
+          <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l("Assign to")}</span>
+          <Bonfire.UI.ValueFlows.AssignItemLive
+            class="flex items-center w-full px-2 rounded-md cursor-pointer h-9 bg-base-content/5 sm:text-sm"
+            field_name={:provider}
+            is_editable
+          />
+        </div>
+
+        <div class="flex-1">
+          <span class="block mb-1 text-sm text-base-content opacity-70 font-regular">{l("Due on")}</span>
+          <Field name={:due}>
+            <DateInput name="due" class="w-full input input-bordered h-9" />
+          </Field>
+        </div>
+        <!-- <Bonfire.UI.ValueFlows.StatusItemLive staus={{"Todo"}} is_editable={true}  /> -->
+      </div>
+    </Bonfire.UI.Common.InputControlsLive>
   </Form>
 </div>

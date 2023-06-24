@@ -21,27 +21,27 @@
     >
       <input name="redirect_after" value={e(@process_url, path(ValueFlows.Process))} type="hidden">
 
-      <Field name={:name}>
-        <label class="block text-sm font-medium text-primary-700">{l("Choose a name")}</label>
-        <div class="mt-1 rounded-md shadow-sm">
-          <TextInput class="block w-full pr-8 rounded-md input-bordered input sm:text-sm" placeholder="" />
-        </div>
-      </Field>
-      <Field name={:note}>
-        <label class="block mt-2 text-sm font-medium text-primary-700">{l("Add an optional description")}</label>
-        <div class="mt-1 rounded-md shadow-sm">
-          <TextArea
-            placeholder="What the process is about..."
-            class="flex-1 w-full h-20 text-sm rounded-md textarea textarea-bordered font-regular placeholder-opacity-60"
-          />
-        </div>
-      </Field>
-
       <Bonfire.UI.Common.InputControlsLive
         create_object_type={:process}
         to_boundaries={@to_boundaries}
         open_boundaries={@open_boundaries}
-      />
+      >
+        <Field name={:name}>
+          <label class="block text-sm font-medium text-primary-700">{l("Choose a name")}</label>
+          <div class="mt-1 rounded-md shadow-sm">
+            <TextInput class="block w-full pr-8 rounded-md input-bordered input sm:text-sm" placeholder="" />
+          </div>
+        </Field>
+        <Field name={:note}>
+          <label class="block mt-2 text-sm font-medium text-primary-700">{l("Add an optional description")}</label>
+          <div class="mt-1 rounded-md shadow-sm">
+            <TextArea
+              placeholder="What the process is about..."
+              class="flex-1 w-full h-20 text-sm rounded-md textarea textarea-bordered font-regular placeholder-opacity-60"
+            />
+          </div>
+        </Field>
+      </Bonfire.UI.Common.InputControlsLive>
     </Form>
   </div>
 </div>
