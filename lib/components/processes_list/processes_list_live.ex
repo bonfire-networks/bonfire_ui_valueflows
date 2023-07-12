@@ -27,7 +27,10 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
   def my_processes(current_user) do
     if not is_nil(current_user),
       do:
-        Bonfire.Social.Likes.by_liker(current_user, object_type: ValueFlows.Process)
+        Bonfire.Social.Likes.by_liker(current_user,
+          object_type: ValueFlows.Process,
+          preload: false
+        )
         |> repo().maybe_preload(edge: [:object])
         |> Enum.map(&e(&1, :edge, :object, nil))
 

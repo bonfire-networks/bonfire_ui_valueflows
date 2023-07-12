@@ -36,7 +36,7 @@ defmodule Bonfire.UI.ValueFlows.CreateResourceSpecForm do
                  default_unit_of_effort: unit,
                  is_public: true
                }) do
-          {:ok, repo.preload(res, :default_unit_of_effort)}
+          {:ok, repo().preload(res, :default_unit_of_effort)}
         else
           _e ->
             {nil, "Incorrect details. Please try again..."}
