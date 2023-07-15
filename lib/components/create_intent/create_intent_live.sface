@@ -16,6 +16,8 @@
     <Bonfire.UI.Common.InputControlsLive
       create_object_type={:process}
       to_boundaries={@to_boundaries}
+      to_circles={@to_circles}
+      exclude_circles={@exclude_circles}
       open_boundaries={@open_boundaries}
     >
       <div class="flex-1">
