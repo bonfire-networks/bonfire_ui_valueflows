@@ -17,6 +17,7 @@
         with_label
         id={"boundary_#{id(@process)}"}
         object={@process}
+        object_type={Types.object_type(@process)}
       />
     </div>
   </div>

@@ -49,7 +49,11 @@
         <span class="ml-2 text-sm font-regular">{DatesTimes.date_from_now(@resource)}</span>
       </div>
 
-      <Bonfire.Boundaries.Web.BoundaryIconLive id={"boundary_#{id(@resource)}"} object={@resource} />
+      <Bonfire.Boundaries.Web.BoundaryIconLive
+        id={"boundary_#{id(@resource)}"}
+        object={@resource}
+        object_type={Types.object_type(@resource)}
+      />
 
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@resource} />
     </div>
