@@ -65,7 +65,7 @@ defmodule ValueFlows.Knowledge.ResourceSpecification.LiveHandler do
 
     selected =
       if !is_ulid?(select_resource_spec),
-        do: create_in_autocomplete(current_user(socket), select_resource_spec),
+        do: create_in_autocomplete(current_user(socket.assigns), select_resource_spec),
         else: {name, select_resource_spec}
 
     debug(selected)
