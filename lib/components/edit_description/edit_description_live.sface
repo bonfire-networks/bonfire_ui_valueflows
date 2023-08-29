@@ -3,7 +3,7 @@
     <#Icon iconify="akar-icons:text-align-left" class="w-5 h-5" />
     <div class="mb-2 text-xs font-semibold text-base-content/70">{l("Description")}</div>
     <button
-      :if={@is_editable? && not is_nil(@current_user)}
+      :if={@is_editable? && not is_nil(current_user(@__context__))}
       @keydown.window.escape="toggle_edit_description = false"
       x-show="!toggle_edit_description"
       x-on:click="toggle_edit_description = true"
@@ -17,7 +17,7 @@
     {markdown(e(@item, :note, nil))}
   </div>
   <div
-    :if={@is_editable? && not is_nil(@current_user)}
+    :if={@is_editable? && not is_nil(current_user(@__context__))}
     x-show="toggle_edit_description"
     x-on:click.outside="toggle_edit_description=false"
     x-transition:enter="ease-out duration-300"
