@@ -18,7 +18,7 @@ defmodule Bonfire.Web.Component.AdsPreviewLive do
   end
 
   def render(assigns) do
-    ~L"""
+    ~H"""
     <%=
       live_redirect to: "/!"<> e(@ads, :character, :preferred_username, "deleted") do %>
       <div class="ads__preview">
