@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <!-- prepare a modal for every type: -->
+  {!-- prepare a modal for every type: --}
 
   <div
     x-show="selected_economic_event === 'produce'"
@@ -83,7 +83,7 @@
         class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40"
         aria-hidden="true"
       />
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      {!-- This element is to trick the browser into centering the modal contents. --}
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div
         x-show="selected_economic_event === 'produce'"
@@ -127,7 +127,7 @@
         class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40"
         aria-hidden="true"
       />
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      {!-- This element is to trick the browser into centering the modal contents. --}
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div
         x-show="selected_economic_event === 'raise'"
@@ -170,7 +170,7 @@
         class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40"
         aria-hidden="true"
       />
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      {!-- This element is to trick the browser into centering the modal contents. --}
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div
         x-show="selected_economic_event === 'transfer'"
@@ -214,7 +214,7 @@
         class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40"
         aria-hidden="true"
       />
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      {!-- This element is to trick the browser into centering the modal contents. --}
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div
         x-show="selected_economic_event === 'use'"
@@ -259,7 +259,7 @@
         class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40"
         aria-hidden="true"
       />
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      {!-- This element is to trick the browser into centering the modal contents. --}
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div
         x-show="selected_economic_event === 'consume'"
@@ -304,7 +304,7 @@
         class="fixed inset-0 transition-opacity bg-base-100 bg-opacity-40"
         aria-hidden="true"
       />
-      <!-- This element is to trick the browser into centering the modal contents. -->
+      {!-- This element is to trick the browser into centering the modal contents. --}
       <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
       <div
         x-show="selected_economic_event === 'lower'"

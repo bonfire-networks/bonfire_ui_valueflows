@@ -21,7 +21,7 @@
 </div>
 <div>
   <div class="flex space-x-2">
-    <!-- SHOW LABELS -->
+    {!-- SHOW LABELS --}
     <%= if length(@chosen_labels) > 0 do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase ">Labels</h4>
@@ -51,7 +51,7 @@
         </div>
       </div>
     <% end %>
-    <!-- SHOW LOCATION -->
+    {!-- SHOW LOCATION --}
     <%= if Map.get(@at_location, :id) do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Location</h4>
@@ -79,7 +79,7 @@
         </div>
       </div>
     <% end %>
-    <!-- SHOW DUE DATE -->
+    {!-- SHOW DUE DATE --}
     <%= if  @due_date != "" do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Due date</h4>

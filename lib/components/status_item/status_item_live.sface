@@ -48,7 +48,7 @@
     aria-orientation="vertical"
   >
     <div class="py-1" role="none">
-      <!-- Active: "bg-neutral text-base-content opacity-90", Not Active: "text-base-content opacity-70" -->
+      {!-- Active: "bg-neutral text-base-content opacity-90", Not Active: "text-base-content opacity-70" --}
       <div
         class="block px-4 py-2 text-sm text-base-content opacity-70"
         role="menuitem"
