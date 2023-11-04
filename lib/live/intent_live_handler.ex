@@ -238,7 +238,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
          socket
          |> assign(intent: intent)}
 
-        # send_self(socket, intent: intent)
+        # if socket_connected?(socket), do: send_self(socket, intent: intent)
       end
     end
   end
