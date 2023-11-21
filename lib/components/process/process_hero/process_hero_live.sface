@@ -8,8 +8,8 @@
       >{e(@process, :note, "")}</span>
     </div>
     <div class="flex items-center justify-end gap-3 p-4">
-      <Bonfire.UI.Common.LikeActionLive
-        id={ComponentID.new(Bonfire.UI.Common.LikeActionLive, id(@process), __MODULE__)}
+      <Bonfire.UI.Social.LikeActionLive
+        id={ComponentID.new(Bonfire.UI.Social.LikeActionLive, id(@process), __MODULE__)}
         object_id={ulid(@process)}
       />
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
