@@ -221,7 +221,7 @@
     </div>
 
     {#for component <- e(@extra_components, [])}
-      <Dynamic.Component module={component} />
+      <StatelessComponent module={component} />
     {/for}
 
     <div>{@form_error}</div>
