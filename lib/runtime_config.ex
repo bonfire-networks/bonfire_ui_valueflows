@@ -27,7 +27,7 @@ defmodule Bonfire.UI.ValueFlows.RuntimeConfig do
       object_actions: [
         {ValueFlows.EconomicEvent,
          {Bonfire.UI.ValueFlows.Preview.EventActionsLive,
-          fn object ->
+          fn activity ->
             %{
               object:
                 Utils.e(activity, :object, :resource_inventoried_as, nil) ||
