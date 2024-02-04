@@ -4,7 +4,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessHeroLive do
 
   prop process, :map
   prop showing_within, :atom, default: :process
-  prop selected_tab, :string, default: "open"
+  prop selected_tab, :any, default: "open"
   # FIXME! update no longer works in stateless
   def update(assigns, socket) do
     # debug(assigns.process.id)
