@@ -2,7 +2,7 @@
   <div class="px-0 py-4 mt-2 ml-4 text-sm font-medium tracking-wide text-base-content/60">{@title}</div>
   <ul class="space-y-1 menu menu-compact">
     <li :for={process <- processes(@__context__)}>
-      <LiveRedirect
+      <LinkLive
         class="flex items-center gap-5 rounded-md"
         to={"#{@process_url || path(ValueFlows.Process)}/#{process.id}"}
       >
@@ -10,7 +10,7 @@
         <span class="truncate w-[160px] desktop-lg:w-[180px] text-ellipsis">
           {process.name}
         </span>
-      </LiveRedirect>
+      </LinkLive>
     </li>
   </ul>
 {/if}

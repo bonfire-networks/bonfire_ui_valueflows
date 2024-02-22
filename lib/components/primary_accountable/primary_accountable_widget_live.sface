@@ -13,11 +13,11 @@
       bg_class="rounded-full"
     />
     <div class="ml-2">
-      <LiveRedirect
+      <LinkLive
         to={path(@primary_accountable)}
         class="text-sm text-base-content opacity-80  font-regular"
       >
-        {e(@primary_accountable, :name, "")}</LiveRedirect>
+        {e(@primary_accountable, :name, "")}</LinkLive>
     </div>
   </div>
 </div>

@@ -71,11 +71,11 @@
         class="w-8 h-8 bg-secondary rounded-btn"
       />
       <div class="ml-2">
-        <LiveRedirect
+        <LinkLive
           to={path(e(@resource, :primary_accountable, nil))}
           class="text-sm text-base-content opacity-80  font-regular"
         >
-          {e(@resource, :primary_accountable, :name, "")}</LiveRedirect>
+          {e(@resource, :primary_accountable, :name, "")}</LinkLive>
       </div>
     </div>
   </div>

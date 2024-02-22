@@ -1,6 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.Preview.IntentTaskLive do
   use Bonfire.UI.Common.Web, :stateless_component
-  # alias Surface.Components.LivePatch
 
   prop object, :map, required: true
   prop activity, :any, default: nil

@@ -10,13 +10,13 @@
       />
       <div class="flex items-start justify-between w-full">
         <div class="flex flex-col flex-1 feed-clickable">
-          <LiveRedirect
+          <LinkLive
             opts={"data-id": "subject_name"}
             class="leading-[16px]"
             to={path(provider(@provider, @primary_accountable, @object))}
           >
             <span class="flex-1 text-base font-semibold link link-hover">{e(profile(provider(@provider, @primary_accountable, @object)), :name, "Anonymous")}</span>
-          </LiveRedirect>
+          </LinkLive>
           <div class="flex items-center gap-1">
             <div
               :if={e(@character, :username, nil)}
@@ -58,11 +58,11 @@
     {!-- <div class="flex items-center">
 
       <span class="text-xs text-primary-content-500">
-        <LiveRedirect to={@permalink}>
+        <LinkLive to={@permalink}>
           <span :if={@verb_display != "created"} class="capitalize">{@verb_display}</span>
 
           {@date_ago}
-        </LiveRedirect>
+        </LinkLive>
 
         <Bonfire.UI.Social.Activity.InstanceIconLive object={@object} />
       </span>
@@ -83,7 +83,7 @@
         receiver(@receiver, @object) != provider(@provider, @primary_accountable, @object)}
       class="flex items-center text-sm text-primary-content-700 vf_receiver"
       >
-      <LiveRedirect
+      <LinkLive
         to={path(character(@object, :receiver))}
         opts={"data-id": "subject_name"}
         class="font-semibold text-primary-content-800 hover:underline"
@@ -91,7 +91,7 @@
         {e(profile(receiver(@receiver, @object)), :name, "Anonymous")}
 
         <Bonfire.UI.Common.AvatarLive parent_id={"receiver-#{@activity_component_id || id(@card)}"} user={receiver(@receiver, @object)} />
-      </LiveRedirect>
+      </LinkLive>
     </div> --}
   </div>
 </div>

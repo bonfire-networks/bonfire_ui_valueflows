@@ -24,11 +24,11 @@
               class="w-4 h-4 text-info"
             />
 
-            <LiveRedirect
+            <LinkLive
               to={~p"/coordination/task/#{e(@object, :id, "")}"}
               class="flex-1 text-sm font-medium cursor-pointer link link-hover"
             >{e(@object, :name, nil) || e(@object, :note, nil) || l("Untitled task")}
-            </LiveRedirect>
+            </LinkLive>
             {!-- <span class="mr-2 badge badge-outline badge-success" :if={e(@object, :finished, nil)}>
               {l("Completed")}
             </span> --}
@@ -37,13 +37,13 @@
             <span :if={length(e(@object, :context, [])) > 0}>
               {l("in")}
               <span :for={scope <- e(@object, :context, [])}>
-                <LiveRedirect
+                <LinkLive
                   :if={e(scope, :id, nil)}
                   to={~p"/coordination/task/#{e(scope, :id, "")}"}
                   class="flex items-center text-sm cursor-pointer text-base-content/70 font-regular hover:underline"
                 >
                   {e(scope, :name, "")}
-                </LiveRedirect>
+                </LinkLive>
               </span>
             </span>
             <div class="flex items-center gap-3">
@@ -67,7 +67,7 @@
                 :if={e(@object, :provider, :id, nil)}
                 data-tip={e(@object, :provider, :name, nil)}
               >
-                <LiveRedirect
+                <LinkLive
                   to={path(e(@object, :provider, nil))}
                   class="flex items-center text-xs text-base-content opacity-70 text-medium"
                 >
@@ -76,7 +76,7 @@
                     class="inline-block w-6 h-6 rounded-full bg-base-content/5"
                     user_id={id(@object.provider)}
                   />
-                </LiveRedirect>
+                </LinkLive>
               </div>
               <div
                 :if={e(@object, :due, nil)}

@@ -1,6 +1,5 @@
 defmodule Bonfire.UI.ValueFlows.Preview.ProcessListLive do
   use Bonfire.UI.Common.Web, :stateless_component
-  # alias Surface.Components.LivePatch
 
   prop object, :any, required: true
   prop activity, :any, default: nil
