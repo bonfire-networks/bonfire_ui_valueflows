@@ -10,7 +10,7 @@ defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
      )}
   end
 
-  def do_handle_event("label_create", %{"label_input" => label_entered}, socket) do
+  def handle_event("label_create", %{"label_input" => label_entered}, socket) do
     assigns =
       with {:ok, label} <-
              Bonfire.Classify.Categories.create(current_user_required!(socket), %{
@@ -31,18 +31,4 @@ defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
 
     {:noreply, assign(socket, assigns)}
   end
-
-  def handle_event(
-        action,
-        attrs,
-        socket
-      ),
-      do:
-        Bonfire.UI.Common.LiveHandlers.handle_event(
-          action,
-          attrs,
-          socket,
-          __MODULE__,
-          &do_handle_event/3
-        )
 end

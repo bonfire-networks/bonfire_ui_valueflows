@@ -3,7 +3,7 @@ defmodule Bonfire.UI.ValueFlows.CreateMilestoneLive do
 
   alias ValueFlows.Process.Processes
 
-  def do_handle_event(
+  def handle_event(
         "create_milestone",
         %{"name" => name, "note" => note, "due_date" => due_date},
         socket
@@ -21,18 +21,4 @@ defmodule Bonfire.UI.ValueFlows.CreateMilestoneLive do
     debug(process)
     {:noreply, socket}
   end
-
-  def handle_event(
-        action,
-        attrs,
-        socket
-      ),
-      do:
-        Bonfire.UI.Common.LiveHandlers.handle_event(
-          action,
-          attrs,
-          socket,
-          __MODULE__,
-          &do_handle_event/3
-        )
 end

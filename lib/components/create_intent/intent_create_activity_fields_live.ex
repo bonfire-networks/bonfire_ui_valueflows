@@ -27,7 +27,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
      )}
   end
 
-  def do_handle_event("clear_due_date", _, socket) do
+  def handle_event("clear_due_date", _, socket) do
     assigns = [
       due_date: ""
     ]
@@ -35,7 +35,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def do_handle_event("set_due", %{"due_date" => due}, socket) do
+  def handle_event("set_due", %{"due_date" => due}, socket) do
     assigns = [
       due_date: due
     ]
@@ -43,7 +43,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
     {:noreply, assign(socket, assigns)}
   end
 
-  def do_handle_event("create", attrs, socket) do
+  def handle_event("create", attrs, socket) do
     user = current_user_required!(socket)
 
     need = input_to_atoms(Map.get(attrs, "need"))
@@ -77,13 +77,13 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
 
   # START EVENT PROXY FUNCTIONS - TODO: find a better approach (hopefully LiveView implements per-input events rather than per-form only)
 
-  def do_handle_event("milestone_" <> _action = event, params, socket) do
+  def handle_event("milestone_" <> _action = event, params, socket) do
     debug(proxy_event: event)
     debug(proxy_params: params)
     Bonfire.UI.ValueFlows.AddMilestoneLive.handle_event(event, params, socket)
   end
 
-  def do_handle_event("label_" <> _action = event, params, socket) do
+  def handle_event("label_" <> _action = event, params, socket) do
     debug(proxy_event: event)
     debug(proxy_params: params)
     Bonfire.UI.ValueFlows.AddLabelLive.handle_event(event, params, socket)
