@@ -114,9 +114,9 @@
   </form>
 </div>
 
-<%= live_component(
-  @socket,
-  CreateLabelLive,
-  id: @intention <> "_label",
-  parent: @parent
-) %>
+<.live_component 
+  module={CreateLabelLive}
+  id={@intention <> "_label"}
+  parent={@parent}
+  socket={@socket}
+/>

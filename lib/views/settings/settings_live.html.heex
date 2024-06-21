@@ -91,38 +91,38 @@
           </nav>
         </aside>
         <div class="divide-y divide-gray-200 lg:col-span-9">
-          <div x-show="tab === 'units'">
-            <%= live_component(
-              @socket,
-              CreateUnitLive,
-              id: "create_unit",
-              all_units: @all_units,
-              current_user: current_user(@__context__)
-            ) %>
-          </div>
-          <div x-show="tab === 'res'">
-            <%= live_component(
-              @socket,
-              CreateResourceSpecificationLive,
-              id: "create_resource_specification",
-              all_resources: @all_resources,
-              all_units: @all_units,
-              current_user: current_user(@__context__)
-            ) %>
-          </div>
-          <div x-show="tab === 'value_calculation'">
-            <%= live_component(
-              @socket,
-              CreateValueCalculationLive,
-              id: "create_value_calculation",
-              all_resources: @all_resources,
-              all_units: @all_units,
-              all_value_calculations: @all_value_calculations,
-              actions: @actions,
-              current_user: current_user(@__context__)
-            ) %>
-          </div>
-        </div>
+  <div x-show="tab === 'units'">
+    <.live_component
+      module={CreateUnitLive}
+      id="create_unit"
+      all_units={@all_units}
+      current_user={current_user(@__context__)}
+      socket={@socket}
+    />
+  </div>
+  <div x-show="tab === 'res'">
+    <.live_component
+      module={CreateResourceSpecificationLive}
+      id="create_resource_specification"
+      all_resources={@all_resources}
+      all_units={@all_units}
+      current_user={current_user(@__context__)}
+      socket={@socket}
+    />
+  </div>
+  <div x-show="tab === 'value_calculation'">
+    <.live_component
+      module={CreateValueCalculationLive}
+      id="create_value_calculation"
+      all_resources={@all_resources}
+      all_units={@all_units}
+      all_value_calculations={@all_value_calculations}
+      actions={@actions}
+      current_user={current_user(@__context__)}
+      socket={@socket}
+    />
+  </div>
+</div>
       </div>
     </div>
   </div>

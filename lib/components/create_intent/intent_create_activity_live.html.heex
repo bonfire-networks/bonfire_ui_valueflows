@@ -76,13 +76,7 @@
               aria-modal="true"
               aria-labelledby="modal-headline"
             >
-              <%= live_component(
-                @socket,
-                IntentCreateActivityFieldsLive,
-                id: :create_need,
-                intention: "need",
-                main_labels: @main_labels
-              ) %>
+              <!-- .live_component module={IntentCreateActivityFieldsLive} id="create_need" intention="need" main_labels={@main_labels} socket={@socket} /> -->
             </div>
           </div>
         </div>
@@ -152,13 +146,7 @@
               aria-modal="true"
               aria-labelledby="modal-headline"
             >
-              <%= live_component(
-                @socket,
-                IntentCreateActivityFieldsLive,
-                id: :create_offer,
-                intention: "offer",
-                main_labels: @main_labels
-              ) %>
+              <!-- .live_component module={IntentCreateActivityFieldsLive} id="create_offer" intention="offer" main_labels={@main_labels} socket={@socket} /> -->
             </div>
           </div>
         </div>
