@@ -441,7 +441,11 @@
           x-transition:leave-end="transform opacity-0 scale-95"
           class="absolute right-0 mt-2 mr-2 origin-top-right bg-base-100 rounded-md shadow-lg w-72 ring-1 ring-black ring-opacity-5"
         >
-          <.live_component module={AddLocationLive} id={@intention <> "_location"} socket={@socket} />
+          <.live_component
+            module={AddLocationLive}
+            id={@intention <> "_location"}
+            socket={@socket}
+          />
         </div>
       </div>
     </nav>
