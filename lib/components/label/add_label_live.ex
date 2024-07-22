@@ -1,7 +1,7 @@
 defmodule Bonfire.UI.ValueFlows.AddLabelLive do
   use Bonfire.UI.Common.Web, :live_component
 
-  alias Bonfire.Tag.Tags
+  alias Bonfire.Tag
   alias Bonfire.UI.ValueFlows.CreateLabelLive
   alias Bonfire.UI.ValueFlows.AddLabelLive
 
@@ -15,7 +15,7 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
   end
 
   def handle_event("label_search", %{"label_search" => search_for}, socket) do
-    {:ok, labels} = Bonfire.Tag.Tags.many({:autocomplete, search_for})
+    {:ok, labels} = Bonfire.Tag.many({:autocomplete, search_for})
     debug(labels)
     # labels = Enum.map(loc, fn (x) -> Map.take(x, [:name, :id]) end)
     assigns = [
