@@ -1,6 +1,7 @@
 defmodule Bonfire.UI.ValueFlows.RuntimeConfig do
   use Bonfire.Common.Localise
   alias Bonfire.Common.Utils
+  use Bonfire.Common.E
 
   @behaviour Bonfire.Common.ConfigModule
   def config_module, do: true
@@ -30,8 +31,8 @@ defmodule Bonfire.UI.ValueFlows.RuntimeConfig do
           fn activity ->
             %{
               object:
-                Utils.e(activity, :object, :resource_inventoried_as, nil) ||
-                  Utils.e(activity, :object, nil)
+                e(activity, :object, :resource_inventoried_as, nil) ||
+                  e(activity, :object, nil)
             }
           end}}
         # {ValueFlows.Planning.Intent, []},
