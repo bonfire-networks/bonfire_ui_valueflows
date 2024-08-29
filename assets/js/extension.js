@@ -1,6 +1,3 @@
-
 let ExtensionHooks = {};
 
-
-
-export { ExtensionHooks }
+export { ExtensionHooks };
