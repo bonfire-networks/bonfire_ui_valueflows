@@ -17,7 +17,7 @@
           module={maybe_component(Bonfire.UI.Reactions.LikeActionLive, @__context__)}
           :if={e(@showing_within, :feed) not in [:feed, :likes, :notifications]}
           id={ComponentID.new(Bonfire.UI.Reactions.LikeActionLive, id(@object), id(@activity))}
-          object_id={ulid(@object)}
+          object_id={uid(@object)}
         />
         {!-- <LinkPatchLive to={if @process_url, do: e(@process_url, "/list/") <> e(@object, :id, ""), else: path(@object)}> --}
         <LinkLive to={~p"/coordination/list/" <> e(@object, :id, "")}>

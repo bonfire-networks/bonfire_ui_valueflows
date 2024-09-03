@@ -24,7 +24,7 @@ defmodule ValueFlows.Knowledge.ResourceSpecification.LiveHandler do
            |> input_to_atoms()
            # |> Map.get(:resource_spec)
            |> ResourceSpecifications.prepare_attrs()
-           |> maybe_put(:image_id, ulid(List.first(uploaded_media)))
+           |> maybe_put(:image_id, uid(List.first(uploaded_media)))
            |> debug(),
          %{valid?: true} = cs <- changeset(obj_attrs),
          {:ok, resource_spec} <-
@@ -64,7 +64,7 @@ defmodule ValueFlows.Knowledge.ResourceSpecification.LiveHandler do
     # debug(socket)
 
     selected =
-      if !is_ulid?(select_resource_spec),
+      if !is_uid?(select_resource_spec),
         do: create_in_autocomplete(current_user(socket.assigns), select_resource_spec),
         else: {name, select_resource_spec}
 

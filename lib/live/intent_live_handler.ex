@@ -88,7 +88,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
            attrs
            # |> debug()
            |> input_to_atoms()
-           |> maybe_put(:image_id, ulid(List.first(uploaded_media)))
+           |> maybe_put(:image_id, uid(List.first(uploaded_media)))
            |> Map.put_new(:provider, if(type == "offer", do: current_user))
            |> Map.put_new(:receiver, if(type == "need", do: current_user))
            |> Map.put(:due, input_date(e(attrs, "due", nil)))
@@ -227,7 +227,7 @@ defmodule ValueFlows.Planning.Intent.LiveHandler do
        socket
        |> assign(intent: intent)}
 
-      id = ulid(intent)
+      id = uid(intent)
 
       if e(attrs, "redirect_after", nil) && is_binary(id) do
         redir = e(attrs, "redirect_after", "/intent") <> "/" <> id

@@ -11,7 +11,7 @@
       <StatefulComponent
         module={maybe_component(Bonfire.UI.Reactions.LikeActionLive, @__context__)}
         id={ComponentID.new(Bonfire.UI.Reactions.LikeActionLive, id(@process), __MODULE__)}
-        object_id={ulid(@process)}
+        object_id={uid(@process)}
       />
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
       <Bonfire.Boundaries.Web.BoundaryIconLive
