@@ -21,7 +21,7 @@ defmodule Bonfire.UI.ValueFlows.CreateLabelLive do
           label_search_phrase: "",
           chosen_labels:
             [repo().preload(label, :profile)] ++
-              Map.get(socket.assigns, :chosen_labels, [])
+              Map.get(assigns(socket), :chosen_labels, [])
         ]
       else
         e ->

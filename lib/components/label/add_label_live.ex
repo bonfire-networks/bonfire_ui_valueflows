@@ -33,7 +33,7 @@ defmodule Bonfire.UI.ValueFlows.AddLabelLive do
     assigns = [
       label_search_results: [],
       label_search_phrase: label_name,
-      chosen_labels: [input_to_atoms(label)] ++ Map.get(socket.assigns, :chosen_labels, [])
+      chosen_labels: [input_to_atoms(label)] ++ Map.get(assigns(socket), :chosen_labels, [])
     ]
 
     {:noreply, assign(socket, assigns)}

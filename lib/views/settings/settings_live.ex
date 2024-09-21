@@ -28,14 +28,14 @@ defmodule Bonfire.UI.ValueFlows.SettingsLive do
   def handle_info({:add_unit, unit}, socket) do
     {:noreply,
      socket
-     |> assign(all_units: [unit] ++ socket.assigns.all_units)
+     |> assign(all_units: [unit] ++ assigns(socket).all_units)
      |> assign_flash(:info, "Unit successfully created!")}
   end
 
   def handle_info({:add_resource_specification, resource}, socket) do
     {:noreply,
      socket
-     |> assign(all_units: [resource] ++ socket.assigns.all_resources)
+     |> assign(all_units: [resource] ++ assigns(socket).all_resources)
      |> assign_flash(:info, "Resource specification successfully created!")}
   end
 
@@ -43,7 +43,7 @@ defmodule Bonfire.UI.ValueFlows.SettingsLive do
     {:noreply,
      socket
      |> assign_flash(:info, "Value calculation successfully created!")
-     |> assign(all_value_calculations: [vc] ++ socket.assigns.all_value_calculations)}
+     |> assign(all_value_calculations: [vc] ++ assigns(socket).all_value_calculations)}
   end
 
   @graphql """

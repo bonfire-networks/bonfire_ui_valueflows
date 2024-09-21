@@ -30,7 +30,7 @@ defmodule Bonfire.UI.ValueFlows.CreateUnitLive do
           :noreply,
           socket
 
-          #  |> assign(all_units: [unit] ++ socket.assigns.all_units)
+          #  |> assign(all_units: [unit] ++ assigns(socket).all_units)
         }
 
       {:error, changeset} ->

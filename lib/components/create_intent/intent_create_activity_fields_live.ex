@@ -63,7 +63,7 @@ defmodule Bonfire.UI.ValueFlows.IntentCreateActivityFieldsLive do
         need
         |> Map.merge(%{
           action: "work",
-          is_public: socket.assigns.is_public,
+          is_public: assigns(socket).is_public,
           at_location: location,
           receiver: current_user_required!(socket)
         })
