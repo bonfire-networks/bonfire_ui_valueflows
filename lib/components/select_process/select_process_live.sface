@@ -1,6 +1,6 @@
 <div class="w-full" role="menu" aria-orientation="vertical">
   <Bonfire.UI.Common.MultiselectLive
-    id={Text.random_string()}
+    id={random_dom_id()}
     preloaded_options={Bonfire.UI.ValueFlows.ProcessesListLive.processes(@__context__)}
     selected_options={@selected_options}
     label={@label || l("Select a process...")}
