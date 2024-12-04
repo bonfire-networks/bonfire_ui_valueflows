@@ -14,7 +14,8 @@
         object_id={uid(@process)}
       />
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
-      <Bonfire.UI.Boundaries.Web.BoundaryIconLive
+      <StatelessComponent
+        module={Bonfire.UI.Boundaries.Web.BoundaryIconLive}
         with_label
         id={"boundary_#{id(@process)}"}
         object={@process}

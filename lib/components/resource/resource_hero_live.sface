@@ -49,7 +49,8 @@
         <span class="ml-2 text-sm font-regular">{DatesTimes.date_from_now(@resource)}</span>
       </div>
 
-      <Bonfire.UI.Boundaries.Web.BoundaryIconLive
+      <StatelessComponent
+        module={Bonfire.UI.Boundaries.Web.BoundaryIconLive}
         id={"boundary_#{id(@resource)}"}
         object={@resource}
         object_type={Types.object_type(@resource)}
