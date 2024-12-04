@@ -50,7 +50,7 @@
       </div>
 
       <StatelessComponent
-        module={Bonfire.UI.Boundaries.Web.BoundaryIconLive}
+        module={maybe_component(Bonfire.UI.Boundaries.Web.BoundaryIconLive)}
         id={"boundary_#{id(@resource)}"}
         object={@resource}
         object_type={Types.object_type(@resource)}
