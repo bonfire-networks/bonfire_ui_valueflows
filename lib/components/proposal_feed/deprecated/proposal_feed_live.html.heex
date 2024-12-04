@@ -5,7 +5,7 @@
   <div class="flex-1 ml-4">
     <a href={"/breadpub/intent/" <> e(@intent, :id, "new")}>
       <h4 class="font-bold tracking-wide text-base-content opacity-80 text-md">
-        <%= e(@intent, :name, "Untitled") %>
+        {e(@intent, :name, "Untitled")}
       </h4>
     </a>
     <p class="text-sm italic text-base-content opacity-60">

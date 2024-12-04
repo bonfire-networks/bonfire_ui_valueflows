@@ -21,14 +21,14 @@
 </div>
 <div>
   <div class="flex space-x-2">
-    {!-- SHOW LABELS --}
+    <!-- SHOW LABELS -->
     <%= if length(@chosen_labels) > 0 do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase ">Labels</h4>
         <div class="flex items-center">
           <%= for label <- @chosen_labels do %>
             <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
-              <%= e(label, :name, e(label, :profile, :name, "Label")) %>
+              {e(label, :name, e(label, :profile, :name, "Label"))}
               <input type="hidden" name="need[tags][]" value={Map.get(label, :id)} />
               <button
                 phx-target={@myself}
@@ -51,13 +51,13 @@
         </div>
       </div>
     <% end %>
-    {!-- SHOW LOCATION --}
+    <!-- SHOW LOCATION -->
     <%= if Map.get(@at_location, :id) do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Location</h4>
         <div class="flex items-center">
           <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
-            <%= Map.get(@at_location, :name) %>
+            {Map.get(@at_location, :name)}
             <input type="hidden" name="need[at_location]" value={Map.get(@at_location, :id)} />
             <button
               phx-target={@myself}
@@ -79,13 +79,13 @@
         </div>
       </div>
     <% end %>
-    {!-- SHOW DUE DATE --}
+    <!-- SHOW DUE DATE -->
     <%= if  @due_date != "" do %>
       <div class="mb-3">
         <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Due date</h4>
         <div class="flex items-center">
           <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
-            <%= @due_date %>
+            {@due_date}
             <button
               type="button"
               phx-target={@myself}
@@ -113,7 +113,7 @@
     <h4 class="mb-1 text-xs font-medium uppercase text-blueGray-500">Milestone</h4>
     <div class="flex items-center">
       <span class="inline-flex items-center px-3 py-1 text-sm font-medium text-base-content opacity-80 rounded ">
-        <%= @milestone.name %>
+        {@milestone.name}
         <button
           type="button"
           phx-target={@myself}

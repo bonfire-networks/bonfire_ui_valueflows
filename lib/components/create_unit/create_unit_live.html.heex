@@ -4,22 +4,22 @@
       <div class="p-3">
         <h3 class="mb-4 text-lg font-medium text-base-content opacity-80 ">Create a new unit</h3>
         <div>
-          <%= label(f, :label, "Choose a label (eg. kilo)?",
+          {label(f, :label, "Choose a label (eg. kilo)?",
             class: "block text-sm font-medium text-base-content opacity-70"
-          ) %>
+          )}
           <div class="mt-1">
-            <%= text_input(f, :label, required: true, class: "input w-full") %>
+            {text_input(f, :label, required: true, class: "input w-full")}
           </div>
-          <%= error_tag(f, :label) %>
+          {error_tag(f, :label)}
         </div>
         <div class="mt-3">
-          <%= label(f, :symbol, "Choose a symbol (eg. kg)",
+          {label(f, :symbol, "Choose a symbol (eg. kg)",
             class: "block text-sm font-medium text-base-content opacity-70"
-          ) %>
+          )}
           <div class="mt-1">
-            <%= text_input(f, :symbol, required: true, class: "input w-full") %>
+            {text_input(f, :symbol, required: true, class: "input w-full")}
           </div>
-          <%= error_tag(f, :symbol) %>
+          {error_tag(f, :symbol)}
         </div>
         <button
           style="background-color: #52E277"
@@ -39,8 +39,8 @@
     <%= for x <- @all_units do %>
       <div class="flex items-center p-3 -mx-3">
         <div>
-          <h4 class="text-base font-semibold text-indigo-500">Label: <%= e(x, :label, nil) %></h4>
-          <p class="text-base text-base-content opacity-60">Symbol: <%= e(x, :symbol, nil) %></p>
+          <h4 class="text-base font-semibold text-indigo-500">Label: {e(x, :label, nil)}</h4>
+          <p class="text-base text-base-content opacity-60">Symbol: {e(x, :symbol, nil)}</p>
         </div>
       </div>
     <% end %>
