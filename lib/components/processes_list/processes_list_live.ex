@@ -27,7 +27,7 @@ defmodule Bonfire.UI.ValueFlows.ProcessesListLive do
     if not is_nil(current_user),
       do:
         Bonfire.Social.Likes.by_liker(current_user,
-          object_type: ValueFlows.Process,
+          object_types: ValueFlows.Process,
           preload: false
         )
         |> repo().maybe_preload(edge: [:object])
