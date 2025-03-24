@@ -14,7 +14,7 @@
         object_id={uid(@process)}
       />
       <Bonfire.UI.Social.Activity.InstanceIconLive object={@process} />
-      <StatelessComponent
+      <StatefulComponent
         module={maybe_component(Bonfire.UI.Boundaries.BoundaryIconLive)}
         with_label
         id={"boundary_#{id(@process)}"}

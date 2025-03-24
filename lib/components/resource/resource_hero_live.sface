@@ -49,7 +49,7 @@
         <span class="ml-2 text-sm font-regular">{DatesTimes.date_from_now(@resource)}</span>
       </div>
 
-      <StatelessComponent
+      <StatefulComponent
         module={maybe_component(Bonfire.UI.Boundaries.BoundaryIconLive)}
         id={"boundary_#{id(@resource)}"}
         object={@resource}
