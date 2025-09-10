@@ -69,7 +69,7 @@ defmodule ValueFlows.EconomicEvent.LiveHandler do
     ~> NaiveDateTime.new(~T[00:00:00])
     ~> Ecto.Type.cast(:utc_datetime_usec, ...)
     # |> debug()
-    |> ok_unwrap()
+    |> from_ok()
   end
 
   defp maybe_date(_d) do
