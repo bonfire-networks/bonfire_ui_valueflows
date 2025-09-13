@@ -47,7 +47,7 @@
               </span>
             </span>
             <div class="flex items-center gap-3">
-              <!-- <Bonfire.UI.Social.Activity.ActionsLive
+              {!-- <Bonfire.UI.Social.Activity.ActionsLive
                 object={@object}
                 activity={@activity}
                 object_type={@object_type}
@@ -61,7 +61,7 @@
                 activity_component_id={@activity_component_id}
                 reply_count={@reply_count}
                 hide_more_actions
-              /> -->
+              /> --}
               <div
                 class="tooltip"
                 :if={e(@object, :provider, :id, nil)}
