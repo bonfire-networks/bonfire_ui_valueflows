@@ -7,7 +7,7 @@
   </div>
   <div class="flex items-center mt-3">
     <Bonfire.UI.Common.AvatarLive
-      parent_id={"primary_accountable-#{id(@primary_accountable)}"}
+      parent_id={deterministic_dom_id(__MODULE__, id(@primary_accountable), "primary_accountable", nil)}
       user={@primary_accountable}
       class="w-8 h-8"
       bg_class="rounded-full"

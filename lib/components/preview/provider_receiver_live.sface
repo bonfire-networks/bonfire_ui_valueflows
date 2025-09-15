@@ -5,7 +5,7 @@
       class="flex w-full gap-3"
     >
       <Bonfire.UI.Common.AvatarLive
-        parent_id={"provider-#{id(@activity_component_id || @card)}"}
+        parent_id={deterministic_dom_id(__MODULE__, id(@activity_component_id || @card), "provider", nil)}
         user={provider(@provider, @primary_accountable, @object)}
       />
       <div class="flex items-start justify-between w-full">
@@ -49,7 +49,7 @@
           object_id={id(@object)}
           object_boundary={@object_boundary}
           object_type={Types.object_type(@published_in) || @object_type}
-          parent_id={"#{@activity_inception}#{id(@activity)}"}
+          parent_id={deterministic_dom_id(__MODULE__, id(@activity), "activity_inception", @activity_inception)}
           with_icon
         />
       </div>
@@ -90,7 +90,7 @@
         >
         {e(profile(receiver(@receiver, @object)), :name, "Anonymous")}
 
-        <Bonfire.UI.Common.AvatarLive parent_id={"receiver-#{@activity_component_id || id(@card)}"} user={receiver(@receiver, @object)} />
+        <Bonfire.UI.Common.AvatarLive parent_id={deterministic_dom_id(__MODULE__, id(@card), "receiver", @activity_component_id)} user={receiver(@receiver, @object)} />
       </LinkLive>
     </div> --}
   </div>
