@@ -17,4 +17,10 @@ defmodule Bonfire.UI.ValueFlows.CreateIntentLive do
 
   @behaviour Bonfire.UI.Common.SmartInputModule
   def smart_input_module, do: [:intent, :offer, :need, ValueFlows.Planning.Intent]
+
+  def smart_input_icon(_), do: "ph:handshake-duotone"
+
+  def smart_input_label(:offer), do: l("Offer")
+  def smart_input_label(:need), do: l("Need")
+  def smart_input_label(_), do: l("Intent")
 end

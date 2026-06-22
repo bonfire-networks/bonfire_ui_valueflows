@@ -13,4 +13,7 @@ defmodule Bonfire.UI.ValueFlows.CreateProcessLive do
 
   @behaviour Bonfire.UI.Common.SmartInputModule
   def smart_input_module, do: [:process, ValueFlows.Process]
+
+  def smart_input_icon(_), do: "ph:arrows-clockwise-duotone"
+  def smart_input_label(_), do: l("Process")
 end

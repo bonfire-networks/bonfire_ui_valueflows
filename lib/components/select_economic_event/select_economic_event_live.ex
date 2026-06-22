@@ -11,6 +11,9 @@ defmodule Bonfire.UI.ValueFlows.SelectEconomicEventLive do
   @behaviour Bonfire.UI.Common.SmartInputModule
   def smart_input_module, do: [:economic_event, ValueFlows.EconomicEvent]
 
+  def smart_input_icon(_), do: "ph:lightning-duotone"
+  def smart_input_label(_), do: l("Economic event")
+
   def preselect(%{id: id} = resource) do
     [{e(resource, :name, "Unnamed resource"), id}]
   end
