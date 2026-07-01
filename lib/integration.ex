@@ -1,7 +1,7 @@
 defmodule Bonfire.UI.ValueFlows.Integration do
   use Bonfire.Common.Utils
 
-  declare_extension("Common UI components for ValueFlows",
+  declare_extension(l("Common UI components for ValueFlows"),
     icon: "fluent-mdl2:web-components",
     emoji: "🧩",
     description: l("Reusable user interface components for other ValueFlows extensions.")
