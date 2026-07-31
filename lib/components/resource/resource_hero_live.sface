@@ -56,7 +56,7 @@
         object_type={Types.object_type(@resource)}
       />
 
-      <Bonfire.UI.Social.Activity.InstanceIconLive object={@resource} />
+      <Bonfire.UI.Common.Icons.InstanceIconLive object={@resource} />
     </div>
   </div>
 </div>
