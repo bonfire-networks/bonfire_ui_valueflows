@@ -1,6 +1,6 @@
 <div>
   <div class="mt-3 mb-3 text-sm text-primary-content-800">
-    <span class="capitalize">{@verb_display}</span>
+    <span class="capitalize">{Bonfire.Social.Activities.experience_display(@experienced_as, %{object: @object})}</span>
 
     <LinkLive to={path(
       e(

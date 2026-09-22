@@ -59,7 +59,7 @@
 
       <span class="text-xs text-primary-content-500">
         <LinkLive to={@permalink}>
-          <span :if={@verb_display != "created"} class="capitalize">{@verb_display}</span>
+          <span :if={@experienced_as != "created"} class="capitalize">{@experienced_as}</span>
 
           {@date_ago}
         </LinkLive>
@@ -75,7 +75,7 @@
       object_type={@object_type}
       object_boundary={@object_boundary}
       showing_within={@showing_within}
-      verb_display={@verb_display}
+      verb_display={@experienced_as}
     /> --}
     {!-- 
     <div

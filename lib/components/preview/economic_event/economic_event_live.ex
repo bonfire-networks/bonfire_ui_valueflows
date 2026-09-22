@@ -4,6 +4,9 @@ defmodule Bonfire.UI.ValueFlows.Preview.EconomicEventLive do
   prop activity, :any, default: nil
   prop object, :map
 
+  # what the activity was for whoever is reading it, from `Bonfire.Social.Activities.experienced_as/2`. An economic event is a `:create` whose word is the action it records, which `Activities.experience_display/2` reads off the object
+  prop experienced_as, :atom, default: nil
+
   # @resource_preloads [
   #   :image,
   #   :current_location,
@@ -29,14 +32,7 @@ defmodule Bonfire.UI.ValueFlows.Preview.EconomicEventLive do
   def activity_component(object) do
     object = prepare(object)
 
-    {__MODULE__,
-     [
-       object: object,
-       verb_display:
-         Bonfire.Social.Activities.verb_display(
-           e(object, :action, :label, e(object, :action_id, ""))
-         )
-     ]}
+    {__MODULE__, [object: object]}
   end
 
   def prepare(object) do
